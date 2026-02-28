@@ -3,12 +3,16 @@
 .im-header__city {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   white-space: nowrap;
   font-weight: 400;
   font-size: 12px;
   line-height: 108%;
   color: #666;
+}
+
+.im-header__city-arrow {
+  display: inline-flex;
 }
 
 .im-header__top-nav {
@@ -447,6 +451,46 @@
 
   &:active {
     transform: scale(0.96);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: 2px;
+  }
+}
+
+.im-header__mobile-actions {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.im-header__mobile-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  border: none;
+  padding: 0;
+  background: #f5f5f5;
+  color: #111111;
+  cursor: pointer;
+  text-decoration: none;
+  @include interactive-transition;
+
+  svg {
+    display: block;
+  }
+
+  &:hover {
+    background: #eaeaea;
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 
   &:focus-visible {

@@ -1,6 +1,7 @@
 .im-header {
   background-color: var(--neutral-100);
-  border-radius: 8px;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
@@ -17,6 +18,12 @@
   align-items: center;
   justify-content: space-between;
   gap: 70px;
+}
+
+.im-header__top-mobile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .im-header__main {
@@ -42,8 +49,89 @@
   font-size: 13px;
 }
 
+.im-bottom-nav {
+  display: none;
+}
+
+.im-bottom-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.im-bottom-nav__link {
+  flex: 1 1 0;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 6px 4px;
+  text-decoration: none;
+  font-size: 11px;
+  line-height: 1.2;
+  color: var(--neutral-600);
+  transition: color var(--transition-fast);
+}
+
+.im-bottom-nav__link:hover {
+  color: var(--brand-600);
+}
+
+.im-bottom-nav__link--active {
+  color: var(--brand-600);
+}
+
+.im-bottom-nav__icon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+}
+
+.im-bottom-nav__text {
+  white-space: nowrap;
+}
+
+.im-bottom-nav__badge {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 2px 4px;
+  border-radius: 6px;
+  background: #ffdada;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 114%;
+  text-align: center;
+  color: #3b0000;
+}
+
 @media (max-width: 1000px) {
   .im-header__main {
     padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .im-bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1100;
+    display: block;
+    padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
+    background-color: var(--neutral-100);
   }
 }
