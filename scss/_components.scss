@@ -1,3 +1,5 @@
+@use "animations" as *;
+
 .im-header__city {
   display: inline-flex;
   align-items: center;
@@ -23,12 +25,17 @@
   font-size: 12px;
   line-height: 108%;
   color: #666;
-  transition: 0.3s linear all;
   cursor: pointer;
-}
+  @include interactive-transition;
 
-.im-header__top-link:hover {
-  color: #111111;
+  &:hover {
+    color: #111111;
+    opacity: 0.9;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
 }
 
 .im-header__top-link--dropdown {
@@ -39,6 +46,15 @@
 
 .im-header__top-link-icon {
   display: inline-flex;
+  transition: all var(--transition-normal);
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+  }
+}
+
+.im-header__top-link--dropdown:hover .im-header__top-link-icon {
+  transform: rotate(180deg);
 }
 
 .im-header__top-right {
@@ -66,7 +82,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
+  padding: 6px;
   border: none;
   background: none;
   background-color: transparent;
@@ -75,24 +91,50 @@
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
+  border-radius: 6px;
+  @include interactive-transition;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: 2px;
+  }
 }
 
 .im-header__email {
   color: #2f6bff;
   text-decoration: none;
-}
+  @include interactive-transition;
 
-.im-header__email:hover {
-  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.85;
+  }
+
+  &:active {
+    opacity: 0.75;
+  }
 }
 
 .im-header__phone {
-  font-weight: 600;
   font-weight: 700;
   font-size: 12px;
   line-height: 108%;
   color: #666;
   text-decoration: none;
+  @include interactive-transition;
+
+  &:hover {
+    color: var(--brand-600);
+  }
 }
 
 .im-header__logo {
@@ -133,6 +175,23 @@
   color: #ffffff;
   font-weight: 600;
   cursor: pointer;
+  @include interactive-transition;
+
+  &:hover {
+    background-color: var(--brand-500);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(200, 4, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: 2px;
+  }
 }
 
 .im-header__catalog-icon {
@@ -147,6 +206,12 @@
   overflow: hidden;
   background: #f5f5f5;
   max-width: 483px;
+  @include interactive-transition;
+
+  &:focus-within {
+    border-color: var(--brand-600);
+    box-shadow: 0 0 0 3px rgba(200, 4, 0, 0.1);
+  }
 }
 
 .im-header__search-input {
@@ -161,6 +226,7 @@
   line-height: 114%;
   color: #666;
   background: #f5f5f5;
+  @include interactive-transition;
 
   &::placeholder {
     font-family: var(--font-family);
@@ -169,6 +235,20 @@
     line-height: 114%;
     color: #666;
     opacity: 1;
+  }
+
+  &:hover {
+    background: #eeeeee;
+  }
+
+  &:focus {
+    background: var(--neutral-100);
+    color: #111111;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: -2px;
   }
 }
 
@@ -180,6 +260,21 @@
   border: none;
   background: transparent;
   cursor: pointer;
+  @include interactive-transition;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: -2px;
+  }
 }
 
 .im-header__search-btn-icon {
@@ -199,13 +294,30 @@
   gap: 8px;
   border: none;
   background: none;
-  padding: 0;
+  padding: 8px;
+  border-radius: 8px;
   cursor: pointer;
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 12px;
   line-height: 108%;
   color: #666;
+  @include interactive-transition;
+
+  &:hover {
+    color: var(--brand-600);
+    background: rgba(200, 4, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: 2px;
+  }
 }
 
 .im-header__action-icon {
@@ -217,8 +329,8 @@
 }
 
 .im-header__login {
-border-radius: 8px;
-padding: 10px 12px;
+  border-radius: 8px;
+  padding: 10px 12px;
   border: none;
   background-color: #111111;
   color: #ffffff;
@@ -226,17 +338,70 @@ padding: 10px 12px;
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
+  @include interactive-transition;
+
+  &:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--neutral-900);
+    outline-offset: 2px;
+  }
 }
 
 .im-header__bottom-link {
   text-decoration: none;
-font-weight: 400;
-font-size: 14px;
-line-height: 114%;
-color: #111;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 114%;
+  color: #111;
+  padding: 4px 0;
+  position: relative;
+  @include interactive-transition;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: currentColor;
+    transition: all var(--transition-normal);
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  &:hover {
+    color: var(--brand-600);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--brand-600);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
 }
 
 .im-header__bottom-link--accent {
-font-weight: 400;
-color: #c80400;
+  font-weight: 400;
+  color: #c80400;
+
+  &:hover {
+    color: var(--brand-500);
+  }
 }

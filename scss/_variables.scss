@@ -73,6 +73,12 @@
   --purple-800: #3b0764;
   --purple-900: #1e063a;
 
+  /* Анимации — плавное замедление в конце */
+  --transition-fast: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
+  --transition-normal: 0.65s cubic-bezier(0.33, 1, 0.68, 1);
+  --transition-slow: 0.9s cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-smooth: cubic-bezier(0.33, 1, 0.68, 1);
+
   /* Цвета — error */
   --error-100: #ffe5e9;
   --error-200: #ffc8ce;
@@ -84,4 +90,3 @@
   --error-800: #9f1239;
   --error-900: #881337;
 }
-
