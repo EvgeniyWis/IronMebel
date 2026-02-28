@@ -4,8 +4,8 @@
   "description": "Базовый шаблон фронтенд-проекта (HTML, SCSS, JS) для IronMebel",
   "private": true,
   "scripts": {
-    "dev:sass": "sass scss/main.scss css/style.css --watch",
-    "build:sass": "sass scss/main.scss css/style.css --style=compressed"
+    "dev:sass": "sass scss:css --watch",
+    "build:sass": "sass scss:css --style=compressed"
   },
   "devDependencies": {
     "sass": "1.97.3"
