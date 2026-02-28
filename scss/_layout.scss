@@ -1,9 +1,12 @@
 .im-header {
+  width: 100vw;
+  max-width: 100%;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
   background-color: var(--neutral-100);
-  width: 100%;
   border-radius: 0 0 20px 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .im-header__top {
@@ -32,7 +35,7 @@
 
 .im-header__main-inner {
   display: grid;
-  grid-template-columns: auto auto minmax(260px, 1fr) auto;
+  grid-template-columns: auto auto minmax(260px, 1fr) auto auto;
   align-items: center;
   column-gap: 12px;
 }
