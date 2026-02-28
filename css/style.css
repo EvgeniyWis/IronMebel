@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "Exo 2";
+  src: url("../@fonts/Exo_2/Exo2-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Exo";
+  src: url("../@fonts/Exo/Exo-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../@fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../@fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* Шрифты */
+  --font-family: "Exo 2", sans-serif;
+  --second-family: "Montserrat", sans-serif;
+  --third-family: "Inter", sans-serif;
+  --font3: "Exo", sans-serif;
+  --font4: "ABC Solar Plus Variable Unlicensed Trial", sans-serif;
+  --font5: "SF Pro", sans-serif;
+
+  /* Цвета — neutral */
+  --neutral-100: #ffffff;
+  --neutral-200: #f5f5f5;
+  --neutral-300: #e5e5e5;
+  --neutral-400: #cccccc;
+  --neutral-500: #999999;
+  --neutral-600: #666666;
+  --neutral-700: #444444;
+  --neutral-800: #222222;
+  --neutral-900: #111111;
+
+  /* Цвета — brand (красный) */
+  --brand-100: #fdeaea;
+  --brand-200: #f9d3d3;
+  --brand-300: #f7aaaa;
+  --brand-400: #f07a7a;
+  --brand-500: #d93838;
+  --brand-600: #b50000;
+  --brand-700: #8a0000;
+  --brand-800: #5a0000;
+  --brand-900: #380000;
+
+  /* Цвета — blue */
+  --blue-100: #e0f0ff;
+  --blue-200: #c2e0ff;
+  --blue-300: #99c7ff;
+  --blue-400: #66a5ff;
+  --blue-500: #3385ff;
+  --blue-600: #1a63d1;
+  --blue-700: #1249a3;
+  --blue-800: #0c3675;
+  --blue-900: #062147;
+
+  /* Цвета — green */
+  --green-100: #e3f7eb;
+  --green-200: #c4ebd3;
+  --green-300: #9bd8b3;
+  --green-400: #6abc87;
+  --green-500: #3a9f5d;
+  --green-600: #278347;
+  --green-700: #1f6737;
+  --green-800: #154a27;
+  --green-900: #0d3019;
+
+  /* Цвета — yellow */
+  --yellow-100: #fff6df;
+  --yellow-200: #ffe7b0;
+  --yellow-300: #ffd27a;
+  --yellow-400: #ffb940;
+  --yellow-500: #f59e0b;
+  --yellow-600: #d97706;
+  --yellow-700: #b45309;
+  --yellow-800: #92400e;
+  --yellow-900: #78350f;
+
+  /* Цвета — purple */
+  --purple-100: #f3e8ff;
+  --purple-200: #e3d0ff;
+  --purple-300: #c7a6ff;
+  --purple-400: #a673ff;
+  --purple-500: #7c3aed;
+  --purple-600: #5b21b6;
+  --purple-700: #4c1d95;
+  --purple-800: #3b0764;
+  --purple-900: #1e063a;
+
+  /* Цвета — error */
+  --error-100: #ffe5e9;
+  --error-200: #ffc8ce;
+  --error-300: #ff9aa3;
+  --error-400: #ff6b7a;
+  --error-500: #f43f5e;
+  --error-600: #e11d48;
+  --error-700: #be123c;
+  --error-800: #9f1239;
+  --error-900: #881337;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+}
+
