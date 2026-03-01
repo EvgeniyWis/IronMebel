@@ -59,7 +59,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: var(--z-fixed);
+  z-index: 20;
   display: none;
   padding: 8px 0 calc(8px + env(safe-area-inset-bottom));
   background-color: var(--neutral-100);
