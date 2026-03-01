@@ -73,6 +73,14 @@
   --purple-800: #3b0764;
   --purple-900: #1e063a;
 
+  /* z-index scale */
+  --z-base: 1;
+  --z-sticky: 2;
+  --z-fixed: 3;
+  --z-dropdown: 4;
+  --z-modal: 5;
+  --z-header: 6;
+
   /* Анимации — плавное замедление в конце */
   --transition-fast: 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   --transition-normal: 0.65s cubic-bezier(0.33, 1, 0.68, 1);

@@ -73,6 +73,29 @@
                 <span></span>
               </button>
 
+              <button
+                class="im-header__catalog im-header__catalog--mobile"
+                type="button"
+                data-mobile-catalog-open
+                aria-label="Открыть каталог"
+              >
+                <span class="im-header__catalog-icon" aria-hidden="true">
+                  <svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2 0C0.8954 0 0 0.895 0 2V6C0 7.105 0.8954 8 2 8H6C7.1046 8 8 7.105 8 6V2C8 0.895 7.1046 0 6 0H2ZM12 0C10.8954 0 10 0.895 10 2V6C10 7.105 10.8954 8 12 8H16C17.1046 8 18 7.105 18 6V2C18 0.895 17.1046 0 16 0H12ZM2 10C0.8954 10 0 10.895 0 12V16C0 17.105 0.8954 18 2 18H6C7.1046 18 8 17.105 8 16V12C8 10.895 7.1046 10 6 10H2ZM12 10C10.8954 10 10 10.895 10 12V16C10 17.105 10.8954 18 12 18H16C17.1046 18 18 17.105 18 16V12C18 10.895 17.1046 10 16 10H12Z"
+                      fill="white"
+                    />
+                  </svg>
+                </span>
+                <span class="im-header__catalog-text">Каталог</span>
+              </button>
+
               <div class="im-header__mobile-actions">
                 <a
                   href="tel:88009561478"
@@ -464,6 +487,126 @@
             </nav>
           </div>
         </div>
+        <div class="im-mobile-catalog" data-mobile-catalog aria-hidden="true">
+          <div class="im-mobile-catalog__backdrop" data-mobile-catalog-close></div>
+          <div class="im-mobile-catalog__panel">
+            <div class="im-mobile-catalog__header">
+              <a href="#" class="im-mobile-catalog__logo" aria-label="IRONMebel — на главную">
+                <span class="im-mobile-catalog__logo-icon" aria-hidden="true">
+                  <svg width="33" height="29" viewBox="0 0 33 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.80318 7.05897L0 0V8.80782V10.4136L7.80318 17.2182V7.05897Z" fill="#C80400"/>
+                    <path d="M0 28.8385H7.80318V23.4012V19.8717L0 13.0671V28.8385Z" fill="#C80400"/>
+                    <path d="M21.2088 19.1896L9.79688 8.85547V18.9988L21.2088 28.84L27.9041 24.8018V28.84H32.5891V22.8939V15.7396V12.3373L21.2088 19.1896Z" fill="#111111"/>
+                  </svg>
+                </span>
+                <span class="im-mobile-catalog__logo-title" aria-hidden="true">
+                  <svg width="146" height="15" viewBox="0 0 146 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0.00012207 0.259766H5.59006V14.5849H0.00012207V0.259766Z" fill="#111111"/>
+                    <path d="M9.27356 0.259766H17.5516C18.6207 0.259766 19.5523 0.366441 20.3618 0.595033C21.1713 0.823625 21.828 1.12842 22.3778 1.53988C22.9124 1.95135 23.3248 2.42377 23.5844 3.00287C23.844 3.58197 23.9968 4.19155 23.9968 4.87732C23.9968 5.71549 23.7982 6.46223 23.4011 7.11752C23.004 7.77282 22.4084 8.29096 21.6294 8.67195L24.6382 14.6001H18.3305L16.0548 9.3882H14.8788V14.5849H9.28884V0.259766H9.27356ZM15.1995 7.6509C15.6577 7.6509 16.0701 7.58994 16.4213 7.45279C16.7879 7.33087 17.0934 7.148 17.3377 6.90417C17.5821 6.66034 17.7806 6.38603 17.9181 6.066C18.0556 5.74597 18.1167 5.38022 18.1167 4.99924C18.1167 4.61825 18.0556 4.2525 17.9181 3.93248C17.7806 3.61245 17.5821 3.3229 17.3377 3.0943C17.0934 2.86571 16.7879 2.68284 16.4213 2.54568C16.0548 2.40853 15.6577 2.34757 15.1995 2.34757H14.8635V7.63566H15.1995V7.6509Z" fill="#111111"/>
+                    <path d="M26.4689 7.36066C26.4689 6.27866 26.6369 5.27285 26.9882 4.37372C27.3394 3.4746 27.8587 2.69738 28.546 2.04209C29.2333 1.38679 30.0886 0.883889 31.1271 0.533382C32.1657 0.167635 33.357 0 34.7163 0C36.0756 0 37.2822 0.182874 38.3055 0.533382C39.344 0.899129 40.1993 1.40203 40.8866 2.04209C41.5739 2.69738 42.0932 3.4746 42.4445 4.37372C42.7958 5.27285 42.9638 6.27866 42.9638 7.36066C42.9638 8.44266 42.7958 9.4637 42.4445 10.3781C42.0932 11.2924 41.5739 12.0696 40.8866 12.7249C40.1993 13.3802 39.344 13.8831 38.3055 14.2337C37.2822 14.5994 36.0756 14.767 34.7163 14.767C33.357 14.767 32.1504 14.5842 31.1271 14.2337C30.1039 13.8679 29.2333 13.365 28.546 12.7249C27.8587 12.0696 27.3394 11.2924 26.9882 10.3781C26.6369 9.4637 26.4689 8.4579 26.4689 7.36066ZM34.7163 12.7859C35.0981 12.7859 35.4494 12.7249 35.7396 12.5878C36.0298 12.4506 36.2894 12.1916 36.488 11.7953C36.6865 11.3991 36.8393 10.8505 36.9462 10.1495C37.0531 9.44847 37.0989 8.51886 37.0989 7.3759C37.0989 6.23294 37.0531 5.33381 36.9462 4.6328C36.8393 3.93178 36.6865 3.38316 36.488 3.00217C36.2894 2.62119 36.0451 2.36212 35.7396 2.22496C35.4494 2.08781 35.0981 2.02685 34.7163 2.02685C34.3345 2.02685 33.9832 2.08781 33.693 2.22496C33.3876 2.36212 33.1432 2.62119 32.9446 3.00217C32.7461 3.38316 32.5934 3.93178 32.4864 4.6328C32.3795 5.33381 32.3337 6.24818 32.3337 7.3759C32.3337 8.50362 32.3795 9.44847 32.4864 10.1495C32.5934 10.8505 32.7461 11.3991 32.9446 11.7953C33.1432 12.1916 33.3876 12.4506 33.693 12.5878C33.9985 12.7249 34.3345 12.7859 34.7163 12.7859Z" fill="#111111"/>
+                    <path d="M45.8048 0.259766H49.3023L58.4203 7.89473V0.259766H60.5586V14.5849H57.061L47.943 6.98037V14.5849H45.8201V0.259766H45.8048Z" fill="#111111"/>
+                    <path d="M64.2267 0.259766H68.1824L73.6196 7.75758L78.7819 0.259766H82.6307V14.5849H77.056V7.26992L71.6952 14.7677L66.3649 7.26992V14.5849H64.2419V0.259766H64.2267Z" fill="#111111"/>
+                    <path d="M86.2892 0.259766H98.4313V2.46949H91.8944V6.34031H96.8887V8.55003H91.8791V12.3904H98.4313V14.6001H86.2892V0.275004V0.259766Z" fill="#111111"/>
+                    <path d="M101.305 0.259766H108.896C109.965 0.259766 110.896 0.351201 111.706 0.534075C112.515 0.716948 113.172 0.976019 113.722 1.29605C114.256 1.63132 114.669 2.02754 114.928 2.49996C115.188 2.97239 115.341 3.49053 115.341 4.05439C115.341 4.61825 115.188 5.16687 114.867 5.66977C114.547 6.17267 114.088 6.61462 113.477 6.98037C114.485 7.26992 115.234 7.69662 115.723 8.26048C116.211 8.82434 116.471 9.51012 116.471 10.3178C116.471 10.8664 116.333 11.3998 116.074 11.918C115.799 12.4361 115.402 12.8933 114.883 13.2895C114.348 13.6857 113.691 14.0058 112.882 14.2496C112.072 14.4934 111.156 14.6153 110.072 14.6153H101.32V0.290244L101.305 0.259766ZM107.49 6.08124C108.025 6.08124 108.468 6.03552 108.819 5.92884C109.186 5.83741 109.476 5.70025 109.69 5.51738C109.904 5.34974 110.056 5.15163 110.148 4.92304C110.24 4.69445 110.285 4.46586 110.285 4.22202C110.285 3.97819 110.24 3.7496 110.148 3.52101C110.056 3.29242 109.904 3.0943 109.69 2.92667C109.476 2.75904 109.186 2.62188 108.819 2.5152C108.453 2.40853 108.01 2.36281 107.49 2.36281H106.895V6.08124H107.49ZM107.49 12.4818C108.071 12.4818 108.544 12.4209 108.941 12.2989C109.338 12.177 109.659 12.0094 109.904 11.796C110.148 11.5827 110.331 11.3389 110.438 11.0493C110.545 10.7598 110.606 10.455 110.606 10.1349C110.606 9.84538 110.545 9.55583 110.438 9.28152C110.316 9.00721 110.148 8.76338 109.919 8.55003C109.69 8.33668 109.415 8.15381 109.079 8.03189C108.743 7.89473 108.361 7.83378 107.918 7.83378H106.91V12.497H107.506L107.49 12.4818Z" fill="#111111"/>
+                    <path d="M119.133 0.259766H131.275V2.46949H124.738V6.34031H129.732V8.55003H124.723V12.3904H131.275V14.6001H119.133V0.275004V0.259766Z" fill="#111111"/>
+                    <path d="M134.141 0.259766H139.731V12.3904H145.214V14.6001H134.141V0.275004V0.259766Z" fill="#111111"/>
+                  </svg>
+                </span>
+              </a>
+              <div class="im-mobile-catalog__city" data-city-dropdown>
+                <button class="im-header__city-toggle" type="button" aria-haspopup="listbox" aria-expanded="false">
+                  <span class="im-header__city-text">Москва</span>
+                  <span class="im-header__city-arrow" aria-hidden="true">
+                    <svg width="11" height="5" viewBox="0 0 11 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.616228 0.0312645C0.428728 0.0687644 0.239729 0.163263 0.124979 0.335013C-0.104521 0.678512 -0.0085282 1.15701 0.335722 1.38576L4.82897 4.37449C5.08022 4.54174 5.41997 4.54174 5.67122 4.37449L10.1645 1.38576C10.5087 1.15701 10.6047 0.678512 10.3752 0.335013C10.1457 -0.00848633 9.66648 -0.104485 9.32223 0.125014L5.24973 2.83325L1.17797 0.125014C1.00622 0.0102646 0.804478 -0.00623541 0.616228 0.0312645Z" fill="#111111"/>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div class="im-mobile-catalog__actions">
+                <a href="tel:88009561478" class="im-header__mobile-action im-header__mobile-action--call" aria-label="Позвонить">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.95349 0C1.68749 0 0 1.68749 0 2.95349C0 4.58399 1.6875 7.59375 3.375 9.28125C3.5565 9.46275 4.03725 9.9435 4.21875 10.125C5.90625 11.8125 8.91601 13.5 10.5465 13.5C11.8125 13.5 13.5 11.8125 13.5 10.5465C13.5 9.28126 11.8125 7.59375 10.5465 7.59375C10.125 7.59375 8.59875 8.46675 8.4375 8.4375C7.092 8.1945 5.34375 6.40275 5.0625 5.0625C5.0235 4.87575 5.90625 3.37499 5.90625 2.95349C5.90625 1.68749 4.21874 0 2.95349 0Z" fill="#111111"/>
+                  </svg>
+                </a>
+                <button class="im-header__mobile-action im-header__mobile-action--search" type="button" aria-label="Поиск">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 0C2.68627 0 0 2.68651 0 6.00001C0 9.31352 2.68627 12 6 12C7.37752 12 8.6832 11.5268 9.69593 10.7468L12.9609 14.0393C13.2538 14.3318 13.7462 14.3318 14.0391 14.0393C14.332 13.746 14.332 13.254 14.0391 12.9608L10.7515 9.69076C11.5321 8.67826 12 7.37777 12 6.00001C12 2.68651 9.31372 0 6 0ZM6 1.5C8.48527 1.5 10.5 3.51451 10.5 6.00001C10.5 8.48552 8.48527 10.5 6 10.5C3.51472 10.5 1.5 8.48552 1.5 6.00001C1.5 3.51451 3.51472 1.5 6 1.5Z" fill="#111111"/>
+                  </svg>
+                </button>
+              </div>
+              <button class="im-mobile-catalog__close" type="button" data-mobile-catalog-close aria-label="Закрыть каталог">×</button>
+            </div>
+            <ul class="im-mobile-catalog__list">
+              <li class="im-mobile-catalog__item" data-catalog-category="metal-shelves">
+                <a href="#" class="im-mobile-catalog__link">
+                  <span class="im-mobile-catalog__image">
+                    <img src="images/mock_catalogue_item.png" alt="" />
+                  </span>
+                  <span class="im-mobile-catalog__item-title">Металлические стеллажи</span>
+                  <span class="im-mobile-catalog__arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-mobile-catalog__item" data-catalog-category="production-furniture">
+                <a href="#" class="im-mobile-catalog__link">
+                  <span class="im-mobile-catalog__image">
+                    <img src="images/mock_catalogue_item.png" alt="" />
+                  </span>
+                  <span class="im-mobile-catalog__item-title">Производственная мебель</span>
+                  <span class="im-mobile-catalog__arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-mobile-catalog__item" data-catalog-category="storage-systems">
+                <a href="#" class="im-mobile-catalog__link">
+                  <span class="im-mobile-catalog__image">
+                    <img src="images/mock_catalogue_item.png" alt="" />
+                  </span>
+                  <span class="im-mobile-catalog__item-title">Системы хранения</span>
+                  <span class="im-mobile-catalog__arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-mobile-catalog__item" data-catalog-category="services">
+                <a href="#" class="im-mobile-catalog__link">
+                  <span class="im-mobile-catalog__image">
+                    <img src="images/mock_catalogue_item.png" alt="" />
+                  </span>
+                  <span class="im-mobile-catalog__item-title">Услуги</span>
+                  <span class="im-mobile-catalog__arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-mobile-catalog__item" data-catalog-category="ironmebel-pro">
+                <a href="#" class="im-mobile-catalog__link">
+                  <span class="im-mobile-catalog__image">
+                    <img src="images/mock_catalogue_item.png" alt="" />
+                  </span>
+                  <span class="im-mobile-catalog__item-title im-mobile-catalog__item-title--accent">IRONMEBEL PRO</span>
+                  <span class="im-mobile-catalog__arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
         <div class="im-header__mobile-overlay" data-menu-overlay>
           <nav class="im-header__mobile-menu" aria-label="Меню сайта">
             <div class="im-header__mobile-top">
@@ -610,7 +753,7 @@
                 </div>
               </div>
 
-              <button class="im-header__catalog" type="button">
+              <button class="im-header__catalog" type="button" data-mobile-catalog-open>
                 <span class="im-header__catalog-icon" aria-hidden="true">
                   <svg
                     width="18"
@@ -779,9 +922,91 @@
         </div>
       </header>
 
+      <main class="im-catalog">
+        <div class="im-container">
+          <ul class="im-catalog__list">
+          <li class="im-catalog__item" data-catalog-category="metal-shelves">
+              <a href="#" class="im-catalog__link">
+                <span class="im-catalog__image">
+                  <img src="images/mock_catalogue_item.png" alt="" />
+                </span>
+                <span class="im-catalog__title"
+                  >Металлические стеллажи</span
+                >
+                <span class="im-catalog__arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.80623 0.0246264C4.55623 0.0746264 4.30523 0.200632 4.15323 0.430632L0.16725 6.43062C-0.0557498 6.76662 -0.0557498 7.21962 0.16725 7.55562L4.15323 13.5556C4.45823 14.0146 5.09623 14.1436 5.55423 13.8366C6.01123 13.5306 6.13923 12.8896 5.83423 12.4306L2.22224 6.99263L5.83423 1.55563C6.13923 1.09563 6.01123 0.455626 5.55423 0.149626C5.32523 -0.00437353 5.05623 -0.0263735 4.80623 0.0246264Z" fill="#111111" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li class="im-catalog__item" data-catalog-category="production-furniture">
+              <a href="#" class="im-catalog__link">
+                <span class="im-catalog__image">
+                  <img src="images/mock_catalogue_item.png" alt="" />
+                </span>
+                <span class="im-catalog__title"
+                  >Производственная мебель</span
+                >
+                <span class="im-catalog__arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li class="im-catalog__item" data-catalog-category="storage-systems">
+              <a href="#" class="im-catalog__link">
+                <span class="im-catalog__image">
+                  <img src="images/mock_catalogue_item.png" alt="" />
+                </span>
+                <span class="im-catalog__title">Системы хранения</span>
+                <span class="im-catalog__arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li class="im-catalog__item" data-catalog-category="services">
+              <a href="#" class="im-catalog__link">
+                <span class="im-catalog__image">
+                  <img src="images/mock_catalogue_item.png" alt="" />
+                </span>
+                <span class="im-catalog__title">Услуги</span>
+                <span class="im-catalog__arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+
+            <li class="im-catalog__item" data-catalog-category="ironmebel-pro">
+              <a href="#" class="im-catalog__link">
+                <span class="im-catalog__image">
+                  <img src="images/mock_catalogue_item.png" alt="" />
+                </span>
+                <span class="im-catalog__title im-catalog__title--accent"
+                  >IRONMEBEL PRO</span
+                >
+                <span class="im-catalog__arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </main>
+
       <nav class="im-bottom-nav" aria-label="Основная навигация по сайту">
         <div class="im-bottom-nav__inner">
-          <a href="#" class="im-bottom-nav__link im-bottom-nav__link--active">
+          <a href="#" class="im-bottom-nav__link">
             <span class="im-bottom-nav__icon" aria-hidden="true">
               <svg
                 width="24"
@@ -799,7 +1024,7 @@
             <span class="im-bottom-nav__text">Главная</span>
           </a>
 
-          <a href="#" class="im-bottom-nav__link">
+          <a href="#" class="im-bottom-nav__link im-bottom-nav__link--active" data-mobile-catalog-open>
             <span class="im-bottom-nav__icon" aria-hidden="true">
               <svg
                 width="24"
@@ -885,6 +1110,326 @@
           </a>
         </div>
       </nav>
+    </div>
+
+    <div class="im-catalog-modal" data-catalog-modal aria-hidden="true">
+      <div
+        class="im-catalog-modal__backdrop"
+        data-catalog-modal-close
+        aria-hidden="true"
+      ></div>
+      <div class="im-catalog-modal__body">
+        <div
+          class="im-catalog-modal__panel"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="catalog-modal-title"
+        >
+          <div class="im-catalog-modal__head">
+            <button
+              class="im-catalog-modal__back"
+              type="button"
+              data-catalog-modal-close
+              aria-label="Вернуться в каталог"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4.80623 0.0246264C4.55623 0.0746264 4.30523 0.200632 4.15323 0.430632L0.16725 6.43062C-0.0557498 6.76662 -0.0557498 7.21962 0.16725 7.55562L4.15323 13.5556C4.45823 14.0146 5.09623 14.1436 5.55423 13.8366C6.01123 13.5306 6.13923 12.8896 5.83423 12.4306L2.22224 6.99263L5.83423 1.55563C6.13923 1.09563 6.01123 0.455626 5.55423 0.149626C5.32523 -0.00437353 5.05623 -0.0263735 4.80623 0.0246264Z"
+                  fill="#111111"
+                />
+              </svg>
+            </button>
+            <span
+              class="im-catalog-modal__title"
+              id="catalog-modal-title"
+            ></span>
+          </div>
+
+          <div class="im-catalog-modal__lists">
+            <ul class="im-catalog-modal__list" data-catalog-category="metal-shelves">
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Верстаки слесарные</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+                <ul class="im-catalog-modal__sub-list">
+                  <li><a href="#" class="im-catalog-modal__sub-item">Готовые решения</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Бестумбовые</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Однотумбовые</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Двухтумбовые</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Мобильные</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Компактные</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Комплектующие и аксессуары</a></li>
+                </ul>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Монтажные и сборочные столы</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+                <ul class="im-catalog-modal__sub-list">
+                  <li><a href="#" class="im-catalog-modal__sub-item">Стандартные</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Регулируемые</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Специальные</a></li>
+                </ul>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Шкафы для раздевалок</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+                <ul class="im-catalog-modal__sub-list">
+                  <li><a href="#" class="im-catalog-modal__sub-item">Однодверные</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Двухдверные</a></li>
+                  <li><a href="#" class="im-catalog-modal__sub-item">Многоместные</a></li>
+                </ul>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Стеллажи для складов</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Готовые решения для хранения</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul class="im-catalog-modal__list" data-catalog-category="production-furniture">
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Верстаки</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Производственные столы</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Инструментальные тумбы</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Мобильные рабочие места</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul class="im-catalog-modal__list" data-catalog-category="storage-systems">
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Архивные стеллажи</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Стеллажи для шин</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Шкафы для документов</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+              <li class="im-catalog-modal__card">
+                <a href="#" class="im-catalog-modal__item">
+                  <span class="im-catalog-modal__item-icon">
+                    <img src="images/mock_catalogue_item.png" alt="">
+                  </span>
+                  <span class="im-catalog-modal__item-text">Металлические ящики</span>
+                  <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
+                </a>
+              </li>
+            </ul>
+            <ul class="im-catalog-modal__list" data-catalog-category="services">
+              <li class="im-catalog-modal__item">
+                <span class="im-catalog-modal__item-icon">
+                  <img src="images/mock_catalogue_item.png" alt="">
+                </span>
+                <span class="im-catalog-modal__item-text">Проектирование</span>
+                <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </li>
+              <li class="im-catalog-modal__item">
+                <span class="im-catalog-modal__item-icon">
+                  <img src="images/mock_catalogue_item.png" alt="">
+                </span>
+                <span class="im-catalog-modal__item-text">Монтаж</span>
+                <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </li>
+              <li class="im-catalog-modal__item">
+                <span class="im-catalog-modal__item-icon">
+                  <img src="images/mock_catalogue_item.png" alt="">
+                </span>
+                <span class="im-catalog-modal__item-text">Доставка</span>
+                <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </li>
+              <li class="im-catalog-modal__item">
+                <span class="im-catalog-modal__item-icon">
+                  <img src="images/mock_catalogue_item.png" alt="">
+                </span>
+                <span class="im-catalog-modal__item-text">Сервисное обслуживание</span>
+                <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </li>
+            </ul>
+            <ul class="im-catalog-modal__list" data-catalog-category="ironmebel-pro">
+              <li class="im-catalog-modal__item">
+                <span class="im-catalog-modal__item-icon">
+                  <img src="images/mock_catalogue_item.png" alt="">
+                </span>
+                <span class="im-catalog-modal__item-text">Готовые решения</span>
+                <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </li>
+              <li class="im-catalog-modal__item">
+                <span class="im-catalog-modal__item-icon">
+                  <img src="images/mock_catalogue_item.png" alt="">
+                </span>
+                <span class="im-catalog-modal__item-text">Индивидуальные проекты</span>
+                <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </li>
+              <li class="im-catalog-modal__item">
+                <span class="im-catalog-modal__item-icon">
+                  <img src="images/mock_catalogue_item.png" alt="">
+                </span>
+                <span class="im-catalog-modal__item-text">Оптовые поставки</span>
+                <span class="im-catalog-modal__item-arrow" aria-hidden="true">
+                  <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                  </svg>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="im-city-modal" data-city-modal aria-hidden="true">

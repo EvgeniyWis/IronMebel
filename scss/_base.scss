@@ -24,6 +24,12 @@ body {
   background-color: var(--neutral-200); /* #f5f5f5 */
   color: #111111;
   width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+:root {
+  --im-header-mobile-offset: 48px;
 }
 
 .page {
