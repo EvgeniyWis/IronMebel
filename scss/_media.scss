@@ -140,7 +140,6 @@
     border-radius: 8px;
   }
 
-
   .im-header__top-burger {
     display: none;
   }
@@ -149,8 +148,9 @@
     display: none;
   }
 
-  .im-header__mobile-overlay {
-    display: none !important;
+  .im-header__mobile-top,
+  .im-header__mobile-controls {
+    display: none;
   }
 
   .im-city-modal {
@@ -188,5 +188,13 @@
   .im-header__mobile-action {
     width: 28px;
     height: 28px;
+  }
+
+  .im-header__mobile-top {
+    display: none;
+  }
+
+  .im-header__mobile-controls {
+    display: none;
   }
 }

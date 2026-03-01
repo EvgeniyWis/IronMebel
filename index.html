@@ -608,6 +608,39 @@
         </div>
 
         <div class="im-header__mobile-overlay" data-menu-overlay>
+          <div class="im-header__mobile-submenu" data-mobile-submenu aria-hidden="true">
+            <div class="im-header__mobile-submenu-header">
+              <button type="button" class="im-header__mobile-submenu-back" data-mobile-submenu-close aria-label="Назад">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.80623 0.0246264C4.55623 0.0746264 4.30523 0.200632 4.15323 0.430632L0.16725 6.43062C-0.0557498 6.76662 -0.0557498 7.21962 0.16725 7.55562L4.15323 13.5556C4.45823 14.0146 5.09623 14.1436 5.55423 13.8366C6.01123 13.5306 6.13923 12.8896 5.83423 12.4306L2.22224 6.99263L5.83423 1.55563C6.13923 1.09563 6.01123 0.455626 5.55423 0.149626C5.32523 -0.00437353 5.05623 -0.0263735 4.80623 0.0246264Z" fill="#111111" />
+                </svg>
+              </button>
+              <span class="im-header__mobile-submenu-title">О компании</span>
+            </div>
+            <ul class="im-header__mobile-submenu-list">
+              <li class="im-header__mobile-submenu-item">
+                <a href="#" class="im-header__mobile-submenu-link">Сервис и поддержка</a>
+              </li>
+              <li class="im-header__mobile-submenu-item">
+                <a href="#" class="im-header__mobile-submenu-link">Блог</a>
+              </li>
+              <li class="im-header__mobile-submenu-item">
+                <a href="#" class="im-header__mobile-submenu-link">Частным лицам</a>
+              </li>
+              <li class="im-header__mobile-submenu-item">
+                <a href="#" class="im-header__mobile-submenu-link">Партнёрам</a>
+              </li>
+              <li class="im-header__mobile-submenu-item">
+                <a href="#" class="im-header__mobile-submenu-link">Оплата</a>
+              </li>
+              <li class="im-header__mobile-submenu-item">
+                <a href="#" class="im-header__mobile-submenu-link">Контакты</a>
+              </li>
+              <li class="im-header__mobile-submenu-item">
+                <a href="#" class="im-header__mobile-submenu-link">О компании</a>
+              </li>
+            </ul>
+          </div>
           <nav class="im-header__mobile-menu" aria-label="Меню сайта">
             <div class="im-header__mobile-top">
               <a
@@ -861,6 +894,12 @@
 
             <ul class="im-header__mobile-list">
               <li class="im-header__mobile-item">
+                <a href="#" class="im-header__mobile-link">Избранное</a>
+              </li>
+              <li class="im-header__mobile-item">
+                <a href="#" class="im-header__mobile-link">Сравнение</a>
+              </li>
+              <li class="im-header__mobile-item">
                 <a href="#" class="im-header__mobile-link"
                   >Сервис и поддержка</a
                 >
@@ -881,34 +920,13 @@
                 <a href="#" class="im-header__mobile-link">Контакты</a>
               </li>
               <li class="im-header__mobile-item">
-                <a href="#" class="im-header__mobile-link">О компании</a>
-              </li>
-              <li class="im-header__mobile-item">
-                <a href="#" class="im-header__mobile-link im-header__bottom-link"
-                  >Металлические стеллажи</a
-                >
-              </li>
-              <li class="im-header__mobile-item">
-                <a href="#" class="im-header__mobile-link im-header__bottom-link"
-                  >Производственная мебель</a
-                >
-              </li>
-              <li class="im-header__mobile-item">
-                <a href="#" class="im-header__mobile-link im-header__bottom-link"
-                  >Системы хранения</a
-                >
-              </li>
-              <li class="im-header__mobile-item">
-                <a href="#" class="im-header__mobile-link im-header__bottom-link"
-                  >Готовые решения</a
-                >
-              </li>
-              <li class="im-header__mobile-item">
-                <a
-                  href="#"
-                  class="im-header__mobile-link im-header__bottom-link im-header__bottom-link--accent"
-                >
-                  IRONMEBEL PRO
+                <a href="#" class="im-header__mobile-link im-header__mobile-link--with-arrow" data-mobile-submenu-open>
+                  <span class="im-header__mobile-link-text">О компании</span>
+                  <span class="im-header__mobile-link-arrow" aria-hidden="true">
+                    <svg width="6" height="14" viewBox="0 0 6 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z" fill="#666666" />
+                    </svg>
+                  </span>
                 </a>
               </li>
             </ul>
@@ -1083,7 +1101,7 @@
             <span class="im-bottom-nav__text">Кабинет</span>
           </a>
 
-          <a href="#" class="im-bottom-nav__link">
+          <button type="button" class="im-bottom-nav__link" data-menu-open aria-label="Открыть меню">
             <span class="im-bottom-nav__icon" aria-hidden="true">
               <svg
                 width="24"
@@ -1107,7 +1125,7 @@
               </svg>
             </span>
             <span class="im-bottom-nav__text">Меню</span>
-          </a>
+          </button>
         </div>
       </nav>
     </div>

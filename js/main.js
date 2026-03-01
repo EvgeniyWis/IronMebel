@@ -2,39 +2,70 @@ const headerBurger = document.querySelector(".im-header__top-burger");
 const headerMenuOverlay = document.querySelector(".im-header__mobile-overlay");
 const headerMenuClose = document.querySelector(".im-header__mobile-close");
 const headerMenuLinks = document.querySelectorAll(".im-header__mobile-link");
-const headerCity = document.querySelector(".im-header__city[data-city-dropdown]");
+const headerCity = document.querySelector(
+  ".im-header__city[data-city-dropdown]",
+);
 const cityModal = document.querySelector("[data-city-modal]");
-const cityModalCloseButtons = document.querySelectorAll("[data-city-modal-close]");
+const cityModalCloseButtons = document.querySelectorAll(
+  "[data-city-modal-close]",
+);
 const cityModalSearchInput = document.querySelector("[data-city-modal-search]");
 const cityModalOptions = document.querySelectorAll("[data-city-modal-option]");
 
 const catalogModal = document.querySelector("[data-catalog-modal]");
 const catalogModalTitle = document.querySelector(".im-catalog-modal__title");
 const CATALOG_CATEGORY_CLASS_PREFIX = "im-catalog-modal--category-";
-const catalogModalCloseButtons = document.querySelectorAll("[data-catalog-modal-close]");
+const catalogModalCloseButtons = document.querySelectorAll(
+  "[data-catalog-modal-close]",
+);
 const catalogItems = document.querySelectorAll("[data-catalog-category]");
 
 const mobileCatalog = document.querySelector("[data-mobile-catalog]");
-const mobileCatalogOpenButtons = document.querySelectorAll("[data-mobile-catalog-open]");
-const mobileCatalogCloseButtons = document.querySelectorAll("[data-mobile-catalog-close]");
+const mobileCatalogOpenButtons = document.querySelectorAll(
+  "[data-mobile-catalog-open]",
+);
+const mobileCatalogCloseButtons = document.querySelectorAll(
+  "[data-mobile-catalog-close]",
+);
 const MOBILE_CATALOG_STORAGE_KEY = "imMobileCatalogOpen";
 const CATALOG_MODAL_STORAGE_KEY = "imCatalogModalCategory";
 const CATALOG_MODAL_TITLE_KEY = "imCatalogModalTitle";
 const CATALOG_MODAL_FROM_MOBILE_KEY = "imCatalogModalFromMobile";
 
 const isSmallScreenCity = () => window.matchMedia("(max-width: 390px)").matches;
-const isMobileCatalogScreen = () => window.matchMedia("(max-width: 600px)").matches;
+const isMobileCatalogScreen = () =>
+  window.matchMedia("(max-width: 600px)").matches;
 
-if (headerBurger && headerMenuOverlay) {
+const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
+
+if (headerMenuOverlay) {
   const openMenu = () => {
     headerMenuOverlay.classList.add("is-open");
   };
 
   const closeMenu = () => {
     headerMenuOverlay.classList.remove("is-open");
+    const sub = document.querySelector("[data-mobile-submenu]");
+    if (sub) {
+      sub.classList.remove("is-open");
+      sub.setAttribute("aria-hidden", "true");
+    }
   };
 
-  headerBurger.addEventListener("click", openMenu);
+  if (headerBurger) {
+    headerBurger.addEventListener("click", openMenu);
+  }
+
+  menuOpenButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (headerMenuOverlay.classList.contains("is-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+  });
 
   if (headerMenuClose) {
     headerMenuClose.addEventListener("click", closeMenu);
@@ -46,13 +77,58 @@ if (headerBurger && headerMenuOverlay) {
     }
   });
 
-  headerMenuLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+  if (headerMenuLinks.length) {
+    headerMenuLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        if (link.hasAttribute("data-mobile-submenu-open")) {
+          e.preventDefault();
+          const submenu = document.querySelector("[data-mobile-submenu]");
+          if (submenu) {
+            submenu.classList.add("is-open");
+            submenu.setAttribute("aria-hidden", "false");
+          }
+          return;
+        }
+        closeMenu();
+      });
+    });
+  }
+
+  const mobileSubmenu = document.querySelector("[data-mobile-submenu]");
+  const mobileSubmenuCloseButtons = document.querySelectorAll(
+    "[data-mobile-submenu-close]",
+  );
+  const mobileSubmenuLinks = document.querySelectorAll(
+    ".im-header__mobile-submenu-link",
+  );
+
+  const closeSubmenu = () => {
+    if (mobileSubmenu) {
+      mobileSubmenu.classList.remove("is-open");
+      mobileSubmenu.setAttribute("aria-hidden", "true");
+    }
+  };
+
+  if (mobileSubmenu) {
+    mobileSubmenuCloseButtons.forEach((btn) => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        closeSubmenu();
+      });
+    });
+
+    mobileSubmenuLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+  }
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      closeMenu();
+      if (mobileSubmenu && mobileSubmenu.classList.contains("is-open")) {
+        closeSubmenu();
+      } else {
+        closeMenu();
+      }
     }
   });
 }
@@ -229,7 +305,9 @@ const openCatalogModal = (categoryKey, titleText) => {
 const closeCatalogModal = () => {
   if (!catalogModal) return;
 
-  const openedFromMobile = sessionStorage.getItem(CATALOG_MODAL_FROM_MOBILE_KEY);
+  const openedFromMobile = sessionStorage.getItem(
+    CATALOG_MODAL_FROM_MOBILE_KEY,
+  );
 
   catalogModal.classList.remove("is-open");
   Array.from(catalogModal.classList).forEach((cls) => {
@@ -242,11 +320,11 @@ const closeCatalogModal = () => {
   sessionStorage.removeItem(CATALOG_MODAL_STORAGE_KEY);
   sessionStorage.removeItem(CATALOG_MODAL_TITLE_KEY);
 
-   if (openedFromMobile && mobileCatalog && isMobileCatalogScreen()) {
-     openMobileCatalog();
-   }
+  if (openedFromMobile && mobileCatalog && isMobileCatalogScreen()) {
+    openMobileCatalog();
+  }
 
-   sessionStorage.removeItem(CATALOG_MODAL_FROM_MOBILE_KEY);
+  sessionStorage.removeItem(CATALOG_MODAL_FROM_MOBILE_KEY);
 };
 
 if (catalogModal) {
@@ -272,9 +350,10 @@ if (catalogItems.length) {
 
     if (!categoryKey || !link) return;
 
-    const titleText = titleElement && titleElement.textContent
-      ? titleElement.textContent.trim()
-      : "";
+    const titleText =
+      titleElement && titleElement.textContent
+        ? titleElement.textContent.trim()
+        : "";
 
     link.addEventListener("click", (event) => {
       if (!isSmallScreenCity()) {
@@ -340,7 +419,9 @@ if (mobileCatalog) {
     }
   });
 
-  const catalogCityToggle = mobileCatalog.querySelector(".im-header__city-toggle");
+  const catalogCityToggle = mobileCatalog.querySelector(
+    ".im-header__city-toggle",
+  );
   if (catalogCityToggle && cityModal) {
     catalogCityToggle.addEventListener("click", (event) => {
       if (isMobileCatalogScreen() && isSmallScreenCity()) {
@@ -351,7 +432,9 @@ if (mobileCatalog) {
   }
 }
 
-const mobileCatalogItems = document.querySelectorAll(".im-mobile-catalog__item[data-catalog-category]");
+const mobileCatalogItems = document.querySelectorAll(
+  ".im-mobile-catalog__item[data-catalog-category]",
+);
 if (mobileCatalogItems.length && catalogModal) {
   mobileCatalogItems.forEach((item) => {
     const categoryKey = item.getAttribute("data-catalog-category");
@@ -360,9 +443,10 @@ if (mobileCatalogItems.length && catalogModal) {
 
     if (!categoryKey || !link) return;
 
-    const titleText = titleElement && titleElement.textContent
-      ? titleElement.textContent.trim()
-      : "";
+    const titleText =
+      titleElement && titleElement.textContent
+        ? titleElement.textContent.trim()
+        : "";
 
     link.addEventListener("click", (event) => {
       if (!isSmallScreenCity()) {

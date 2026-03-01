@@ -87,6 +87,10 @@
   line-height: 1.2;
   color: var(--neutral-600);
   transition: color var(--transition-fast);
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .im-bottom-nav__link:hover {
