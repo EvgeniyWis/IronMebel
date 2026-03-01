@@ -1,6 +1,5 @@
 .im-header {
   width: 100vw;
-  max-width: 100%;
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   background-color: var(--neutral-100);
@@ -146,7 +145,7 @@
 .im-hero__main {
   position: relative;
   overflow: hidden;
-  border-radius: 20px;
+  border-radius: 8px;
   background: #111111;
   color: #ffffff;
   min-height: 280px;
@@ -247,7 +246,7 @@
 
 .im-hero__side {
   position: relative;
-  border-radius: 20px;
+  border-radius: 8px;
   box-shadow: 0 1px 2px 0 rgba(24, 39, 75, 0.04);
   background: #111;
   padding: 20px;
@@ -256,6 +255,12 @@
   justify-content: space-between;
   gap: 12px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+.im-hero__side-main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .im-hero__side-image {
