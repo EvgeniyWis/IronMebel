@@ -31,10 +31,14 @@ const MOBILE_CATALOG_STORAGE_KEY = "imMobileCatalogOpen";
 const CATALOG_MODAL_STORAGE_KEY = "imCatalogModalCategory";
 const CATALOG_MODAL_TITLE_KEY = "imCatalogModalTitle";
 const CATALOG_MODAL_FROM_MOBILE_KEY = "imCatalogModalFromMobile";
+const MOBILE_BREAKPOINT_PX = 1000;
 
-const isSmallScreenCity = () => window.matchMedia("(max-width: 390px)").matches;
+const isSmallScreenCity = () =>
+  window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT_PX}px)`).matches;
+const isCityModalScreen = () =>
+  window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT_PX}px)`).matches;
 const isMobileCatalogScreen = () =>
-  window.matchMedia("(max-width: 600px)").matches;
+  window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT_PX}px)`).matches;
 
 const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
 
@@ -158,7 +162,7 @@ const setActiveCityValue = (value) => {
 };
 
 const openCityModal = () => {
-  if (!cityModal || !isSmallScreenCity()) return;
+  if (!cityModal || !isCityModalScreen()) return;
 
   cityModal.classList.add("is-open");
   cityModal.setAttribute("aria-hidden", "false");
@@ -177,22 +181,34 @@ if (headerCity) {
   const cityToggle = headerCity.querySelector(".im-header__city-toggle");
   const cityDropdown = headerCity.querySelector(".im-header__city-dropdown");
   const cityOptions = headerCity.querySelectorAll(".im-header__city-option");
+  const cityDropdownSearchInput = headerCity.querySelector(
+    "[data-city-dropdown-search]",
+  );
 
   if (cityToggle) {
     const openCityDropdown = () => {
-      if (!cityDropdown || isSmallScreenCity()) return;
+      if (!cityDropdown || isCityModalScreen()) return;
       headerCity.classList.add("is-open");
       cityToggle.setAttribute("aria-expanded", "true");
+      if (cityDropdownSearchInput) {
+        cityDropdownSearchInput.focus();
+      }
     };
 
     const closeCityDropdown = () => {
       if (!cityDropdown) return;
       headerCity.classList.remove("is-open");
       cityToggle.setAttribute("aria-expanded", "false");
+      if (cityDropdownSearchInput) {
+        cityDropdownSearchInput.value = "";
+      }
+      cityOptions.forEach((option) => {
+        option.style.display = "";
+      });
     };
 
     const toggleCityDropdown = () => {
-      if (isSmallScreenCity()) {
+      if (isCityModalScreen()) {
         openCityModal();
         return;
       }
@@ -222,6 +238,21 @@ if (headerCity) {
         closeCityDropdown();
       });
     });
+
+    if (cityDropdownSearchInput) {
+      cityDropdownSearchInput.addEventListener("input", () => {
+        const query = cityDropdownSearchInput.value.trim().toLowerCase();
+
+        cityOptions.forEach((option) => {
+          const text = option.textContent
+            ? option.textContent.toLowerCase()
+            : "";
+          const shouldShow = !query || text.includes(query);
+
+          option.style.display = shouldShow ? "" : "none";
+        });
+      });
+    }
 
     document.addEventListener("click", (event) => {
       if (!headerCity.contains(event.target)) {
@@ -276,6 +307,69 @@ if (cityModal) {
   cityModal.addEventListener("click", (event) => {
     if (event.target === cityModal) {
       closeCityModal();
+    }
+  });
+}
+
+const topDropdowns = document.querySelectorAll("[data-top-dropdown]");
+
+if (topDropdowns.length) {
+  const canHoverOpen = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  const closeAllTopDropdowns = () => {
+    topDropdowns.forEach((root) => {
+      root.classList.remove("is-open");
+      const toggle = root.querySelector("[data-top-dropdown-toggle]");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  };
+
+  topDropdowns.forEach((root) => {
+    const toggle = root.querySelector("[data-top-dropdown-toggle]");
+    const menu = root.querySelector("[data-top-dropdown-menu]");
+    if (!toggle || !menu) return;
+
+    const open = () => {
+      closeAllTopDropdowns();
+      root.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+    };
+
+    const close = () => {
+      root.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+
+    toggle.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      if (root.classList.contains("is-open")) {
+        close();
+      } else {
+        open();
+      }
+    });
+
+    if (canHoverOpen.matches) {
+      root.addEventListener("mouseenter", open);
+      root.addEventListener("mouseleave", close);
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    const inside = Array.from(topDropdowns).some((root) =>
+      root.contains(event.target),
+    );
+    if (!inside) {
+      closeAllTopDropdowns();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeAllTopDropdowns();
     }
   });
 }
@@ -477,6 +571,125 @@ document.addEventListener("visibilitychange", () => {
     openMobileCatalog();
   }
 });
+
+// ─── Desktop catalog dropdown ───────────────────────────────
+const desktopCatalog = document.querySelector("[data-desktop-catalog]");
+const desktopCatalogToggle = document.querySelector(
+  "[data-desktop-catalog-toggle]",
+);
+
+if (desktopCatalog && desktopCatalogToggle) {
+  const openDesktopCatalog = () => {
+    desktopCatalog.classList.add("is-open");
+    desktopCatalogToggle.setAttribute("aria-expanded", "true");
+  };
+
+  const closeDesktopCatalog = () => {
+    desktopCatalog.classList.remove("is-open");
+    desktopCatalogToggle.setAttribute("aria-expanded", "false");
+  };
+
+  desktopCatalogToggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (desktopCatalog.classList.contains("is-open")) {
+      closeDesktopCatalog();
+    } else {
+      openDesktopCatalog();
+    }
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      desktopCatalog.classList.contains("is-open") &&
+      !desktopCatalog.contains(event.target)
+    ) {
+      closeDesktopCatalog();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (
+      event.key === "Escape" &&
+      desktopCatalog.classList.contains("is-open")
+    ) {
+      closeDesktopCatalog();
+    }
+  });
+
+  const desktopCategories = desktopCatalog.querySelectorAll(
+    "[data-desktop-category]",
+  );
+  const desktopSubpanels = desktopCatalog.querySelectorAll(
+    "[data-desktop-subpanel]",
+  );
+
+  const activateCategory = (categoryKey) => {
+    desktopCategories.forEach((cat) => {
+      cat.classList.toggle(
+        "is-active",
+        cat.getAttribute("data-desktop-category") === categoryKey,
+      );
+    });
+    desktopSubpanels.forEach((panel) => {
+      panel.classList.toggle(
+        "is-active",
+        panel.getAttribute("data-desktop-subpanel") === categoryKey,
+      );
+    });
+  };
+
+  // Build title-to-key map from categories
+  const categoryTitles = {};
+  desktopCategories.forEach((cat) => {
+    const key = cat.getAttribute("data-desktop-category");
+    const titleEl = cat.querySelector(".im-desktop-catalog__category-title");
+    if (key && titleEl) {
+      categoryTitles[key] = titleEl.textContent.trim();
+    }
+  });
+
+  // Inject subpanel titles and wrap subcards in subgrid
+  desktopSubpanels.forEach((panel) => {
+    const key = panel.getAttribute("data-desktop-subpanel");
+    const titleText = categoryTitles[key] || "";
+
+    // Add title if not already present
+    if (!panel.querySelector(".im-desktop-catalog__subpanel-title")) {
+      const titleEl = document.createElement("h3");
+      titleEl.className = "im-desktop-catalog__subpanel-title";
+      titleEl.textContent = titleText;
+      panel.prepend(titleEl);
+    }
+
+    // Wrap subcards in subgrid if not already wrapped
+    if (!panel.querySelector(".im-desktop-catalog__subgrid")) {
+      const subcards = Array.from(
+        panel.querySelectorAll(".im-desktop-catalog__subcard"),
+      );
+      if (subcards.length) {
+        const grid = document.createElement("div");
+        grid.className = "im-desktop-catalog__subgrid";
+        subcards.forEach((card) => grid.appendChild(card));
+        panel.appendChild(grid);
+      }
+    }
+  });
+
+  desktopCategories.forEach((cat) => {
+    cat.addEventListener("mouseenter", () => {
+      const key = cat.getAttribute("data-desktop-category");
+      if (key) activateCategory(key);
+    });
+
+    cat.addEventListener("click", (event) => {
+      event.preventDefault();
+      const key = cat.getAttribute("data-desktop-category");
+      if (key) activateCategory(key);
+    });
+  });
+}
 
 // Toggle subcategories in catalog modal:
 // - по стрелке всегда только раскрытие/скрытие

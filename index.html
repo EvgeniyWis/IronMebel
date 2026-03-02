@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="./css/main.css" />
   </head>
-  <body>
+  <body class="im-user-logged-in">
     <div class="page">
       <header class="im-header">
         <div class="im-header__top">
@@ -21,10 +21,26 @@
                 <button
                   class="im-header__city-toggle"
                   type="button"
-                  aria-haspopup="listbox"
+                  aria-haspopup="dialog"
                   aria-expanded="false"
                 >
-                  <span class="im-header__city-text">Москва</span>
+                  <span class="im-header__city-main">
+                    <span class="im-header__city-icon" aria-hidden="true">
+                      <svg
+                        width="12"
+                        height="15"
+                        viewBox="0 0 12 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.99999 0C2.68649 0 0 2.6865 0 6C0 8.60025 1.686 11.559 3.96075 14.016C4.03425 14.0947 4.09425 14.1562 4.1715 14.2267C4.81575 14.8035 5.48324 15.0075 5.99999 15C6.00674 15 6.01799 15 6.02324 15C6.56174 15 7.32073 14.7577 8.03923 14.0392C10.2217 11.8567 12 8.6385 12 6C12 2.6865 9.31348 0 5.99999 0ZM5.99999 3.75C7.24274 3.75 8.24998 4.75725 8.24998 6C8.24998 7.24275 7.24274 8.25 5.99999 8.25C4.75724 8.25 3.74999 7.24275 3.74999 6C3.74999 4.75725 4.75724 3.75 5.99999 3.75Z"
+                          fill="#111111"
+                        />
+                      </svg>
+                    </span>
+                    <span class="im-header__city-text">Москва</span>
+                  </span>
                   <span class="im-header__city-arrow" aria-hidden="true">
                     <svg
                       width="11"
@@ -40,28 +56,71 @@
                     </svg>
                   </span>
                 </button>
-                <ul class="im-header__city-dropdown" role="listbox">
-                  <li
-                    class="im-header__city-option is-active"
-                    role="option"
-                    aria-selected="true"
+                <div
+                  class="im-header__city-dropdown"
+                  role="dialog"
+                  aria-label="Выбор города"
+                >
+                  <div class="im-header__city-dropdown-head">
+                    <span class="im-header__city-dropdown-title"
+                      >Выберите город</span
+                    >
+                  </div>
+
+                  <form
+                    class="im-header__city-dropdown-search"
+                    action="#"
+                    method="get"
                   >
-                    Москва
-                  </li>
-                  <li class="im-header__city-option" role="option">
-                    Московская область
-                  </li>
-                  <li class="im-header__city-option" role="option">
-                    Санкт-Петербург
-                  </li>
-                  <li class="im-header__city-option" role="option">Казань</li>
-                  <li class="im-header__city-option" role="option">
-                    Екатеринбург
-                  </li>
-                  <li class="im-header__city-option" role="option">
-                    Новосибирск
-                  </li>
-                </ul>
+                    <input
+                      class="im-header__city-dropdown-search-input"
+                      type="search"
+                      placeholder="Поиск"
+                      autocomplete="off"
+                      data-city-dropdown-search
+                    />
+                    <span
+                      class="im-header__city-dropdown-search-icon"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.66667 0C2.98475 0 0 2.98501 0 6.66668C0 10.3484 2.98475 13.3334 6.66667 13.3334C8.19725 13.3334 9.648 12.8075 10.7733 11.9409L14.401 15.5992C14.7265 15.9242 15.2735 15.9242 15.599 15.5992C15.9244 15.2734 15.9244 14.7267 15.599 14.4009L11.9461 10.7675C12.8134 9.64251 13.3333 8.19752 13.3333 6.66668C13.3333 2.98501 10.3486 0 6.66667 0ZM6.66667 1.66667C9.42808 1.66667 11.6667 3.90501 11.6667 6.66668C11.6667 9.42835 9.42808 11.6667 6.66667 11.6667C3.90525 11.6667 1.66667 9.42835 1.66667 6.66668C1.66667 3.90501 3.90525 1.66667 6.66667 1.66667Z"
+                          fill="#666666"
+                        />
+                      </svg>
+                    </span>
+                  </form>
+
+                  <ul class="im-header__city-dropdown-list" role="listbox">
+                    <li
+                      class="im-header__city-option is-active"
+                      role="option"
+                      aria-selected="true"
+                    >
+                      Москва
+                    </li>
+                    <li class="im-header__city-option" role="option">
+                      Московская область
+                    </li>
+                    <li class="im-header__city-option" role="option">
+                      Санкт-Петербург
+                    </li>
+                    <li class="im-header__city-option" role="option">Казань</li>
+                    <li class="im-header__city-option" role="option">
+                      Екатеринбург
+                    </li>
+                    <li class="im-header__city-option" role="option">
+                      Новосибирск
+                    </li>
+                  </ul>
+                </div>
               </div>
               <button
                 class="im-header__top-burger"
@@ -211,26 +270,56 @@
               <a href="#" class="im-header__top-link">Партнёрам</a>
               <a href="#" class="im-header__top-link">Оплата</a>
               <a href="#" class="im-header__top-link">Контакты</a>
-              <a
-                href="#"
-                class="im-header__top-link im-header__top-link--dropdown"
-              >
-                <span class="im-header__top-link-text">О компании</span>
-                <span class="im-header__top-link-icon" aria-hidden="true">
-                  <svg
-                    width="9"
-                    height="4"
-                    viewBox="0 0 9 4"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
+              <div class="im-header__top-dropdown" data-top-dropdown>
+                <button
+                  class="im-header__top-link im-header__top-link--dropdown"
+                  type="button"
+                  data-top-dropdown-toggle
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <span class="im-header__top-link-text">О компании</span>
+                  <span class="im-header__top-link-icon" aria-hidden="true">
+                    <svg
+                      width="9"
+                      height="4"
+                      viewBox="0 0 9 4"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.479289 0.0243168C0.333455 0.0534834 0.186456 0.126983 0.0972058 0.260566C-0.0812943 0.527732 -0.00663304 0.899898 0.261117 1.07781L3.75587 3.40238C3.95128 3.53247 4.21553 3.53247 4.41095 3.40238L7.90571 1.07781C8.17346 0.899898 8.24812 0.527732 8.06962 0.260566C7.89112 -0.00660048 7.51838 -0.0812663 7.25063 0.0972333L4.08312 2.20364L0.916201 0.0972333C0.782618 0.00798354 0.625705 -0.00484977 0.479289 0.0243168Z"
+                        fill="#666666"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  class="im-header__top-dropdown-menu"
+                  data-top-dropdown-menu
+                  role="menu"
+                  aria-label="О компании"
+                >
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >Новости</a
                   >
-                    <path
-                      d="M0.479289 0.0243168C0.333455 0.0534834 0.186456 0.126983 0.0972058 0.260566C-0.0812943 0.527732 -0.00663304 0.899898 0.261117 1.07781L3.75587 3.40238C3.95128 3.53247 4.21553 3.53247 4.41095 3.40238L7.90571 1.07781C8.17346 0.899898 8.24812 0.527732 8.06962 0.260566C7.89112 -0.00660048 7.51838 -0.0812663 7.25063 0.0972333L4.08312 2.20364L0.916201 0.0972333C0.782618 0.00798354 0.625705 -0.00484977 0.479289 0.0243168Z"
-                      fill="#666666"
-                    />
-                  </svg>
-                </span>
-              </a>
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >О Ironmebel</a
+                  >
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >Правовая информация</a
+                  >
+                </div>
+              </div>
             </nav>
             <div class="im-header__top-right">
               <span class="im-header__schedule">Пн–Пт, 9:00–18:00</span>
@@ -359,23 +448,1301 @@
                 >Стальная мебель для бизнеса</span
               >
             </a>
-            <button class="im-header__catalog" type="button">
-              <span class="im-header__catalog-icon" aria-hidden="true">
-                <svg
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M2 0C0.8954 0 0 0.895 0 2V6C0 7.105 0.8954 8 2 8H6C7.1046 8 8 7.105 8 6V2C8 0.895 7.1046 0 6 0H2ZM12 0C10.8954 0 10 0.895 10 2V6C10 7.105 10.8954 8 12 8H16C17.1046 8 18 7.105 18 6V2C18 0.895 17.1046 0 16 0H12ZM2 10C0.8954 10 0 10.895 0 12V16C0 17.105 0.8954 18 2 18H6C7.1046 18 8 17.105 8 16V12C8 10.895 7.1046 10 6 10H2ZM12 10C10.8954 10 10 10.895 10 12V16C10 17.105 10.8954 18 12 18H16C17.1046 18 18 17.105 18 16V12C18 10.895 17.1046 10 16 10H12Z"
-                    fill="white"
-                  />
-                </svg>
-              </span>
-              <span class="im-header__catalog-text">Каталог</span>
-            </button>
+            <div class="im-desktop-catalog" data-desktop-catalog>
+              <button
+                class="im-header__catalog"
+                type="button"
+                data-desktop-catalog-toggle
+                aria-expanded="false"
+                aria-haspopup="true"
+              >
+                <span class="im-header__catalog-icons" aria-hidden="true">
+                  <span
+                    class="im-header__catalog-icon im-header__catalog-icon--grid"
+                  >
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 0C0.8954 0 0 0.895 0 2V6C0 7.105 0.8954 8 2 8H6C7.1046 8 8 7.105 8 6V2C8 0.895 7.1046 0 6 0H2ZM12 0C10.8954 0 10 0.895 10 2V6C10 7.105 10.8954 8 12 8H16C17.1046 8 18 7.105 18 6V2C18 0.895 17.1046 0 16 0H12ZM2 10C0.8954 10 0 10.895 0 12V16C0 17.105 0.8954 18 2 18H6C7.1046 18 8 17.105 8 16V12C8 10.895 7.1046 10 6 10H2ZM12 10C10.8954 10 10 10.895 10 12V16C10 17.105 10.8954 18 12 18H16C17.1046 18 18 17.105 18 16V12C18 10.895 17.1046 10 16 10H12Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </span>
+                  <span
+                    class="im-header__catalog-icon im-header__catalog-icon--close"
+                  >
+                    <svg
+                      width="13"
+                      height="12"
+                      viewBox="0 0 13 12"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M0.758756 0C0.566831 0 0.366131 0.0645044 0.219656 0.210754C-0.0732188 0.504004 -0.0732188 0.995995 0.219656 1.28925L4.93063 6L0.219656 10.7108C-0.0732188 11.004 -0.0732188 11.496 0.219656 11.7892C0.512606 12.0817 1.00491 12.0817 1.29786 11.7892L6.00876 7.0785L10.7197 11.7892C11.0126 12.0817 11.5049 12.0817 11.7979 11.7892C12.0907 11.496 12.0907 11.004 11.7979 10.7108L7.08688 6L11.7979 1.28925C12.0907 0.995995 12.0907 0.504004 11.7979 0.210754C11.6514 0.0645044 11.4506 0 11.2588 0C11.0668 0 10.8662 0.0645044 10.7197 0.210754L6.00876 4.9215L1.29786 0.210754C1.15138 0.0645044 0.950681 0 0.758756 0Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </span>
+                </span>
+                <span class="im-header__catalog-text">Каталог</span>
+              </button>
+
+              <div
+                class="im-desktop-catalog__dropdown"
+                data-desktop-catalog-dropdown
+              >
+                <div class="im-desktop-catalog__categories">
+                  <a
+                    href="#"
+                    class="im-desktop-catalog__category is-active"
+                    data-desktop-category="metal-shelves"
+                  >
+                    <span class="im-desktop-catalog__category-image">
+                      <img
+                        src="images/catalogue/mock_catalogue_item_white_bg.png"
+                        alt=""
+                      />
+                    </span>
+                    <span class="im-desktop-catalog__category-title"
+                      >Металлические стеллажи</span
+                    >
+                    <span
+                      class="im-desktop-catalog__category-arrow"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="6"
+                        height="14"
+                        viewBox="0 0 6 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    class="im-desktop-catalog__category"
+                    data-desktop-category="production-furniture"
+                  >
+                    <span class="im-desktop-catalog__category-image">
+                      <img
+                        src="images/catalogue/mock_catalogue_item_white_bg.png"
+                        alt=""
+                      />
+                    </span>
+                    <span class="im-desktop-catalog__category-title"
+                      >Производственная мебель</span
+                    >
+                    <span
+                      class="im-desktop-catalog__category-arrow"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="6"
+                        height="14"
+                        viewBox="0 0 6 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    class="im-desktop-catalog__category"
+                    data-desktop-category="storage-systems"
+                  >
+                    <span class="im-desktop-catalog__category-image">
+                      <img
+                        src="images/catalogue/mock_catalogue_item_white_bg.png"
+                        alt=""
+                      />
+                    </span>
+                    <span class="im-desktop-catalog__category-title"
+                      >Системы хранения</span
+                    >
+                    <span
+                      class="im-desktop-catalog__category-arrow"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="6"
+                        height="14"
+                        viewBox="0 0 6 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    class="im-desktop-catalog__category"
+                    data-desktop-category="services"
+                  >
+                    <span class="im-desktop-catalog__category-image">
+                      <img
+                        src="images/catalogue/mock_catalogue_item_white_bg.png"
+                        alt=""
+                      />
+                    </span>
+                    <span class="im-desktop-catalog__category-title"
+                      >Готовые решения</span
+                    >
+                    <span
+                      class="im-desktop-catalog__category-arrow"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="6"
+                        height="14"
+                        viewBox="0 0 6 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                  <a
+                    href="#"
+                    class="im-desktop-catalog__category im-desktop-catalog__category--accent"
+                    data-desktop-category="ironmebel-pro"
+                  >
+                    <span class="im-desktop-catalog__category-image">
+                      <img
+                        src="images/catalogue/mock_catalogue_item_white_bg.png"
+                        alt=""
+                      />
+                    </span>
+                    <span class="im-desktop-catalog__category-title"
+                      >IRONMEBEL PRO</span
+                    >
+                    <span
+                      class="im-desktop-catalog__category-arrow"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="6"
+                        height="14"
+                        viewBox="0 0 6 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M1.19377 0.0246264C1.44377 0.0746264 1.69477 0.200632 1.84677 0.430632L5.83275 6.43062C6.05575 6.76662 6.05575 7.21962 5.83275 7.55562L1.84677 13.5556C1.54177 14.0146 0.90377 14.1436 0.445771 13.8366C-0.0112276 13.5306 -0.139226 12.8896 0.165773 12.4306L3.77776 6.99263L0.165773 1.55563C-0.139226 1.09563 -0.0112276 0.455626 0.445771 0.149626C0.674771 -0.00437353 0.943771 -0.0263735 1.19377 0.0246264Z"
+                          fill="currentColor"
+                        />
+                      </svg>
+                    </span>
+                  </a>
+                </div>
+
+                <div class="im-desktop-catalog__subcategories">
+                  <div
+                    class="im-desktop-catalog__subpanel is-active"
+                    data-desktop-subpanel="metal-shelves"
+                  >
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Верстаки слесарные</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Монтажные и сборочные столы</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Стандартные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Регулируемые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Специальные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Шкафы для раздевалок</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однодверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухдверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Многоместные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Стеллажи для складов</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Готовые решения для хранения</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="im-desktop-catalog__subpanel"
+                    data-desktop-subpanel="production-furniture"
+                  >
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Верстаки слесарные</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Монтажные и сборочные столы</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Стандартные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Регулируемые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Специальные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Шкафы для раздевалок</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однодверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухдверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Многоместные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Стеллажи для складов</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Готовые решения для хранения</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="im-desktop-catalog__subpanel"
+                    data-desktop-subpanel="storage-systems"
+                  >
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Верстаки слесарные</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Монтажные и сборочные столы</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Стандартные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Регулируемые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Специальные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Шкафы для раздевалок</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однодверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухдверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Многоместные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Стеллажи для складов</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Готовые решения для хранения</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="im-desktop-catalog__subpanel"
+                    data-desktop-subpanel="services"
+                  >
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Верстаки слесарные</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Монтажные и сборочные столы</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Стандартные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Регулируемые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Специальные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Шкафы для раздевалок</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однодверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухдверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Многоместные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Стеллажи для складов</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Готовые решения для хранения</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div
+                    class="im-desktop-catalog__subpanel"
+                    data-desktop-subpanel="ironmebel-pro"
+                  >
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Верстаки слесарные</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Монтажные и сборочные столы</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Стандартные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Регулируемые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Специальные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Шкафы для раздевалок</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однодверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухдверные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Многоместные</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Стеллажи для складов</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="im-desktop-catalog__subcard">
+                      <a href="#" class="im-desktop-catalog__subitem">
+                        <span class="im-desktop-catalog__subitem-image">
+                          <img
+                            src="images/catalogue/mock_catalogue_item_white_bg.png"
+                            alt=""
+                          />
+                        </span>
+                        <span class="im-desktop-catalog__subitem-title"
+                          >Готовые решения для хранения</span
+                        >
+                      </a>
+                      <ul class="im-desktop-catalog__sub-list">
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Готовые решения</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Бестумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Однотумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Двухтумбовые</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Мобильные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Компактные</a
+                          >
+                        </li>
+                        <li>
+                          <a href="#" class="im-desktop-catalog__sub-link"
+                            >Комплектующие и аксессуары</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <form class="im-header__search" action="#" method="get">
               <input
@@ -462,6 +1829,98 @@
                 </span>
                 <span class="im-header__action-text">Корзина</span>
               </button>
+
+              <div
+                class="im-header__user im-header__top-dropdown"
+                data-top-dropdown
+              >
+                <button
+                  class="im-header__user-toggle im-header__top-link im-header__top-link--dropdown"
+                  type="button"
+                  data-top-dropdown-toggle
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
+                  <span class="im-header__user-title">
+                    ООО «ВАЙЛДБЕРИС И...»
+                  </span>
+                  <span class="im-header__user-icon" aria-hidden="true">
+                    <svg
+                      width="15"
+                      height="14"
+                      viewBox="0 0 15 14"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.75 0C5.09318 0 3.75 1.34325 3.75 3H3C1.34318 3 0 4.34325 0 6V10.5C0 12.1567 1.34318 13.5 3 13.5H12C13.6568 13.5 15 12.1567 15 10.5V6C15 4.34325 13.6568 3 12 3H11.25C11.25 1.34325 9.90683 0 8.25 0H6.75ZM6.75 1.5H8.25C9.07845 1.5 9.75 2.17125 9.75 3H5.25C5.25 2.17125 5.92155 1.5 6.75 1.5ZM3 4.5H12C12.8285 4.5 13.5 5.17125 13.5 6V6.21075L9.49215 7.54651C8.4159 7.90576 6.5841 7.90576 5.50785 7.54651L1.5 6.21075V6C1.5 5.17125 2.17155 4.5 3 4.5ZM1.5 7.78125L5.0391 8.97675C6.42323 9.438 8.57678 9.438 9.9609 8.97675L13.5 7.78125V10.5C13.5 11.3287 12.8285 12 12 12H3C2.17155 12 1.5 11.3287 1.5 10.5V7.78125Z"
+                        fill="#111111"
+                      />
+                    </svg>
+                  </span>
+                </button>
+                <div
+                  class="im-header__top-dropdown-menu im-header__user-menu"
+                  data-top-dropdown-menu
+                  role="menu"
+                  aria-label="Профиль"
+                >
+                  <div class="im-header__user-menu-account" role="presentation">
+                    <span
+                      class="im-header__user-menu-account-icon"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        width="15"
+                        height="14"
+                        viewBox="0 0 15 14"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M6.75 0C5.09318 0 3.75 1.34325 3.75 3H3C1.34318 3 0 4.34325 0 6V10.5C0 12.1567 1.34318 13.5 3 13.5H12C13.6568 13.5 15 12.1567 15 10.5V6C15 4.34325 13.6568 3 12 3H11.25C11.25 1.34325 9.90683 0 8.25 0H6.75ZM6.75 1.5H8.25C9.07845 1.5 9.75 2.17125 9.75 3H5.25C5.25 2.17125 5.92155 1.5 6.75 1.5ZM3 4.5H12C12.8285 4.5 13.5 5.17125 13.5 6V6.21075L9.49215 7.54651C8.4159 7.90576 6.5841 7.90576 5.50785 7.54651L1.5 6.21075V6C1.5 5.17125 2.17155 4.5 3 4.5ZM1.5 7.78125L5.0391 8.97675C6.42323 9.438 8.57678 9.438 9.9609 8.97675L13.5 7.78125V10.5C13.5 11.3287 12.8285 12 12 12H3C2.17155 12 1.5 11.3287 1.5 10.5V7.78125Z"
+                          fill="#C80400"
+                        />
+                      </svg>
+                    </span>
+                    <span class="im-header__user-menu-account-title">
+                      ООО «ВАЙЛДБЕРИС...
+                    </span>
+                  </div>
+                  <hr class="im-header__user-menu-divider" aria-hidden="true" />
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >Мой кабинет</a
+                  >
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >Заказы</a
+                  >
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >Мои организации</a
+                  >
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >Личные данные</a
+                  >
+                  <a
+                    href="#"
+                    class="im-header__top-dropdown-item"
+                    role="menuitem"
+                    >Выход</a
+                  >
+                </div>
+              </div>
+
               <button class="im-header__login" type="button">Войти</button>
             </div>
           </div>
@@ -575,7 +2034,23 @@
                   aria-haspopup="listbox"
                   aria-expanded="false"
                 >
-                  <span class="im-header__city-text">Москва</span>
+                  <span class="im-header__city-main">
+                    <span class="im-header__city-icon" aria-hidden="true">
+                      <svg
+                        width="12"
+                        height="15"
+                        viewBox="0 0 12 15"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M5.99999 0C2.68649 0 0 2.6865 0 6C0 8.60025 1.686 11.559 3.96075 14.016C4.03425 14.0947 4.09425 14.1562 4.1715 14.2267C4.81575 14.8035 5.48324 15.0075 5.99999 15C6.00674 15 6.01799 15 6.02324 15C6.56174 15 7.32073 14.7577 8.03923 14.0392C10.2217 11.8567 12 8.6385 12 6C12 2.6865 9.31348 0 5.99999 0ZM5.99999 3.75C7.24274 3.75 8.24998 4.75725 8.24998 6C8.24998 7.24275 7.24274 8.25 5.99999 8.25C4.75724 8.25 3.74999 7.24275 3.74999 6C3.74999 4.75725 4.75724 3.75 5.99999 3.75Z"
+                          fill="#111111"
+                        />
+                      </svg>
+                    </span>
+                    <span class="im-header__city-text">Москва</span>
+                  </span>
                   <span class="im-header__city-arrow" aria-hidden="true">
                     <svg
                       width="11"
@@ -647,7 +2122,7 @@
                 <a href="#" class="im-mobile-catalog__link">
                   <span class="im-mobile-catalog__image">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -677,7 +2152,7 @@
                 <a href="#" class="im-mobile-catalog__link">
                   <span class="im-mobile-catalog__image">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -707,7 +2182,7 @@
                 <a href="#" class="im-mobile-catalog__link">
                   <span class="im-mobile-catalog__image">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -737,7 +2212,7 @@
                 <a href="#" class="im-mobile-catalog__link">
                   <span class="im-mobile-catalog__image">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -765,7 +2240,7 @@
                 <a href="#" class="im-mobile-catalog__link">
                   <span class="im-mobile-catalog__image">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1296,7 +2771,7 @@
             <li class="im-catalog__item" data-catalog-category="metal-shelves">
               <a href="#" class="im-catalog__link">
                 <span class="im-catalog__image">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog__title">Металлические стеллажи</span>
                 <span class="im-catalog__arrow" aria-hidden="true">
@@ -1322,7 +2797,7 @@
             >
               <a href="#" class="im-catalog__link">
                 <span class="im-catalog__image">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog__title">Производственная мебель</span>
                 <span class="im-catalog__arrow" aria-hidden="true">
@@ -1348,7 +2823,7 @@
             >
               <a href="#" class="im-catalog__link">
                 <span class="im-catalog__image">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog__title">Системы хранения</span>
                 <span class="im-catalog__arrow" aria-hidden="true">
@@ -1371,7 +2846,7 @@
             <li class="im-catalog__item" data-catalog-category="services">
               <a href="#" class="im-catalog__link">
                 <span class="im-catalog__image">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog__title">Услуги</span>
                 <span class="im-catalog__arrow" aria-hidden="true">
@@ -1394,7 +2869,7 @@
             <li class="im-catalog__item" data-catalog-category="ironmebel-pro">
               <a href="#" class="im-catalog__link">
                 <span class="im-catalog__image">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog__title im-catalog__title--accent"
                   >IRONMEBEL PRO</span
@@ -1584,7 +3059,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1646,7 +3121,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1690,7 +3165,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1734,7 +3209,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1761,7 +3236,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1793,7 +3268,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1818,7 +3293,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1845,7 +3320,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1872,7 +3347,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1904,7 +3379,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1931,7 +3406,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1958,7 +3433,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -1985,7 +3460,7 @@
                 <a href="#" class="im-catalog-modal__item">
                   <span class="im-catalog-modal__item-icon">
                     <img
-                      src="images/catalogue/mock_catalogue_item.png"
+                      src="images/catalogue/mock_catalogue_item_white_bg.png"
                       alt=""
                     />
                   </span>
@@ -2012,7 +3487,7 @@
             <ul class="im-catalog-modal__list" data-catalog-category="services">
               <li class="im-catalog-modal__item">
                 <span class="im-catalog-modal__item-icon">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog-modal__item-text">Проектирование</span>
                 <span class="im-catalog-modal__item-arrow" aria-hidden="true">
@@ -2032,7 +3507,7 @@
               </li>
               <li class="im-catalog-modal__item">
                 <span class="im-catalog-modal__item-icon">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog-modal__item-text">Монтаж</span>
                 <span class="im-catalog-modal__item-arrow" aria-hidden="true">
@@ -2052,7 +3527,7 @@
               </li>
               <li class="im-catalog-modal__item">
                 <span class="im-catalog-modal__item-icon">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog-modal__item-text">Доставка</span>
                 <span class="im-catalog-modal__item-arrow" aria-hidden="true">
@@ -2072,7 +3547,7 @@
               </li>
               <li class="im-catalog-modal__item">
                 <span class="im-catalog-modal__item-icon">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog-modal__item-text"
                   >Сервисное обслуживание</span
@@ -2099,7 +3574,7 @@
             >
               <li class="im-catalog-modal__item">
                 <span class="im-catalog-modal__item-icon">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog-modal__item-text">Готовые решения</span>
                 <span class="im-catalog-modal__item-arrow" aria-hidden="true">
@@ -2119,7 +3594,7 @@
               </li>
               <li class="im-catalog-modal__item">
                 <span class="im-catalog-modal__item-icon">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog-modal__item-text"
                   >Индивидуальные проекты</span
@@ -2141,7 +3616,7 @@
               </li>
               <li class="im-catalog-modal__item">
                 <span class="im-catalog-modal__item-icon">
-                  <img src="images/catalogue/mock_catalogue_item.png" alt="" />
+                  <img src="images/catalogue/mock_catalogue_item_white_bg.png" alt="" />
                 </span>
                 <span class="im-catalog-modal__item-text"
                   >Оптовые поставки</span

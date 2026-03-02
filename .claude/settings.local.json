@@ -4,7 +4,8 @@
       "Bash(npm run build:sass:*)",
       "Bash(npx sass scss/main.scss css/main.css --no-source-map)",
       "Bash(sass scss/main.scss css/main.css --no-source-map)",
-      "Bash(npx sass scss:css)"
+      "Bash(npx sass scss:css)",
+      "Bash(npx sass scss/main.scss css/main.css --source-map)"
     ]
   }
 }
