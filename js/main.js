@@ -725,3 +725,62 @@ if (catalogModalCards.length) {
     }
   });
 }
+
+// ─── Decisions sliders (mobile, Keen Slider) ─────────────────────────────────
+
+const initDecisionsSliders = () => {
+  if (typeof KeenSlider === "undefined") return;
+
+  const MOBILE_DECISIONS_BREAKPOINT = 600;
+  const sliders = document.querySelectorAll(".im-decisions__slider");
+
+  if (!sliders.length) return;
+
+  const instances = [];
+
+  const destroyAll = () => {
+    instances.forEach((instance) => {
+      try {
+        instance.destroy();
+      } catch (e) {
+        // ignore
+      }
+    });
+    instances.length = 0;
+  };
+
+  const setup = () => {
+    const isMobile = window.innerWidth <= MOBILE_DECISIONS_BREAKPOINT;
+
+    if (!isMobile) {
+      if (instances.length) {
+        destroyAll();
+      }
+      return;
+    }
+
+    if (instances.length) return;
+
+    sliders.forEach((slider) => {
+      const root =
+        slider.querySelector(".keen-slider") || slider;
+
+      const instance = new KeenSlider(root, {
+        slides: {
+          perView: 2.1,
+          spacing: 12,
+        },
+        loop: false,
+        drag: true,
+        rubberband: false,
+      });
+
+      instances.push(instance);
+    });
+  };
+
+  setup();
+  window.addEventListener("resize", setup);
+};
+
+initDecisionsSliders();

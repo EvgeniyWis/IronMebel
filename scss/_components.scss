@@ -2190,11 +2190,11 @@ body.im-user-logged-in {
 .im-century__stat {
   flex: 1 1 0%;
   border-radius: 8px;
-  background: #e0433c;
   color: #ffffff;
   padding: 0;
   display: flex;
   align-items: stretch;
+  background: #c80400;
   overflow: hidden;
 }
 
@@ -2224,26 +2224,28 @@ body.im-user-logged-in {
 }
 
 .im-century__stat-text {
- font-weight: 400;
-font-size: 14px;
-line-height: 114%;
-color: #fff;
-margin-top: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 114%;
+  color: #fff;
 }
 
 .im-century__stat-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 8px;
   gap: 4px;
+  background: #e0433c;
   padding: 16px 18px;
+  width: 100%;
 }
 
 .im-century__stat-title {
-font-weight: 700;
-font-size: 16px;
-line-height: 150%;
-color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  color: #fff;
 }
 
 @media (max-width: 1100px) {
@@ -2285,17 +2287,46 @@ color: #fff;
     padding: 24px 0 28px;
   }
 
+  .im-century__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
   .im-century__main {
     flex-direction: column;
     gap: 18px;
+    padding: 24px 20px 28px;
+    border-radius: 16px;
   }
 
   .im-century__content {
     max-width: 100%;
   }
 
+  .im-century__eyebrow {
+    font-size: 20px;
+    line-height: 120%;
+  }
+
   .im-century__title {
-    font-size: 22px;
+    font-size: 20px;
+  }
+
+  .im-century__text {
+    font-size: 14px;
+    line-height: 140%;
+  }
+
+  .im-century__button {
+    border-radius: 8px;
+    padding: 10px 12px;
+    width: 200px;
+    height: 40px;
+  }
+
+  .im-century__logo {
+    max-width: 220px;
+    margin: 0 auto;
   }
 
   .im-century__stats {
@@ -2304,6 +2335,27 @@ color: #fff;
 
   .im-century__stat {
     flex: 1 1 auto;
+  }
+
+  .im-century__stat-title {
+    font-size: 14px;
+    line-height: 133%;
+  }
+
+  .im-century__stat-unit {
+    font-size: 14px;
+  }
+
+  .im-century__stat-value {
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 133%;
+    color: #fff;
+  }
+
+  .im-century__stat-text {
+    font-size: 12px;
   }
 }
 
@@ -2490,7 +2542,7 @@ color: #fff;
     @include interactive-transition;
 
     // первый тайл — широкий, как в макете
-    &:first-child {
+    &--1 {
       grid-column: span 2;
       flex-direction: row;
       justify-content: space-between;
@@ -2567,6 +2619,24 @@ color: #fff;
     color: #c80400;
     font-weight: 600;
   }
+
+  &__sliders {
+    display: none;
+    margin-top: 24px;
+  }
+
+  &__slider {
+    display: none;
+    width: 100%;
+    border-radius: 16px;
+    background: transparent;
+    overflow: hidden;
+  }
+
+  &__pagination {
+    margin-top: 12px;
+    position: static;
+  }
 }
 
 // Индивидуальные высоты карточек (десктопная сетка)
@@ -2600,4 +2670,96 @@ color: #fff;
 
 .im-decisions__item--7 {
   flex-direction: row;
+}
+
+@media (max-width: 900px) {
+  .im-decisions__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    height: auto;
+  }
+
+  .im-decisions__item {
+    height: auto;
+  }
+
+  .im-decisions__item--6,
+  .im-decisions__item--8 {
+    bottom: 0;
+  }
+
+  .im-decisions__item--1,
+  .im-decisions__item--7 {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .im-decisions__item--1 .im-decisions__label {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .im-decisions {
+    margin: 36px 0 40px;
+    padding: 24px 0 32px;
+    overflow-x: hidden;
+  }
+
+  .im-decisions__grid {
+    display: none;
+  }
+
+  .im-decisions__sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .im-decisions__slider {
+    display: block;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .im-decisions__slider .keen-slider__slide {
+    height: 172px;
+  }
+
+  .im-decisions__slider .im-decisions__item {
+    width: 100%;
+    height: 100%;
+    padding: 16px;
+    border-radius: 8px;
+    background: #fff;
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-shadow: none;
+  }
+
+  .im-decisions__slider .im-decisions__item--accent {
+    background: linear-gradient(329deg, #222 0%, #444 100%);
+  }
+
+  .im-decisions__slider .im-decisions__image {
+    margin-bottom: 8px;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .im-decisions__slider .keen-slider {
+    box-sizing: border-box;
+  }
+
+  .im-decisions__label-arrow {
+    display: none;
+  }
+
+  .im-decisions__label-text {
+    align-self: left;
+  }
+
+  .im-decisions__label {
+    font-size: 14px;
+  }
 }
