@@ -762,8 +762,7 @@ const initDecisionsSliders = () => {
     if (instances.length) return;
 
     sliders.forEach((slider) => {
-      const root =
-        slider.querySelector(".keen-slider") || slider;
+      const root = slider.querySelector(".keen-slider") || slider;
 
       const instance = new KeenSlider(root, {
         slides: {
@@ -784,3 +783,127 @@ const initDecisionsSliders = () => {
 };
 
 initDecisionsSliders();
+
+/* ─── Projects Slider ──────────────────────────────────────── */
+const initProjectsSlider = () => {
+  const container = document.querySelector(".im-projects");
+  if (!container) return;
+
+  const sliderRoot = container.querySelector("#projects-slider");
+  if (!sliderRoot) return;
+
+  const prevBtn = container.querySelector(".im-projects__arrow--prev");
+  const nextBtn = container.querySelector(".im-projects__arrow--next");
+
+  const slider = new KeenSlider(sliderRoot, {
+    slides: {
+      perView: 3.15,
+      spacing: 16,
+    },
+    loop: false,
+    drag: true,
+    rubberband: false,
+    breakpoints: {
+      "(max-width: 1200px)": {
+        slides: { perView: 2.5, spacing: 14 },
+      },
+      "(max-width: 900px)": {
+        slides: { perView: 2.15, spacing: 12 },
+      },
+      "(max-width: 600px)": {
+        slides: { perView: 1.15, spacing: 10 },
+      },
+    },
+    created(s) {
+      updateArrows(s);
+    },
+    slideChanged(s) {
+      updateArrows(s);
+    },
+  });
+
+  function updateArrows(s) {
+    if (!prevBtn || !nextBtn) return;
+    prevBtn.disabled = s.track.details.rel === 0;
+    nextBtn.disabled = s.track.details.rel === s.track.details.maxIdx;
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => slider.prev());
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => slider.next());
+  }
+};
+
+initProjectsSlider();
+
+/* ─── Industries Slider ───────────────────────────────────── */
+const initIndustriesSlider = () => {
+  const container = document.querySelector(".im-industries");
+  if (!container) return;
+
+  const sliderRoot = container.querySelector("#industries-slider");
+  if (!sliderRoot) return;
+
+  const prevBtn = container.querySelector(".im-industries__arrow--prev");
+  const nextBtn = container.querySelector(".im-industries__arrow--next");
+
+  // Pair slides into two-row columns
+  const slides = Array.from(sliderRoot.querySelectorAll(".keen-slider__slide"));
+  sliderRoot.innerHTML = "";
+  for (let i = 0; i < slides.length; i += 2) {
+    const col = document.createElement("div");
+    col.className = "keen-slider__slide im-industries__column";
+    col.appendChild(slides[i].querySelector(".im-industries__card"));
+    if (slides[i + 1]) {
+      col.appendChild(slides[i + 1].querySelector(".im-industries__card"));
+    }
+    sliderRoot.appendChild(col);
+  }
+
+  const slider = new KeenSlider(sliderRoot, {
+    slides: {
+      perView: 3,
+      spacing: 16,
+    },
+    loop: false,
+    drag: true,
+    rubberband: false,
+    breakpoints: {
+      "(max-width: 1200px)": {
+        slides: { perView: 2.5, spacing: 14 },
+      },
+      "(max-width: 900px)": {
+        slides: { perView: 2, spacing: 12 },
+      },
+      "(max-width: 600px)": {
+        slides: { perView: 1.4, spacing: 10 },
+      },
+      "(max-width: 350px)": {
+        slides: { perView: 1, spacing: 10 },
+      },
+    },
+    created(s) {
+      updateArrows(s);
+    },
+    slideChanged(s) {
+      updateArrows(s);
+    },
+  });
+
+  function updateArrows(s) {
+    if (!prevBtn || !nextBtn) return;
+    prevBtn.disabled = s.track.details.rel === 0;
+    nextBtn.disabled = s.track.details.rel === s.track.details.maxIdx;
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => slider.prev());
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => slider.next());
+  }
+};
+
+initIndustriesSlider();
