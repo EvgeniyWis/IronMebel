@@ -845,13 +845,69 @@ const initPartnersSlider = () => {
   const container = document.querySelector(".im-partners");
   if (!container) return;
 
-  const sliderRoot = container.querySelector("#partners-slider");
-  if (!sliderRoot) return;
+  const baseSliderRoot = container.querySelector("#partners-slider");
+  if (!baseSliderRoot) return;
 
+  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+  // Мобильная версия: 2 отдельных слайдера (2 строки партнёров)
+  if (isMobile) {
+    const items = Array.from(
+      baseSliderRoot.querySelectorAll(".im-partners__item")
+    );
+    if (!items.length || !baseSliderRoot.parentElement) return;
+
+    const sliderWrapper = baseSliderRoot.parentElement;
+
+    // Создаём два отдельных корня слайдера
+    const row1 = document.createElement("div");
+    row1.className =
+      "im-partners__list keen-slider im-partners__list--mobile";
+    row1.id = "partners-slider-mobile-1";
+
+    const row2 = document.createElement("div");
+    row2.className =
+      "im-partners__list keen-slider im-partners__list--mobile";
+    row2.id = "partners-slider-mobile-2";
+
+    const half = Math.ceil(items.length / 2);
+
+    items.forEach((item, index) => {
+      const target = index < half ? row1 : row2;
+      target.appendChild(item);
+    });
+
+    // Заменяем исходный слайдер двумя мобильными
+    sliderWrapper.innerHTML = "";
+    sliderWrapper.appendChild(row1);
+    sliderWrapper.appendChild(row2);
+
+    const mobileOptions = {
+      slides: {
+        perView: 3,
+        spacing: 8,
+      },
+      loop: false,
+      drag: true,
+      rubberband: false,
+      breakpoints: {
+        "(max-width: 400px)": {
+          slides: { perView: 2.2, spacing: 8 },
+        },
+      },
+    };
+
+    new KeenSlider(row1, mobileOptions);
+    new KeenSlider(row2, mobileOptions);
+
+    return;
+  }
+
+  // Десктоп/планшет: один слайдер с навигацией
   const prevBtn = container.querySelector(".im-partners__nav-btn--prev");
   const nextBtn = container.querySelector(".im-partners__nav-btn--next");
 
-  const slider = new KeenSlider(sliderRoot, {
+  const slider = new KeenSlider(baseSliderRoot, {
     slides: {
       perView: 6,
       spacing: 0,
@@ -893,6 +949,56 @@ const initPartnersSlider = () => {
 };
 
 initPartnersSlider();
+
+/* ─── Professionals Slider ──────────────────────────────────── */
+const initProfessionalsSlider = () => {
+  if (typeof KeenSlider === "undefined") return;
+
+  const container = document.querySelector(".im-professionals");
+  if (!container) return;
+
+  const sliderRoot = container.querySelector("#professionals-slider");
+  if (!sliderRoot) return;
+
+  const prevBtn = container.querySelector(".im-professionals__nav-btn--prev");
+  const nextBtn = container.querySelector(".im-professionals__nav-btn--next");
+
+  const slider = new KeenSlider(sliderRoot, {
+    slides: {
+      perView: 3,
+      spacing: 12,
+    },
+    loop: false,
+    drag: true,
+    rubberband: false,
+    breakpoints: {
+      "(max-width: 1200px)": {
+        slides: { perView: 2, spacing: 12 },
+      },
+      "(max-width: 768px)": {
+        slides: { perView: 1.2, spacing: 10 },
+      },
+    },
+  });
+
+  function updateArrows(s) {
+    if (!prevBtn || !nextBtn) return;
+    prevBtn.disabled = s.track.details.rel === 0;
+    nextBtn.disabled = s.track.details.rel === s.track.details.maxIdx;
+  }
+
+  slider.on("created", updateArrows);
+  slider.on("slideChanged", updateArrows);
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => slider.prev());
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => slider.next());
+  }
+};
+
+initProfessionalsSlider();
 
 /* ─── Industries Slider ───────────────────────────────────── */
 const initIndustriesSlider = () => {

@@ -3220,6 +3220,13 @@ body.im-user-logged-in {
   }
 }
 
+.im-goods__all--bottom {
+  display: none;
+  width: 100%;
+  justify-content: center;
+  margin-top: 16px;
+}
+
 .im-goods__all-arrow {
   display: inline-flex;
   align-items: center;
@@ -3378,6 +3385,7 @@ body.im-user-logged-in {
 .im-goods__body {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 16px;
   flex: 1;
 }
@@ -3646,6 +3654,13 @@ body.im-user-logged-in {
   background: #fff;
 }
 
+// Колонка для мобильного слайдера (2 строки)
+.im-partners__column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
 .im-partners__logo {
   display: inline-flex;
   align-items: center;
@@ -3748,9 +3763,7 @@ body.im-user-logged-in {
 }
 
 .im-professionals__list {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
+  display: flex;
 }
 
 .im-professionals__card {
@@ -3854,7 +3867,8 @@ body.im-user-logged-in {
   gap: 40px;
   border-radius: 8px;
   padding: 28px 20px;
-  background: #111111;
+box-shadow: 0 1px 2px 0 rgba(24, 39, 75, 0.04);
+background: linear-gradient(45deg, #252525 0%, #111 100%);
   color: #ffffff;
   margin-top: 40px;
 }
