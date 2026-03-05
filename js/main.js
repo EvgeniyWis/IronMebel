@@ -838,6 +838,62 @@ const initProjectsSlider = () => {
 
 initProjectsSlider();
 
+/* ─── Partners Slider ──────────────────────────────────────── */
+const initPartnersSlider = () => {
+  if (typeof KeenSlider === "undefined") return;
+
+  const container = document.querySelector(".im-partners");
+  if (!container) return;
+
+  const sliderRoot = container.querySelector("#partners-slider");
+  if (!sliderRoot) return;
+
+  const prevBtn = container.querySelector(".im-partners__nav-btn--prev");
+  const nextBtn = container.querySelector(".im-partners__nav-btn--next");
+
+  const slider = new KeenSlider(sliderRoot, {
+    slides: {
+      perView: 6,
+      spacing: 0,
+    },
+    loop: false,
+    drag: true,
+    rubberband: false,
+    breakpoints: {
+      "(max-width: 1200px)": {
+        slides: { perView: 5, spacing: 14 },
+      },
+      "(max-width: 900px)": {
+        slides: { perView: 4, spacing: 12 },
+      },
+      "(max-width: 600px)": {
+        slides: { perView: 2.4, spacing: 10 },
+      },
+      "(max-width: 400px)": {
+        slides: { perView: 1.6, spacing: 8 },
+      },
+    },
+  });
+
+  function updateArrows(s) {
+    if (!prevBtn || !nextBtn) return;
+    prevBtn.disabled = s.track.details.rel === 0;
+    nextBtn.disabled = s.track.details.rel === s.track.details.maxIdx;
+  }
+
+  slider.on("created", updateArrows);
+  slider.on("slideChanged", updateArrows);
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => slider.prev());
+  }
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => slider.next());
+  }
+};
+
+initPartnersSlider();
+
 /* ─── Industries Slider ───────────────────────────────────── */
 const initIndustriesSlider = () => {
   const container = document.querySelector(".im-industries");
@@ -907,3 +963,73 @@ const initIndustriesSlider = () => {
 };
 
 initIndustriesSlider();
+
+/* ─── Goods card slider (Keen Slider inside product card) ─── */
+const initGoodsCardSliders = () => {
+  const containers = document.querySelectorAll("[data-goods-slider]");
+  containers.forEach((container) => {
+    const root = container.querySelector(".keen-slider");
+    if (!root) return;
+
+    const pagination = container.querySelector(".im-goods__pagination");
+    /** @type {HTMLButtonElement[]} */
+    let dots = [];
+
+    const slider = new KeenSlider(root, {
+      slides: {
+        perView: 1,
+        spacing: 0,
+      },
+      loop: true,
+      drag: true,
+      rubberband: false,
+      created(s) {
+        if (!pagination) return;
+
+        const slideCount = s.slides.length;
+        if (slideCount <= 1) return;
+
+        pagination.innerHTML = "";
+        dots = [];
+
+        for (let i = 0; i < slideCount; i += 1) {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "im-goods__dot";
+          if (i === 0) {
+            dot.classList.add("is-active");
+          }
+          dot.addEventListener("click", () => {
+            slider.moveToIdx(i);
+          });
+          pagination.appendChild(dot);
+          dots.push(dot);
+        }
+      },
+      slideChanged(s) {
+        if (!dots.length) return;
+        const current = s.track.details.rel;
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("is-active", index === current);
+        });
+      },
+    });
+  });
+};
+
+initGoodsCardSliders();
+
+// ─── Goods favorites (heart toggle) ───────────────────────────
+const initGoodsFavorites = () => {
+  const favoriteButtons = document.querySelectorAll(".im-goods__favorite");
+  if (!favoriteButtons.length) return;
+
+  favoriteButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const isActive = button.classList.toggle("is-active");
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  });
+};
+
+initGoodsFavorites();

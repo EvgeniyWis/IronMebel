@@ -814,6 +814,172 @@
   }
 }
 
+/* ─── Goods responsive ────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .im-goods__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .im-goods {
+    margin: 32px 0;
+  }
+
+  .im-goods__title {
+    font-size: 24px;
+  }
+
+  .im-goods__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .im-goods {
+    margin: 24px 0;
+  }
+
+  .im-goods__head {
+    margin-bottom: 16px;
+  }
+
+  .im-goods__title {
+    font-size: 20px;
+  }
+
+  .im-goods__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .im-goods__image {
+    padding: 12px;
+    min-height: 120px;
+
+    img {
+      max-height: 100px;
+    }
+  }
+
+  .im-goods__favorite {
+    width: 28px;
+    height: 28px;
+    top: 8px;
+    right: 8px;
+
+    svg {
+      width: 16px;
+      height: 14px;
+    }
+  }
+
+  .im-goods__body {
+    padding: 10px;
+  }
+
+  .im-goods__name {
+    font-size: 13px;
+    line-height: 140%;
+    margin-bottom: 8px;
+  }
+
+  .im-goods__specs {
+    gap: 4px;
+    margin-bottom: 8px;
+  }
+
+  .im-goods__spec-text {
+    font-size: 11px;
+  }
+
+  .im-goods__spec-icon {
+    width: 10px;
+    height: 10px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  .im-goods__price-old {
+    font-size: 11px;
+  }
+
+  .im-goods__price {
+    font-size: 15px;
+  }
+
+  .im-goods__pricing {
+    margin-bottom: 10px;
+  }
+
+  .im-goods__cart {
+    height: 34px;
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .im-goods__cart-icon svg {
+    width: 13px;
+    height: 12px;
+  }
+
+  .im-goods__compare {
+    width: 34px;
+    height: 34px;
+
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .im-goods__all-text {
+    font-size: 13px;
+  }
+}
+
+/* ─── Partners responsive ─────────────────────────────────── */
+
+@media (max-width: 900px) {
+  .im-partners {
+    margin: 32px 0 28px;
+  }
+
+  .im-partners .im-container {
+    padding: 20px 18px 16px;
+    border-radius: 20px;
+  }
+
+  .im-partners__title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 600px) {
+  .im-partners__head {
+    align-items: center;
+  }
+
+  .im-partners__nav {
+    flex-shrink: 0;
+  }
+
+  .im-partners__list {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .im-partners__item {
+    flex: 0 0 160px;
+    scroll-snap-align: start;
+  }
+}
+
 /* ─── How we work responsive ───────────────────────────────── */
 
 @media (max-width: 900px) {
