@@ -1388,3 +1388,70 @@ const initCtaCustomSelects = () => {
 };
 
 initCtaCustomSelects();
+
+/* ── Catalog sidebar: dual-handle range sliders ── */
+const initCatalogRangeSliders = () => {
+  const containers = document.querySelectorAll(".im-catalog-sidebar__range");
+  if (!containers.length) return;
+
+  containers.forEach((container) => {
+    const minInput = container.querySelector(
+      ".im-catalog-sidebar__range-input--min"
+    );
+    const maxInput = container.querySelector(
+      ".im-catalog-sidebar__range-input--max"
+    );
+    const fill = container.querySelector(".im-catalog-sidebar__range-fill");
+    const minLabel = container.querySelector("[data-range-min-label]");
+    const maxLabel = container.querySelector("[data-range-max-label]");
+
+    if (!minInput || !maxInput || !fill) return;
+
+    const total = +minInput.max - +minInput.min;
+
+    const update = () => {
+      let minVal = +minInput.value;
+      let maxVal = +maxInput.value;
+
+      if (minVal > maxVal) {
+        [minVal, maxVal] = [maxVal, minVal];
+        minInput.value = minVal;
+        maxInput.value = maxVal;
+      }
+
+      const leftPct = ((minVal - +minInput.min) / total) * 100;
+      const rightPct = ((maxVal - +minInput.min) / total) * 100;
+
+      fill.style.left = leftPct + "%";
+      fill.style.width = rightPct - leftPct + "%";
+
+      if (minLabel) minLabel.textContent = minVal;
+      if (maxLabel) maxLabel.textContent = maxVal;
+    };
+
+    minInput.addEventListener("input", update);
+    maxInput.addEventListener("input", update);
+    update();
+  });
+};
+
+initCatalogRangeSliders();
+
+/* ── Catalog sidebar: "Показать все" expand buttons ── */
+const initShowAllButtons = () => {
+  const buttons = document.querySelectorAll(
+    ".im-catalog-sidebar__show-all"
+  );
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const group = btn.closest(".im-catalog-sidebar__group");
+      if (!group) return;
+      group.classList.toggle("is-expanded");
+      btn.textContent = group.classList.contains("is-expanded")
+        ? "Скрыть"
+        : "Показать все";
+    });
+  });
+};
+
+initShowAllButtons();

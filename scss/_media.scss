@@ -699,6 +699,149 @@
 }
 
 @media (max-width: 600px) {
+  .im-catalog-page {
+    padding: 20px 0 28px;
+  }
+
+  .im-catalog-page__breadcrumbs {
+    margin-bottom: 16px;
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .im-catalog-page__hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .im-catalog-page__hero-main {
+    gap: 8px;
+  }
+
+  .im-catalog-page__title {
+    font-size: 40px;
+    line-height: 118%;
+  }
+
+  .im-catalog-page__count {
+    font-size: 18px;
+  }
+
+  .im-catalog-page__download {
+    width: 100%;
+  }
+
+  .im-catalog-page__grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .im-catalog-page__card-link {
+    min-height: 64px;
+    padding: 12px;
+  }
+
+  .im-catalog-page__card-title {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .im-catalog-page__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .im-catalog-sidebar {
+    position: static;
+  }
+
+  .im-catalog-sidebar__panel {
+    max-width: none;
+    padding: 14px;
+  }
+
+  .im-catalog-sidebar__price {
+    grid-template-columns: 1fr;
+  }
+
+  .im-catalog-sidebar__toggle-row {
+    padding-bottom: 12px;
+  }
+
+  .im-catalog-sidebar__range-labels {
+    font-size: 11px;
+  }
+
+  .im-catalog-collections {
+    padding: 14px;
+  }
+
+  .im-catalog-toolbar {
+    padding: 14px;
+  }
+
+  .im-catalog-toolbar__select {
+    width: 100%;
+  }
+
+  .im-catalog-toolbar__select select {
+    width: 100%;
+  }
+
+  .im-product-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .im-product-card__inner {
+    padding: 14px;
+  }
+
+  .im-product-card__price {
+    font-size: 20px;
+  }
+
+  .im-product-card__footer {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .im-product-card__cart {
+    width: 100%;
+  }
+
+  .im-help-banner {
+    padding: 20px 14px;
+
+    &__title {
+      font-size: 16px;
+    }
+  }
+
+  .im-catalog-benefits {
+    grid-template-columns: 1fr;
+    margin-top: 24px;
+  }
+
+  .im-catalog-seo {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .im-catalog-seo__columns {
+    grid-template-columns: 1fr;
+  }
+
+  .im-catalog-seo__title {
+    font-size: 20px;
+  }
+
+  .im-catalog-seo__brand {
+    justify-self: center;
+  }
+
   .im-decisions {
     margin: 32px 0 32px;
     padding: 24px 0 28px;

@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Каталог — IronMebel</title>
-    <meta name="description" content="Каталог IronMebel" />
+    <title>Металлические стеллажи - каталог | IronMebel</title>
+    <meta
+      name="description"
+      content="Каталог металлических стеллажей IronMebel с фильтрацией и подбором."
+    />
 
     <link rel="stylesheet" href="./css/main.css" />
     <link
@@ -16,15 +19,1022 @@
     <div class="page">
       <div data-layout-header></div>
 
-      <main>
-        <section style="padding: 24px 0">
-          <div class="im-container">
-            <h1 style="margin: 0 0 12px">Каталог</h1>
-            <p style="margin: 0; color: #666">
-              Страница каталога: контент будет добавлен дальше.
-            </p>
+      <main class="im-catalog-page">
+        <div class="im-container">
+          <nav class="im-catalog-page__breadcrumbs" aria-label="Хлебные крошки">
+            <a class="im-catalog-page__breadcrumb-link" href="./index.html"
+              >Главная</a
+            >
+            <span class="im-catalog-page__breadcrumb-separator">/</span>
+            <a class="im-catalog-page__breadcrumb-link" href="#"
+              >Металлические стеллажи</a
+            >
+            <span class="im-catalog-page__breadcrumb-separator">/</span>
+            <span class="im-catalog-page__breadcrumb-current"
+              >Среднегрузовые</span
+            >
+          </nav>
+
+          <div class="im-catalog-page__hero">
+            <div class="im-catalog-page__hero-main">
+              <h1 class="im-catalog-page__title">Металлические стеллажи</h1>
+              <span class="im-catalog-page__count">116 товаров</span>
+            </div>
+            <a
+              class="im-catalog-page__download"
+              href="#"
+              aria-label="Скачать каталог"
+            >
+              Скачать каталог
+              <span class="im-catalog-page__download-icon" aria-hidden="true"
+                >↓</span
+              >
+            </a>
           </div>
-        </section>
+
+          <ul class="im-catalog-page__grid">
+            <li class="im-catalog-page__grid-item">
+              <a class="im-catalog-page__card-link" href="#">
+                <span class="im-catalog-page__card-title"
+                  >Полочные стеллажи</span
+                >
+                <span class="im-catalog-page__card-image">
+                  <img
+                    src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                    alt="Полочные стеллажи"
+                  />
+                </span>
+              </a>
+            </li>
+            <li class="im-catalog-page__grid-item">
+              <a class="im-catalog-page__card-link" href="#">
+                <span class="im-catalog-page__card-title"
+                  >Стеллажи для склада</span
+                >
+                <span class="im-catalog-page__card-image">
+                  <img
+                    src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                    alt="Стеллажи для склада"
+                  />
+                </span>
+              </a>
+            </li>
+            <li class="im-catalog-page__grid-item">
+              <a class="im-catalog-page__card-link" href="#">
+                <span class="im-catalog-page__card-title"
+                  >Паллетные стеллажи</span
+                >
+                <span class="im-catalog-page__card-image">
+                  <img
+                    src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                    alt="Паллетные стеллажи"
+                  />
+                </span>
+              </a>
+            </li>
+            <li class="im-catalog-page__grid-item">
+              <a class="im-catalog-page__card-link" href="#">
+                <span class="im-catalog-page__card-title"
+                  >Комплектующие для стеллажей</span
+                >
+                <span class="im-catalog-page__card-image">
+                  <img
+                    src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                    alt="Комплектующие"
+                  />
+                </span>
+              </a>
+            </li>
+            <li class="im-catalog-page__grid-item">
+              <a class="im-catalog-page__card-link" href="#">
+                <span class="im-catalog-page__card-title"
+                  >Специализированные стеллажи</span
+                >
+                <span class="im-catalog-page__card-image">
+                  <img
+                    src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                    alt="Специализированные"
+                  />
+                </span>
+              </a>
+            </li>
+            <li class="im-catalog-page__grid-item">
+              <a class="im-catalog-page__card-link" href="#">
+                <span class="im-catalog-page__card-title"
+                  >Пример длинного названия категории ес...</span
+                >
+                <span class="im-catalog-page__card-image">
+                  <img
+                    src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                    alt="Длинное название категории"
+                  />
+                </span>
+              </a>
+            </li>
+          </ul>
+
+          <div class="im-catalog-page__layout">
+            <aside class="im-catalog-sidebar">
+              <form class="im-catalog-sidebar__panel" action="#" method="get">
+                <div class="im-catalog-sidebar__toggle-row">
+                  <span class="im-catalog-sidebar__toggle-label"
+                    >В наличии</span
+                  >
+                  <label class="im-catalog-sidebar__toggle">
+                    <input type="checkbox" checked />
+                    <span class="im-catalog-sidebar__toggle-track"></span>
+                  </label>
+                </div>
+
+                <div
+                  class="im-catalog-sidebar__group im-catalog-sidebar__group--category"
+                >
+                  <h3 class="im-catalog-sidebar__title">Категория</h3>
+                  <label
+                    class="im-catalog-sidebar__radio im-catalog-sidebar__radio--category is-active"
+                  >
+                    <input type="radio" name="category" checked />
+                    <span class="im-catalog-sidebar__radio-text"
+                      >Металлические стеллажи</span
+                    >
+                  </label>
+                  <label
+                    class="im-catalog-sidebar__radio im-catalog-sidebar__radio--category"
+                  >
+                    <input type="radio" name="category" />
+                    <span class="im-catalog-sidebar__radio-text"
+                      >Полочные стеллажи</span
+                    >
+                  </label>
+                  <label
+                    class="im-catalog-sidebar__radio im-catalog-sidebar__radio--category"
+                  >
+                    <input type="radio" name="category" />
+                    <span class="im-catalog-sidebar__radio-text"
+                      >Стеллажи для склада</span
+                    >
+                  </label>
+                  <label
+                    class="im-catalog-sidebar__radio im-catalog-sidebar__radio--category"
+                  >
+                    <input type="radio" name="category" />
+                    <span class="im-catalog-sidebar__radio-text"
+                      >Паллетные стеллажи</span
+                    >
+                  </label>
+                  <label
+                    class="im-catalog-sidebar__radio im-catalog-sidebar__radio--category"
+                  >
+                    <input type="radio" name="category" />
+                    <span class="im-catalog-sidebar__radio-text"
+                      >Комплектующие для ст...</span
+                    >
+                  </label>
+                </div>
+
+                <div class="im-catalog-sidebar__group">
+                  <h3
+                    class="im-catalog-sidebar__title im-catalog-sidebar__title--with-arrow"
+                  >
+                    Цена
+                  </h3>
+                  <div class="im-catalog-sidebar__range">
+                    <div class="im-catalog-sidebar__range-labels">
+                      <span data-range-min-label>2000</span>
+                      <span data-range-max-label>4000</span>
+                    </div>
+                    <div class="im-catalog-sidebar__range-track">
+                      <span class="im-catalog-sidebar__range-fill"></span>
+                      <input
+                        class="im-catalog-sidebar__range-input im-catalog-sidebar__range-input--min"
+                        type="range"
+                        min="1000"
+                        max="10000"
+                        value="2000"
+                      />
+                      <input
+                        class="im-catalog-sidebar__range-input im-catalog-sidebar__range-input--max"
+                        type="range"
+                        min="1000"
+                        max="10000"
+                        value="4000"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="im-catalog-sidebar__group">
+                  <h3
+                    class="im-catalog-sidebar__title im-catalog-sidebar__title--with-arrow"
+                  >
+                    Нагрузка на ярус
+                  </h3>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" checked />
+                    До 300 кг
+                    <span class="im-catalog-sidebar__count">4</span>
+                  </label>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" />
+                    300-600 кг
+                    <span class="im-catalog-sidebar__count">9</span>
+                  </label>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" />
+                    600-1000 кг
+                    <span class="im-catalog-sidebar__count">99</span>
+                  </label>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" />
+                    Более 1000 кг
+                    <span class="im-catalog-sidebar__count">45</span>
+                  </label>
+                </div>
+
+                <div class="im-catalog-sidebar__group">
+                  <h3 class="im-catalog-sidebar__title">Размеры, мм</h3>
+                  <div class="im-catalog-sidebar__range">
+                    <div class="im-catalog-sidebar__range-labels">
+                      <span>2000</span>
+                      <span>4000</span>
+                    </div>
+                    <div class="im-catalog-sidebar__range-track">
+                      <span class="im-catalog-sidebar__range-fill"></span>
+                      <input
+                        class="im-catalog-sidebar__range-input im-catalog-sidebar__range-input--min"
+                        type="range"
+                        min="1500"
+                        max="5000"
+                        value="2000"
+                      />
+                      <input
+                        class="im-catalog-sidebar__range-input im-catalog-sidebar__range-input--max"
+                        type="range"
+                        min="1500"
+                        max="5000"
+                        value="4000"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="im-catalog-sidebar__group">
+                  <h3 class="im-catalog-sidebar__title">Цвет</h3>
+                  <div class="im-catalog-sidebar__colors">
+                    <label class="im-catalog-sidebar__color">
+                      <input type="checkbox" />
+                      <span
+                        class="im-catalog-sidebar__color-swatch"
+                        style="background: #2ebf3f"
+                      ></span>
+                      <span class="im-catalog-sidebar__color-text"
+                        >Зеленый</span
+                      >
+                      <span class="im-catalog-sidebar__count">13</span>
+                    </label>
+                    <label class="im-catalog-sidebar__color">
+                      <input type="checkbox" checked />
+                      <span
+                        class="im-catalog-sidebar__color-swatch"
+                        style="background: #3273dc"
+                      ></span>
+                      <span class="im-catalog-sidebar__color-text">Синий</span>
+                      <span class="im-catalog-sidebar__count">45</span>
+                    </label>
+                    <label class="im-catalog-sidebar__color">
+                      <input type="checkbox" />
+                      <span
+                        class="im-catalog-sidebar__color-swatch"
+                        style="background: #f4c430"
+                      ></span>
+                      <span class="im-catalog-sidebar__color-text">Желтый</span>
+                      <span class="im-catalog-sidebar__count">78</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="im-catalog-sidebar__group">
+                  <h3
+                    class="im-catalog-sidebar__title im-catalog-sidebar__title--with-arrow"
+                  >
+                    Тип полки
+                  </h3>
+                  <label class="im-catalog-sidebar__radio">
+                    <input type="radio" name="shelf_type" checked />
+                    <span class="im-catalog-sidebar__radio-mark"></span>
+                    <span class="im-catalog-sidebar__radio-text"
+                      >Металлическая</span
+                    >
+                    <span class="im-catalog-sidebar__count">52</span>
+                  </label>
+                  <label class="im-catalog-sidebar__radio">
+                    <input type="radio" name="shelf_type" />
+                    <span class="im-catalog-sidebar__radio-mark"></span>
+                    <span class="im-catalog-sidebar__radio-text">Фанера</span>
+                    <span class="im-catalog-sidebar__count">46</span>
+                  </label>
+                  <label class="im-catalog-sidebar__radio">
+                    <input type="radio" name="shelf_type" />
+                    <span class="im-catalog-sidebar__radio-mark"></span>
+                    <span class="im-catalog-sidebar__radio-text"
+                      >Комбинированная</span
+                    >
+                    <span class="im-catalog-sidebar__count">81</span>
+                  </label>
+                </div>
+
+                <div class="im-catalog-sidebar__group">
+                  <h3 class="im-catalog-sidebar__title">Назначение</h3>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" checked />
+                    Для склада
+                    <span class="im-catalog-sidebar__count">64</span>
+                  </label>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" checked />
+                    Для ПВЗ
+                    <span class="im-catalog-sidebar__count">52</span>
+                  </label>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" />
+                    Для производства
+                    <span class="im-catalog-sidebar__count">14</span>
+                  </label>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" checked />
+                    Для архива
+                    <span class="im-catalog-sidebar__count">3</span>
+                  </label>
+                  <button class="im-catalog-sidebar__show-all" type="button">
+                    Показать все
+                  </button>
+                </div>
+
+                <div class="im-catalog-sidebar__group">
+                  <h3
+                    class="im-catalog-sidebar__title im-catalog-sidebar__title--with-arrow"
+                  >
+                    Серии
+                  </h3>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" checked />
+                    Ironmebel
+                    <span class="im-catalog-sidebar__count">43</span>
+                  </label>
+                  <label class="im-catalog-sidebar__check">
+                    <input type="checkbox" checked />
+                    Ironmebel Pro
+                    <span class="im-catalog-sidebar__count">28</span>
+                  </label>
+                </div>
+
+                <div class="im-catalog-sidebar__actions">
+                  <button class="im-catalog-sidebar__submit" type="submit">
+                    Применить
+                  </button>
+                  <button class="im-catalog-sidebar__reset" type="reset">
+                    Сбросить
+                  </button>
+                </div>
+              </form>
+            </aside>
+
+            <section class="im-catalog-content">
+              <div class="im-catalog-collections">
+                <h2 class="im-catalog-collections__title">
+                  Популярные подборки
+                </h2>
+                <div class="im-catalog-collections__tags">
+                  <a class="im-catalog-collections__tag" href="#"
+                    >Готовые решения со склада</a
+                  >
+                  <a class="im-catalog-collections__tag" href="#"
+                    >Верстак безтумбовые</a
+                  >
+                  <a class="im-catalog-collections__tag" href="#"
+                    >Готовые решения со столами</a
+                  >
+                  <a class="im-catalog-collections__tag" href="#"
+                    >Верстаки мебельные</a
+                  >
+                  <a class="im-catalog-collections__tag" href="#"
+                    >Верстаки подкатные</a
+                  >
+                  <a class="im-catalog-collections__tag" href="#"
+                    >Инструментальные тумбы</a
+                  >
+                  <a class="im-catalog-collections__tag" href="#"
+                    >Комплектующие для верстаков</a
+                  >
+                </div>
+              </div>
+
+              <div class="im-catalog-toolbar">
+                <div class="im-catalog-toolbar__filters">
+                  <button class="im-catalog-toolbar__reset" type="button">
+                    Сначала популярные
+                  </button>
+                  <button class="im-catalog-toolbar__filter-chip" type="button">
+                    Нагрузка на ярус: 2.3кН... ✕
+                  </button>
+                  <button class="im-catalog-toolbar__filter-chip" type="button">
+                    Подкатегория: 12.3кН... ✕
+                  </button>
+                  <button class="im-catalog-toolbar__filter-chip" type="button">
+                    Нагрузка на ярус: 1.3кН... ✕
+                  </button>
+                  <button class="im-catalog-toolbar__reset" type="button">
+                    Сбросить фильтры ✕
+                  </button>
+                </div>
+              </div>
+
+              <div class="im-goods__grid">
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <img
+                      src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price">48 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <span class="im-goods__badge im-goods__badge--green"
+                      >-33%</span
+                    >
+                    <button
+                      class="im-goods__favorite"
+                      type="button"
+                      aria-label="Добавить в избранное"
+                    >
+                      ♡
+                    </button>
+                    <button
+                      class="im-goods__compare-top"
+                      type="button"
+                      aria-label="Сравнить"
+                    >
+                      ◌
+                    </button>
+                    <img
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price im-goods__price--accent"
+                          >48 900 ₽</span
+                        >
+                        <span class="im-goods__price-old">59 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <img
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price">64 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <span class="im-goods__badge im-goods__badge--green"
+                      >-33%</span
+                    >
+                    <img
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price im-goods__price--accent"
+                          >48 900 ₽</span
+                        >
+                        <span class="im-goods__price-old">59 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="im-goods__card im-help-banner">
+                  <div class="im-help-banner__logo">
+                    <img src="./images/logo.png" alt="IronMebel" />
+                  </div>
+                  <h3 class="im-help-banner__title">Нужна помощь?</h3>
+                  <p class="im-help-banner__text">
+                    Мы быстро перезвоним и поможем с выбором
+                  </p>
+                  <a class="im-help-banner__btn" href="#">Оставить заявку</a>
+                  <p class="im-help-banner__hint">
+                    Напишите нам<br />мы онлайн
+                  </p>
+                  <div class="im-help-banner__socials">
+                    <a
+                      class="im-help-banner__social im-help-banner__social--tg"
+                      href="#"
+                      ><span>Telegram</span></a
+                    >
+                    <a
+                      class="im-help-banner__social im-help-banner__social--max"
+                      href="#"
+                      ><span>Max</span></a
+                    >
+                  </div>
+                </article>
+
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <img
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price">64 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <img
+                      src="./images/catalogue/mock_catalogue_item_white_bg.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price">48 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <span class="im-goods__badge im-goods__badge--green"
+                      >-33%</span
+                    >
+                    <img
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price im-goods__price--accent"
+                          >48 900 ₽</span
+                        >
+                        <span class="im-goods__price-old">59 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+
+                <article class="im-goods__card">
+                  <div class="im-goods__image">
+                    <img
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt="Шкаф металлический Secure для хранения инструмента"
+                    />
+                  </div>
+                  <div class="im-goods__body">
+                    <div class="im-goods__pricing">
+                      <div class="im-goods__price-group">
+                        <span class="im-goods__price">64 900 ₽</span>
+                      </div>
+                      <button
+                        class="im-goods__cart"
+                        type="button"
+                        aria-label="В корзину"
+                      >
+                        <span class="im-goods__cart-icon" aria-hidden="true"
+                          >🛒</span
+                        >
+                      </button>
+                    </div>
+                    <h3 class="im-goods__name">
+                      Шкаф металлический Secure для хранения инструмента
+                    </h3>
+                    <ul class="im-goods__specs">
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >1800×900×500 мм</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >4 полки - перфорированные</span
+                        >
+                      </li>
+                      <li class="im-goods__spec">
+                        <span class="im-goods__spec-icon" aria-hidden="true"
+                          >•</span
+                        ><span class="im-goods__spec-text"
+                          >До 60 кг / полка</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </article>
+              </div>
+
+              <nav
+                class="im-catalog-pagination"
+                aria-label="Пагинация каталога"
+              >
+                <a
+                  class="im-catalog-pagination__arrow"
+                  href="#"
+                  aria-label="Предыдущая страница"
+                  >‹</a
+                >
+                <a class="im-catalog-pagination__item" href="#">1</a>
+                <a
+                  class="im-catalog-pagination__item is-active"
+                  href="#"
+                  aria-current="page"
+                  >2</a
+                >
+                <a class="im-catalog-pagination__item" href="#">3</a>
+                <span class="im-catalog-pagination__dots">...</span>
+                <a class="im-catalog-pagination__item" href="#">12</a>
+                <a
+                  class="im-catalog-pagination__arrow"
+                  href="#"
+                  aria-label="Следующая страница"
+                  >›</a
+                >
+              </nav>
+            </section>
+          </div>
+
+          <section class="im-catalog-benefits" aria-label="Преимущества">
+            <article class="im-catalog-benefits__item">
+              <span class="im-catalog-benefits__icon">
+                <img
+                  src="./images/catalogue_page/shield.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <div>
+                <div class="im-catalog-benefits__title">Высота стеллажа<br />до 13 метров</div>
+              </div>
+            </article>
+            <article class="im-catalog-benefits__item">
+              <span class="im-catalog-benefits__icon">
+                <img
+                  src="./images/catalogue_page/shield.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <div>
+                <div class="im-catalog-benefits__title">Максимальная<br />нагрузка на ярус<br />до 5 тонн</div>
+              </div>
+            </article>
+            <article class="im-catalog-benefits__item">
+              <span class="im-catalog-benefits__icon">
+                <img
+                  src="./images/catalogue_page/shield.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <div>
+                <div class="im-catalog-benefits__title">Стеллажи<br />сертифицированы</div>
+              </div>
+            </article>
+            <article class="im-catalog-benefits__item">
+              <span class="im-catalog-benefits__icon">
+                <img
+                  src="./images/catalogue_page/shield.png"
+                  alt=""
+                  width="28"
+                  height="28"
+                />
+              </span>
+              <div>
+                <div class="im-catalog-benefits__title">Комплексно<br />обустроим склад</div>
+              </div>
+            </article>
+          </section>
+
+          <section class="im-catalog-seo">
+            <div>
+              <h2 class="im-catalog-seo__title">Заголовок для SEO текста</h2>
+              <div class="im-catalog-seo__subtitle">
+                Подзаголовок для SEO текста
+              </div>
+              <div class="im-catalog-seo__columns">
+                <div>
+                  <p class="im-catalog-seo__text">
+                    Металлические стеллажи IronMebel подходят для склада,
+                    архива, гаража и производства. В каталоге представлены
+                    модели разной грузоподъемности, глубины и высоты.
+                  </p>
+                </div>
+                <div>
+                  <p class="im-catalog-seo__text">
+                    Мы помогаем с подбором по нагрузке и бюджету, готовим
+                    спецификацию и оперативно отгружаем заказ. Все решения
+                    рассчитаны на длительную эксплуатацию.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="im-catalog-seo__brand">
+              <img
+                class="im-catalog-seo__brand-logo"
+                src="./images/logo.png"
+                alt="IronMebel"
+              />
+              <span class="im-catalog-seo__brand-name">IRONMEBEL</span>
+            </div>
+          </section>
+        </div>
       </main>
 
       <div data-layout-footer></div>
