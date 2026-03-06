@@ -1139,3 +1139,185 @@ const initGoodsFavorites = () => {
 };
 
 initGoodsFavorites();
+
+/* ─── CTA custom selects (replace native dropdown UI) ───────── */
+const initCtaCustomSelects = () => {
+  const wraps = document.querySelectorAll(".im-cta__select-wrap");
+  if (!wraps.length) return;
+
+  /** @type {Set<HTMLElement>} */
+  const openWraps = new Set();
+
+  const closeWrap = (wrap) => {
+    if (!wrap) return;
+    wrap.classList.remove("is-open");
+
+    const btn = wrap.querySelector(".im-cta__select-btn");
+    if (btn) btn.setAttribute("aria-expanded", "false");
+
+    openWraps.delete(wrap);
+  };
+
+  const closeAll = () => {
+    openWraps.forEach((wrap) => closeWrap(wrap));
+  };
+
+  const openWrap = (wrap) => {
+    if (!wrap) return;
+    closeAll();
+
+    wrap.classList.add("is-open");
+    const btn = wrap.querySelector(".im-cta__select-btn");
+    const menu = wrap.querySelector(".im-cta__select-menu");
+    if (btn) btn.setAttribute("aria-expanded", "true");
+
+    openWraps.add(wrap);
+
+    // Focus active option for keyboard users
+    if (menu) {
+      const active = menu.querySelector(".im-cta__select-option.is-active");
+      if (active && active instanceof HTMLElement) {
+        active.focus();
+      }
+    }
+  };
+
+  const ensureButtonAndMenu = (wrap, select) => {
+    // Avoid double-init
+    if (wrap.querySelector(".im-cta__select-btn")) return;
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "im-cta__select-btn";
+    btn.setAttribute("aria-haspopup", "listbox");
+    btn.setAttribute("aria-expanded", "false");
+
+    const menu = document.createElement("div");
+    menu.className = "im-cta__select-menu";
+    menu.setAttribute("role", "listbox");
+
+    const options = Array.from(select.options);
+
+    const syncButtonText = () => {
+      const selectedOption = select.selectedOptions[0] || select.options[0];
+      btn.textContent = selectedOption ? selectedOption.textContent : "";
+    };
+
+    const rebuildMenu = () => {
+      menu.innerHTML = "";
+
+      options.forEach((opt, index) => {
+        const optionBtn = document.createElement("button");
+        optionBtn.type = "button";
+        optionBtn.className = "im-cta__select-option";
+        optionBtn.setAttribute("role", "option");
+        optionBtn.textContent = opt.textContent;
+        optionBtn.dataset.index = String(index);
+
+        const isActive = index === select.selectedIndex;
+        optionBtn.classList.toggle("is-active", isActive);
+        optionBtn.setAttribute("aria-selected", isActive ? "true" : "false");
+
+        optionBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          select.selectedIndex = index;
+          select.dispatchEvent(new Event("change", { bubbles: true }));
+          syncButtonText();
+          rebuildMenu();
+          closeWrap(wrap);
+          btn.focus();
+        });
+
+        optionBtn.addEventListener("keydown", (e) => {
+          const items = Array.from(
+            menu.querySelectorAll(".im-cta__select-option"),
+          );
+          const currentIndex = items.indexOf(optionBtn);
+
+          if (e.key === "Escape") {
+            e.preventDefault();
+            closeWrap(wrap);
+            btn.focus();
+            return;
+          }
+
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            const next = items[Math.min(items.length - 1, currentIndex + 1)];
+            if (next) next.focus();
+            return;
+          }
+
+          if (e.key === "ArrowUp") {
+            e.preventDefault();
+            const prev = items[Math.max(0, currentIndex - 1)];
+            if (prev) prev.focus();
+            return;
+          }
+
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            optionBtn.click();
+          }
+        });
+
+        menu.appendChild(optionBtn);
+      });
+    };
+
+    syncButtonText();
+    rebuildMenu();
+
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      if (wrap.classList.contains("is-open")) {
+        closeWrap(wrap);
+      } else {
+        openWrap(wrap);
+      }
+    });
+
+    btn.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowDown" || e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        openWrap(wrap);
+      }
+      if (e.key === "Escape") {
+        e.preventDefault();
+        closeWrap(wrap);
+      }
+    });
+
+    wrap.appendChild(btn);
+    wrap.appendChild(menu);
+
+    // Keep in sync if value changes externally
+    select.addEventListener("change", () => {
+      syncButtonText();
+      rebuildMenu();
+    });
+  };
+
+  wraps.forEach((wrap) => {
+    const select = wrap.querySelector("select.im-cta__select");
+    if (!select) return;
+    ensureButtonAndMenu(wrap, select);
+  });
+
+  document.addEventListener("click", (e) => {
+    const target = e.target;
+    if (!(target instanceof HTMLElement)) {
+      closeAll();
+      return;
+    }
+    const inside = target.closest(".im-cta__select-wrap");
+    if (!inside) closeAll();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
+};
+
+initCtaCustomSelects();

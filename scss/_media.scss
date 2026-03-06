@@ -1276,3 +1276,266 @@
     font-size: 14px;
   }
 }
+
+/* ─── Blog responsive ────────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .im-blog__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .im-blog__card:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .im-blog__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .im-blog__card:last-child {
+    display: flex;
+  }
+
+  .im-blog__card:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .im-blog {
+    padding: 40px 0;
+  }
+
+  .im-blog__title {
+    font-size: 22px;
+  }
+
+  .im-blog__head {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .im-blog__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .im-blog__card:nth-child(n + 3) {
+    display: flex;
+  }
+}
+
+/* ─── Footer responsive ──────────────────────────────────── */
+
+@media (max-width: 1200px) {
+  .im-footer__columns {
+    grid-template-columns: 1.2fr 1fr 1fr 1.2fr;
+    gap: 24px;
+  }
+
+  .im-footer__col--company {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px 24px;
+  }
+
+  .im-footer__company-name {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .im-footer__company-desc {
+    grid-column: 1;
+    grid-row: 2;
+    margin-bottom: 0;
+  }
+
+  .im-footer__company-detail {
+    grid-column: 2;
+  }
+
+  .im-footer__company-detail:first-of-type {
+    grid-row: 1;
+    align-self: end;
+  }
+
+  .im-footer__company-detail:last-of-type {
+    grid-row: 2;
+    align-self: start;
+  }
+
+  .im-footer__col--catalog .im-footer__downloads {
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 900px) {
+  .im-footer {
+    border-radius: 16px 16px 0 0;
+    margin-top: 32px;
+  }
+
+  .im-footer__inner {
+    padding: 32px 20px 24px;
+  }
+
+  .im-footer__top {
+    margin-bottom: 28px;
+  }
+
+  .im-footer__columns {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+
+  .im-footer__col--company {
+    grid-column: 1 / -1;
+    display: block;
+  }
+
+  .im-footer__company-desc {
+    margin-bottom: 12px;
+  }
+
+  .im-footer__downloads {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 16px;
+  }
+
+  .im-footer__col--contacts {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .im-footer {
+    border-radius: 14px 14px 0 0;
+    margin-top: 24px;
+  }
+
+  .im-footer__inner {
+    padding: 24px 16px 20px;
+  }
+
+  .im-footer__top {
+    margin-bottom: 24px;
+  }
+
+  .im-footer__logo-title {
+    svg {
+      width: 176px;
+      height: 18px;
+    }
+  }
+
+  .im-footer__columns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .im-footer__col--company {
+    grid-column: auto;
+  }
+
+  .im-footer__col--contacts {
+    grid-column: auto;
+  }
+
+  .im-footer__downloads {
+    flex-direction: column;
+  }
+
+  .im-footer__download {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ─── CTA responsive ────────────────────── */
+@media (max-width: 1024px) {
+  .im-cta__inner {
+    padding: 40px 36px;
+    gap: 32px;
+  }
+
+  .im-cta__title {
+    font-size: 28px;
+  }
+
+  .im-cta__logo {
+    width: 220px;
+    height: 220px;
+
+    img {
+      width: 160px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .im-cta {
+    margin: 32px 0;
+  }
+
+  .im-cta__inner {
+    grid-template-columns: 1fr;
+    padding: 32px 24px;
+    gap: 24px;
+  }
+
+  .im-cta__title {
+    font-size: 24px;
+  }
+
+  .im-cta__subtitle {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .im-cta__row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .im-cta__logo {
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+
+    img {
+      width: 140px;
+    }
+  }
+
+  .im-cta__button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .im-cta {
+    margin: 24px 0;
+  }
+
+  .im-cta__inner {
+    padding: 24px 16px;
+  }
+
+  .im-cta__title {
+    font-size: 20px;
+  }
+
+  .im-cta__logo {
+    width: 140px;
+    height: 140px;
+
+    img {
+      width: 110px;
+    }
+  }
+}
