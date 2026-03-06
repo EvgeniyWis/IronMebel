@@ -1140,6 +1140,73 @@ const initGoodsFavorites = () => {
 
 initGoodsFavorites();
 
+/* ─── Blog Slider (Keen Slider) ───────────────────────────── */
+const initBlogSlider = () => {
+  if (typeof KeenSlider === "undefined") return;
+
+  const container = document.querySelector(".im-blog");
+  if (!container) return;
+
+  const sliderRoot = container.querySelector(".im-blog__grid");
+  if (!sliderRoot) return;
+
+  const cards = Array.from(sliderRoot.querySelectorAll(".im-blog__card"));
+  if (!cards.length) return;
+
+  let sliderInstance = null;
+
+  const destroySlider = () => {
+    if (!sliderInstance) return;
+    try {
+      sliderInstance.destroy();
+    } catch (e) {
+      // ignore
+    }
+    sliderInstance = null;
+    sliderRoot.classList.remove("keen-slider");
+    cards.forEach((card) => card.classList.remove("keen-slider__slide"));
+  };
+
+  const setup = () => {
+    const shouldBeSlider = window.innerWidth < 1200;
+
+    if (shouldBeSlider) {
+      if (sliderInstance) return;
+
+      sliderRoot.classList.add("keen-slider");
+      cards.forEach((card) => card.classList.add("keen-slider__slide"));
+
+      sliderInstance = new KeenSlider(sliderRoot, {
+        slides: {
+          perView: 3,
+          spacing: 16,
+        },
+        loop: false,
+        drag: true,
+        rubberband: false,
+        breakpoints: {
+          "(max-width: 900px)": {
+            slides: { perView: 2.1, spacing: 14 },
+          },
+          "(max-width: 600px)": {
+            // Мобильный вид: одна карточка, как на макете
+            slides: { perView: 1.4, spacing: 8 },
+          },
+        },
+      });
+    } else {
+      if (sliderInstance) {
+        destroySlider();
+      }
+    }
+  };
+
+  setup();
+  window.addEventListener("resize", setup);
+};
+
+initBlogSlider();
+
 /* ─── CTA custom selects (replace native dropdown UI) ───────── */
 const initCtaCustomSelects = () => {
   const wraps = document.querySelectorAll(".im-cta__select-wrap");
