@@ -1140,6 +1140,25 @@ const initGoodsFavorites = () => {
 
 initGoodsFavorites();
 
+const initGoodsCartButtons = () => {
+  const cartButtons = document.querySelectorAll(".im-goods__cart");
+  if (!cartButtons.length) return;
+
+  cartButtons.forEach((button) => {
+    const isAdded = button.classList.contains("is-added");
+    button.setAttribute("aria-pressed", isAdded ? "true" : "false");
+    button.setAttribute("aria-label", isAdded ? "Added to cart" : "Add to cart");
+
+    button.addEventListener("click", () => {
+      const nextIsAdded = button.classList.toggle("is-added");
+      button.setAttribute("aria-pressed", nextIsAdded ? "true" : "false");
+      button.setAttribute("aria-label", nextIsAdded ? "Added to cart" : "Add to cart");
+    });
+  });
+};
+
+initGoodsCartButtons();
+
 /* ─── Blog Slider (Keen Slider) ───────────────────────────── */
 const initBlogSlider = () => {
   if (typeof KeenSlider === "undefined") return;

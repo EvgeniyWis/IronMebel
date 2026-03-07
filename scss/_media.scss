@@ -1032,6 +1032,25 @@
   .im-goods__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .im-goods__help-title {
+    font-size: 36px;
+  }
+
+  .im-goods__help-text,
+  .im-goods__help-note {
+    font-size: 14px;
+  }
+
+  .im-goods__help-button {
+    min-height: 40px;
+    font-size: 14px;
+  }
+
+  .im-goods__help-social {
+    min-width: 100px;
+    font-size: 13px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1069,6 +1088,60 @@
   .im-goods__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
+  }
+
+  .im-goods__help-card {
+    padding: 12px 8px;
+  }
+
+  .im-goods__help-logo {
+    margin-bottom: 12px;
+
+    img {
+      height: 30px;
+    }
+  }
+
+  .im-goods__help-title {
+    font-size: 24px;
+  }
+
+  .im-goods__help-text {
+    margin-top: 10px;
+    font-size: 12px;
+    line-height: 133%;
+  }
+
+  .im-goods__help-button {
+    margin-top: 12px;
+    min-height: 34px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .im-goods__help-note {
+    margin-top: 16px;
+    font-size: 12px;
+    line-height: 133%;
+  }
+
+  .im-goods__help-socials {
+    margin-top: 12px;
+    gap: 6px;
+  }
+
+  .im-goods__help-social {
+    min-width: 0;
+    flex: 1 1 0;
+    height: 32px;
+    gap: 4px;
+    font-size: 11px;
+  }
+
+  .im-goods__help-social-icon svg {
+    width: 12px;
+    height: 12px;
   }
 
   .im-goods__image {
