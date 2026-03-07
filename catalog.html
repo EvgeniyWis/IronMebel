@@ -38,7 +38,9 @@
           <div class="im-catalog-page__hero">
             <div class="im-catalog-page__hero-main">
               <h1 class="im-catalog-page__title">Металлические стеллажи</h1>
-              <span class="im-catalog-page__count">116 товаров</span>
+              <span class="im-catalog-page__count im-catalog-page__count--desktop"
+                >116 товаров</span
+              >
             </div>
             <a
               class="im-catalog-page__download"
@@ -145,8 +147,35 @@
           </ul>
 
           <div class="im-catalog-page__layout">
+            <div
+              class="im-catalog-sidebar-backdrop"
+              data-catalog-filters-backdrop
+            ></div>
+
             <aside class="im-catalog-sidebar">
               <form class="im-catalog-sidebar__panel" action="#" method="get">
+                <button
+                  class="im-catalog-sidebar__close"
+                  type="button"
+                  data-catalog-filters-close
+                  aria-label="Закрыть фильтры"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 14 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M1 1L13 13M13 1L1 13"
+                      stroke="#222222"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </button>
                 <div class="im-catalog-sidebar__toggle-row">
                   <span class="im-catalog-sidebar__toggle-label"
                     >В наличии</span
@@ -460,22 +489,187 @@
                 </div>
 
                 <div class="im-catalog-toolbar">
-                  <div class="im-catalog-toolbar__filters">
-                    <button class="im-catalog-toolbar__sort" type="button">
-                      Сначала популярные
-                      <svg
-                        width="12"
-                        height="5"
-                        viewBox="0 0 12 5"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M6.63529 4.86063L11.6278 1.53894C12.0094 1.28478 12.1161 0.753138 11.8611 0.371471C11.6069 -0.00936133 11.0736 -0.116051 10.6911 0.138109L6.16695 3.14813L1.64281 0.138109C1.26031 -0.116051 0.727808 -0.00936133 0.472808 0.371471C0.217808 0.753138 0.324475 1.28478 0.706141 1.53894L5.69861 4.86063C5.97861 5.04646 6.3553 5.04646 6.63529 4.86063Z"
-                          fill="#666666"
-                        />
-                      </svg>
+                  <div class="im-catalog-toolbar__mobile-row">
+                    <button
+                      class="im-catalog-toolbar__mobile-filters"
+                      type="button"
+                      data-catalog-filters-open
+                    >
+                      <span class="im-catalog-toolbar__mobile-filters-main">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M7.5 4.5C7.5 5.74264 6.49264 6.75 5.25 6.75C4.00736 6.75 3 5.74264 3 4.5C3 3.25736 4.00736 2.25 5.25 2.25C6.49264 2.25 7.5 3.25736 7.5 4.5Z"
+                            stroke="#222222"
+                            stroke-width="1.5"
+                          />
+                          <path
+                            d="M15 4.5H7.5"
+                            stroke="#222222"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M3 13.5H10.5"
+                            stroke="#222222"
+                            stroke-width="1.5"
+                            stroke-linecap="round"
+                          />
+                          <path
+                            d="M15 13.5C15 14.7426 13.9926 15.75 12.75 15.75C11.5074 15.75 10.5 14.7426 10.5 13.5C10.5 12.2574 11.5074 11.25 12.75 11.25C13.9926 11.25 15 12.2574 15 13.5Z"
+                            stroke="#222222"
+                            stroke-width="1.5"
+                          />
+                        </svg>
+                        <span>Фильтры</span>
+                      </span>
+                      <span class="im-catalog-toolbar__mobile-count">3</span>
                     </button>
+
+                    <div
+                      class="im-catalog-toolbar__mobile-sort-dropdown"
+                      data-catalog-sort
+                    >
+                      <button
+                        class="im-catalog-toolbar__mobile-sort"
+                        type="button"
+                        data-catalog-sort-toggle
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                      >
+                        <span data-catalog-sort-label>Сначала популярные</span>
+                        <svg
+                          width="12"
+                          height="8"
+                          viewBox="0 0 12 8"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M0.75 0C0.335775 0 0 0.335775 0 0.75C0 1.16422 0.335775 1.5 0.75 1.5H11.25C11.664 1.5 12 1.16422 12 0.75C12 0.335775 11.664 0 11.25 0H0.75ZM0.75 3C0.335775 3 0 3.33578 0 3.75C0 4.16422 0.335775 4.5 0.75 4.5H8.25C8.664 4.5 9 4.16422 9 3.75C9 3.33578 8.664 3 8.25 3H0.75ZM0.75 6C0.335775 6 0 6.33578 0 6.75C0 7.16422 0.335775 7.5 0.75 7.5H5.25C5.664 7.5 6 7.16422 6 6.75C6 6.33578 5.664 6 5.25 6H0.75Z"
+                            fill="#111111"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        class="im-catalog-toolbar__sort-menu im-catalog-toolbar__sort-menu--mobile"
+                        data-catalog-sort-menu
+                        role="listbox"
+                        aria-label="Сортировка"
+                      >
+                        <button
+                          class="im-catalog-toolbar__sort-option is-active"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала популярные
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала новинки
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала дешевле
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала дороже
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          По размеру скидки
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="im-catalog-toolbar__filters">
+                    <div class="im-catalog-toolbar__sort-dropdown" data-catalog-sort>
+                      <button
+                        class="im-catalog-toolbar__sort"
+                        type="button"
+                        data-catalog-sort-toggle
+                        aria-expanded="false"
+                        aria-haspopup="listbox"
+                      >
+                        <span data-catalog-sort-label>Сначала популярные</span>
+                        <svg
+                          width="12"
+                          height="5"
+                          viewBox="0 0 12 5"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          aria-hidden="true"
+                        >
+                          <path
+                            d="M6.63529 4.86063L11.6278 1.53894C12.0094 1.28478 12.1161 0.753138 11.8611 0.371471C11.6069 -0.00936133 11.0736 -0.116051 10.6911 0.138109L6.16695 3.14813L1.64281 0.138109C1.26031 -0.116051 0.727808 -0.00936133 0.472808 0.371471C0.217808 0.753138 0.324475 1.28478 0.706141 1.53894L5.69861 4.86063C5.97861 5.04646 6.3553 5.04646 6.63529 4.86063Z"
+                            fill="#666666"
+                          />
+                        </svg>
+                      </button>
+                      <div
+                        class="im-catalog-toolbar__sort-menu"
+                        data-catalog-sort-menu
+                        role="listbox"
+                        aria-label="Сортировка"
+                      >
+                        <button
+                          class="im-catalog-toolbar__sort-option is-active"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала популярные
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала новинки
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала дешевле
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          Сначала дороже
+                        </button>
+                        <button
+                          class="im-catalog-toolbar__sort-option"
+                          type="button"
+                          data-catalog-sort-option
+                        >
+                          По размеру скидки
+                        </button>
+                      </div>
+                    </div>
                     <button
                       class="im-catalog-toolbar__filter-chip"
                       type="button"
@@ -548,6 +742,10 @@
                   </div>
                 </div>
               </div>
+
+                                    <span class="im-catalog-page__count im-catalog-page__count--mobile"
+            >116 товаров</span
+          >
 
               <div class="im-goods__grid">
                 <!-- Card 1 -->
