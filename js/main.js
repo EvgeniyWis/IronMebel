@@ -853,7 +853,7 @@ const initPartnersSlider = () => {
   // Мобильная версия: 2 отдельных слайдера (2 строки партнёров)
   if (isMobile) {
     const items = Array.from(
-      baseSliderRoot.querySelectorAll(".im-partners__item")
+      baseSliderRoot.querySelectorAll(".im-partners__item"),
     );
     if (!items.length || !baseSliderRoot.parentElement) return;
 
@@ -861,13 +861,11 @@ const initPartnersSlider = () => {
 
     // Создаём два отдельных корня слайдера
     const row1 = document.createElement("div");
-    row1.className =
-      "im-partners__list keen-slider im-partners__list--mobile";
+    row1.className = "im-partners__list keen-slider im-partners__list--mobile";
     row1.id = "partners-slider-mobile-1";
 
     const row2 = document.createElement("div");
-    row2.className =
-      "im-partners__list keen-slider im-partners__list--mobile";
+    row2.className = "im-partners__list keen-slider im-partners__list--mobile";
     row2.id = "partners-slider-mobile-2";
 
     const half = Math.ceil(items.length / 2);
@@ -1144,15 +1142,33 @@ const initGoodsCartButtons = () => {
   const cartButtons = document.querySelectorAll(".im-goods__cart");
   if (!cartButtons.length) return;
 
-  cartButtons.forEach((button) => {
-    const isAdded = button.classList.contains("is-added");
+  const cartCheckIconSvg =
+    '<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.2423 0C11.0503 0 10.85 0.0630007 10.7038 0.207001L4.17352 6.65249C3.98077 6.84224 3.78727 6.80701 3.63577 6.58351L1.38877 3.2685C1.15926 2.93025 0.679265 2.83575 0.335014 3.0615C-0.00848637 3.28725 -0.104486 3.75901 0.125015 4.09726L2.37127 7.41224C3.04777 8.40899 4.36552 8.53575 5.22727 7.68825L11.7808 1.26599C12.0725 0.977991 12.0725 0.495 11.7808 0.207001C11.6345 0.0630007 11.4335 0 11.2423 0Z" fill="#C80400" /></svg>';
+
+  const syncCartButtonState = (button, isAdded) => {
+    const icon = button.querySelector(".im-goods__cart-icon");
+    button.classList.toggle("is-added", isAdded);
     button.setAttribute("aria-pressed", isAdded ? "true" : "false");
-    button.setAttribute("aria-label", isAdded ? "Added to cart" : "Add to cart");
+    button.setAttribute(
+      "aria-label",
+      isAdded ? "Добавлено в корзину" : "Добавить в корзину",
+    );
+
+    if (!icon) return;
+    if (!button.dataset.defaultCartIcon) {
+      button.dataset.defaultCartIcon = icon.innerHTML;
+    }
+
+    icon.innerHTML = isAdded
+      ? cartCheckIconSvg
+      : button.dataset.defaultCartIcon;
+  };
+
+  cartButtons.forEach((button) => {
+    syncCartButtonState(button, button.classList.contains("is-added"));
 
     button.addEventListener("click", () => {
-      const nextIsAdded = button.classList.toggle("is-added");
-      button.setAttribute("aria-pressed", nextIsAdded ? "true" : "false");
-      button.setAttribute("aria-label", nextIsAdded ? "Added to cart" : "Add to cart");
+      syncCartButtonState(button, !button.classList.contains("is-added"));
     });
   });
 };
@@ -1415,10 +1431,10 @@ const initCatalogRangeSliders = () => {
 
   containers.forEach((container) => {
     const minInput = container.querySelector(
-      ".im-catalog-sidebar__range-input--min"
+      ".im-catalog-sidebar__range-input--min",
     );
     const maxInput = container.querySelector(
-      ".im-catalog-sidebar__range-input--max"
+      ".im-catalog-sidebar__range-input--max",
     );
     const fill = container.querySelector(".im-catalog-sidebar__range-fill");
     const minLabel = container.querySelector("[data-range-min-label]");
@@ -1458,9 +1474,7 @@ initCatalogRangeSliders();
 
 /* ── Catalog sidebar: "Показать все" expand buttons ── */
 const initShowAllButtons = () => {
-  const buttons = document.querySelectorAll(
-    ".im-catalog-sidebar__show-all"
-  );
+  const buttons = document.querySelectorAll(".im-catalog-sidebar__show-all");
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const group = btn.closest(".im-catalog-sidebar__group");
