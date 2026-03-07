@@ -769,6 +769,14 @@ const initDecisionsSliders = () => {
           perView: 2.1,
           spacing: 12,
         },
+        breakpoints: {
+          "(max-width: 450px)": {
+            slides: {
+              perView: 1.5,
+              spacing: 12,
+            },
+          },
+        },
         loop: false,
         drag: true,
         rubberband: false,
