@@ -766,16 +766,8 @@ const initDecisionsSliders = () => {
 
       const instance = new KeenSlider(root, {
         slides: {
-          perView: 2.1,
-          spacing: 12,
-        },
-        breakpoints: {
-          "(max-width: 450px)": {
-            slides: {
-              perView: 1.5,
-              spacing: 12,
-            },
-          },
+          perView: 2.2,
+          spacing: 8,
         },
         loop: false,
         drag: true,
