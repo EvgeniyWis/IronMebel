@@ -6425,6 +6425,10 @@ body.im-user-logged-in {
     line-height: 120%;
     color: #111;
     margin-bottom: 24px;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__layout {
@@ -6471,6 +6475,10 @@ body.im-user-logged-in {
 
     &::placeholder {
       color: var(--neutral-500);
+    }
+
+    &--mobile {
+      display: none;
     }
   }
 
@@ -6544,7 +6552,7 @@ body.im-user-logged-in {
     font-family: var(--font-family);
     font-size: 14px;
     font-weight: 500;
-    color: #666;
+    color: var(--neutral-500);
   }
 
   &__delete-selected {
@@ -6569,6 +6577,10 @@ body.im-user-logged-in {
     border-radius: 12px;
     padding: 20px 32px;
     align-items: flex-start;
+  }
+
+  &__item--mobile {
+    display: none;
   }
 
   &__item-check {
@@ -6637,6 +6649,10 @@ body.im-user-logged-in {
   &__item-body {
     flex: 1;
     min-width: 0;
+  }
+
+  &__item-mobile-block {
+    width: 100%;
   }
 
   &__item-top {
@@ -6780,11 +6796,11 @@ body.im-user-logged-in {
     display: flex;
     align-items: center;
     overflow: hidden;
-border-radius: 8px;
-padding: 4px;
-width: 76px;
-height: 28px;
-background: #fff;
+    border-radius: 8px;
+    padding: 4px;
+    width: 76px;
+    height: 28px;
+    background: #fff;
   }
 
   &__quantity--sm {
@@ -6824,12 +6840,12 @@ background: #fff;
     text-align: center;
     border: none;
     outline: none;
-font-weight: 500;
-font-size: 14px;
-line-height: 114%;
-text-align: center;
-color: #111;
-background: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    text-align: center;
+    color: #111;
+    background: #fff;
     height: 100%;
   }
 
@@ -6890,6 +6906,10 @@ background: #fff;
     }
   }
 
+  &__extras-list--mobile {
+    display: none;
+  }
+
   &__item-body:has(
       .im-cart-page__extras-list:not(.im-cart-page__extras-list--hidden)
     )
@@ -6915,11 +6935,13 @@ background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-border-radius: 8px;
-width: 28px;
-height: 28px;
-box-shadow: 0 4px 4px -2px rgba(24, 39, 75, 0.08), 0 2px 4px -2px rgba(24, 39, 75, 0.12);
-background: #fff;
+    border-radius: 8px;
+    width: 28px;
+    height: 28px;
+    box-shadow:
+      0 4px 4px -2px rgba(24, 39, 75, 0.08),
+      0 2px 4px -2px rgba(24, 39, 75, 0.12);
+    background: #fff;
   }
 
   &__extras-card-image {
@@ -6976,10 +6998,10 @@ background: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
-border-radius: 8px;
-width: 36px;
-height: 36px;
-   background: #c80400;
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    background: #c80400;
     transition: background var(--transition-fast);
 
     &:hover {
