@@ -859,7 +859,7 @@
 
   .im-best-choice .im-container {
     padding: 18px 16px 14px;
-    border-radius: 18px;
+    border-radius: 8px;
     background: #ffffff;
   }
 
@@ -921,7 +921,6 @@
 
   .im-dealer {
     padding: 20px;
-    border-radius: 18px;
   }
 
   .im-dealer__title {
@@ -1435,10 +1434,14 @@
   .im-industries__card {
     border-radius: 8px;
     padding: 16px;
-    height: 80px;
-    gap: 16px;
+    height: 90px;
+    gap: 20px;
     box-shadow: 0 1px 2px 0 rgba(24, 39, 75, 0.04);
     background: #fff;
+  }
+
+  .im-industries__column {
+    gap: 8px;
   }
 
   .im-industries__icon svg {
@@ -2106,7 +2109,6 @@
     flex-direction: column;
     gap: 18px;
     padding: 24px 20px 28px;
-    border-radius: 16px;
   }
 
   .im-century__content {
