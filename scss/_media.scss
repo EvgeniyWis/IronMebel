@@ -849,7 +849,14 @@
 }
 
 @media (max-width: 600px) {
+  .im-decisions__title,
+  .im-goods__title,
+  .im-partners__title {
+    font-size: 20px;
+  }
+
   .im-best-choice {
+    background: transparent;
     padding: 24px 0 20px;
   }
 

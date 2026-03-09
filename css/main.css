@@ -2290,6 +2290,7 @@ body.im-user-logged-in .im-header__user {
 
 .im-desktop-catalog {
   position: static;
+  margin-left: 30px;
 }
 
 .im-header__catalog-icon--grid,
@@ -8624,7 +8625,13 @@ input:checked + .reg__toggle-track::after {
   }
 }
 @media (max-width: 600px) {
+  .im-decisions__title,
+  .im-goods__title,
+  .im-partners__title {
+    font-size: 20px;
+  }
   .im-best-choice {
+    background: transparent;
     padding: 24px 0 20px;
   }
   .im-best-choice__title {
