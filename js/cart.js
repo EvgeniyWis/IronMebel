@@ -125,7 +125,7 @@
           </div>
           <div class="im-cart-page__extras-card-body">
             <span class="im-cart-page__extras-card-name">Металлический стеллаж Ironme...</span>
-            <div class="im-cart-page__extras-card-bottom">
+            <div class="im-cart-page__extras-card-bottom im-cart-page__extras-card-bottom--recommend">
               <div class="im-cart-page__extras-card-prices">
                 <span class="im-cart-page__extras-card-price">48 900 ₽</span>
                 <span class="im-cart-page__extras-card-old-price">59 900 ₽</span>
@@ -138,17 +138,12 @@
         </div>
 
         <div class="im-cart-page__extras-card im-cart-page__extras-card--highlight">
-          <button class="im-cart-page__extras-card-grid" type="button" aria-label="Рекомендуем">
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M1.5 0C0.67155 0 0 0.671249 0 1.5V4.5C0 5.32875 0.67155 6 1.5 6H4.5C5.32875 6 6 5.32875 6 4.5V1.5C6 0.671249 5.32875 0 4.5 0H1.5ZM9 0C8.17125 0 7.5 0.671249 7.5 1.5V4.5C7.5 5.32875 8.17125 6 9 6H12C12.8287 6 13.5 5.32875 13.5 4.5V1.5C13.5 0.671249 12.8287 0 12 0H9ZM1.5 1.5H4.5V4.5H1.5V1.5ZM9 1.5H12V4.5H9V1.5ZM1.5 7.5C0.67155 7.5 0 8.17125 0 9V12C0 12.8287 0.67155 13.5 1.5 13.5H4.5C5.32875 13.5 6 12.8287 6 12V9C6 8.17125 5.32875 7.5 4.5 7.5H1.5ZM9 7.5C8.17125 7.5 7.5 8.17125 7.5 9V12C7.5 12.8287 8.17125 13.5 9 13.5H12C12.8287 13.5 13.5 12.8287 13.5 12V9C13.5 8.17125 12.8287 7.5 12 7.5H9ZM1.5 9H4.5V12H1.5V9ZM9 9H12V12H9V9Z" fill="#fff"/>
-            </svg>
-          </button>
           <div class="im-cart-page__extras-card-image">
             <img src="./images/catalogue/mock_catalogue_item_white_bg.png" alt="Металлический стеллаж Ironme..." />
           </div>
           <div class="im-cart-page__extras-card-body">
             <span class="im-cart-page__extras-card-name">Металлический стеллаж Ironme...</span>
-            <div class="im-cart-page__extras-card-bottom">
+            <div class="im-cart-page__extras-card-bottom im-cart-page__extras-card-bottom--recommend">
               <div class="im-cart-page__extras-card-prices">
                 <span class="im-cart-page__extras-card-price">48 900 ₽</span>
                 <span class="im-cart-page__extras-card-old-price">59 900 ₽</span>
@@ -166,24 +161,45 @@
     return container.firstElementChild;
   }
 
-  var itemStates = Array.from(document.querySelectorAll(".im-cart-page__item--desktop")).map(function (item) {
-    return {
-      desktop: item,
-      mobile: buildMobileItem(),
-      isMobileMounted: false,
-    };
+  var desktopItems = Array.from(
+    document.querySelectorAll(".im-cart-page__item--desktop"),
+  );
+  var mobileItems = desktopItems.map(function () {
+    return buildMobileItem();
   });
 
+  var mobileContainer = document.createElement("div");
+  mobileContainer.className = "im-cart-page__items-mobile";
+  mobileItems.forEach(function (item) {
+    mobileContainer.appendChild(item);
+  });
+
+  var isMobileMounted = false;
+
   function setCartView(isMobile) {
-    itemStates.forEach(function (state) {
-      if (isMobile && !state.isMobileMounted && state.desktop.parentNode) {
-        state.desktop.replaceWith(state.mobile);
-        state.isMobileMounted = true;
-      } else if (!isMobile && state.isMobileMounted && state.mobile.parentNode) {
-        state.mobile.replaceWith(state.desktop);
-        state.isMobileMounted = false;
-      }
-    });
+    if (
+      isMobile &&
+      !isMobileMounted &&
+      desktopItems[0] &&
+      desktopItems[0].parentNode
+    ) {
+      var parent = desktopItems[0].parentNode;
+      parent.insertBefore(mobileContainer, desktopItems[0]);
+      desktopItems.forEach(function (item) {
+        if (item.parentNode) {
+          item.parentNode.removeChild(item);
+        }
+      });
+      isMobileMounted = true;
+    } else if (!isMobile && isMobileMounted && mobileContainer.parentNode) {
+      var parent = mobileContainer.parentNode;
+      var ref = mobileContainer.nextSibling;
+      parent.removeChild(mobileContainer);
+      desktopItems.forEach(function (item) {
+        parent.insertBefore(item, ref);
+      });
+      isMobileMounted = false;
+    }
   }
 
   function syncCartView() {
