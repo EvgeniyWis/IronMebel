@@ -1183,6 +1183,7 @@ initGoodsFavorites();
 const initGoodsCartButtons = () => {
   const cartButtons = document.querySelectorAll(".im-goods__cart");
   if (!cartButtons.length) return;
+  const cartPageUrl = "./cart.html";
 
   const cartCheckIconSvg =
     '<svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11.2423 0C11.0503 0 10.85 0.0630007 10.7038 0.207001L4.17352 6.65249C3.98077 6.84224 3.78727 6.80701 3.63577 6.58351L1.38877 3.2685C1.15926 2.93025 0.679265 2.83575 0.335014 3.0615C-0.00848637 3.28725 -0.104486 3.75901 0.125015 4.09726L2.37127 7.41224C3.04777 8.40899 4.36552 8.53575 5.22727 7.68825L11.7808 1.26599C12.0725 0.977991 12.0725 0.495 11.7808 0.207001C11.6345 0.0630007 11.4335 0 11.2423 0Z" fill="#C80400" /></svg>';
@@ -1211,6 +1212,7 @@ const initGoodsCartButtons = () => {
 
     button.addEventListener("click", () => {
       syncCartButtonState(button, !button.classList.contains("is-added"));
+      window.location.href = cartPageUrl;
     });
   });
 };

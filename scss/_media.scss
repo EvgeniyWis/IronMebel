@@ -336,7 +336,7 @@
   }
 
   .im-goods__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
   .im-catalog-page__layout {
@@ -569,7 +569,7 @@
   }
 
   .im-goods__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
   .im-partners__list {
@@ -701,7 +701,7 @@
   }
 
   .im-goods__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
   .im-goods__help-title {
@@ -1528,7 +1528,7 @@
   }
 
   .im-goods__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px;
   }
 
@@ -2933,6 +2933,15 @@
     background-position: center;
   }
 
+    .im-cta__select-btn {
+    font-size: 16px;
+  }
+
+  
+  .im-cta__select-label {
+    font-size: 12px;
+  }
+  
   .auth__card {
     width: min(100% - 40px, 398px);
     min-height: 362px;
@@ -3022,7 +3031,7 @@
     margin-top: 16px;
   }
 
-  .auth__submit {
+  .confirm--register .auth__submit {
     margin-top: 16px;
   }
 
@@ -3068,12 +3077,14 @@
   .auth__overlay--confirm .confirm {
     position: relative;
     z-index: 1;
-border-radius: 8px;
-padding: 24px 24px 32px;
-width: 366px;
-height: 334px;
-box-shadow: 0 8px 24px -4px rgba(24, 39, 75, 0.08), 0 6px 12px -6px rgba(24, 39, 75, 0.12);
-background: #fff;
+    border-radius: 8px;
+    padding: 24px 24px 32px;
+    width: 366px;
+    height: 334px;
+    box-shadow:
+      0 8px 24px -4px rgba(24, 39, 75, 0.08),
+      0 6px 12px -6px rgba(24, 39, 75, 0.12);
+    background: #fff;
     border-radius: 8px;
     gap: 0;
   }
@@ -3089,27 +3100,27 @@ background: #fff;
   }
 
   .auth__overlay--confirm .confirm__title {
-font-weight: 700;
-font-size: 20px;
-line-height: 140%;
-text-align: center;
-color: #111;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: center;
+    color: #111;
   }
 
   .auth__overlay--confirm .confirm__text {
-font-weight: 400;
-font-size: 16px;
-line-height: 150%;
-text-align: center;
-color: #666;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #666;
   }
 
   .auth__overlay--confirm .confirm__phone {
-font-weight: 700;
-font-size: 16px;
-line-height: 150%;
-text-align: center;
-color: #111;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #111;
   }
 
   .auth__overlay--confirm .confirm__code {
@@ -3118,20 +3129,20 @@ color: #111;
   }
 
   .auth__overlay--confirm .confirm__code-input {
-width: 70px;
-height: 74px;
+    width: 70px;
+    height: 74px;
     padding: 0;
-border-radius: 8px;
+    border-radius: 8px;
     font-size: 24px;
     line-height: 1;
   }
 
   .auth__overlay--confirm .confirm__resend {
-font-weight: 500;
-font-size: 14px;
-line-height: 114%;
-color: #666;
-margin-top: 32px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 114%;
+    color: #666;
+    margin-top: 32px;
   }
 }
 

@@ -52,8 +52,8 @@
       console.warn("layout-include: footer.im-footer не найден в index.html");
     }
 
-    // Переносим все элементы, которые идут после футера (нижняя навигация, модалки и т.д.)
-    // до первых <script> в конце body.
+    // Переносим все элементы, которые идут после футера (нижняя навигация и т.д.)
+    // до конца родительского контейнера.
     if (indexFooter && footerInserted) {
       let insertAfter = footerInserted;
       let next = indexFooter.nextElementSibling;
@@ -62,6 +62,19 @@
         const cloned = next.cloneNode(true);
         insertAfter.insertAdjacentElement("afterend", cloned);
         insertAfter = cloned;
+        next = next.nextElementSibling;
+      }
+    }
+
+    // Переносим модалки и другие элементы, лежащие после .page в <body>
+    // (im-catalog-modal, im-city-modal и т.д.)
+    const pageWrapper = doc.querySelector(".page");
+    if (pageWrapper) {
+      let next = pageWrapper.nextElementSibling;
+      while (next) {
+        if (next.tagName && next.tagName.toLowerCase() === "script") break;
+        const cloned = next.cloneNode(true);
+        document.body.appendChild(cloned);
         next = next.nextElementSibling;
       }
     }

@@ -554,6 +554,16 @@ h6 {
     display: block;
   }
 }
+.im-goods__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.im-catalog-page .im-goods__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .im-header__city {
   display: inline-flex;
   align-items: center;
@@ -5001,8 +5011,6 @@ input:checked ~ .im-catalog-sidebar__radio-mark::after {
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  align-items: center;
-  text-align: center;
 }
 
 .im-industries__card-title {
@@ -5088,12 +5096,6 @@ input:checked ~ .im-catalog-sidebar__radio-mark::after {
 }
 .im-goods__all-arrow svg path {
   transition: fill var(--transition-fast);
-}
-
-.im-goods__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
 }
 
 .im-goods__card {
@@ -6548,23 +6550,6 @@ input:checked ~ .im-catalog-sidebar__radio-mark::after {
   flex-shrink: 0;
   width: 368px;
   height: 386px;
-}
-.im-cta__logo::before {
-  content: "";
-  position: absolute;
-  inset: -40px;
-  background: radial-gradient(circle, rgba(200, 4, 0, 0.15) 0%, rgba(200, 4, 0, 0.05) 30%, transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.im-cta__logo::after {
-  content: "";
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 255, 255, 0.03) 10deg, transparent 20deg, transparent 30deg, rgba(255, 255, 255, 0.03) 40deg, transparent 50deg, transparent 60deg, rgba(255, 255, 255, 0.03) 70deg, transparent 80deg, transparent 90deg, rgba(255, 255, 255, 0.03) 100deg, transparent 110deg, transparent 120deg, rgba(255, 255, 255, 0.03) 130deg, transparent 140deg, transparent 150deg, rgba(255, 255, 255, 0.03) 160deg, transparent 170deg, transparent 180deg, rgba(255, 255, 255, 0.03) 190deg, transparent 200deg, transparent 210deg, rgba(255, 255, 255, 0.03) 220deg, transparent 230deg, transparent 240deg, rgba(255, 255, 255, 0.03) 250deg, transparent 260deg, transparent 270deg, rgba(255, 255, 255, 0.03) 280deg, transparent 290deg, transparent 300deg, rgba(255, 255, 255, 0.03) 310deg, transparent 320deg, transparent 330deg, rgba(255, 255, 255, 0.03) 340deg, transparent 350deg, transparent 360deg);
-  border-radius: 50%;
-  pointer-events: none;
 }
 .im-cta__logo img {
   position: relative;
@@ -8224,7 +8209,7 @@ input:checked + .reg__toggle-track::after {
     align-self: center;
   }
   .im-goods__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
   .im-catalog-page__layout {
     grid-template-columns: 200px minmax(0, 1fr);
@@ -8406,7 +8391,7 @@ input:checked + .reg__toggle-track::after {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
   .im-goods__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
   .im-partners__list {
     gap: 0;
@@ -8510,7 +8495,7 @@ input:checked + .reg__toggle-track::after {
     font-size: 24px;
   }
   .im-goods__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
   .im-goods__help-title {
     font-size: 36px;
@@ -9187,7 +9172,7 @@ input:checked + .reg__toggle-track::after {
     fill: #ffffff;
   }
   .im-goods__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     gap: 8px;
   }
   .im-goods__help-card {
@@ -10321,6 +10306,12 @@ input:checked + .reg__toggle-track::after {
   .auth__bg {
     background-position: center;
   }
+  .im-cta__select-btn {
+    font-size: 16px;
+  }
+  .im-cta__select-label {
+    font-size: 12px;
+  }
   .auth__card {
     width: min(100% - 40px, 398px);
     min-height: 362px;
@@ -10393,7 +10384,7 @@ input:checked + .reg__toggle-track::after {
   .reg__toggle-row {
     margin-top: 16px;
   }
-  .auth__submit {
+  .confirm--register .auth__submit {
     margin-top: 16px;
   }
   .auth__overlay--register .auth__input {

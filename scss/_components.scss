@@ -1,5 +1,15 @@
 ﻿@use "animations" as *;
 
+.im-goods__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.im-catalog-page .im-goods__grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 .im-header__city {
   display: inline-flex;
   align-items: center;
@@ -4564,8 +4574,6 @@ body.im-user-logged-in {
   flex-direction: column;
   justify-content: center;
   gap: 4px;
-  align-items: center;
-  text-align: center;
 }
 
 .im-industries__card-title {
@@ -4652,12 +4660,6 @@ body.im-user-logged-in {
   svg path {
     transition: fill var(--transition-fast);
   }
-}
-
-.im-goods__grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
 }
 
 .im-goods__card {
@@ -6131,69 +6133,6 @@ body.im-user-logged-in {
   flex-shrink: 0;
   width: 368px;
   height: 386px;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -40px;
-    background: radial-gradient(
-      circle,
-      rgba(200, 4, 0, 0.15) 0%,
-      rgba(200, 4, 0, 0.05) 30%,
-      transparent 70%
-    );
-    border-radius: 50%;
-    pointer-events: none;
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    width: 360px;
-    height: 360px;
-    background: conic-gradient(
-      from 0deg,
-      transparent 0deg,
-      rgba(255, 255, 255, 0.03) 10deg,
-      transparent 20deg,
-      transparent 30deg,
-      rgba(255, 255, 255, 0.03) 40deg,
-      transparent 50deg,
-      transparent 60deg,
-      rgba(255, 255, 255, 0.03) 70deg,
-      transparent 80deg,
-      transparent 90deg,
-      rgba(255, 255, 255, 0.03) 100deg,
-      transparent 110deg,
-      transparent 120deg,
-      rgba(255, 255, 255, 0.03) 130deg,
-      transparent 140deg,
-      transparent 150deg,
-      rgba(255, 255, 255, 0.03) 160deg,
-      transparent 170deg,
-      transparent 180deg,
-      rgba(255, 255, 255, 0.03) 190deg,
-      transparent 200deg,
-      transparent 210deg,
-      rgba(255, 255, 255, 0.03) 220deg,
-      transparent 230deg,
-      transparent 240deg,
-      rgba(255, 255, 255, 0.03) 250deg,
-      transparent 260deg,
-      transparent 270deg,
-      rgba(255, 255, 255, 0.03) 280deg,
-      transparent 290deg,
-      transparent 300deg,
-      rgba(255, 255, 255, 0.03) 310deg,
-      transparent 320deg,
-      transparent 330deg,
-      rgba(255, 255, 255, 0.03) 340deg,
-      transparent 350deg,
-      transparent 360deg
-    );
-    border-radius: 50%;
-    pointer-events: none;
-  }
 
   img {
     position: relative;
