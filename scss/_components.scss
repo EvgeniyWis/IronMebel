@@ -562,6 +562,7 @@
 }
 
 .im-header__login {
+  display: inline-block;
   border-radius: 8px;
   padding: 10px 12px;
   border: none;
@@ -571,6 +572,7 @@
   font-weight: 600;
   font-size: 14px;
   cursor: pointer;
+  text-decoration: none;
   @include interactive-transition;
 
   &:hover {
@@ -587,6 +589,17 @@
   &:focus-visible {
     outline: 2px solid #111;
     outline-offset: 2px;
+  }
+}
+
+.im-header__login--reg {
+  background-color: transparent;
+  color: #111111;
+  border: 1px solid var(--neutral-300);
+
+  &:hover {
+    background-color: var(--neutral-200);
+    box-shadow: none;
   }
 }
 

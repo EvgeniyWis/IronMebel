@@ -1,3 +1,45 @@
+const AUTH_STORAGE_KEY = "imAuthState";
+
+const initAuthUi = () => {
+  if (!document.body) return;
+
+  let isLoggedIn = false;
+
+  try {
+    isLoggedIn = JSON.parse(localStorage.getItem(AUTH_STORAGE_KEY) || "null")
+      ?.isLoggedIn === true;
+  } catch (error) {
+    isLoggedIn = false;
+  }
+
+  document.body.classList.toggle("im-user-logged-in", isLoggedIn);
+};
+
+initAuthUi();
+
+const authLogoutButtons = document.querySelectorAll(
+  "[data-auth-logout], .im-header__user-menu .im-header__top-dropdown-item:last-of-type",
+);
+
+const logout = () => {
+  try {
+    localStorage.removeItem(AUTH_STORAGE_KEY);
+  } catch (error) {
+    // Ignore storage failures and still update the UI.
+  }
+
+  initAuthUi();
+};
+
+if (authLogoutButtons.length) {
+  authLogoutButtons.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      logout();
+    });
+  });
+}
+
 const headerBurger = document.querySelector(".im-header__top-burger");
 const headerMenuOverlay = document.querySelector(".im-header__mobile-overlay");
 const headerMenuClose = document.querySelector(".im-header__mobile-close");

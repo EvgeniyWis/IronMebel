@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Авторизация — IronMebel</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body class="auth-page">
+    <main class="auth">
+      <div class="auth__bg"></div>
+
+      <div class="auth__card">
+        <div class="auth__header">
+          <button class="auth__back" type="button" aria-label="Назад" onclick="location.href='index.html'">
+<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14 6.30117C14 5.65717 13.4785 5.13568 12.8345 5.13568C12.2768 5.13568 5.75868 5.13568 4.02035 5.13568L7.48065 1.63917L5.84149 0L0.341832 5.4635C0.113166 5.691 0 5.99668 0 6.30234C0 6.60684 0.114332 6.91134 0.341832 7.13884L5.84149 12.6023L7.48065 10.9632L4.02035 7.46668C5.75868 7.46668 12.2768 7.46668 12.8345 7.46668C13.4785 7.46668 14 6.94517 14 6.30117Z" fill="#666666" />
+</svg>
+          </button>
+          <h1 class="auth__title">Авторизация</h1>
+        </div>
+
+        <form class="auth__form" id="authForm">
+          <div class="auth__field">
+            <input
+              class="auth__input"
+              type="text"
+              name="login"
+              placeholder="Почта или телефон"
+              autocomplete="username"
+            />
+            <span class="auth__error" id="authError"></span>
+          </div>
+          <button class="auth__submit" type="submit">Продолжить</button>
+        </form>
+
+        <span class="auth__divider">или войдите через</span>
+
+        <a class="auth__vk" href="#">
+          <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.51046 9.75C3.17187 9.75 0.126877 6.09009 0 0H2.67417C2.76201 4.46997 4.73343 6.36336 6.295 6.75375V0H8.81311V3.8551C10.3552 3.68919 11.9751 1.93243 12.5216 0H15.0397C14.62 2.38138 12.8633 4.13814 11.614 4.86036C12.8633 5.44595 14.8641 6.97823 15.6254 9.75H12.8535C12.2582 7.89565 10.7748 6.46096 8.81311 6.26577V9.75H8.51046Z" fill="#2F6BFF" />
+          </svg>
+          VK ID
+        </a>
+      </div>
+    </main>
+
+    <div class="auth__overlay auth__overlay--register" id="registerOverlay">
+      <div class="confirm confirm--register">
+        <div class="auth__header">
+          <button class="auth__back" type="button" aria-label="Назад" id="registerBack">
+<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14 6.30117C14 5.65717 13.4785 5.13568 12.8345 5.13568C12.2768 5.13568 5.75868 5.13568 4.02035 5.13568L7.48065 1.63917L5.84149 0L0.341832 5.4635C0.113166 5.691 0 5.99668 0 6.30234C0 6.60684 0.114332 6.91134 0.341832 7.13884L5.84149 12.6023L7.48065 10.9632L4.02035 7.46668C5.75868 7.46668 12.2768 7.46668 12.8345 7.46668C13.4785 7.46668 14 6.94517 14 6.30117Z" fill="#666666" />
+</svg>
+          </button>
+          <h2 class="confirm__title">Регистрация</h2>
+        </div>
+
+        <form class="auth__form" id="registerForm">
+          <div class="auth__field">
+            <input
+              class="auth__input"
+              type="text"
+              name="name"
+              placeholder="Имя"
+              autocomplete="given-name"
+            />
+            <span class="auth__error" data-error="name"></span>
+          </div>
+
+          <div class="auth__field auth__field--method" data-method-field="phone">
+            <div class="auth__input-wrap auth__input-wrap--float auth__input-wrap--static">
+              <input
+                class="auth__input"
+                type="tel"
+                name="phone"
+                placeholder="+7 (___) ___-__-__"
+                autocomplete="tel"
+              />
+              <span class="auth__input-label">Телефон</span>
+              <span class="auth__input-icon auth__input-icon--valid" id="phoneValid">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9.01074 1.49902C4.86849 1.49902 1.51074 4.85677 1.51074 8.99901C1.51074 13.1413 4.86849 16.499 9.01074 16.499C13.153 16.499 16.5107 13.1413 16.5107 8.99901C16.5107 4.85677 13.153 1.49902 9.01074 1.49902ZM12.0107 6.74902C12.2027 6.74902 12.403 6.81352 12.55 6.95977C12.8425 7.25302 12.8425 7.74501 12.55 8.03826L9.73749 10.8275C8.87424 11.69 7.555 11.561 6.87775 10.5455L6.12775 9.42052C5.89825 9.07627 5.99423 8.59627 6.33923 8.36602C6.68348 8.13652 7.16349 8.2325 7.39374 8.5775L8.14374 9.7025C8.29524 9.92975 8.4895 9.96577 8.68225 9.77227L11.4715 6.95977C11.6185 6.81352 11.8187 6.74902 12.0107 6.74902Z" fill="#1E9E5A" />
+</svg>
+              </span>
+            </div>
+            <span class="auth__error" data-error="phone"></span>
+          </div>
+
+          <div class="auth__field auth__field--method" data-method-field="email">
+            <div class="auth__input-wrap auth__input-wrap--float auth__input-wrap--static">
+              <input
+                class="auth__input"
+                type="email"
+                name="email"
+                placeholder="example@mail.ru"
+                autocomplete="email"
+              />
+              <span class="auth__input-label">Почта</span>
+              <span class="auth__input-icon auth__input-icon--valid" id="emailValid">
+<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M9.01074 1.49902C4.86849 1.49902 1.51074 4.85677 1.51074 8.99901C1.51074 13.1413 4.86849 16.499 9.01074 16.499C13.153 16.499 16.5107 13.1413 16.5107 8.99901C16.5107 4.85677 13.153 1.49902 9.01074 1.49902ZM12.0107 6.74902C12.2027 6.74902 12.403 6.81352 12.55 6.95977C12.8425 7.25302 12.8425 7.74501 12.55 8.03826L9.73749 10.8275C8.87424 11.69 7.555 11.561 6.87775 10.5455L6.12775 9.42052C5.89825 9.07627 5.99423 8.59627 6.33923 8.36602C6.68348 8.13652 7.16349 8.2325 7.39374 8.5775L8.14374 9.7025C8.29524 9.92975 8.4895 9.96577 8.68225 9.77227L11.4715 6.95977C11.6185 6.81352 11.8187 6.74902 12.0107 6.74902Z" fill="#1E9E5A" />
+</svg>
+              </span>
+            </div>
+            <span class="auth__error" data-error="email"></span>
+          </div>
+
+          <div class="reg__toggle-row">
+            <label class="reg__toggle">
+              <input type="checkbox" name="is_company" id="isCompany" />
+              <span class="reg__toggle-track"></span>
+            </label>
+            <span class="reg__toggle-label">Я представитель юрлица или ИП</span>
+          </div>
+
+          <div class="auth__field reg__inn-field" id="innField" aria-hidden="true">
+            <input
+              class="auth__input"
+              type="text"
+              name="inn"
+              placeholder="ИНН организации или ИП"
+              inputmode="numeric"
+            />
+            <span class="auth__error" data-error="inn"></span>
+          </div>
+
+          <label class="reg__check">
+            <input type="checkbox" name="newsletter" checked />
+            <span class="reg__check-text">Подписаться на E-mail рассылку новостей</span>
+          </label>
+
+          <label class="reg__check">
+            <input type="checkbox" name="agreement" checked />
+            <span class="reg__check-text">Я прочитал и согласен с <a href="#" class="reg__check-link">Условиями соглашения</a></span>
+          </label>
+
+          <button class="auth__submit" type="submit">Зарегистрироваться</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="auth__overlay auth__overlay--confirm" id="confirmOverlay">
+      <div class="confirm">
+        <div class="auth__header">
+          <button class="auth__back" type="button" aria-label="Назад" id="confirmBack">
+<svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14 6.30117C14 5.65717 13.4785 5.13568 12.8345 5.13568C12.2768 5.13568 5.75868 5.13568 4.02035 5.13568L7.48065 1.63917L5.84149 0L0.341832 5.4635C0.113166 5.691 0 5.99668 0 6.30234C0 6.60684 0.114332 6.91134 0.341832 7.13884L5.84149 12.6023L7.48065 10.9632L4.02035 7.46668C5.75868 7.46668 12.2768 7.46668 12.8345 7.46668C13.4785 7.46668 14 6.94517 14 6.30117Z" fill="#666666" />
+</svg>
+          </button>
+          <h2 class="confirm__title">Подтверждение</h2>
+        </div>
+
+        <p class="confirm__text" id="confirmText">
+          Введите код из СМС,<br />которое мы отправили на номер
+          <span class="confirm__phone" id="confirmPhone"></span>
+        </p>
+
+        <div class="confirm__code">
+          <input class="confirm__code-input" type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" />
+          <input class="confirm__code-input" type="text" inputmode="numeric" maxlength="1" />
+          <input class="confirm__code-input" type="text" inputmode="numeric" maxlength="1" />
+          <input class="confirm__code-input" type="text" inputmode="numeric" maxlength="1" />
+        </div>
+
+        <div class="confirm__resend">
+          <span id="resendTimer">Отправить новый код (<span id="resendCount">60</span> сек)</span>
+          <button class="confirm__resend-btn" id="resendBtn" type="button">Отправить новый код</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="auth__footer">
+      <a class="auth__partner-link" href="#">
+<svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M6.75 0C5.09325 0 3.75 1.34325 3.75 3H3C1.44 3 0.191259 4.197 0.0465088 5.71875C0.426009 5.8485 5.508 7.54726 5.508 7.54651C6.58425 7.90576 8.41575 7.90576 9.492 7.54651C9.492 7.54651 13.3785 6.249 14.9767 5.71875C14.838 4.191 13.5638 3 12 3H11.25C11.25 1.34325 9.90675 0 8.25 0H6.75ZM6.75 1.5H8.25C9.07875 1.5 9.75 2.17125 9.75 3H5.25C5.25 2.17125 5.92125 1.5 6.75 1.5ZM0 7.28925V10.5C0 12.1568 1.34325 13.5 3 13.5H12C13.6568 13.5 15 12.1568 15 10.5V7.28925L9.96075 8.97675C8.577 9.438 6.423 9.438 5.03925 8.97675L0 7.28925Z" fill="#666666" />
+</svg>
+        Вход для партнёров
+      </a>
+    </footer>
+    <script>
+      (() => {
+        const AUTH_STORAGE_KEY = 'imAuthState';
+        const authForm = document.getElementById('authForm');
+        const registerForm = document.getElementById('registerForm');
+        const registerOverlay = document.getElementById('registerOverlay');
+        const registerBack = document.getElementById('registerBack');
+        const confirmOverlay = document.getElementById('confirmOverlay');
+        const confirmBack = document.getElementById('confirmBack');
+        const confirmText = document.getElementById('confirmText');
+        const confirmPhone = document.getElementById('confirmPhone');
+        const codeInputs = document.querySelectorAll('.confirm__code-input');
+        const resendTimer = document.getElementById('resendTimer');
+        const resendCount = document.getElementById('resendCount');
+        const resendBtn = document.getElementById('resendBtn');
+        const authError = document.getElementById('authError');
+        const authLoginInput = authForm.querySelector('input[name="login"]');
+        const registerPhoneInput = registerForm.querySelector('input[name="phone"]');
+        const registerEmailInput = registerForm.querySelector('input[name="email"]');
+        const phoneValid = document.getElementById('phoneValid');
+        const emailValid = document.getElementById('emailValid');
+        const methodFields = registerForm.querySelectorAll('[data-method-field]');
+        const isCompany = document.getElementById('isCompany');
+        const innField = document.getElementById('innField');
+
+        let timer = null;
+        let currentFlow = null;
+        let authPayload = null;
+        let registerPreferredMethod = null;
+
+        function isEmail(value) {
+          return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+        }
+
+        function getPhoneDigits(value) {
+          const digits = value.replace(/\D/g, '');
+
+          if (digits.length === 11 && digits[0] === '8') {
+            return '7' + digits.slice(1);
+          }
+
+          if (digits.length === 10) {
+            return '7' + digits;
+          }
+
+          return digits;
+        }
+
+        function isPhone(value) {
+          const digits = getPhoneDigits(value);
+          return digits.length === 11 && digits[0] === '7';
+        }
+
+        function formatPhone(raw) {
+          const digits = getPhoneDigits(raw);
+          if (digits.length === 11) {
+            return `+7 (${digits.slice(1,4)}) ${digits.slice(4,7)}-${digits.slice(7,9)}-${digits.slice(9)}`;
+          }
+          return raw;
+        }
+
+        function getLoginPayload(value) {
+          const trimmed = value.trim();
+
+          if (isEmail(trimmed)) {
+            return {
+              type: 'email',
+              value: trimmed,
+              normalized: trimmed.toLowerCase(),
+            };
+          }
+
+          return {
+            type: 'phone',
+            value: trimmed,
+            normalized: getPhoneDigits(trimmed),
+          };
+        }
+
+        function isExistingAccount(payload) {
+          if (payload.type === 'email') {
+            return payload.normalized === 'admin@gmail.com';
+          }
+
+          return payload.normalized.startsWith('7909');
+        }
+
+        function saveLoggedInState(payload) {
+          localStorage.setItem(AUTH_STORAGE_KEY, JSON.stringify({
+            isLoggedIn: true,
+            method: payload.type,
+            value: payload.value,
+          }));
+        }
+
+        function showAuthError(message) {
+          authError.textContent = message;
+          authLoginInput.classList.add('auth__input--error');
+        }
+
+        function clearAuthError() {
+          authError.textContent = '';
+          authLoginInput.classList.remove('auth__input--error');
+        }
+
+        function clearRegisterErrors() {
+          registerForm.querySelectorAll('.auth__error').forEach((item) => {
+            item.textContent = '';
+          });
+          registerForm.querySelectorAll('.auth__input').forEach((item) => {
+            item.classList.remove('auth__input--error');
+          });
+        }
+
+        function showRegisterError(name, message) {
+          const error = registerForm.querySelector(`[data-error="${name}"]`);
+          const input = registerForm.querySelector(`input[name="${name}"]`);
+          if (error) error.textContent = message;
+          if (input) input.classList.add('auth__input--error');
+        }
+
+        function setPreferredMethod(method) {
+          registerPreferredMethod = method;
+
+          methodFields.forEach((field) => {
+            field.classList.toggle('auth__field--selected', field.dataset.methodField === method);
+          });
+
+          phoneValid.classList.toggle('is-visible', method === 'phone' && isPhone(registerPhoneInput.value));
+          emailValid.classList.toggle('is-visible', method === 'email' && isEmail(registerEmailInput.value));
+        }
+
+        function syncInnField() {
+          const isOpen = isCompany.checked;
+          innField.classList.toggle('is-open', isOpen);
+          innField.setAttribute('aria-hidden', String(!isOpen));
+          const innInput = innField.querySelector('input[name="inn"]');
+          if (innInput) innInput.disabled = !isOpen;
+        }
+
+        function openRegisterOverlay(payload) {
+          authPayload = payload;
+          registerForm.reset();
+          clearRegisterErrors();
+          isCompany.checked = false;
+          syncInnField();
+
+          registerPhoneInput.value = payload.type === 'phone' ? payload.value : '';
+          registerEmailInput.value = payload.type === 'email' ? payload.value : '';
+          if (payload.type === 'phone') {
+            registerPhoneInput.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+          if (payload.type === 'email') {
+            registerEmailInput.dispatchEvent(new Event('input', { bubbles: true }));
+          }
+
+          setPreferredMethod(payload.type);
+          registerOverlay.classList.add('is-open');
+        }
+
+        function closeRegisterOverlay() {
+          registerOverlay.classList.remove('is-open');
+        }
+
+        function startCountdown() {
+          let seconds = 60;
+          clearInterval(timer);
+          resendCount.textContent = seconds;
+          resendTimer.style.display = '';
+          resendBtn.style.display = 'none';
+
+          timer = setInterval(() => {
+            seconds -= 1;
+            resendCount.textContent = seconds;
+            if (seconds <= 0) {
+              clearInterval(timer);
+              resendTimer.style.display = 'none';
+              resendBtn.style.display = 'inline';
+            }
+          }, 1000);
+        }
+
+        function openConfirm(payload, flow) {
+          currentFlow = flow;
+          codeInputs.forEach((input) => {
+            input.value = '';
+          });
+
+          if (payload.type === 'email') {
+            confirmPhone.textContent = payload.value;
+            confirmText.innerHTML = 'Введите код из письма,<br />которое мы отправили на почту <span class="confirm__phone">' + payload.value + '</span>';
+          } else {
+            const formattedPhone = formatPhone(payload.value);
+            confirmPhone.textContent = formattedPhone;
+            confirmText.innerHTML = 'Введите код из СМС,<br />которое мы отправили на номер <span class="confirm__phone">' + formattedPhone + '</span>';
+          }
+
+          confirmOverlay.classList.add('is-open');
+          codeInputs[0].focus();
+          startCountdown();
+        }
+
+        function closeConfirm() {
+          confirmOverlay.classList.remove('is-open');
+          clearInterval(timer);
+        }
+
+        function handleConfirmedCode() {
+          clearInterval(timer);
+
+          if (currentFlow === 'auth' && authPayload) {
+            closeConfirm();
+
+            if (isExistingAccount(authPayload)) {
+              saveLoggedInState(authPayload);
+              window.location.href = 'index.html';
+              return;
+            }
+
+            openRegisterOverlay(authPayload);
+            return;
+          }
+
+        }
+
+        authLoginInput.addEventListener('input', clearAuthError);
+
+        registerPhoneInput.addEventListener('input', () => {
+          let digits = registerPhoneInput.value.replace(/\D/g, '');
+          if (digits.length === 0) {
+            registerPhoneInput.value = '';
+            phoneValid.classList.remove('is-visible');
+            return;
+          }
+          if (digits[0] === '8') digits = '7' + digits.slice(1);
+          if (digits[0] !== '7') digits = '7' + digits;
+          let formatted = '+7';
+          if (digits.length > 1) formatted += ' (' + digits.slice(1, 4);
+          if (digits.length >= 4) formatted += ') ';
+          if (digits.length > 4) formatted += digits.slice(4, 7);
+          if (digits.length > 7) formatted += '-' + digits.slice(7, 9);
+          if (digits.length > 9) formatted += '-' + digits.slice(9, 11);
+          registerPhoneInput.value = formatted;
+          phoneValid.classList.toggle('is-visible', registerPreferredMethod === 'phone' && digits.length === 11);
+        });
+
+        registerEmailInput.addEventListener('input', () => {
+          emailValid.classList.toggle('is-visible', registerPreferredMethod === 'email' && isEmail(registerEmailInput.value));
+        });
+
+        registerForm.querySelectorAll('.auth__input').forEach((input) => {
+          input.addEventListener('input', () => {
+            input.classList.remove('auth__input--error');
+            const error = input.closest('.auth__field')?.querySelector('.auth__error');
+            if (error) error.textContent = '';
+          });
+        });
+
+        isCompany.addEventListener('change', syncInnField);
+        syncInnField();
+
+        authForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          const loginValue = authLoginInput.value.trim();
+
+          if (!loginValue) {
+            showAuthError('Введите почту или телефон');
+            return;
+          }
+
+          if (!isEmail(loginValue) && !isPhone(loginValue)) {
+            showAuthError('Введите корректную почту или номер телефона');
+            return;
+          }
+
+          clearAuthError();
+          authPayload = getLoginPayload(loginValue);
+          openConfirm(authPayload, 'auth');
+        });
+
+        registerForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          clearRegisterErrors();
+
+          const name = registerForm.querySelector('input[name="name"]').value.trim();
+          const phone = registerPhoneInput.value.trim();
+          const email = registerEmailInput.value.trim();
+          const agreement = registerForm.querySelector('input[name="agreement"]').checked;
+          const inn = registerForm.querySelector('input[name="inn"]').value.trim();
+          let valid = true;
+
+          if (!name) {
+            showRegisterError('name', 'Введите имя');
+            valid = false;
+          }
+          if (phone && !isPhone(phone)) {
+            showRegisterError('phone', 'Введите корректный номер телефона');
+            valid = false;
+          }
+          if (email && !isEmail(email)) {
+            showRegisterError('email', 'Введите корректную почту');
+            valid = false;
+          }
+          if (!phone && !email) {
+            showRegisterError(registerPreferredMethod === 'phone' ? 'phone' : 'email', 'Заполните телефон или почту');
+            valid = false;
+          }
+          if (!agreement) {
+            showRegisterError('agreement', 'Необходимо принять условия соглашения');
+            valid = false;
+          }
+          if (isCompany.checked && (!inn || inn.replace(/\D/g, '').length < 10)) {
+            showRegisterError('inn', 'Введите корректный ИНН');
+            valid = false;
+          }
+
+          if (!valid) return;
+
+          const registrationAuthPayload = authPayload
+            ? { ...authPayload }
+            : (registerPreferredMethod === 'email'
+              ? getLoginPayload(email)
+              : getLoginPayload(phone));
+
+          saveLoggedInState(registrationAuthPayload);
+          window.location.href = 'index.html';
+        });
+
+        registerBack.addEventListener('click', closeRegisterOverlay);
+        registerOverlay.addEventListener('click', (event) => {
+          if (event.target === registerOverlay) closeRegisterOverlay();
+        });
+
+        confirmBack.addEventListener('click', closeConfirm);
+        confirmOverlay.addEventListener('click', (event) => {
+          if (event.target === confirmOverlay) closeConfirm();
+        });
+
+        codeInputs.forEach((input, index) => {
+          input.addEventListener('input', () => {
+            input.value = input.value.replace(/\D/g, '').slice(0, 1);
+            if (input.value && index < codeInputs.length - 1) {
+              codeInputs[index + 1].focus();
+            }
+            if ([...codeInputs].every((item) => item.value.length === 1)) {
+              handleConfirmedCode();
+            }
+          });
+
+          input.addEventListener('keydown', (event) => {
+            if (event.key === 'Backspace' && !input.value && index > 0) {
+              codeInputs[index - 1].focus();
+            }
+          });
+
+          input.addEventListener('paste', (event) => {
+            event.preventDefault();
+            const pasted = (event.clipboardData || window.clipboardData).getData('text').replace(/\D/g, '');
+            codeInputs.forEach((field, fieldIndex) => {
+              field.value = pasted[fieldIndex] || '';
+            });
+            codeInputs[Math.min(pasted.length, codeInputs.length - 1)].focus();
+            if ([...codeInputs].every((item) => item.value.length === 1)) {
+              handleConfirmedCode();
+            }
+          });
+        });
+
+        resendBtn.addEventListener('click', startCountdown);
+      })();
+    </script>
+  </body>
+</html>
