@@ -1120,6 +1120,9 @@ const initGoodsCardSliders = () => {
     const pagination = container.querySelector(".im-goods__pagination");
     /** @type {HTMLButtonElement[]} */
     let dots = [];
+    let slideCount = 0;
+    let activeMouseIndex = -1;
+    const hoverMediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
 
     const slider = new KeenSlider(root, {
       slides: {
@@ -1130,9 +1133,9 @@ const initGoodsCardSliders = () => {
       drag: true,
       rubberband: false,
       created(s) {
+        slideCount = s.slides.length;
         if (!pagination) return;
 
-        const slideCount = s.slides.length;
         if (slideCount <= 1) return;
 
         pagination.innerHTML = "";
@@ -1159,6 +1162,37 @@ const initGoodsCardSliders = () => {
           dot.classList.toggle("is-active", index === current);
         });
       },
+    });
+
+    const updateSlideByPointer = (clientX) => {
+      if (!hoverMediaQuery.matches || slideCount <= 1) return;
+
+      const bounds = container.getBoundingClientRect();
+      const relativeX = Math.min(Math.max(clientX - bounds.left, 0), bounds.width);
+      const nextIndex = Math.min(
+        slideCount - 1,
+        Math.floor((relativeX / Math.max(bounds.width, 1)) * slideCount),
+      );
+
+      if (nextIndex === activeMouseIndex) return;
+      activeMouseIndex = nextIndex;
+      slider.moveToIdx(nextIndex);
+    };
+
+    container.addEventListener("mousemove", (event) => {
+      updateSlideByPointer(event.clientX);
+    });
+
+    container.addEventListener("mouseleave", () => {
+      if (!hoverMediaQuery.matches || slideCount <= 1) return;
+      activeMouseIndex = -1;
+      slider.moveToIdx(0);
+    });
+
+    hoverMediaQuery.addEventListener("change", (event) => {
+      if (event.matches || slideCount <= 1) return;
+      activeMouseIndex = -1;
+      slider.moveToIdx(0);
     });
   });
 };

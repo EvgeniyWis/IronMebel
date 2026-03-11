@@ -4877,6 +4877,9 @@ body.im-user-logged-in {
   background: #fff;
   border-radius: 12px 12px 0 0;
   min-height: 180px;
+  overflow: hidden;
+  cursor: ew-resize;
+  touch-action: pan-y;
 
   img {
     display: block;
@@ -4908,6 +4911,7 @@ body.im-user-logged-in {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  z-index: 2;
 }
 
 .im-goods__dot {
@@ -4921,6 +4925,12 @@ body.im-user-logged-in {
   opacity: 0.3;
   cursor: pointer;
   transition: opacity linear 0.3s;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .im-goods__image {
+    cursor: default;
+  }
 }
 
 .im-goods__dot.is-active {
@@ -5727,8 +5737,7 @@ body.im-user-logged-in {
 }
 
 .im-footer__link--underline {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
 }
 
 .im-footer__company-name {
