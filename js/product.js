@@ -1,4 +1,26 @@
 document.addEventListener("click", (event) => {
+  const thumbButton = event.target.closest(".im-product-page__thumb");
+
+  if (thumbButton) {
+    const gallery = thumbButton.closest(".im-product-page__gallery");
+    const mainImage = gallery?.querySelector(".im-product-page__gallery-image");
+    const nextSrc = thumbButton.dataset.fullSrc;
+
+    if (gallery && mainImage && nextSrc) {
+      gallery.querySelectorAll(".im-product-page__thumb").forEach((thumb) => {
+        const isActive = thumb === thumbButton;
+
+        thumb.classList.toggle("im-product-page__thumb--active", isActive);
+        thumb.setAttribute("aria-pressed", String(isActive));
+      });
+
+      mainImage.src = nextSrc;
+      mainImage.alt = thumbButton.dataset.fullAlt || mainImage.alt;
+    }
+
+    return;
+  }
+
   const button = event.target.closest(".im-product-page__counter-btn");
 
   if (!button) {
