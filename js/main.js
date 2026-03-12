@@ -1566,3 +1566,23 @@ const initShowAllButtons = () => {
 };
 
 initShowAllButtons();
+
+const initGoodsCardLinks = () => {
+  const productPageUrl = "./product.html";
+  const blockedSelector =
+    "a, button, input, select, textarea, label, [data-goods-slider], .keen-slider";
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    if (!(target instanceof HTMLElement)) return;
+    if (target.closest(blockedSelector)) return;
+
+    const card = target.closest(".im-goods__card");
+    if (!card) return;
+
+    window.location.href = productPageUrl;
+  });
+};
+
+initGoodsCardLinks();

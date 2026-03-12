@@ -75,6 +75,23 @@ document
   heroMain.insertBefore(link, title);
 })();
 
+(function initCatalogGoodsCardLinks() {
+  var productPageUrl = "./product.html";
+  var blockedSelector =
+    "a, button, input, select, textarea, label, [data-goods-slider], .keen-slider";
+
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+    if (target.closest(blockedSelector)) return;
+
+    var card = target.closest(".im-goods__card");
+    if (!card) return;
+
+    window.location.href = productPageUrl;
+  });
+})();
+
 (function initCatalogCardsSlider() {
   const grid = document.querySelector(".im-catalog-page__grid");
   if (!grid) return;
