@@ -764,6 +764,92 @@ function syncReviews(reviewsSection) {
   scheduleReviewMediaInit(reviewsSection);
 }
 
+function getProductStickyOffset() {
+  const stickyHeader = document.querySelector("[data-product-sticky-header]");
+
+  if (!(stickyHeader instanceof HTMLElement)) {
+    return 24;
+  }
+
+  return stickyHeader.classList.contains("is-visible")
+    ? stickyHeader.offsetHeight + 24
+    : 24;
+}
+
+function setActiveDetailsTabByHref(href) {
+  if (!href || !href.startsWith("#")) {
+    return;
+  }
+
+  document.querySelectorAll(".im-product-page__details-tab").forEach((tab) => {
+    const isActive = tab.getAttribute("href") === href;
+    tab.classList.toggle("im-product-page__details-tab--active", isActive);
+    tab.setAttribute("aria-current", isActive ? "true" : "false");
+  });
+}
+
+function scrollToProductSection(targetSection) {
+  if (!(targetSection instanceof HTMLElement)) {
+    return;
+  }
+
+  const top =
+    window.scrollY +
+    targetSection.getBoundingClientRect().top -
+    getProductStickyOffset();
+
+  window.scrollTo({
+    top: Math.max(0, top),
+    behavior: "smooth",
+  });
+}
+
+function initProductStickyHeader() {
+  const stickyHeader = document.querySelector("[data-product-sticky-header]");
+  const bundleSection = document.querySelector(".im-product-page__bundle");
+  const trackedSections = Array.from(
+    document.querySelectorAll(
+      "#product-characteristics, #product-set, #product-reviews, #product-cases, #product-analogs, #product-related",
+    ),
+  );
+
+  if (!(stickyHeader instanceof HTMLElement) || !(bundleSection instanceof HTMLElement)) {
+    return;
+  }
+
+  const syncStickyVisibility = () => {
+    const bundleTop = bundleSection.getBoundingClientRect().top;
+    const shouldShow = bundleTop <= 24;
+
+    stickyHeader.classList.toggle("is-visible", shouldShow);
+    stickyHeader.setAttribute("aria-hidden", shouldShow ? "false" : "true");
+  };
+
+  const syncActiveSection = () => {
+    const offset = getProductStickyOffset();
+    let activeSection = trackedSections[0];
+
+    trackedSections.forEach((section) => {
+      if (section.getBoundingClientRect().top - offset <= 24) {
+        activeSection = section;
+      }
+    });
+
+    if (activeSection?.id) {
+      setActiveDetailsTabByHref(`#${activeSection.id}`);
+    }
+  };
+
+  const syncStickyState = () => {
+    syncStickyVisibility();
+    syncActiveSection();
+  };
+
+  syncStickyState();
+  window.addEventListener("scroll", syncStickyState, { passive: true });
+  window.addEventListener("resize", syncStickyState);
+}
+
 document.addEventListener("change", (event) => {
   const filter = event.target.closest("[data-review-filter]");
 
@@ -860,16 +946,8 @@ document.addEventListener("click", (event) => {
 
       if (targetSection) {
         event.preventDefault();
-        targetSection.scrollIntoView({ behavior: "smooth" });
-
-        document
-          .querySelectorAll(".im-product-page__details-tab")
-          .forEach((tab) => {
-            tab.classList.toggle(
-              "im-product-page__details-tab--active",
-              tab === detailsTab,
-            );
-          });
+        scrollToProductSection(targetSection);
+        setActiveDetailsTabByHref(href);
       }
     }
 
@@ -1099,3 +1177,4 @@ scheduleGoodsCardInit();
 initCasesGalleries();
 scheduleProductGoodsInit();
 initFaqAccordions();
+initProductStickyHeader();
