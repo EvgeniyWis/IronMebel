@@ -353,7 +353,11 @@
 
                 <!-- Иконки-характеристики -->
                 <div class="im-product-page__icons-row">
-                  <div class="im-product-page__icon-item">
+                  <button
+                    class="im-product-page__icon-item im-product-page__icon-item--has-tooltip"
+                    type="button"
+                    aria-describedby="product-feature-tooltip-load"
+                  >
                     <div class="im-product-page__icon-item-icon">
                       <svg
                         width="15"
@@ -369,8 +373,24 @@
                       </svg>
                     </div>
                     <span>800 кг</span>
-                  </div>
-                  <div class="im-product-page__icon-item">
+                    <span
+                      class="im-product-page__icon-tooltip"
+                      id="product-feature-tooltip-load"
+                      role="tooltip"
+                    >
+                      <span class="im-product-page__icon-tooltip-title">
+                        Заголовок тултипа
+                      </span>
+                      <span class="im-product-page__icon-tooltip-text">
+                        Пояснение внутри тултипа, какое то описание
+                      </span>
+                    </span>
+                  </button>
+                  <button
+                    class="im-product-page__icon-item im-product-page__icon-item--has-tooltip"
+                    type="button"
+                    aria-describedby="product-feature-tooltip-step"
+                  >
                     <div class="im-product-page__icon-item-icon">
                       <svg
                         width="19"
@@ -390,8 +410,24 @@
                       </svg>
                     </div>
                     <span>50 мм</span>
-                  </div>
-                  <div class="im-product-page__icon-item">
+                    <span
+                      class="im-product-page__icon-tooltip"
+                      id="product-feature-tooltip-step"
+                      role="tooltip"
+                    >
+                      <span class="im-product-page__icon-tooltip-title">
+                        Заголовок тултипа
+                      </span>
+                      <span class="im-product-page__icon-tooltip-text">
+                        Пояснение внутри тултипа, какое то описание
+                      </span>
+                    </span>
+                  </button>
+                  <button
+                    class="im-product-page__icon-item im-product-page__icon-item--has-tooltip"
+                    type="button"
+                    aria-describedby="product-feature-tooltip-shelf"
+                  >
                     <div class="im-product-page__icon-item-icon">
                       <svg
                         width="20"
@@ -407,13 +443,41 @@
                       </svg>
                     </div>
                     <span>200 кг</span>
-                  </div>
-                  <div class="im-product-page__icon-item">
+                    <span
+                      class="im-product-page__icon-tooltip"
+                      id="product-feature-tooltip-shelf"
+                      role="tooltip"
+                    >
+                      <span class="im-product-page__icon-tooltip-title">
+                        Заголовок тултипа
+                      </span>
+                      <span class="im-product-page__icon-tooltip-text">
+                        Пояснение внутри тултипа, какое то описание
+                      </span>
+                    </span>
+                  </button>
+                  <button
+                    class="im-product-page__icon-item im-product-page__icon-item--has-tooltip"
+                    type="button"
+                    aria-describedby="product-feature-tooltip-warranty"
+                  >
                     <div class="im-product-page__icon-item-icon">
                       <span class="im-product-page__icon-item-number">2</span>
                     </div>
                     <span>года</span>
-                  </div>
+                    <span
+                      class="im-product-page__icon-tooltip"
+                      id="product-feature-tooltip-warranty"
+                      role="tooltip"
+                    >
+                      <span class="im-product-page__icon-tooltip-title">
+                        Заголовок тултипа
+                      </span>
+                      <span class="im-product-page__icon-tooltip-text">
+                        Пояснение внутри тултипа, какое то описание
+                      </span>
+                    </span>
+                  </button>
                 </div>
 
                 <p class="im-product-page__meta">

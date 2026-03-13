@@ -4146,12 +4146,15 @@ body.im-user-logged-in .im-header__user {
 }
 
 .im-product-page__icon-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 48px;
   height: 48px;
+  padding: 0;
+  border: 0;
   border-radius: 12px;
   background: var(--neutral-200);
   font-family: var(--font-family);
@@ -4160,9 +4163,19 @@ body.im-user-logged-in .im-header__user {
   line-height: 108%;
   color: var(--neutral-900);
   text-align: center;
+  cursor: default;
 }
 .im-product-page__icon-item span:last-child {
   display: block;
+}
+
+.im-product-page__icon-item--has-tooltip {
+  cursor: pointer;
+}
+
+.im-product-page__icon-item--has-tooltip:focus-visible {
+  outline: 2px solid var(--brand-600);
+  outline-offset: 2px;
 }
 
 .im-product-page__icon-item-icon {
@@ -4190,6 +4203,53 @@ body.im-user-logged-in .im-header__user {
   font-weight: 700;
   line-height: 133%;
   color: var(--brand-600);
+}
+
+.im-product-page__icon-tooltip {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 199px;
+  min-height: 65px;
+  padding: 8px;
+  border-radius: 6px;
+  background: var(--neutral-800);
+  box-shadow: 0 8px 8px -4px rgba(24, 39, 75, 0.08), 0 4px 6px -4px rgba(24, 39, 75, 0.12);
+  text-align: left;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity var(--transition-fast), visibility var(--transition-fast), transform var(--transition-fast);
+  z-index: 5;
+}
+
+.im-product-page__icon-item--has-tooltip:hover .im-product-page__icon-tooltip,
+.im-product-page__icon-item--has-tooltip:focus-visible .im-product-page__icon-tooltip,
+.im-product-page__icon-item--has-tooltip:focus-within .im-product-page__icon-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.im-product-page__icon-tooltip-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 115%;
+  color: var(--neutral-100);
+}
+
+.im-product-page__icon-tooltip-text {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 115%;
+  margin-top: 4px;
+  color: var(--neutral-400);
 }
 
 .im-product-page__meta {
