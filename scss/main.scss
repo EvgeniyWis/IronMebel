@@ -1,9 +1,8 @@
+// Shared base — подключается на все страницы
 @use "fonts";
 @use "variables";
 @use "base";
 @use "layout";
 @use "animations";
-@use "components";
-@use "auth";
-@use "product";
+@use "components"; // shared: header, footer, goods, cta, modals
 @use "media";

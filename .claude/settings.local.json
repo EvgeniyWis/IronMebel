@@ -7,7 +7,11 @@
       "Bash(npx sass scss:css)",
       "Bash(npx sass scss/main.scss css/main.css --source-map)",
       "Bash(npx sass scss:css --no-source-map)",
-      "Bash(npx sass scss:css --style=compressed)"
+      "Bash(npx sass scss:css --style=compressed)",
+      "Bash(sed 's/class=\"\"\"\"//g')",
+      "Bash(grep -n \"^\\\\.im-[a-z-]*\\\\s*{$\" /d/Web/FrontEnd/Projects/IronMebel/scss/_components.scss)",
+      "Bash(/tmp/blocks_analysis.txt:*)",
+      "Read(//tmp/**)"
     ]
   }
 }
