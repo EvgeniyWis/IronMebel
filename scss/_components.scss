@@ -4679,6 +4679,19 @@ body.im-user-logged-in {
   }
 }
 
+.im-goods__card:hover .im-goods__badge,
+.im-goods__card:hover .im-goods__favorite,
+.im-goods__card:hover .im-goods__compare-top,
+.im-goods__card:hover .im-goods__cart,
+.im-goods__card:focus-within .im-goods__badge,
+.im-goods__card:focus-within .im-goods__favorite,
+.im-goods__card:focus-within .im-goods__compare-top,
+.im-goods__card:focus-within .im-goods__cart {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
 .im-goods__help-card {
   position: relative;
   display: flex;
@@ -4950,8 +4963,16 @@ body.im-user-logged-in {
   border-radius: 50%;
   background: #fff;
   cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  @include interactive-transition;
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 
   svg path {
     transition: fill var(--transition-fast);
@@ -4987,8 +5008,16 @@ body.im-user-logged-in {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  @include interactive-transition;
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    box-shadow var(--transition-fast);
 
   svg {
     width: 21px;
@@ -5103,6 +5132,12 @@ body.im-user-logged-in {
   font-size: 13px;
   line-height: 1.2;
   color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast);
 }
 
 .im-goods__badge--green {
@@ -5130,7 +5165,17 @@ body.im-user-logged-in {
   line-height: 114%;
   margin-left: auto;
   cursor: pointer;
-  @include interactive-transition;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-fast),
+    visibility var(--transition-fast),
+    transform var(--transition-fast),
+    background-color var(--transition-fast),
+    border-color var(--transition-fast),
+    box-shadow var(--transition-fast),
+    color var(--transition-fast);
 
   &:hover {
     background: var(--brand-500);
@@ -5903,12 +5948,13 @@ body.im-user-logged-in {
   line-height: 133%;
   color: var(--neutral-500);
   margin-bottom: 40px;
+  margin-top: 16px;
 }
 
 .im-cta__form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
 }
 
 .im-cta__subheading {

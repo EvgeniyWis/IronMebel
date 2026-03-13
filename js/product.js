@@ -1,7 +1,11 @@
 const REVIEW_INITIAL_LIMIT = 4;
 const reviewsState = new WeakMap();
 const reviewMediaSliders = new WeakMap();
+const productGoodsSliders = new WeakMap();
+const goodsCardSliders = new WeakMap();
 let reviewMediaInitAttempts = 0;
+let productGoodsInitAttempts = 0;
+let goodsCardInitAttempts = 0;
 
 function resolveRatingValue(ratingNode) {
   if (!ratingNode) {
@@ -65,6 +69,277 @@ function initRatingStars(root = document) {
     .forEach(renderRatingStars);
 }
 
+function resolveRatingValue(ratingNode) {
+  if (!ratingNode) {
+    return 0;
+  }
+
+  const explicitValue = Number.parseFloat(ratingNode.dataset.ratingValue || "");
+
+  if (Number.isFinite(explicitValue)) {
+    return explicitValue;
+  }
+
+  const reviewCard = ratingNode.closest("[data-review-card]");
+  const cardValue = Number.parseFloat(reviewCard?.dataset.reviewRating || "");
+
+  if (Number.isFinite(cardValue)) {
+    return cardValue;
+  }
+
+  const ariaMatch = ratingNode
+    .getAttribute("aria-label")
+    ?.match(/(\d+(?:[.,]\d+)?)/);
+
+  if (ariaMatch) {
+    return Number.parseFloat(ariaMatch[1].replace(",", "."));
+  }
+
+  const text = ratingNode.textContent || "";
+  const filledCount = (text.match(/★/g) || []).length;
+  const halfCount = (text.match(/⯨|⭑|⭒/g) || []).length;
+  const emptyCount = (text.match(/☆/g) || []).length;
+
+  return filledCount > 0 || halfCount > 0 || emptyCount > 0
+    ? filledCount + halfCount * 0.5
+    : 0;
+}
+
+function renderRatingStars(ratingNode) {
+  if (!ratingNode) {
+    return;
+  }
+
+  const ratingValue = Math.max(0, Math.min(5, resolveRatingValue(ratingNode)));
+  const fullStars = Math.floor(ratingValue);
+  const hasHalfStar = ratingValue % 1 > 0 && fullStars < 5;
+  const emptyStars = Math.max(0, 5 - fullStars - (hasHalfStar ? 1 : 0));
+  const fragment = document.createDocumentFragment();
+
+  for (let index = 0; index < fullStars; index += 1) {
+    const star = document.createElement("span");
+    star.className = "im-product-page__rating-star im-product-page__rating-star--full";
+    star.setAttribute("aria-hidden", "true");
+    fragment.appendChild(star);
+  }
+
+  if (hasHalfStar) {
+    const star = document.createElement("span");
+    star.className = "im-product-page__rating-star im-product-page__rating-star--half";
+    star.setAttribute("aria-hidden", "true");
+    fragment.appendChild(star);
+  }
+
+  for (let index = 0; index < emptyStars; index += 1) {
+    const star = document.createElement("span");
+    star.className = "im-product-page__rating-star im-product-page__rating-star--muted";
+    star.setAttribute("aria-hidden", "true");
+    fragment.appendChild(star);
+  }
+
+  ratingNode.replaceChildren(fragment);
+}
+
+function initCtaCustomSelects(root = document) {
+  const wraps = root.querySelectorAll(".im-cta__select-wrap");
+  if (!wraps.length) {
+    return;
+  }
+
+  const openWraps = new Set();
+
+  const closeWrap = (wrap) => {
+    if (!wrap) {
+      return;
+    }
+
+    wrap.classList.remove("is-open");
+
+    const button = wrap.querySelector(".im-cta__select-btn");
+    if (button) {
+      button.setAttribute("aria-expanded", "false");
+    }
+
+    openWraps.delete(wrap);
+  };
+
+  const closeAll = () => {
+    openWraps.forEach((wrap) => closeWrap(wrap));
+  };
+
+  const openWrap = (wrap) => {
+    if (!wrap) {
+      return;
+    }
+
+    closeAll();
+    wrap.classList.add("is-open");
+
+    const button = wrap.querySelector(".im-cta__select-btn");
+    const menu = wrap.querySelector(".im-cta__select-menu");
+
+    if (button) {
+      button.setAttribute("aria-expanded", "true");
+    }
+
+    openWraps.add(wrap);
+
+    if (menu) {
+      const activeOption = menu.querySelector(".im-cta__select-option.is-active");
+      if (activeOption instanceof HTMLElement) {
+        activeOption.focus();
+      }
+    }
+  };
+
+  const ensureButtonAndMenu = (wrap, select) => {
+    if (wrap.querySelector(".im-cta__select-btn")) {
+      return;
+    }
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "im-cta__select-btn";
+    button.setAttribute("aria-haspopup", "listbox");
+    button.setAttribute("aria-expanded", "false");
+
+    const menu = document.createElement("div");
+    menu.className = "im-cta__select-menu";
+    menu.setAttribute("role", "listbox");
+
+    const options = Array.from(select.options);
+
+    const syncButtonText = () => {
+      const selectedOption = select.selectedOptions[0] || select.options[0];
+      button.textContent = selectedOption ? selectedOption.textContent : "";
+    };
+
+    const rebuildMenu = () => {
+      menu.innerHTML = "";
+
+      options.forEach((option, index) => {
+        const optionButton = document.createElement("button");
+        optionButton.type = "button";
+        optionButton.className = "im-cta__select-option";
+        optionButton.setAttribute("role", "option");
+        optionButton.textContent = option.textContent;
+
+        const isActive = index === select.selectedIndex;
+        optionButton.classList.toggle("is-active", isActive);
+        optionButton.setAttribute("aria-selected", isActive ? "true" : "false");
+
+        optionButton.addEventListener("click", (event) => {
+          event.preventDefault();
+          select.selectedIndex = index;
+          select.dispatchEvent(new Event("change", { bubbles: true }));
+          syncButtonText();
+          rebuildMenu();
+          closeWrap(wrap);
+          button.focus();
+        });
+
+        optionButton.addEventListener("keydown", (event) => {
+          const items = Array.from(menu.querySelectorAll(".im-cta__select-option"));
+          const currentIndex = items.indexOf(optionButton);
+
+          if (event.key === "Escape") {
+            event.preventDefault();
+            closeWrap(wrap);
+            button.focus();
+            return;
+          }
+
+          if (event.key === "ArrowDown") {
+            event.preventDefault();
+            const next = items[Math.min(items.length - 1, currentIndex + 1)];
+            if (next instanceof HTMLElement) {
+              next.focus();
+            }
+            return;
+          }
+
+          if (event.key === "ArrowUp") {
+            event.preventDefault();
+            const prev = items[Math.max(0, currentIndex - 1)];
+            if (prev instanceof HTMLElement) {
+              prev.focus();
+            }
+            return;
+          }
+
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            optionButton.click();
+          }
+        });
+
+        menu.appendChild(optionButton);
+      });
+    };
+
+    syncButtonText();
+    rebuildMenu();
+
+    button.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      if (wrap.classList.contains("is-open")) {
+        closeWrap(wrap);
+      } else {
+        openWrap(wrap);
+      }
+    });
+
+    button.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowDown" || event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openWrap(wrap);
+      }
+
+      if (event.key === "Escape") {
+        event.preventDefault();
+        closeWrap(wrap);
+      }
+    });
+
+    wrap.appendChild(button);
+    wrap.appendChild(menu);
+
+    select.addEventListener("change", () => {
+      syncButtonText();
+      rebuildMenu();
+    });
+  };
+
+  wraps.forEach((wrap) => {
+    const select = wrap.querySelector("select.im-cta__select");
+    if (!(select instanceof HTMLSelectElement)) {
+      return;
+    }
+
+    ensureButtonAndMenu(wrap, select);
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) {
+      closeAll();
+      return;
+    }
+
+    if (!target.closest(".im-cta__select-wrap")) {
+      closeAll();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeAll();
+    }
+  });
+}
+
 function initReviewMediaSliders(root = document) {
   const mediaNodes = root.querySelectorAll(".im-product-page__review-media");
 
@@ -117,16 +392,175 @@ function scheduleReviewMediaInit(root = document) {
   }, 250);
 }
 
-function syncCasesGallery(gallery, index) {
-  if (!gallery) {
+function initGoodsCardSliders(root = document) {
+  root.querySelectorAll("[data-goods-slider]").forEach((container) => {
+    if (goodsCardSliders.has(container)) {
+      return;
+    }
+
+    const sliderRoot = container.querySelector(".keen-slider");
+
+    if (!sliderRoot || sliderRoot.offsetWidth === 0 || typeof KeenSlider === "undefined") {
+      return;
+    }
+
+    const pagination = container.querySelector(".im-goods__pagination");
+    let dots = [];
+
+    const slider = new KeenSlider(sliderRoot, {
+      slides: {
+        perView: 1,
+        spacing: 0,
+      },
+      loop: true,
+      drag: true,
+      rubberband: false,
+      created(instance) {
+        const slideCount = instance.slides.length;
+
+        if (!pagination || slideCount <= 1) {
+          return;
+        }
+
+        pagination.replaceChildren();
+        dots = [];
+
+        for (let index = 0; index < slideCount; index += 1) {
+          const dot = document.createElement("button");
+          dot.type = "button";
+          dot.className = "im-goods__dot";
+          dot.classList.toggle("is-active", index === 0);
+          dot.addEventListener("click", () => {
+            instance.moveToIdx(index);
+          });
+          pagination.appendChild(dot);
+          dots.push(dot);
+        }
+      },
+      slideChanged(instance) {
+        if (!dots.length) {
+          return;
+        }
+
+        const current = instance.track.details.rel;
+        dots.forEach((dot, index) => {
+          dot.classList.toggle("is-active", index === current);
+        });
+      },
+    });
+
+    goodsCardSliders.set(container, slider);
+  });
+}
+
+function scheduleGoodsCardInit(root = document) {
+  initGoodsCardSliders(root);
+
+  if (
+    typeof KeenSlider !== "undefined" ||
+    goodsCardInitAttempts >= 20 ||
+    !root.querySelector("[data-goods-slider]")
+  ) {
     return;
   }
 
-  const thumbs = Array.from(gallery.querySelectorAll("[data-case-thumb]"));
-  const card = gallery.querySelector("[data-case-card]");
-  const mainImage = gallery.querySelector("[data-case-main-image]");
+  goodsCardInitAttempts += 1;
+  window.setTimeout(() => {
+    scheduleGoodsCardInit(root);
+  }, 250);
+}
 
-  if (!thumbs.length || !card || !mainImage) {
+function initProductGoodsCarousels(root = document) {
+  root.querySelectorAll("[data-product-goods-section]").forEach((section) => {
+    const track = section.querySelector("[data-product-goods-track]");
+
+    if (!track || productGoodsSliders.has(track)) {
+      return;
+    }
+
+    if (track.dataset.sliderPrepared !== "true") {
+      const sourceCards = Array.from(track.querySelectorAll(".im-goods__card"));
+
+      sourceCards.forEach((card) => {
+        track.appendChild(card.cloneNode(true));
+      });
+
+      track.dataset.sliderPrepared = "true";
+    }
+
+    if (typeof KeenSlider === "undefined") {
+      return;
+    }
+
+    const slides = Array.from(track.querySelectorAll(".im-goods__card"));
+    track.classList.add("keen-slider");
+    slides.forEach((slide) => slide.classList.add("keen-slider__slide"));
+
+    const slider = new KeenSlider(track, {
+      selector: ".im-goods__card",
+      mode: "free-snap",
+      rubberband: false,
+      drag: true,
+      slides: {
+        origin: "auto",
+        perView: 4,
+        spacing: 12,
+      },
+      breakpoints: {
+        "(max-width: 1100px)": {
+          slides: {
+            origin: "auto",
+            perView: 3,
+            spacing: 12,
+          },
+        },
+        "(max-width: 900px)": {
+          slides: {
+            origin: "auto",
+            perView: 2,
+            spacing: 12,
+          },
+        },
+        "(max-width: 640px)": {
+          slides: {
+            origin: "auto",
+            perView: 1.1,
+            spacing: 12,
+          },
+        },
+      },
+    });
+
+    productGoodsSliders.set(track, slider);
+  });
+}
+
+function scheduleProductGoodsInit(root = document) {
+  initProductGoodsCarousels(root);
+
+  if (
+    typeof KeenSlider !== "undefined" ||
+    productGoodsInitAttempts >= 20 ||
+    !root.querySelector("[data-product-goods-section]")
+  ) {
+    return;
+  }
+
+  productGoodsInitAttempts += 1;
+  window.setTimeout(() => {
+    scheduleProductGoodsInit(root);
+  }, 250);
+}
+
+function syncCasesGallery(caseCard, index) {
+  if (!caseCard) {
+    return;
+  }
+
+  const thumbs = Array.from(caseCard.querySelectorAll("[data-case-thumb]"));
+  const mainImage = caseCard.querySelector("[data-case-main-image]");
+
+  if (!thumbs.length || !mainImage) {
     return;
   }
 
@@ -144,12 +578,103 @@ function syncCasesGallery(gallery, index) {
 
   mainImage.src = nextSrc;
   mainImage.alt = nextAlt;
-  gallery.dataset.caseIndex = String(nextIndex);
+  caseCard.dataset.caseIndex = String(nextIndex);
 }
 
 function initCasesGalleries() {
-  document.querySelectorAll("[data-cases-gallery]").forEach((gallery) => {
-    syncCasesGallery(gallery, Number.parseInt(gallery.dataset.caseIndex || "0", 10));
+  document.querySelectorAll("[data-case-card]").forEach((caseCard) => {
+    syncCasesGallery(
+      caseCard,
+      Number.parseInt(caseCard.dataset.caseIndex || "0", 10),
+    );
+  });
+}
+
+function stopFaqAnimation(answer) {
+  if (!answer) {
+    return;
+  }
+
+  if (answer._faqAnimationFrame) {
+    cancelAnimationFrame(answer._faqAnimationFrame);
+    answer._faqAnimationFrame = null;
+  }
+
+  if (answer._faqTransitionHandler) {
+    answer.removeEventListener("transitionend", answer._faqTransitionHandler);
+    answer._faqTransitionHandler = null;
+  }
+}
+
+function collapseFaqItem(item) {
+  const answer = item?.querySelector(".im-product-page__faq-answer");
+
+  if (!item || !answer || !item.open) {
+    return;
+  }
+
+  stopFaqAnimation(answer);
+
+  const startHeight = `${answer.scrollHeight}px`;
+  answer.style.height = startHeight;
+
+  answer._faqAnimationFrame = requestAnimationFrame(() => {
+    answer.style.height = "0px";
+
+    const handleTransitionEnd = (event) => {
+      if (event.propertyName !== "height") {
+        return;
+      }
+
+      item.open = false;
+      answer.style.height = "0px";
+      answer.removeEventListener("transitionend", handleTransitionEnd);
+      answer._faqTransitionHandler = null;
+    };
+
+    answer._faqTransitionHandler = handleTransitionEnd;
+    answer.addEventListener("transitionend", handleTransitionEnd);
+  });
+}
+
+function expandFaqItem(item) {
+  const answer = item?.querySelector(".im-product-page__faq-answer");
+
+  if (!item || !answer) {
+    return;
+  }
+
+  stopFaqAnimation(answer);
+  item.open = true;
+  answer.style.height = "0px";
+
+  answer._faqAnimationFrame = requestAnimationFrame(() => {
+    answer.style.height = `${answer.scrollHeight}px`;
+
+    const handleTransitionEnd = (event) => {
+      if (event.propertyName !== "height") {
+        return;
+      }
+
+      answer.style.height = "auto";
+      answer.removeEventListener("transitionend", handleTransitionEnd);
+      answer._faqTransitionHandler = null;
+    };
+
+    answer._faqTransitionHandler = handleTransitionEnd;
+    answer.addEventListener("transitionend", handleTransitionEnd);
+  });
+}
+
+function initFaqAccordions(root = document) {
+  root.querySelectorAll(".im-product-page__faq-item").forEach((item) => {
+    const answer = item.querySelector(".im-product-page__faq-answer");
+
+    if (!answer) {
+      return;
+    }
+
+    answer.style.height = item.open ? "auto" : "0px";
   });
 }
 
@@ -260,6 +785,24 @@ document.addEventListener("change", (event) => {
 });
 
 document.addEventListener("click", (event) => {
+  const faqSummary = event.target.closest(".im-product-page__faq-summary");
+
+  if (faqSummary) {
+    const faqItem = faqSummary.closest(".im-product-page__faq-item");
+
+    if (faqItem) {
+      event.preventDefault();
+
+      if (faqItem.open) {
+        collapseFaqItem(faqItem);
+      } else {
+        expandFaqItem(faqItem);
+      }
+    }
+
+    return;
+  }
+
   const selectOption = event.target.closest("[data-review-select-option]");
 
   if (selectOption) {
@@ -310,27 +853,24 @@ document.addEventListener("click", (event) => {
   const detailsTab = event.target.closest(".im-product-page__details-tab");
 
   if (detailsTab) {
-    const detailsSection = detailsTab.closest(".im-product-page__details");
-    const target = detailsTab.dataset.detailsTarget;
+    const href = detailsTab.getAttribute("href");
 
-    if (detailsSection && target) {
-      detailsSection
-        .querySelectorAll(".im-product-page__details-tab")
-        .forEach((tab) => {
-          const isActive = tab === detailsTab;
+    if (href && href.startsWith("#")) {
+      const targetSection = document.getElementById(href.slice(1));
 
-          tab.classList.toggle("im-product-page__details-tab--active", isActive);
-          tab.setAttribute("aria-selected", String(isActive));
-        });
+      if (targetSection) {
+        event.preventDefault();
+        targetSection.scrollIntoView({ behavior: "smooth" });
 
-      detailsSection
-        .querySelectorAll(".im-product-page__details-pane")
-        .forEach((pane) => {
-          const isActive = pane.dataset.detailsPane === target;
-
-          pane.classList.toggle("im-product-page__details-pane--active", isActive);
-          pane.hidden = !isActive;
-        });
+        document
+          .querySelectorAll(".im-product-page__details-tab")
+          .forEach((tab) => {
+            tab.classList.toggle(
+              "im-product-page__details-tab--active",
+              tab === detailsTab,
+            );
+          });
+      }
     }
 
     return;
@@ -388,12 +928,32 @@ document.addEventListener("click", (event) => {
 
   if (goodsNavButton) {
     const section = goodsNavButton.closest(".im-product-page__goods-carousel");
+    const productGoodsSection =
+      goodsNavButton.closest("[data-product-goods-section]");
+    const productGoodsTrack =
+      productGoodsSection?.querySelector("[data-product-goods-track]");
+    const productGoodsSlider = productGoodsTrack
+      ? productGoodsSliders.get(productGoodsTrack)
+      : null;
+
+    if (productGoodsSlider) {
+      if (goodsNavButton.hasAttribute("data-goods-next")) {
+        productGoodsSlider.next();
+      } else {
+        productGoodsSlider.prev();
+      }
+
+      return;
+    }
+
     const slider = section?.querySelector("[data-goods-carousel]");
     const firstCard = slider?.querySelector(".im-goods__card");
 
     if (slider && firstCard) {
       const sliderStyles = getComputedStyle(slider);
-      const cardGap = Number.parseFloat(sliderStyles.columnGap || sliderStyles.gap || "0");
+      const cardGap = Number.parseFloat(
+        sliderStyles.columnGap || sliderStyles.gap || "0",
+      );
       const step = firstCard.getBoundingClientRect().width + cardGap;
       const direction = goodsNavButton.hasAttribute("data-goods-next") ? 1 : -1;
 
@@ -431,14 +991,14 @@ document.addEventListener("click", (event) => {
   const caseThumbButton = event.target.closest("[data-case-thumb]");
 
   if (caseThumbButton) {
-    const gallery = caseThumbButton.closest("[data-cases-gallery]");
-    const thumbs = gallery
-      ? Array.from(gallery.querySelectorAll("[data-case-thumb]"))
+    const caseCard = caseThumbButton.closest("[data-case-card]");
+    const thumbs = caseCard
+      ? Array.from(caseCard.querySelectorAll("[data-case-thumb]"))
       : [];
     const nextIndex = thumbs.indexOf(caseThumbButton);
 
-    if (gallery && nextIndex >= 0) {
-      syncCasesGallery(gallery, nextIndex);
+    if (caseCard && nextIndex >= 0) {
+      syncCasesGallery(caseCard, nextIndex);
     }
 
     return;
@@ -447,12 +1007,18 @@ document.addEventListener("click", (event) => {
   const caseNavButton = event.target.closest("[data-case-prev], [data-case-next]");
 
   if (caseNavButton) {
-    const gallery = caseNavButton.closest("[data-cases-gallery]");
+    const casesSection = caseNavButton.closest(".im-product-page__cases");
+    const track = casesSection?.querySelector("[data-cases-gallery]");
 
-    if (gallery) {
-      const currentIndex = Number.parseInt(gallery.dataset.caseIndex || "0", 10);
+    if (track) {
       const direction = caseNavButton.hasAttribute("data-case-next") ? 1 : -1;
-      syncCasesGallery(gallery, currentIndex + direction);
+      const card = track.querySelector("[data-case-card]");
+      const step = card ? card.getBoundingClientRect().width : track.clientWidth;
+
+      track.scrollBy({
+        left: step * direction,
+        behavior: "smooth",
+      });
     }
 
     return;
@@ -526,6 +1092,10 @@ document.querySelectorAll("[data-reviews]").forEach((reviewsSection) => {
 });
 
 initReviewSelects();
+initCtaCustomSelects();
 initRatingStars();
 scheduleReviewMediaInit();
+scheduleGoodsCardInit();
 initCasesGalleries();
+scheduleProductGoodsInit();
+initFaqAccordions();
