@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Оформление заказа | IronMebel</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <meta
+      name="description"
+      content="Оформление заказа в интернет-магазине IronMebel."
+    />
+
+    <link rel="stylesheet" href="./css/page-checkout.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div data-layout-header></div>
+
+      <main class="im-checkout-page">
+        <div class="im-container">
+          <!-- Хлебные крошки -->
+          <nav
+            class="im-checkout-page__breadcrumbs"
+            aria-label="Хлебные крошки"
+          >
+            <a class="im-checkout-page__breadcrumb-link" href="./index.html"
+              >Главная</a
+            >
+            <span class="im-checkout-page__breadcrumb-separator">/</span>
+            <a class="im-checkout-page__breadcrumb-link" href="./cart.html"
+              >Корзина</a
+            >
+            <span class="im-checkout-page__breadcrumb-separator">/</span>
+            <span class="im-checkout-page__breadcrumb-current"
+              >Оформление заказа</span
+            >
+          </nav>
+
+          <h1 class="im-checkout-page__title">Оформление заказа</h1>
+
+          <div class="im-checkout-page__layout">
+            <!-- Left column: checkout steps -->
+            <div class="im-checkout-page__main">
+              <!-- Auth block (shown for guests) -->
+              <section class="im-checkout-page__section">
+                <h2 class="im-checkout-page__section-title">
+                  Вход или регистрация
+                </h2>
+                <p class="im-checkout-page__section-text">
+                  Для оформления заказа необходимо авторизоваться на сайте
+                </p>
+                <a class="im-checkout-page__login-btn" href="./auth.html"
+                  >Войти</a
+                >
+              </section>
+            </div>
+
+            <!-- Right column: order summary -->
+            <aside class="im-checkout-page__summary">
+              <div class="im-checkout-page__summary-inner">
+                <div class="im-checkout-page__summary-row">
+                  <span class="im-checkout-page__summary-label">4 товара</span>
+                  <span class="im-checkout-page__summary-value">137 587 ₽</span>
+                </div>
+
+                <!-- Items list (collapsible) -->
+                <div class="im-checkout-page__items-list">
+                  <ol class="im-checkout-page__items">
+                    <li class="im-checkout-page__items-item">
+                      Металлический шкаф Werk для инструментов
+                    </li>
+                    <li class="im-checkout-page__items-item">
+                      Мобильный верстак Profi для автосервиса
+                    </li>
+                    <li class="im-checkout-page__items-item">
+                      Инструментальный шкаф Kraft для мастерской
+                      инструментальный шка...
+                    </li>
+                    <li class="im-checkout-page__items-item">
+                      Шкаф для инструментов MetalBox с замком
+                    </li>
+                  </ol>
+                  <button class="im-checkout-page__items-toggle" type="button">
+                    <span class="im-checkout-page__items-toggle-text"
+                      >Скрыть</span
+                    >
+                    <svg
+                      class="im-checkout-page__items-toggle-icon"
+                      width="12"
+                      height="8"
+                      viewBox="0 0 12 8"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 6.5L6 1.5L11 6.5"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="im-checkout-page__summary-row">
+                  <span class="im-checkout-page__summary-label">Скидка</span>
+                  <span
+                    class="im-checkout-page__summary-value im-checkout-page__summary-value--discount"
+                    >-13 471 ₽</span
+                  >
+                </div>
+
+                <div class="im-checkout-page__summary-row">
+                  <span class="im-checkout-page__summary-label"
+                    >Вес товаров</span
+                  >
+                  <span class="im-checkout-page__summary-value">62.00 кг</span>
+                </div>
+
+                <div class="im-checkout-page__summary-row">
+                  <span class="im-checkout-page__summary-label">Доставка</span>
+                  <span class="im-checkout-page__summary-value">Самовывоз</span>
+                </div>
+
+                <div class="im-checkout-page__promo">
+                  <input
+                    class="im-checkout-page__promo-input"
+                    type="text"
+                    placeholder="Ваш промокод"
+                  />
+                </div>
+                <div
+                  class="im-checkout-page__summary-row im-checkout-page__summary-row--total"
+                >
+                  <span class="im-checkout-page__summary-label">Итого</span>
+                  <span class="im-checkout-page__summary-value">137 587 ₽</span>
+                </div>
+
+                <button class="im-checkout-page__submit-btn" type="button">
+                  Оформить заказ
+                </button>
+
+                <label class="im-checkout-page__agree">
+                  <input type="checkbox" name="agreement" checked />
+                  <span class="im-checkout-page__agree-text">
+                    Нажимая кнопку «Оформить заказ», я соглашаюсь с
+                    <a class="im-checkout-page__agree-link" href="#"
+                      >Условиями политики в отношении обработки персональных
+                      данных</a
+                    >
+                  </span>
+                </label>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </main>
+
+      <div data-layout-footer></div>
+    </div>
+
+    <script src="./js/layout-include.js"></script>
+    <script src="./js/checkout.js"></script>
+  </body>
+</html>

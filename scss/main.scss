@@ -4,5 +4,7 @@
 @use "base";
 @use "layout";
 @use "animations";
-@use "components"; // shared: header, footer, goods, cta, modals
+@use "header";
+@use "footer";
+@use "components"; // shared: goods, cta, modals
 @use "media";
