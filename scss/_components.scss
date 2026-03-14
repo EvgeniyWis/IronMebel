@@ -23,7 +23,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 108%;
-  color: #666;
+  color: var(--neutral-500);
 }
 
 .im-header__city-toggle {
@@ -79,8 +79,8 @@
   max-width: min(360px, calc(100vw - 32px));
   padding: 12px;
   border-radius: 20px;
-  background: #ffffff;
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.16);
+  background: var(--neutral-100);
+  box-shadow: 0 16px 50px color-mix(in srgb, var(--neutral-black) 16%, transparent);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -102,7 +102,7 @@
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-header__city-dropdown-search {
@@ -111,7 +111,7 @@
   gap: 10px;
   padding: 12px 14px;
   border-radius: 12px;
-  background: #f5f5f5;
+  background: var(--neutral-200);
   margin: 0 0 14px 0;
 }
 
@@ -123,17 +123,17 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 114%;
-  color: #111111;
+  color: var(--neutral-900);
   min-width: 0;
 
   &::placeholder {
-    color: #666;
+    color: var(--neutral-500);
   }
 }
 
 .im-header__city-dropdown-search-icon {
   display: inline-flex;
-  color: #111111;
+  color: var(--neutral-900);
 }
 
 .im-header__city-dropdown-list {
@@ -153,17 +153,17 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #111111;
+  color: var(--neutral-900);
   cursor: pointer;
   @include interactive-transition;
 
   &:hover {
-    background: #f5f5f5;
+    background: var(--neutral-200);
     color: var(--brand-600);
   }
 
   &.is-active {
-    background: #f5f5f5;
+    background: var(--neutral-200);
   }
 }
 
@@ -190,12 +190,12 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 108%;
-  color: #666;
+  color: var(--neutral-500);
   cursor: pointer;
   @include interactive-transition;
 
   &:hover {
-    color: #111111;
+    color: var(--neutral-900);
     opacity: 0.9;
   }
 
@@ -225,8 +225,8 @@
   max-width: min(240px, calc(100vw - 32px));
   padding: 12px;
   border-radius: 20px;
-  background: #ffffff;
-  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.16);
+  background: var(--neutral-100);
+  box-shadow: 0 16px 50px color-mix(in srgb, var(--neutral-black) 16%, transparent);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-8px);
@@ -244,11 +244,11 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #111111;
+  color: var(--neutral-900);
   @include interactive-transition;
 
   &:hover {
-    background: #f5f5f5;
+    background: var(--neutral-200);
   }
 }
 
@@ -289,7 +289,7 @@
   font-weight: 400;
   font-size: 12px;
   line-height: 108%;
-  color: #666;
+  color: var(--neutral-500);
 }
 
 .im-header__top-phone {
@@ -315,7 +315,7 @@
   @include interactive-transition;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: color-mix(in srgb, var(--neutral-black) 6%, transparent);
     transform: scale(1.1);
   }
 
@@ -330,7 +330,7 @@
 }
 
 .im-header__email {
-  color: #2f6bff;
+  color: var(--blue-500);
   text-decoration: none;
   @include interactive-transition;
 
@@ -348,7 +348,7 @@
   font-weight: 700;
   font-size: 12px;
   line-height: 108%;
-  color: #666;
+  color: var(--neutral-500);
   text-decoration: none;
   @include interactive-transition;
 
@@ -362,7 +362,7 @@
   flex-direction: column;
   gap: 2px;
   text-decoration: none;
-  color: #111111;
+  color: var(--neutral-900);
 }
 
 .im-header__logo--top {
@@ -388,7 +388,7 @@
   font-size: 10px;
   line-height: 100%;
   letter-spacing: 0.18em;
-  color: #666;
+  color: var(--neutral-500);
   text-transform: none;
 }
 
@@ -408,7 +408,7 @@
   border-radius: 8px;
   border: none;
   background-color: var(--brand-600);
-  color: #ffffff;
+  color: var(--neutral-100);
   font-weight: 600;
   cursor: pointer;
   @include interactive-transition;
@@ -416,7 +416,7 @@
   &:hover {
     background-color: var(--brand-500);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(200, 4, 0, 0.3);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--brand-600) 30%, transparent);
   }
 
   &:active {
@@ -449,14 +449,14 @@
   border-radius: 8px;
   border: 1px solid var(--neutral-300);
   overflow: hidden;
-  background: #f5f5f5;
+  background: var(--neutral-200);
   width: 100%;
   max-width: none;
   @include interactive-transition;
 
   &:focus-within {
     border-color: var(--brand-600);
-    box-shadow: 0 0 0 3px rgba(200, 4, 0, 0.1);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--brand-600) 10%, transparent);
   }
 }
 
@@ -470,8 +470,8 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 114%;
-  color: #666;
-  background: #f5f5f5;
+  color: var(--neutral-500);
+  background: var(--neutral-200);
   @include interactive-transition;
 
   &::placeholder {
@@ -479,17 +479,17 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 114%;
-    color: #666;
+    color: var(--neutral-500);
     opacity: 1;
   }
 
   &:hover {
-    background: #eeeeee;
+    background: var(--neutral-250);
   }
 
   &:focus {
     background: var(--neutral-100);
-    color: #111111;
+    color: var(--neutral-900);
   }
 
   &:focus-visible {
@@ -509,7 +509,7 @@
   @include interactive-transition;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.05);
+    background: color-mix(in srgb, var(--neutral-black) 5%, transparent);
     transform: scale(1.05);
   }
 
@@ -548,12 +548,12 @@
   font-size: 12px;
   text-decoration: none;
   line-height: 108%;
-  color: #666;
+  color: var(--neutral-500);
   @include interactive-transition;
 
   &:hover {
     color: var(--brand-600);
-    background: rgba(200, 4, 0, 0.06);
+    background: color-mix(in srgb, var(--brand-600) 6%, transparent);
     transform: translateY(-2px);
   }
 
@@ -580,8 +580,8 @@
   border-radius: 8px;
   padding: 10px 12px;
   border: none;
-  background-color: #111111;
-  color: #ffffff;
+  background: var(--blue-600);
+  color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 14px;
@@ -590,9 +590,9 @@
   @include interactive-transition;
 
   &:hover {
-    background-color: #333333;
+    background-color: var(--neutral-700);
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--neutral-black) 20%, transparent);
   }
 
   &:active {
@@ -601,14 +601,14 @@
   }
 
   &:focus-visible {
-    outline: 2px solid #111;
+    outline: 2px solid var(--neutral-900);
     outline-offset: 2px;
   }
 }
 
 .im-header__login--reg {
   background-color: transparent;
-  color: #111111;
+  color: var(--neutral-900);
   border: 1px solid var(--neutral-300);
 
   &:hover {
@@ -630,8 +630,8 @@
   border-radius: 8px;
   padding: 10px 12px;
   border: none;
-  background: #f5f5f5;
-  color: #111111;
+  background: var(--neutral-200);
+  color: var(--neutral-900);
   font-family: var(--font-family);
   font-weight: 500;
   font-size: 12px;
@@ -640,8 +640,8 @@
   @include interactive-transition;
 
   &:hover {
-    background: #eeeeee;
-    color: #111111;
+    background: var(--neutral-250);
+    color: var(--neutral-900);
   }
 
   &:active {
@@ -661,7 +661,7 @@
   width: 26px;
   height: 26px;
   border-radius: 999px;
-  background: #f5f5f5;
+  background: var(--neutral-200);
 
   svg {
     display: block;
@@ -707,7 +707,7 @@ body.im-user-logged-in {
   height: 26px;
 
   svg path {
-    fill: #c80400;
+    fill: var(--brand-600);
   }
 }
 
@@ -716,14 +716,14 @@ body.im-user-logged-in {
   font-size: 16px;
   white-space: nowrap;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-header__user-menu-divider {
   margin: 8px 0;
   border: none;
   height: 1px;
-  background: var(--neutral-200, #eeeeee);
+  background: var(--neutral-200, var(--neutral-250));
 }
 
 .im-header__bottom-link {
@@ -731,7 +731,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 14px;
   line-height: 114%;
-  color: #111;
+  color: var(--neutral-900);
   padding: 4px 0;
   position: relative;
   @include interactive-transition;
@@ -764,7 +764,7 @@ body.im-user-logged-in {
 
 .im-header__bottom-link--accent {
   font-weight: 400;
-  color: #c80400;
+  color: var(--brand-600);
 
   &:hover {
     color: var(--brand-500);
@@ -790,7 +790,7 @@ body.im-user-logged-in {
     width: 18px;
     height: 2px;
     border-radius: 999px;
-    background: #666666;
+    background: var(--neutral-500);
     transition: all var(--transition-normal);
 
     &:not(:last-child) {
@@ -799,10 +799,10 @@ body.im-user-logged-in {
   }
 
   &:hover {
-    background: rgba(0, 0, 0, 0.06);
+    background: color-mix(in srgb, var(--neutral-black) 6%, transparent);
 
     span {
-      background: #111111;
+      background: var(--neutral-900);
     }
   }
 
@@ -831,8 +831,8 @@ body.im-user-logged-in {
   border-radius: 999px;
   border: none;
   padding: 0;
-  background: #f5f5f5;
-  color: #111111;
+  background: var(--neutral-200);
+  color: var(--neutral-900);
   cursor: pointer;
   text-decoration: none;
   @include interactive-transition;
@@ -842,7 +842,7 @@ body.im-user-logged-in {
   }
 
   &:hover {
-    background: #eaeaea;
+    background: var(--neutral-265);
     transform: translateY(-1px);
   }
 
@@ -863,7 +863,7 @@ body.im-user-logged-in {
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
-  background: rgba(0, 0, 0, 0.4);
+  background: color-mix(in srgb, var(--neutral-black) 40%, transparent);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -878,7 +878,7 @@ body.im-user-logged-in {
   width: 100%;
   max-width: 100%;
   flex-shrink: 0;
-  background: #ffffff;
+  background: var(--neutral-100);
   padding: 20px 16px 24px;
   transform: translateX(-100%);
   transition: transform var(--transition-normal);
@@ -923,7 +923,7 @@ body.im-user-logged-in {
   @include interactive-transition;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.06);
+    background: color-mix(in srgb, var(--neutral-black) 6%, transparent);
   }
 
   &:focus-visible {
@@ -937,7 +937,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 18px;
   line-height: 133%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-header__mobile-submenu-list {
@@ -961,7 +961,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  color: #666;
+  color: var(--neutral-500);
   text-decoration: none;
   @include interactive-transition;
 
@@ -1001,12 +1001,12 @@ body.im-user-logged-in {
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  color: #666666;
+  color: var(--neutral-500);
   @include interactive-transition;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.06);
-    color: #111111;
+    background: color-mix(in srgb, var(--neutral-black) 6%, transparent);
+    color: var(--neutral-900);
   }
 
   &:focus-visible {
@@ -1055,7 +1055,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
   text-decoration: none;
   @include interactive-transition;
 
@@ -1115,7 +1115,7 @@ body.im-user-logged-in {
   align-items: flex-end;
   justify-content: center;
   padding: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: color-mix(in srgb, var(--neutral-black) 60%, transparent);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1143,8 +1143,8 @@ body.im-user-logged-in {
   max-width: 100%;
   margin: 0;
   border-radius: 20px 20px 0 0;
-  background: #ffffff;
-  box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.25);
+  background: var(--neutral-100);
+  box-shadow: 0 -6px 24px color-mix(in srgb, var(--neutral-black) 25%, transparent);
   padding: 20px 16px calc(100px + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
@@ -1157,7 +1157,7 @@ body.im-user-logged-in {
   width: 48px;
   height: 4px;
   border-radius: 400px;
-  background: #fff;
+  background: var(--neutral-100);
   margin-bottom: 12px;
 }
 
@@ -1173,7 +1173,7 @@ body.im-user-logged-in {
   font-weight: 700;
   font-size: 16px;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-city-modal__search {
@@ -1182,7 +1182,7 @@ body.im-user-logged-in {
   gap: 8px;
   padding: 10px 12px;
   border-radius: 10px;
-  background: #f5f5f5;
+  background: var(--neutral-200);
 }
 
 .im-city-modal__search-input {
@@ -1194,10 +1194,10 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 14px;
   line-height: 114%;
-  color: #111111;
+  color: var(--neutral-900);
 
   &::placeholder {
-    color: #999999;
+    color: var(--neutral-400);
   }
 }
 
@@ -1224,7 +1224,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
   cursor: pointer;
   @include interactive-transition;
 
@@ -1263,7 +1263,7 @@ body.im-user-logged-in {
 .im-catalog-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: color-mix(in srgb, var(--neutral-black) 40%, transparent);
 }
 
 .im-catalog-modal__body {
@@ -1275,7 +1275,7 @@ body.im-user-logged-in {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: var(--neutral-100);
 }
 
 .im-catalog-modal__panel {
@@ -1285,7 +1285,7 @@ body.im-user-logged-in {
   max-width: 100%;
   min-height: 100%;
   margin: 0;
-  background: #ffffff;
+  background: var(--neutral-100);
   padding: 0;
   overflow-y: auto;
   transform: translateX(-100%);
@@ -1301,7 +1301,7 @@ body.im-user-logged-in {
   gap: 12px;
   padding: 12px 16px;
   border-bottom: 1px solid var(--neutral-200);
-  background: #ffffff;
+  background: var(--neutral-100);
   flex-shrink: 0;
 }
 
@@ -1333,7 +1333,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 18px;
   line-height: 133%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-catalog-modal__lists {
@@ -1365,7 +1365,7 @@ body.im-user-logged-in {
   gap: 4px;
   padding: 12px;
   border-radius: 8px;
-  background: #f5f5f5;
+  background: var(--neutral-200);
 }
 
 .im-catalog-modal__sub-list {
@@ -1435,7 +1435,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #666;
+  color: var(--neutral-500);
   text-decoration: none;
   @include interactive-transition;
 
@@ -1455,7 +1455,7 @@ body.im-user-logged-in {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f5f5f5;
+  background: var(--neutral-200);
 
   img {
     display: block;
@@ -1471,7 +1471,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 18px;
   line-height: 133%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-catalog-modal__item-arrow {
@@ -1522,7 +1522,7 @@ body.im-user-logged-in {
 .im-mobile-catalog__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: color-mix(in srgb, var(--neutral-black) 40%, transparent);
 }
 
 .im-mobile-catalog__panel {
@@ -1531,7 +1531,7 @@ body.im-user-logged-in {
   width: 100%;
   max-width: 100%;
   min-height: 100%;
-  background-color: #ffffff;
+  background-color: var(--neutral-100);
   padding: 0;
   overflow-y: auto;
   transform: translateX(-100%);
@@ -1556,7 +1556,7 @@ body.im-user-logged-in {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: #111111;
+  color: var(--neutral-900);
 }
 
 .im-mobile-catalog__logo-icon {
@@ -1587,7 +1587,7 @@ body.im-user-logged-in {
 .im-mobile-catalog__city .im-header__city-toggle {
   padding: 10px 12px;
   border-radius: 8px;
-  background: #f5f5f5;
+  background: var(--neutral-200);
 }
 
 .im-mobile-catalog__actions {
@@ -1605,13 +1605,13 @@ body.im-user-logged-in {
   font-size: 22px;
   line-height: 1;
   cursor: pointer;
-  color: #666666;
+  color: var(--neutral-500);
   flex-shrink: 0;
   @include interactive-transition;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.06);
-    color: #111111;
+    background: color-mix(in srgb, var(--neutral-black) 6%, transparent);
+    color: var(--neutral-900);
   }
 
   &:focus-visible {
@@ -1627,7 +1627,7 @@ body.im-user-logged-in {
   display: flex;
   flex-direction: column;
   flex: 1;
-  background-color: #ffffff;
+  background-color: var(--neutral-100);
 }
 
 .im-mobile-catalog__item {
@@ -1640,7 +1640,7 @@ body.im-user-logged-in {
   gap: 12px;
   padding: 15px 0;
   text-decoration: none;
-  color: #111;
+  color: var(--neutral-900);
   @include interactive-transition;
 
   &:hover {
@@ -1682,11 +1682,11 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-mobile-catalog__item-title--accent {
-  color: #c80400;
+  color: var(--brand-600);
 }
 
 .im-mobile-catalog__arrow {
@@ -1748,8 +1748,8 @@ body.im-user-logged-in {
   z-index: var(--z-dropdown);
   display: flex;
   max-height: 520px;
-  background: #ffffff;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  background: var(--neutral-100);
+  box-shadow: 0 16px 48px color-mix(in srgb, var(--neutral-black) 12%, transparent);
   border-radius: 0 0 16px 16px;
   opacity: 0;
   visibility: hidden;
@@ -1782,7 +1782,7 @@ body.im-user-logged-in {
   padding: 13px;
   border-radius: 8px;
   text-decoration: none;
-  color: #111;
+  color: var(--neutral-900);
   cursor: pointer;
   @include interactive-transition;
 
@@ -1832,7 +1832,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-desktop-catalog__category-arrow {
@@ -1846,7 +1846,7 @@ body.im-user-logged-in {
 
 .im-desktop-catalog__category.is-active .im-desktop-catalog__category-arrow {
   display: inline-flex;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-desktop-catalog__subcategories {
@@ -1880,7 +1880,7 @@ body.im-user-logged-in {
   font-weight: 700;
   font-size: 18px;
   line-height: 133%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-desktop-catalog__subgrid {
@@ -1910,7 +1910,7 @@ body.im-user-logged-in {
   gap: 15px;
   padding: 16px;
   text-decoration: none;
-  color: #111;
+  color: var(--neutral-900);
   cursor: pointer;
   @include interactive-transition;
 }
@@ -1922,7 +1922,7 @@ body.im-user-logged-in {
   border-radius: 8px;
   width: 80px;
   height: 80px;
-  background-color: #fff;
+  background-color: var(--neutral-100);
   flex-shrink: 0;
   border-radius: 4px;
   overflow: hidden;
@@ -1941,7 +1941,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-desktop-catalog__sub-list {
@@ -1965,7 +1965,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 14px;
   line-height: 114%;
-  color: #666;
+  color: var(--neutral-500);
   text-decoration: none;
   @include interactive-transition;
 
@@ -1996,7 +1996,7 @@ body.im-user-logged-in {
   font-weight: 700;
   font-size: 28px;
   line-height: 129%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-goods__all {
@@ -2008,17 +2008,17 @@ body.im-user-logged-in {
   font-weight: 600;
   font-size: 14px;
   line-height: 114%;
-  color: #222;
+  color: var(--neutral-800);
   border-radius: 8px;
   padding: 8px 12px;
-  background: #ffffff;
+  background: var(--blue-600);
   border: 1px solid var(--neutral-300);
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--blue-900) 8%, transparent);
   @include interactive-transition;
 
   &:hover {
     color: var(--brand-600);
-    background: #f9fafb;
+    background: var(--neutral-130);
     border-color: var(--neutral-400);
 
     .im-goods__all-arrow svg path {
@@ -2048,16 +2048,16 @@ body.im-user-logged-in {
   display: flex;
   flex-direction: column;
   border-radius: 12px;
-  background: #fff;
+  background: var(--neutral-100);
   overflow: hidden;
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.04),
-    0 2px 8px rgba(0, 0, 0, 0.02);
+    0 10px 30px color-mix(in srgb, var(--neutral-black) 4%, transparent),
+    0 2px 8px color-mix(in srgb, var(--neutral-black) 2%, transparent);
   @include interactive-transition;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 50px color-mix(in srgb, var(--neutral-black) 10%, transparent);
   }
 }
 
@@ -2082,8 +2082,8 @@ body.im-user-logged-in {
   justify-content: space-evenly;
   text-align: center;
   border-radius: 12px;
-  border: 1px solid #ececec;
-  background: #f5f5f5;
+  border: 1px solid var(--neutral-260);
+  background: var(--neutral-200);
   padding: 40px;
   overflow: hidden;
 }
@@ -2121,7 +2121,7 @@ body.im-user-logged-in {
   font-size: 28px;
   line-height: 129%;
   text-align: center;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-goods__help-text {
@@ -2130,7 +2130,7 @@ body.im-user-logged-in {
   font-size: 16px;
   line-height: 150%;
   text-align: center;
-  color: #666;
+  color: var(--neutral-500);
   z-index: 1;
 }
 
@@ -2145,8 +2145,8 @@ body.im-user-logged-in {
   padding: 10px 20px;
   margin-top: 22px;
   text-decoration: none;
-  background: #c80400;
-  color: #ffffff;
+  background: var(--brand-600);
+  color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 14px;
@@ -2170,7 +2170,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #666666;
+  color: var(--neutral-500);
 }
 
 .im-goods__help-socials {
@@ -2191,7 +2191,7 @@ body.im-user-logged-in {
   gap: 8px;
   width: 112px;
   height: 36px;
-  border: 1px solid #0d99ff;
+  border: 1px solid var(--blue-590);
   border-radius: 8px;
   padding: 8px 12px;
   text-decoration: none;
@@ -2199,7 +2199,7 @@ body.im-user-logged-in {
   font-weight: 600;
   font-size: 14px;
   line-height: 114%;
-  background: #f8f8f8;
+  background: var(--neutral-140);
   transition:
     opacity var(--transition-fast),
     transform var(--transition-fast);
@@ -2217,13 +2217,13 @@ body.im-user-logged-in {
 }
 
 .im-goods__help-social--telegram {
-  color: #1f92f3;
+  color: var(--blue-570);
 }
 
 .im-goods__help-social--max {
   position: relative;
   border: none;
-  background: linear-gradient(90deg, #46c0fc 0%, #a15edd 100%);
+  background: linear-gradient(90deg, var(--purple-gradient-start) 0%, var(--purple-gradient-end) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2244,10 +2244,10 @@ body.im-user-logged-in {
     inset: 0;
     border-radius: inherit;
     padding: 1.5px;
-    background: linear-gradient(90deg, #46c0fc 0%, #a15edd 100%);
+    background: linear-gradient(90deg, var(--purple-gradient-start) 0%, var(--purple-gradient-end) 100%);
     -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
+      linear-gradient(var(--neutral-100) 0 0) content-box,
+      linear-gradient(var(--neutral-100) 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
@@ -2260,7 +2260,7 @@ body.im-user-logged-in {
   line-height: 100%;
   letter-spacing: 0.18em;
   text-align: center;
-  color: #666;
+  color: var(--neutral-500);
 }
 
 .im-goods__image {
@@ -2269,7 +2269,7 @@ body.im-user-logged-in {
   align-items: center;
   justify-content: center;
   padding: 12px;
-  background: #fff;
+  background: var(--neutral-100);
   border-radius: 12px 12px 0 0;
   min-height: 180px;
   overflow: hidden;
@@ -2315,8 +2315,8 @@ body.im-user-logged-in {
   height: 8px;
   border: none;
   padding: 0;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  background: #111;
+  box-shadow: 0 1px 2px 0 color-mix(in srgb, var(--neutral-black) 6%, transparent);
+  background: var(--neutral-900);
   opacity: 0.3;
   cursor: pointer;
   transition: opacity linear 0.3s;
@@ -2343,12 +2343,12 @@ body.im-user-logged-in {
   height: 36px;
   border: none;
   border-radius: 50%;
-  background: #fff;
+  background: var(--neutral-100);
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--neutral-black) 10%, transparent);
   transition:
     opacity var(--transition-fast),
     visibility var(--transition-fast),
@@ -2361,7 +2361,7 @@ body.im-user-logged-in {
   }
 
   &.is-active {
-    background: #ffe9ec;
+    background: var(--brand-110);
 
     svg path {
       fill: var(--brand-600);
@@ -2385,7 +2385,7 @@ body.im-user-logged-in {
   height: 36px;
   border-radius: 50%;
   border: none;
-  background: #ffffff;
+  background: var(--neutral-100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2393,7 +2393,7 @@ body.im-user-logged-in {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--neutral-black) 10%, transparent);
   transition:
     opacity var(--transition-fast),
     visibility var(--transition-fast),
@@ -2420,10 +2420,15 @@ body.im-user-logged-in {
 }
 
 .im-goods__name {
+  display: -webkit-box;
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
-  color: #444;
+  color: var(--neutral-600);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .im-goods__specs {
@@ -2443,7 +2448,7 @@ body.im-user-logged-in {
   border-radius: 4px;
   padding: 6px;
   backdrop-filter: blur(8px);
-  background: #f5f5f5;
+  background: var(--neutral-200);
   width: fit-content;
   height: 28px;
 }
@@ -2462,7 +2467,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 13px;
   line-height: 115%;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-goods__pricing {
@@ -2485,7 +2490,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  color: #999;
+  color: var(--neutral-400);
   text-decoration: line-through;
   white-space: nowrap;
 }
@@ -2496,11 +2501,11 @@ body.im-user-logged-in {
   font-size: 20px;
   line-height: 133%;
   white-space: nowrap;
-  color: #111;
+  color: var(--neutral-900);
 }
 
 .im-goods__price--accent {
-  color: var(--brand-600);
+  color: var(--brand-500);
 }
 
 .im-goods__badge {
@@ -2513,7 +2518,7 @@ body.im-user-logged-in {
   font-weight: 600;
   font-size: 13px;
   line-height: 1.2;
-  color: #ffffff;
+  color: var(--neutral-100);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -2540,7 +2545,7 @@ body.im-user-logged-in {
   border: 1px solid transparent;
   border-radius: 8px;
   background: var(--brand-600);
-  color: #fff;
+  color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 600;
   font-size: 14px;
@@ -2562,7 +2567,7 @@ body.im-user-logged-in {
   &:hover {
     background: var(--brand-500);
     transform: translateY(-1px);
-    box-shadow: 0 8px 18px rgba(200, 4, 0, 0.4);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--brand-600) 40%, transparent);
   }
 
   &:active {
@@ -2578,15 +2583,15 @@ body.im-user-logged-in {
 }
 
 .im-goods__cart.is-added {
-  border-color: #f2c3c2;
-  background: #fff;
+  border-color: var(--brand-250);
+  background: var(--neutral-100);
   color: var(--brand-600);
   box-shadow: none;
   transform: none;
 
   &:hover {
-    border-color: #e9afae;
-    background: #fff7f7;
+    border-color: var(--brand-260);
+    background: var(--neutral-100)7f7;
     box-shadow: none;
     transform: none;
   }
@@ -2611,7 +2616,7 @@ body.im-user-logged-in {
   flex-shrink: 0;
   border: 1px solid var(--neutral-300);
   border-radius: 50%;
-  background: #fff;
+  background: var(--neutral-100);
   cursor: pointer;
   @include interactive-transition;
 
@@ -2637,8 +2642,8 @@ body.im-user-logged-in {
 // ─── Footer ────────────────────────────────────────────────
 .im-footer {
   width: 100%;
-  background-color: #111111;
-  color: #ffffff;
+  background-color: var(--neutral-900);
+  color: var(--neutral-100);
   border-radius: 8px;
   padding: 20px 40px 32px;
   margin-top: 40px;
@@ -2687,7 +2692,7 @@ body.im-user-logged-in {
   font-size: 7px;
   line-height: 100%;
   letter-spacing: 0.1em;
-  color: #fff;
+  color: var(--neutral-100);
 }
 
 .im-footer__socials {
@@ -2704,7 +2709,7 @@ body.im-user-logged-in {
   font-weight: 500;
   font-size: 14px;
   line-height: 1.4;
-  color: #0d99ff;
+  color: var(--blue-590);
   transition: opacity var(--transition-fast);
 }
 
@@ -2723,7 +2728,7 @@ body.im-user-logged-in {
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
-  background: linear-gradient(90deg, #46c0fc 0%, #a15edd 100%);
+  background: linear-gradient(90deg, var(--purple-gradient-start) 0%, var(--purple-gradient-end) 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -2740,14 +2745,14 @@ body.im-user-logged-in {
   grid-template-columns: repeat(5, 1fr);
   gap: 70px;
   padding-bottom: 40px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid color-mix(in srgb, var(--neutral-100) 10%, transparent);
 }
 
 .im-footer__col-title {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.4;
-  color: #ffffff;
+  color: var(--neutral-100);
   margin: 0 0 16px;
 }
 
@@ -2769,13 +2774,13 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
-  color: #cccccc;
+  color: var(--neutral-300);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .im-footer__link:hover {
-  color: #ffffff;
+  color: var(--neutral-100);
 }
 
 .im-footer__link--underline {
@@ -2786,7 +2791,7 @@ body.im-user-logged-in {
   font-weight: 700;
   font-size: 14px;
   line-height: 114%;
-  color: #fff;
+  color: var(--neutral-100);
   margin: 0 0 8px;
 }
 
@@ -2794,7 +2799,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 14px;
   line-height: 114%;
-  color: #ccc;
+  color: var(--neutral-300);
   margin: 0 0 16px;
 }
 
@@ -2802,7 +2807,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 14px;
   line-height: 114%;
-  color: #ccc;
+  color: var(--neutral-300);
   margin: 0 0 4px;
 }
 
@@ -2818,14 +2823,14 @@ body.im-user-logged-in {
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid color-mix(in srgb, var(--neutral-100) 20%, transparent);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
   font-size: 14px;
   white-space: nowrap;
   line-height: 1.4;
-  color: #ffffff;
+  color: var(--neutral-100);
   transition:
     border-color var(--transition-fast),
     background-color var(--transition-fast);
@@ -2833,8 +2838,8 @@ body.im-user-logged-in {
 }
 
 .im-footer__download:hover {
-  border-color: rgba(255, 255, 255, 0.4);
-  background-color: rgba(255, 255, 255, 0.05);
+  border-color: color-mix(in srgb, var(--neutral-100) 40%, transparent);
+  background-color: color-mix(in srgb, var(--neutral-100) 5%, transparent);
 }
 
 .im-footer__download-icon {
@@ -2847,26 +2852,26 @@ body.im-user-logged-in {
   font-weight: 600;
   font-size: 14px;
   line-height: 114%;
-  color: #ffffff;
+  color: var(--neutral-100);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .im-footer__phone:hover {
-  color: #cccccc;
+  color: var(--neutral-300);
 }
 
 .im-footer__email {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.4;
-  color: #ffffff;
+  color: var(--neutral-100);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
 .im-footer__email:hover {
-  color: #cccccc;
+  color: var(--neutral-300);
 }
 
 .im-footer__contact {
@@ -2880,7 +2885,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
-  color: #ccc;
+  color: var(--neutral-300);
 }
 
 .im-footer__address {
@@ -2893,7 +2898,7 @@ body.im-user-logged-in {
   font-weight: 600;
   font-size: 14px;
   line-height: 1.4;
-  color: #ffffff;
+  color: var(--neutral-100);
   margin: 0;
 }
 
@@ -2905,7 +2910,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 13px;
   line-height: 1.4;
-  color: #999999;
+  color: var(--neutral-400);
 }
 
 // ─── CTA (Получите лучшее решение) ─────────────────────────
@@ -2918,7 +2923,7 @@ body.im-user-logged-in {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 40px;
-  background: #111;
+  background: var(--neutral-900);
   border-radius: 8px;
   padding: 48px 56px;
   overflow: hidden;
@@ -2961,7 +2966,7 @@ body.im-user-logged-in {
   font-weight: 700;
   font-size: 12px;
   line-height: 108%;
-  color: #ccc;
+  color: var(--neutral-300);
 }
 
 .im-cta__row {
@@ -2976,7 +2981,7 @@ body.im-user-logged-in {
   padding: 10px 14px;
   height: 50px;
   padding: 0 16px;
-  background: rgba(255, 255, 255, 0.05);
+  background: color-mix(in srgb, var(--neutral-100) 5%, transparent);
   border: 1px solid var(--neutral-700);
   border-radius: 10px;
   font-family: var(--font-family);
@@ -3007,10 +3012,10 @@ body.im-user-logged-in {
 }
 
 .im-cta__select-wrap:focus-within .im-cta__select-btn {
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: color-mix(in srgb, var(--neutral-100) 35%, transparent);
   box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 10px 28px rgba(0, 0, 0, 0.35);
+    0 0 0 1px color-mix(in srgb, var(--neutral-100) 6%, transparent),
+    0 10px 28px color-mix(in srgb, var(--neutral-black) 35%, transparent);
 }
 
 .im-cta__select-wrap:focus-within .im-cta__select-arrow {
@@ -3018,8 +3023,8 @@ body.im-user-logged-in {
 }
 
 .im-cta__select-wrap:hover .im-cta__select-btn {
-  border-color: rgba(255, 255, 255, 0.28);
-  background: rgba(255, 255, 255, 0.07);
+  border-color: color-mix(in srgb, var(--neutral-100) 28%, transparent);
+  background: color-mix(in srgb, var(--neutral-100) 7%, transparent);
 }
 
 .im-cta__select-label {
@@ -3027,7 +3032,7 @@ body.im-user-logged-in {
   font-weight: 400;
   font-size: 12px;
   line-height: 1;
-  color: #ccc;
+  color: var(--neutral-300);
   position: absolute;
   top: 8px;
   left: 16px;
@@ -3049,13 +3054,13 @@ body.im-user-logged-in {
   height: 50px;
   border-radius: 12px;
   padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: color-mix(in srgb, var(--neutral-100) 6%, transparent);
+  border: 1px solid color-mix(in srgb, var(--neutral-100) 16%, transparent);
   font-family: var(--font-family);
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
-  color: #fff;
+  color: var(--neutral-100);
   outline: none;
   cursor: pointer;
   text-align: left;
@@ -3072,7 +3077,7 @@ body.im-user-logged-in {
 }
 
 .im-cta__select-btn:focus-visible {
-  border-color: rgba(255, 255, 255, 0.4);
+  border-color: color-mix(in srgb, var(--neutral-100) 40%, transparent);
 }
 
 .im-cta__select-menu {
@@ -3082,11 +3087,11 @@ body.im-user-logged-in {
   top: calc(100% + 8px);
   border-radius: 14px;
   padding: 6px;
-  background: rgba(17, 17, 17, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: color-mix(in srgb, var(--neutral-900) 92%, transparent);
+  border: 1px solid color-mix(in srgb, var(--neutral-100) 12%, transparent);
   box-shadow:
-    0 20px 48px rgba(0, 0, 0, 0.55),
-    0 2px 0 rgba(255, 255, 255, 0.04) inset;
+    0 20px 48px color-mix(in srgb, var(--neutral-black) 55%, transparent),
+    0 2px 0 color-mix(in srgb, var(--neutral-100) 4%, transparent) inset;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   z-index: 5;
@@ -3103,7 +3108,7 @@ body.im-user-logged-in {
   width: 100%;
   border-radius: 10px;
   padding: 10px 12px;
-  color: rgba(255, 255, 255, 0.92);
+  color: color-mix(in srgb, var(--neutral-100) 92%, transparent);
   font-size: 16px;
   line-height: 1.2;
   text-align: left;
@@ -3116,16 +3121,16 @@ body.im-user-logged-in {
 }
 
 .im-cta__select-option:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: color-mix(in srgb, var(--neutral-100) 8%, transparent);
 }
 
 .im-cta__select-option.is-active {
-  background: rgba(200, 4, 0, 0.18);
-  color: #ffffff;
+  background: color-mix(in srgb, var(--brand-600) 18%, transparent);
+  color: var(--neutral-100);
 }
 
 .im-cta__select-option:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.22);
+  outline: 2px solid color-mix(in srgb, var(--neutral-100) 22%, transparent);
   outline-offset: 2px;
 }
 
@@ -3154,8 +3159,8 @@ body.im-user-logged-in {
   font-weight: 700;
   font-size: 14px;
   line-height: 114%;
-  color: #fff;
-  background: #c80400;
+  color: var(--neutral-100);
+  background: var(--brand-600);
   cursor: pointer;
   transition:
     background var(--transition-fast),
@@ -3193,4 +3198,3 @@ body.im-user-logged-in {
     height: 100%;
   }
 }
-

@@ -3,9 +3,190 @@ const reviewsState = new WeakMap();
 const reviewMediaSliders = new WeakMap();
 const productGoodsSliders = new WeakMap();
 const goodsCardSliders = new WeakMap();
+const productGallerySliders = new WeakMap();
 let reviewMediaInitAttempts = 0;
 let productGoodsInitAttempts = 0;
 let goodsCardInitAttempts = 0;
+let productGalleryInitAttempts = 0;
+
+function getProductGalleryThumbs(gallery) {
+  if (!gallery) {
+    return [];
+  }
+
+  return Array.from(gallery.querySelectorAll(".im-product-page__thumb")).filter(
+    (thumb) => thumb.dataset.fullSrc,
+  );
+}
+
+function getActiveProductGalleryThumbIndex(gallery) {
+  const thumbs = getProductGalleryThumbs(gallery);
+  const activeIndex = thumbs.findIndex((thumb) =>
+    thumb.classList.contains("im-product-page__thumb--active"),
+  );
+
+  return activeIndex >= 0 ? activeIndex : 0;
+}
+
+function syncProductGalleryThumbs(gallery, nextIndex) {
+  const thumbs = getProductGalleryThumbs(gallery);
+
+  thumbs.forEach((thumb, thumbIndex) => {
+    const isActive = thumbIndex === nextIndex;
+    thumb.classList.toggle("im-product-page__thumb--active", isActive);
+    thumb.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
+function syncProductGalleryMainImage(gallery, nextIndex) {
+  if (!gallery) {
+    return;
+  }
+
+  const thumbs = getProductGalleryThumbs(gallery);
+  const mainImage = gallery.querySelector(".im-product-page__gallery-image");
+  const activeThumb = thumbs[nextIndex];
+
+  if (!mainImage || !activeThumb?.dataset.fullSrc) {
+    return;
+  }
+
+  mainImage.src = activeThumb.dataset.fullSrc;
+  mainImage.alt = activeThumb.dataset.fullAlt || mainImage.alt;
+}
+
+function destroyProductGallerySlider(gallery) {
+  const slider = productGallerySliders.get(gallery);
+  const main = gallery?.querySelector(".im-product-page__gallery-main");
+
+  if (slider) {
+    slider.destroy();
+    productGallerySliders.delete(gallery);
+  }
+
+  if (!main) {
+    return;
+  }
+
+  main.classList.remove("keen-slider");
+  Array.from(main.children).forEach((child) => {
+    child.classList.remove("keen-slider__slide");
+  });
+}
+
+function buildProductGallerySlides(gallery) {
+  const main = gallery?.querySelector(".im-product-page__gallery-main");
+  const thumbs = getProductGalleryThumbs(gallery);
+
+  if (!main || !thumbs.length) {
+    return null;
+  }
+
+  main.replaceChildren();
+
+  thumbs.forEach((thumb, index) => {
+    const slide = document.createElement("div");
+    slide.className = "im-product-page__gallery-slide";
+    slide.dataset.galleryIndex = String(index);
+
+    const image = document.createElement("img");
+    image.className = "im-product-page__gallery-image";
+    image.src = thumb.dataset.fullSrc;
+    image.alt = thumb.dataset.fullAlt || "";
+    image.loading = index === 0 ? "eager" : "lazy";
+
+    slide.appendChild(image);
+    main.appendChild(slide);
+  });
+
+  return main;
+}
+
+function restoreProductGalleryMainImage(gallery) {
+  const main = gallery?.querySelector(".im-product-page__gallery-main");
+  const activeIndex = getActiveProductGalleryThumbIndex(gallery);
+  const thumbs = getProductGalleryThumbs(gallery);
+  const activeThumb = thumbs[activeIndex];
+
+  if (!main || !activeThumb?.dataset.fullSrc) {
+    return;
+  }
+
+  main.replaceChildren();
+
+  const image = document.createElement("img");
+  image.className = "im-product-page__gallery-image";
+  image.src = activeThumb.dataset.fullSrc;
+  image.alt = activeThumb.dataset.fullAlt || "";
+
+  main.appendChild(image);
+}
+
+function initProductGallerySliders(root = document) {
+  root.querySelectorAll(".im-product-page__gallery").forEach((gallery) => {
+    if (!(gallery instanceof HTMLElement)) {
+      return;
+    }
+
+    const isMobile = window.matchMedia("(max-width: 640px)").matches;
+
+    if (!isMobile) {
+      destroyProductGallerySlider(gallery);
+      restoreProductGalleryMainImage(gallery);
+      return;
+    }
+
+    if (productGallerySliders.has(gallery) || typeof KeenSlider === "undefined") {
+      return;
+    }
+
+    const main = buildProductGallerySlides(gallery);
+
+    if (!main || main.offsetWidth === 0) {
+      return;
+    }
+
+    const initial = getActiveProductGalleryThumbIndex(gallery);
+    main.classList.add("keen-slider");
+    Array.from(main.children).forEach((child) => {
+      child.classList.add("keen-slider__slide");
+    });
+
+    const slider = new KeenSlider(main, {
+      initial,
+      rubberband: false,
+      slides: {
+        origin: "auto",
+        perView: "auto",
+        spacing: 12,
+      },
+      slideChanged(instance) {
+        const nextIndex = instance.track.details.rel;
+        syncProductGalleryThumbs(gallery, nextIndex);
+      },
+    });
+
+    productGallerySliders.set(gallery, slider);
+    syncProductGalleryThumbs(gallery, initial);
+  });
+}
+
+function scheduleProductGalleryInit(root = document) {
+  initProductGallerySliders(root);
+
+  if (
+    typeof KeenSlider !== "undefined" ||
+    productGalleryInitAttempts >= 20 ||
+    !root.querySelector(".im-product-page__gallery")
+  ) {
+    return;
+  }
+
+  productGalleryInitAttempts += 1;
+  window.setTimeout(() => {
+    scheduleProductGalleryInit(root);
+  }, 250);
+}
 
 function resolveRatingValue(ratingNode) {
   if (!ratingNode) {
@@ -521,11 +702,11 @@ function initProductGoodsCarousels(root = document) {
             spacing: 12,
           },
         },
-        "(max-width: 640px)": {
+        "(max-width: 600px)": {
           slides: {
             origin: "auto",
-            perView: 1.1,
-            spacing: 12,
+            perView: 2,
+            spacing: 8,
           },
         },
       },
@@ -806,20 +987,20 @@ function scrollToProductSection(targetSection) {
 
 function initProductStickyHeader() {
   const stickyHeader = document.querySelector("[data-product-sticky-header]");
-  const bundleSection = document.querySelector(".im-product-page__bundle");
+  const heroSection = document.querySelector(".im-product-page__hero");
   const trackedSections = Array.from(
     document.querySelectorAll(
       "#product-characteristics, #product-set, #product-reviews, #product-cases, #product-analogs, #product-related",
     ),
   );
 
-  if (!(stickyHeader instanceof HTMLElement) || !(bundleSection instanceof HTMLElement)) {
+  if (!(stickyHeader instanceof HTMLElement) || !(heroSection instanceof HTMLElement)) {
     return;
   }
 
   const syncStickyVisibility = () => {
-    const bundleTop = bundleSection.getBoundingClientRect().top;
-    const shouldShow = bundleTop <= 24;
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    const shouldShow = heroBottom <= 0;
 
     stickyHeader.classList.toggle("is-visible", shouldShow);
     stickyHeader.setAttribute("aria-hidden", shouldShow ? "false" : "true");
@@ -1048,19 +1229,18 @@ document.addEventListener("click", (event) => {
 
   if (thumbButton) {
     const gallery = thumbButton.closest(".im-product-page__gallery");
-    const mainImage = gallery?.querySelector(".im-product-page__gallery-image");
-    const nextSrc = thumbButton.dataset.fullSrc;
+    const thumbs = gallery ? getProductGalleryThumbs(gallery) : [];
+    const nextIndex = thumbs.indexOf(thumbButton);
+    const productGallerySlider = gallery ? productGallerySliders.get(gallery) : null;
 
-    if (gallery && mainImage && nextSrc) {
-      gallery.querySelectorAll(".im-product-page__thumb").forEach((thumb) => {
-        const isActive = thumb === thumbButton;
+    if (gallery && nextIndex >= 0) {
+      syncProductGalleryThumbs(gallery, nextIndex);
 
-        thumb.classList.toggle("im-product-page__thumb--active", isActive);
-        thumb.setAttribute("aria-pressed", String(isActive));
-      });
-
-      mainImage.src = nextSrc;
-      mainImage.alt = thumbButton.dataset.fullAlt || mainImage.alt;
+      if (productGallerySlider) {
+        productGallerySlider.moveToIdx(nextIndex);
+      } else {
+        syncProductGalleryMainImage(gallery, nextIndex);
+      }
     }
 
     return;
@@ -1174,7 +1354,12 @@ initCtaCustomSelects();
 initRatingStars();
 scheduleReviewMediaInit();
 scheduleGoodsCardInit();
+scheduleProductGalleryInit();
 initCasesGalleries();
 scheduleProductGoodsInit();
 initFaqAccordions();
 initProductStickyHeader();
+
+window.addEventListener("resize", () => {
+  initProductGallerySliders();
+});

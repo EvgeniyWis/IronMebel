@@ -10,7 +10,7 @@
     font-size: 28px;
     margin-left: 16px;
     line-height: 120%;
-    color: #111;
+    color: var(--neutral-900);
     margin-bottom: 24px;
 
     &--mobile {
@@ -43,7 +43,7 @@
   &__search {
     display: flex;
     align-items: center;
-    background: #f5f5f5;
+    background: var(--neutral-200);
     border-radius: 8px;
     padding: 16px 14px;
     height: 48px;
@@ -58,7 +58,7 @@
     background: transparent;
     font-family: var(--font-family);
     font-size: 14px;
-    color: #111;
+    color: var(--neutral-900);
 
     &::placeholder {
       color: var(--neutral-500);
@@ -91,14 +91,14 @@
     user-select: none;
     font-size: 14px;
     font-weight: 500;
-    color: #111;
+    color: var(--neutral-900);
 
     input {
       width: 20px;
       height: 20px;
-      border: 1.5px solid #ccc;
+      border: 1.5px solid var(--neutral-300);
       border-radius: 6px;
-      background: #ffffff;
+      background: var(--neutral-100);
       appearance: none;
       -webkit-appearance: none;
       position: relative;
@@ -125,8 +125,8 @@
       }
 
       &:checked {
-        border-color: #c80400;
-        background: #c80400;
+        border-color: var(--blue-600);
+        background: var(--blue-600);
       }
 
       &:checked::after {
@@ -178,9 +178,9 @@
     input {
       width: 20px;
       height: 20px;
-      border: 1.5px solid #ccc;
+      border: 1.5px solid var(--neutral-300);
       border-radius: 6px;
-      background: #ffffff;
+      background: var(--neutral-100);
       appearance: none;
       -webkit-appearance: none;
       position: relative;
@@ -207,8 +207,8 @@
       }
 
       &:checked {
-        border-color: #c80400;
-        background: #c80400;
+        border-color: var(--blue-600);
+        background: var(--blue-600);
       }
 
       &:checked::after {
@@ -259,7 +259,7 @@
     font-weight: 500;
     font-size: 18px;
     line-height: 133%;
-    color: #111;
+    color: var(--neutral-900);
     text-decoration: none;
     margin-bottom: 4px;
     transition: color var(--transition-fast);
@@ -275,12 +275,12 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 114%;
-    color: #666;
+    color: var(--neutral-500);
     margin-bottom: 10px;
 
     span {
       font-weight: 500;
-      color: #111;
+      color: var(--neutral-900);
     }
   }
 
@@ -297,7 +297,7 @@
     font-family: var(--font-family);
     font-size: 14px;
     line-height: 114%;
-    color: #666;
+    color: var(--neutral-500);
     height: 44px;
     transition: color var(--transition-fast);
 
@@ -325,13 +325,13 @@
     font-family: var(--font-family);
     font-weight: 700;
     font-size: 16px;
-    color: #c80400;
+    color: var(--brand-600);
   }
 
   &__item-old-price {
     font-family: var(--font-family);
     font-size: 14px;
-    color: #999;
+    color: var(--neutral-400);
     text-decoration: line-through;
   }
 
@@ -343,7 +343,7 @@
     border-radius: 8px;
     overflow: hidden;
     padding: 10px;
-    background: #f5f5f5;
+    background: var(--neutral-200);
     height: 44px;
   }
 
@@ -361,7 +361,7 @@
 
     &:hover {
       background: var(--neutral-200);
-      color: #111;
+      color: var(--neutral-900);
     }
   }
 
@@ -373,8 +373,8 @@
     font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
-    color: #111;
-    background: #f5f5f5;
+    color: var(--neutral-900);
+    background: var(--neutral-200);
     height: 100%;
   }
 
@@ -387,7 +387,7 @@
     padding: 4px;
     width: 76px;
     height: 28px;
-    background: #fff;
+    background: var(--neutral-100);
   }
 
   &__quantity--sm {
@@ -418,7 +418,7 @@
 
     &:hover {
       background: var(--neutral-200);
-      color: #111;
+      color: var(--neutral-900);
     }
   }
 
@@ -431,8 +431,8 @@
     font-size: 14px;
     line-height: 114%;
     text-align: center;
-    color: #111;
-    background: #fff;
+    color: var(--neutral-900);
+    background: var(--neutral-100);
     height: 100%;
   }
 
@@ -526,9 +526,9 @@
     width: 28px;
     height: 28px;
     box-shadow:
-      0 4px 4px -2px rgba(24, 39, 75, 0.08),
-      0 2px 4px -2px rgba(24, 39, 75, 0.12);
-    background: #fff;
+      0 4px 4px -2px color-mix(in srgb, var(--blue-900) 8%, transparent),
+      0 2px 4px -2px color-mix(in srgb, var(--blue-900) 12%, transparent);
+    background: var(--neutral-100);
   }
 
   &__extras-card-image {
@@ -557,7 +557,7 @@
     font-family: var(--font-family);
     font-size: 14px;
     line-height: 140%;
-    color: #111;
+    color: var(--neutral-900);
     margin-bottom: 6px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -578,7 +578,7 @@
     font-weight: 700;
     line-height: 150%;
     font-size: 16px;
-    color: #111;
+    color: var(--neutral-900);
   }
 
   &__extras-card-add {
@@ -588,7 +588,7 @@
     border-radius: 8px;
     width: 36px;
     height: 36px;
-    background: #c80400;
+    background: var(--brand-600);
     transition: background var(--transition-fast);
 
     &:hover {
@@ -605,8 +605,8 @@
   }
 
   &__summary-inner {
-    box-shadow: 0 1px 2px 0 rgba(24, 39, 75, 0.04);
-    background: #fff;
+    box-shadow: 0 1px 2px 0 color-mix(in srgb, var(--blue-900) 4%, transparent);
+    background: var(--neutral-100);
     border-radius: 8px;
     padding: 16px;
   }
@@ -628,13 +628,13 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 140%;
-    color: #677383;
+    color: var(--neutral-460);
 
     .im-cart-page__summary-row--total & {
       font-weight: 500;
       font-size: 20px;
       line-height: 140%;
-      color: #111827;
+      color: var(--neutral-850);
     }
   }
 
@@ -642,18 +642,18 @@
     font-family: var(--font-family);
     font-weight: 500;
     font-size: 20px;
-    color: #111827;
+    color: var(--neutral-850);
 
     .im-cart-page__summary-row--total & {
       font-weight: 700;
       font-size: 24px;
       line-height: 133%;
-      color: #111827;
+      color: var(--neutral-850);
     }
   }
 
   &__summary-value--discount {
-    color: #1a9a5a;
+    color: var(--green-550);
   }
 
   &__summary-btn {
@@ -674,3 +674,4 @@
     }
   }
 }
+

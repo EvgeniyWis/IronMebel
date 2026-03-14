@@ -271,58 +271,6 @@
                   />
                 </div>
 
-                <!-- Блоки под галереей -->
-                <div class="im-product-page__gallery-extras">
-                  <a class="im-product-page__extra-link" href="#">
-                    <img
-                      class="im-product-page__extra-image"
-                      src="./images/catalogue/mock_catalogue_item.png"
-                      alt=""
-                    />
-                    <div class="im-product-page__extra-text">
-                      <span>Готовые решения с этим товаром</span>
-                    </div>
-                    <svg
-                      class="im-product-page__extra-arrow"
-                      width="10"
-                      height="9"
-                      viewBox="0 0 10 9"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M0 4.50083C0 4.04083 0.37275 3.66834 0.8325 3.66834C1.23067 3.66834 5.88667 3.66834 7.12833 3.66834L4.65666 1.17083L5.8275 0L9.75583 3.90251C9.91917 4.06501 10 4.28334 10 4.50167C10 4.71917 9.91833 4.93668 9.75583 5.09918L5.8275 9.00167L4.65666 7.83084L7.12833 5.33333C5.88667 5.33333 1.23067 5.33333 0.8325 5.33333C0.37275 5.33333 0 4.96083 0 4.50083Z"
-                        fill="#666666"
-                      />
-                    </svg>
-                  </a>
-                  <a class="im-product-page__extra-link" href="#">
-                    <img
-                      class="im-product-page__extra-image"
-                      src="./images/catalogue/mock_catalogue_item.png"
-                      alt=""
-                    />
-                    <div class="im-product-page__extra-text">
-                      <span>Сопутствующие товары</span>
-                      <span class="im-product-page__extra-hint"
-                        >Подборка для этого товара</span
-                      >
-                    </div>
-                    <svg
-                      class="im-product-page__extra-arrow"
-                      width="10"
-                      height="9"
-                      viewBox="0 0 10 9"
-                      fill="none"
-                      aria-hidden="true"
-                    >
-                      <path
-                        d="M0 4.50083C0 4.04083 0.37275 3.66834 0.8325 3.66834C1.23067 3.66834 5.88667 3.66834 7.12833 3.66834L4.65666 1.17083L5.8275 0L9.75583 3.90251C9.91917 4.06501 10 4.28334 10 4.50167C10 4.71917 9.91833 4.93668 9.75583 5.09918L5.8275 9.00167L4.65666 7.83084L7.12833 5.33333C5.88667 5.33333 1.23067 5.33333 0.8325 5.33333C0.37275 5.33333 0 4.96083 0 4.50083Z"
-                        fill="#666666"
-                      />
-                    </svg>
-                  </a>
-                </div>
               </div>
 
               <!-- === ЦЕНТРАЛЬНАЯ КОЛОНКА: Информация и конфигуратор === -->
@@ -523,43 +471,37 @@
 
                 <!-- Выбор цвета -->
                 <div class="im-product-page__option">
-                  <span class="im-product-page__option-label">Цвет:</span>
+                  <span class="im-product-page__option-label">Цвет</span>
                   <div class="im-product-page__color-swatches">
+                    <button
+                      class="im-product-page__swatch"
+                      type="button"
+                      style="--swatch-color: #ff3131"
+                      aria-label="Красный"
+                    ></button>
                     <button
                       class="im-product-page__swatch im-product-page__swatch--active"
                       type="button"
-                      style="--swatch-color: #333"
-                      aria-label="Чёрный"
-                    ></button>
-                    <button
-                      class="im-product-page__swatch"
-                      type="button"
-                      style="--swatch-color: #999"
-                      aria-label="Серый"
-                    ></button>
-                    <button
-                      class="im-product-page__swatch"
-                      type="button"
-                      style="--swatch-color: #c8a830"
-                      aria-label="Жёлтый"
-                    ></button>
-                    <button
-                      class="im-product-page__swatch"
-                      type="button"
-                      style="--swatch-color: #4a8c3f"
-                      aria-label="Зелёный"
-                    ></button>
-                    <button
-                      class="im-product-page__swatch"
-                      type="button"
-                      style="--swatch-color: #3a6fbf"
+                      style="--swatch-color: #3f8fc4"
                       aria-label="Синий"
                     ></button>
                     <button
                       class="im-product-page__swatch"
                       type="button"
-                      style="--swatch-color: #c83030"
-                      aria-label="Красный"
+                      style="--swatch-color: #25a55b"
+                      aria-label="Зелёный"
+                    ></button>
+                    <button
+                      class="im-product-page__swatch"
+                      type="button"
+                      style="--swatch-color: #f0ab00"
+                      aria-label="Жёлтый"
+                    ></button>
+                    <button
+                      class="im-product-page__swatch"
+                      type="button"
+                      style="--swatch-color: #7347ed"
+                      aria-label="Фиолетовый"
                     ></button>
                   </div>
                 </div>
@@ -797,6 +739,58 @@
                 </div>
 
                 <!-- Характеристики (краткие) -->
+                <div class="im-product-page__gallery-extras">
+                  <a class="im-product-page__extra-link" href="#">
+                    <img
+                      class="im-product-page__extra-image"
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt=""
+                    />
+                    <div class="im-product-page__extra-text">
+                      <span>Готовые решения с этим товаром</span>
+                    </div>
+                    <svg
+                      class="im-product-page__extra-arrow"
+                      width="10"
+                      height="9"
+                      viewBox="0 0 10 9"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M0 4.50083C0 4.04083 0.37275 3.66834 0.8325 3.66834C1.23067 3.66834 5.88667 3.66834 7.12833 3.66834L4.65666 1.17083L5.8275 0L9.75583 3.90251C9.91917 4.06501 10 4.28334 10 4.50167C10 4.71917 9.91833 4.93668 9.75583 5.09918L5.8275 9.00167L4.65666 7.83084L7.12833 5.33333C5.88667 5.33333 1.23067 5.33333 0.8325 5.33333C0.37275 5.33333 0 4.96083 0 4.50083Z"
+                        fill="#666666"
+                      />
+                    </svg>
+                  </a>
+                  <a class="im-product-page__extra-link" href="#">
+                    <img
+                      class="im-product-page__extra-image"
+                      src="./images/catalogue/mock_catalogue_item.png"
+                      alt=""
+                    />
+                    <div class="im-product-page__extra-text">
+                      <span>Сопутствующие товары</span>
+                      <span class="im-product-page__extra-hint"
+                        >Подборка для этого товара</span
+                      >
+                    </div>
+                    <svg
+                      class="im-product-page__extra-arrow"
+                      width="10"
+                      height="9"
+                      viewBox="0 0 10 9"
+                      fill="none"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M0 4.50083C0 4.04083 0.37275 3.66834 0.8325 3.66834C1.23067 3.66834 5.88667 3.66834 7.12833 3.66834L4.65666 1.17083L5.8275 0L9.75583 3.90251C9.91917 4.06501 10 4.28334 10 4.50167C10 4.71917 9.91833 4.93668 9.75583 5.09918L5.8275 9.00167L4.65666 7.83084L7.12833 5.33333C5.88667 5.33333 1.23067 5.33333 0.8325 5.33333C0.37275 5.33333 0 4.96083 0 4.50083Z"
+                        fill="#666666"
+                      />
+                    </svg>
+                  </a>
+                </div>
+
                 <div class="im-product-page__specs-short">
                   <h3 class="im-product-page__specs-heading">Характеристики</h3>
                   <ul class="im-product-page__specs-list">
@@ -1136,14 +1130,15 @@
 
               <div class="im-product-page__bundle-operator" aria-hidden="true">
                 <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
+                  class="im-product-page__bundle-operator-icon"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.5 0C7.04 0 6.66666 0.373333 6.66666 0.833333V6.66667H0.833333C0.373333 6.66667 0 7.04 0 7.5C0 7.96 0.373333 8.33333 0.833333 8.33333H6.66666V14.1667C6.66666 14.6267 7.04 15 7.5 15C7.96 15 8.33333 14.6267 8.33333 14.1667V8.33333H14.1667C14.6267 8.33333 15 7.96 15 7.5C15 7.04 14.6267 6.66667 14.1667 6.66667H8.33333V0.833333C8.33333 0.373333 7.96 0 7.5 0Z"
+                    d="M6 0C5.632 0 5.33333 0.298667 5.33333 0.666667V5.33333H0.666667C0.298667 5.33333 0 5.632 0 6C0 6.368 0.298667 6.66667 0.666667 6.66667H5.33333V11.3333C5.33333 11.7013 5.632 12 6 12C6.368 12 6.66667 11.7013 6.66667 11.3333V6.66667H11.3333C11.7013 6.66667 12 6.368 12 6C12 5.632 11.7013 5.33333 11.3333 5.33333H6.66667V0.666667C6.66667 0.298667 6.368 0 6 0Z"
                     fill="#999999"
                   />
                 </svg>
@@ -1240,14 +1235,15 @@
 
               <div class="im-product-page__bundle-operator" aria-hidden="true">
                 <svg
-                  width="15"
-                  height="15"
-                  viewBox="0 0 15 15"
+                  class="im-product-page__bundle-operator-icon"
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M7.5 0C7.04 0 6.66666 0.373333 6.66666 0.833333V6.66667H0.833333C0.373333 6.66667 0 7.04 0 7.5C0 7.96 0.373333 8.33333 0.833333 8.33333H6.66666V14.1667C6.66666 14.6267 7.04 15 7.5 15C7.96 15 8.33333 14.6267 8.33333 14.1667V8.33333H14.1667C14.6267 8.33333 15 7.96 15 7.5C15 7.04 14.6267 6.66667 14.1667 6.66667H8.33333V0.833333C8.33333 0.373333 7.96 0 7.5 0Z"
+                    d="M6 0C5.632 0 5.33333 0.298667 5.33333 0.666667V5.33333H0.666667C0.298667 5.33333 0 5.632 0 6C0 6.368 0.298667 6.66667 0.666667 6.66667H5.33333V11.3333C5.33333 11.7013 5.632 12 6 12C6.368 12 6.66667 11.7013 6.66667 11.3333V6.66667H11.3333C11.7013 6.66667 12 6.368 12 6C12 5.632 11.7013 5.33333 11.3333 5.33333H6.66667V0.666667C6.66667 0.298667 6.368 0 6 0Z"
                     fill="#999999"
                   />
                 </svg>
@@ -1342,6 +1338,7 @@
 
               <div class="im-product-page__bundle-operator" aria-hidden="true">
                 <svg
+                  class="im-product-page__bundle-operator-icon"
                   width="19"
                   height="9"
                   viewBox="0 0 19 9"
@@ -1655,6 +1652,7 @@
           <section
             class="im-goods im-goods--cart im-product-page__goods-carousel"
             id="product-set"
+            data-product-goods-section
           >
             <div class="im-container">
               <header class="im-goods__head">
@@ -1703,7 +1701,7 @@
 
               <div
                 class="im-goods__grid im-product-page__goods-carousel-track"
-                data-goods-carousel
+                data-product-goods-track
               >
                 <!-- Card 1 -->
                 <article class="im-goods__card">
@@ -2532,6 +2530,16 @@
                             <h3>Комментарий</h3>
                             <p>Легко собирается, выглядит отлично.</p>
                           </section>
+                          <div class="im-product-page__review-reply">
+                            <p class="im-product-page__review-reply-title">
+                              Ответ IronMebel
+                            </p>
+                            <p>
+                              Компания благодарит за отзыв, очень рады, что все
+                              понравилось и примут к сведению недостатки, для
+                              того, чтобы в будущем их исключить
+                            </p>
+                          </div>
                         </div>
                       </article>
 
@@ -4175,7 +4183,7 @@
                     class="im-product-page__guarantee-card im-product-page__guarantee-card--accent"
                   >
                     <strong>5 лет</strong>
-                    <p>гарантии на паллетные стеллажи</p>
+                    <p class="im-product-page__guarantee-card--accent-p">гарантии на паллетные стеллажи</p>
                   </article>
 
                   <article class="im-product-page__guarantee-card">

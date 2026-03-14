@@ -11,7 +11,8 @@
       "Bash(sed 's/class=\"\"\"\"//g')",
       "Bash(grep -n \"^\\\\.im-[a-z-]*\\\\s*{$\" /d/Web/FrontEnd/Projects/IronMebel/scss/_components.scss)",
       "Bash(/tmp/blocks_analysis.txt:*)",
-      "Read(//tmp/**)"
+      "Read(//tmp/**)",
+      "Bash(grep -o \"@media[^{]*\" /d/Web/FrontEnd/Projects/IronMebel/scss/*.scss)"
     ]
   }
 }
