@@ -1031,6 +1031,18 @@ function initProductStickyHeader() {
   window.addEventListener("resize", syncStickyState);
 }
 
+function syncProductColorSwatches(group, activeSwatch) {
+  if (!(group instanceof HTMLElement) || !(activeSwatch instanceof HTMLElement)) {
+    return;
+  }
+
+  group.querySelectorAll(".im-product-page__swatch").forEach((swatch) => {
+    const isActive = swatch === activeSwatch;
+    swatch.classList.toggle("im-product-page__swatch--active", isActive);
+    swatch.setAttribute("aria-pressed", String(isActive));
+  });
+}
+
 document.addEventListener("change", (event) => {
   const filter = event.target.closest("[data-review-filter]");
 
@@ -1241,6 +1253,18 @@ document.addEventListener("click", (event) => {
       } else {
         syncProductGalleryMainImage(gallery, nextIndex);
       }
+    }
+
+    return;
+  }
+
+  const colorSwatch = event.target.closest(".im-product-page__swatch");
+
+  if (colorSwatch) {
+    const swatchGroup = colorSwatch.closest(".im-product-page__color-swatches");
+
+    if (swatchGroup) {
+      syncProductColorSwatches(swatchGroup, colorSwatch);
     }
 
     return;
