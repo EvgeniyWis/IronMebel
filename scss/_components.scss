@@ -21,7 +21,7 @@
   width: 140px;
   white-space: nowrap;
   font-weight: 400;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 108%;
   color: var(--neutral-500);
 }
@@ -100,7 +100,7 @@
 
 .im-header__city-dropdown-title {
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
 }
@@ -121,7 +121,7 @@
   background: transparent;
   outline: none;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-900);
   min-width: 0;
@@ -151,7 +151,7 @@
   padding: 10px 10px;
   border-radius: 12px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
   cursor: pointer;
@@ -188,7 +188,7 @@
   text-decoration: none;
   white-space: nowrap;
   font-weight: 400;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 108%;
   color: var(--neutral-500);
   cursor: pointer;
@@ -242,7 +242,7 @@
   border-radius: 12px;
   text-decoration: none;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
   @include interactive-transition;
@@ -287,7 +287,7 @@
 .im-header__schedule {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 108%;
   color: var(--neutral-500);
 }
@@ -346,7 +346,7 @@
 
 .im-header__phone {
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 108%;
   color: var(--neutral-500);
   text-decoration: none;
@@ -468,7 +468,7 @@
   min-height: 38px;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-500);
   background: var(--neutral-200);
@@ -477,7 +477,7 @@
   &::placeholder {
     font-family: var(--font-family);
     font-weight: 400;
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     line-height: 114%;
     color: var(--neutral-500);
     opacity: 1;
@@ -545,7 +545,7 @@
   cursor: pointer;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   text-decoration: none;
   line-height: 108%;
   color: var(--neutral-500);
@@ -584,7 +584,7 @@
   color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   cursor: pointer;
   text-decoration: none;
   @include interactive-transition;
@@ -634,7 +634,7 @@
   color: var(--neutral-900);
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   cursor: pointer;
   text-decoration: none;
   @include interactive-transition;
@@ -713,7 +713,7 @@ body.im-user-logged-in {
 
 .im-header__user-menu-account-title {
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   white-space: nowrap;
   line-height: 150%;
   color: var(--neutral-900);
@@ -729,7 +729,7 @@ body.im-user-logged-in {
 .im-header__bottom-link {
   text-decoration: none;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-900);
   padding: 4px 0;
@@ -935,7 +935,7 @@ body.im-user-logged-in {
 .im-header__mobile-submenu-title {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 133%;
   color: var(--neutral-900);
 }
@@ -959,7 +959,7 @@ body.im-user-logged-in {
   padding: 15px 0;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-500);
   text-decoration: none;
@@ -1053,7 +1053,7 @@ body.im-user-logged-in {
 .im-header__mobile-link {
   display: block;
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
   text-decoration: none;
@@ -1171,7 +1171,7 @@ body.im-user-logged-in {
 .im-city-modal__title {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
 }
@@ -1192,7 +1192,7 @@ body.im-user-logged-in {
   outline: none;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-900);
 
@@ -1222,7 +1222,7 @@ body.im-user-logged-in {
   box-sizing: border-box;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
   cursor: pointer;
@@ -1331,7 +1331,7 @@ body.im-user-logged-in {
 .im-catalog-modal__title {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 133%;
   color: var(--neutral-900);
 }
@@ -1433,7 +1433,7 @@ body.im-user-logged-in {
   padding: 6px 0;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-500);
   text-decoration: none;
@@ -1469,7 +1469,7 @@ body.im-user-logged-in {
   flex: 1 1 auto;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 133%;
   color: var(--neutral-900);
 }
@@ -1680,7 +1680,7 @@ body.im-user-logged-in {
   flex: 1 1 auto;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
 }
@@ -1830,7 +1830,7 @@ body.im-user-logged-in {
   flex: 1 1 auto;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
 }
@@ -1878,7 +1878,7 @@ body.im-user-logged-in {
   margin: 0;
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 133%;
   color: var(--neutral-900);
 }
@@ -1939,7 +1939,7 @@ body.im-user-logged-in {
   flex: 1 1 auto;
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-900);
 }
@@ -1963,7 +1963,7 @@ body.im-user-logged-in {
   padding: 2px 0;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-500);
   text-decoration: none;
@@ -1994,7 +1994,7 @@ body.im-user-logged-in {
   margin: 0;
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 28px;
+  font-size: var(--font-3xl-size);
   line-height: 129%;
   color: var(--neutral-900);
 }
@@ -2006,7 +2006,7 @@ body.im-user-logged-in {
   text-decoration: none;
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-800);
   border-radius: 8px;
@@ -2118,7 +2118,7 @@ body.im-user-logged-in {
   z-index: 1;
   margin: 0;
   font-weight: 700;
-  font-size: 28px;
+  font-size: var(--font-3xl-size);
   line-height: 129%;
   text-align: center;
   color: var(--neutral-900);
@@ -2127,7 +2127,7 @@ body.im-user-logged-in {
 .im-goods__help-text {
   margin: 16px 0 0;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   text-align: center;
   color: var(--neutral-500);
@@ -2149,7 +2149,7 @@ body.im-user-logged-in {
   color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   transition:
     background var(--transition-fast),
@@ -2168,7 +2168,7 @@ body.im-user-logged-in {
   max-width: 190px;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-500);
 }
@@ -2197,7 +2197,7 @@ body.im-user-logged-in {
   text-decoration: none;
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   background: var(--neutral-140);
   transition:
@@ -2422,7 +2422,7 @@ body.im-user-logged-in {
 .im-goods__name {
   display: -webkit-box;
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-600);
   overflow: hidden;
@@ -2465,7 +2465,7 @@ body.im-user-logged-in {
 .im-goods__spec-text {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   line-height: 115%;
   color: var(--neutral-900);
 }
@@ -2488,7 +2488,7 @@ body.im-user-logged-in {
 .im-goods__price-old {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 140%;
   color: var(--neutral-400);
   text-decoration: line-through;
@@ -2498,7 +2498,7 @@ body.im-user-logged-in {
 .im-goods__price {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 20px;
+  font-size: var(--font-xl-size);
   line-height: 133%;
   white-space: nowrap;
   color: var(--neutral-900);
@@ -2516,7 +2516,7 @@ body.im-user-logged-in {
   border-radius: 6px;
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   line-height: 1.2;
   color: var(--neutral-100);
   opacity: 0;
@@ -2548,7 +2548,7 @@ body.im-user-logged-in {
   color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   margin-left: auto;
   cursor: pointer;
@@ -2707,7 +2707,7 @@ body.im-user-logged-in {
   gap: 4px;
   text-decoration: none;
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.4;
   color: var(--blue-590);
   transition: opacity var(--transition-fast);
@@ -2727,7 +2727,7 @@ body.im-user-logged-in {
 .im-footer__social-text--max {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   background: linear-gradient(90deg, var(--purple-gradient-start) 0%, var(--purple-gradient-end) 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -2750,7 +2750,7 @@ body.im-user-logged-in {
 
 .im-footer__col-title {
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.4;
   color: var(--neutral-100);
   margin: 0 0 16px;
@@ -2772,7 +2772,7 @@ body.im-user-logged-in {
 
 .im-footer__link {
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.4;
   color: var(--neutral-300);
   text-decoration: none;
@@ -2789,7 +2789,7 @@ body.im-user-logged-in {
 
 .im-footer__company-name {
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-100);
   margin: 0 0 8px;
@@ -2797,7 +2797,7 @@ body.im-user-logged-in {
 
 .im-footer__company-desc {
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-300);
   margin: 0 0 16px;
@@ -2805,7 +2805,7 @@ body.im-user-logged-in {
 
 .im-footer__company-detail {
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-300);
   margin: 0 0 4px;
@@ -2827,7 +2827,7 @@ body.im-user-logged-in {
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   white-space: nowrap;
   line-height: 1.4;
   color: var(--neutral-100);
@@ -2850,7 +2850,7 @@ body.im-user-logged-in {
 
 .im-footer__phone {
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-100);
   text-decoration: none;
@@ -2863,7 +2863,7 @@ body.im-user-logged-in {
 
 .im-footer__email {
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.4;
   color: var(--neutral-100);
   text-decoration: none;
@@ -2883,7 +2883,7 @@ body.im-user-logged-in {
 
 .im-footer__contact-note {
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.4;
   color: var(--neutral-300);
 }
@@ -2896,7 +2896,7 @@ body.im-user-logged-in {
 
 .im-footer__address-line {
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.4;
   color: var(--neutral-100);
   margin: 0;
@@ -2908,7 +2908,7 @@ body.im-user-logged-in {
 
 .im-footer__copyright {
   font-weight: 400;
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   line-height: 1.4;
   color: var(--neutral-400);
 }
@@ -2937,7 +2937,7 @@ body.im-user-logged-in {
 .im-cta__title {
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 40px;
+  font-size: var(--font-5xl-size);
   line-height: 120%;
   color: var(--neutral-100);
   margin-bottom: 8px;
@@ -2946,7 +2946,7 @@ body.im-user-logged-in {
 .im-cta__subtitle {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 133%;
   color: var(--neutral-500);
   margin-bottom: 40px;
@@ -2964,7 +2964,7 @@ body.im-user-logged-in {
   margin: 0 0 8px;
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 108%;
   color: var(--neutral-300);
 }
@@ -2986,7 +2986,7 @@ body.im-user-logged-in {
   border-radius: 10px;
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   color: var(--neutral-100);
   outline: none;
   transition: border-color var(--transition-fast);
@@ -3030,7 +3030,7 @@ body.im-user-logged-in {
 .im-cta__select-label {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 1;
   color: var(--neutral-300);
   position: absolute;
@@ -3058,7 +3058,7 @@ body.im-user-logged-in {
   border: 1px solid color-mix(in srgb, var(--neutral-100) 16%, transparent);
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 1.2;
   color: var(--neutral-100);
   outline: none;
@@ -3109,7 +3109,7 @@ body.im-user-logged-in {
   border-radius: 10px;
   padding: 10px 12px;
   color: color-mix(in srgb, var(--neutral-100) 92%, transparent);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 1.2;
   text-align: left;
   display: flex;
@@ -3157,7 +3157,7 @@ body.im-user-logged-in {
   height: 38px;
   border: none;
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-100);
   background: var(--brand-600);

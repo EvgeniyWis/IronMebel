@@ -19,7 +19,7 @@
   gap: 6px;
   margin-bottom: 20px;
   font-family: var(--font-family);
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   line-height: 1.3;
   color: var(--neutral-500);
 }
@@ -118,7 +118,7 @@
 
 .im-product-page__sticky-meta {
   margin: 0 0 2px;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   white-space: nowrap;
   line-height: 1.3;
   color: var(--neutral-500);
@@ -130,7 +130,7 @@
 
 .im-product-page__sticky-title {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   font-weight: 500;
   line-height: 1.15;
   color: var(--neutral-800);
@@ -153,7 +153,7 @@
 }
 
 .im-product-page__sticky-price {
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   font-weight: 700;
   line-height: 1;
   color: var(--brand-600);
@@ -161,7 +161,7 @@
 }
 
 .im-product-page__sticky-old-price {
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 1;
   color: var(--neutral-400);
   text-decoration: line-through;
@@ -176,7 +176,7 @@
   padding: 0 20px;
   border-radius: 8px;
   background: var(--brand-600);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 700;
   text-decoration: none;
   line-height: 1;
@@ -220,7 +220,7 @@
   min-height: 32px;
   padding: 0 12px;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 1;
 }
 
@@ -372,12 +372,12 @@
   flex-direction: column;
   gap: 6px;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 150%;
 }
 
 .im-product-page__extra-hint {
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   color: var(--neutral-500);
 }
 
@@ -398,7 +398,7 @@
   padding: 6px 8px;
   border-radius: 999px;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 700;
   line-height: 150%;
 }
@@ -413,7 +413,7 @@
   margin: 16px 0;
   max-width: 520px;
   font-family: var(--font-family);
-  font-size: 24px;
+  font-size: var(--font-2xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -439,7 +439,7 @@
   border-radius: 12px;
   background: var(--neutral-200);
   font-family: var(--font-family);
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   font-weight: 700;
   line-height: 108%;
   color: var(--neutral-900);
@@ -481,7 +481,7 @@
 }
 
 .im-product-page__icon-item-number {
-  font-size: 24px;
+  font-size: var(--font-2xl-size);
   font-weight: 700;
   line-height: 133%;
   color: var(--brand-600);
@@ -526,7 +526,7 @@
 
 .im-product-page__icon-tooltip-title {
   display: block;
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   font-weight: 700;
   line-height: 115%;
   color: var(--neutral-100);
@@ -534,7 +534,7 @@
 
 .im-product-page__icon-tooltip-text {
   display: block;
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   font-weight: 400;
   line-height: 115%;
   margin-top: 4px;
@@ -548,7 +548,7 @@
   gap: 0;
   margin: 0 0 28px;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.3;
   color: var(--neutral-600);
 
@@ -583,7 +583,7 @@
   display: block;
   margin-bottom: 10px;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 500;
   line-height: 150%;
   color: var(--neutral-900);
@@ -649,7 +649,7 @@
   border-radius: 8px;
   background: var(--neutral-200);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 500;
   line-height: 150%;
   color: var(--neutral-700);
@@ -704,7 +704,7 @@
   background: transparent;
   text-align: center;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 500;
   color: var(--neutral-900);
   appearance: textfield;
@@ -723,7 +723,7 @@
 .im-product-page__specs-heading {
   margin: 0 0 12px;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 500;
   line-height: 150%;
   color: var(--neutral-900);
@@ -746,7 +746,7 @@
 }
 
 .im-product-page__specs-label {
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 500;
   line-height: 150%;
   color: var(--neutral-600);
@@ -760,7 +760,7 @@
 }
 
 .im-product-page__specs-value {
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 400;
   line-height: 150%;
   color: var(--neutral-900);
@@ -773,7 +773,7 @@
   gap: 4px;
   margin-top: 13px;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 500;
   color: var(--brand-500);
   text-decoration: none;
@@ -804,7 +804,7 @@
   padding: 10px 12px;
   background: var(--neutral-100);
   font-family: var(--font-family);
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   font-weight: 500;
   color: var(--neutral-600);
   @include interactive-transition;
@@ -840,7 +840,7 @@
 
 .im-product-page__price {
   font-family: var(--font-family);
-  font-size: 32px;
+  font-size: var(--font-4xl-size);
   font-weight: 700;
   line-height: 150%;
   color: var(--brand-500);
@@ -848,7 +848,7 @@
 
 .im-product-page__price-old {
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 150%;
   color: var(--neutral-500);
   text-decoration: line-through;
@@ -864,7 +864,7 @@
   border-radius: 6px;
   background: var(--green-500);
   font-family: var(--font-family);
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   font-weight: 700;
   line-height: 150%;
   color: var(--neutral-100);
@@ -879,7 +879,7 @@
   width: 100%;
   border-radius: 8px;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 500;
   line-height: 150%;
   text-decoration: none;
@@ -906,7 +906,7 @@
   gap: 8px;
   margin-bottom: 16px;
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   font-weight: 500;
   line-height: 150%;
   color: var(--neutral-900);
@@ -930,7 +930,7 @@
     display: block;
     margin-bottom: 4px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-base-size);
     font-weight: 700;
     line-height: 150%;
     color: var(--neutral-900);
@@ -939,7 +939,7 @@
   p,
   a {
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     line-height: 150%;
   }
 
@@ -988,7 +988,7 @@
 
 .im-product-page__analog-name {
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 150%;
   color: var(--neutral-700);
 }
@@ -1050,7 +1050,7 @@
   z-index: 1;
   margin: 0;
   font-family: var(--font-family);
-  font-size: 24px;
+  font-size: var(--font-2xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -1070,7 +1070,7 @@
   max-width: 220px;
   margin: 0;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.25;
   color: var(--neutral-600);
 }
@@ -1087,7 +1087,7 @@
   border-radius: 8px;
   background: var(--blue-650);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 700;
   color: var(--neutral-100);
   text-decoration: none;
@@ -1110,7 +1110,7 @@
 .im-product-page__bundle-title {
   margin: 0 0 20px;
   font-family: var(--font-family);
-  font-size: 28px;
+  font-size: var(--font-3xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -1169,7 +1169,7 @@
 
 .im-product-page__bundle-link {
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   text-decoration: underline;
   text-decoration-skip-ink: none;
@@ -1200,7 +1200,7 @@
 
 .im-product-page__bundle-old-price {
   font-family: var(--font-family);
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 150%;
   color: var(--neutral-400);
   text-decoration: line-through;
@@ -1244,7 +1244,7 @@
   border-radius: 8px;
   background: var(--green-100);
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 500;
   line-height: 150%;
   color: var(--green-500);
@@ -1253,7 +1253,7 @@
 .im-product-page__bundle-summary-old-price {
   margin-bottom: 8px;
   font-family: var(--font-family);
-  font-size: 20px;
+  font-size: var(--font-xl-size);
   line-height: 150%;
   color: var(--neutral-500);
   text-decoration: line-through;
@@ -1262,7 +1262,7 @@
 .im-product-page__bundle-summary-price {
   margin-bottom: 20px;
   font-family: var(--font-family);
-  font-size: 32px;
+  font-size: var(--font-4xl-size);
   font-weight: 700;
   line-height: 125%;
   color: var(--neutral-900);
@@ -1277,7 +1277,7 @@
   padding: 10px 20px;
   background: var(--brand-600);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 700;
   line-height: 150%;
   color: var(--neutral-100);
@@ -1310,7 +1310,7 @@
   border-radius: 8px;
   background: var(--neutral-200);
   font-family: var(--font-family);
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   font-weight: 500;
   line-height: 1.15;
   color: var(--neutral-700);
@@ -1361,7 +1361,7 @@
 .im-product-page__details-title {
   margin: 0 0 24px;
   font-family: var(--font-family);
-  font-size: 28px;
+  font-size: var(--font-3xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -1383,7 +1383,7 @@
 
   li {
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-base-size);
     font-weight: 500;
     line-height: 1.5;
     color: var(--neutral-900);
@@ -1402,7 +1402,7 @@
   p {
     margin: 0;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-base-size);
     font-weight: 400;
     line-height: 1.5;
     color: var(--neutral-600);
@@ -1448,7 +1448,7 @@
     display: block;
     margin-bottom: 8px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-base-size);
     font-weight: 400;
     line-height: 1.5;
     color: var(--neutral-700);
@@ -1491,7 +1491,7 @@
 
 .im-product-page__details-note li {
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 400;
   line-height: 1.5;
   color: var(--neutral-700);
@@ -1504,7 +1504,7 @@
   border-radius: 8px;
   background: var(--brand-600);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-100);
@@ -1524,7 +1524,7 @@
 .im-product-page__reviews-section-title {
   margin: 0 0 24px;
   font-family: var(--font-family);
-  font-size: 28px;
+  font-size: var(--font-3xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -1551,7 +1551,7 @@
 .im-product-page__reviews-score {
   grid-column: 1 / -1;
   font-family: var(--font-family);
-  font-size: 28px;
+  font-size: var(--font-3xl-size);
   font-weight: 700;
   line-height: 1;
   color: var(--neutral-900);
@@ -1613,7 +1613,7 @@
   justify-self: end;
   align-self: center;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 500;
   line-height: 1.4;
   color: var(--neutral-900);
@@ -1674,7 +1674,7 @@
 
 .im-product-page__reviews-breakdown-link {
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 1.4;
   color: var(--neutral-900);
   text-decoration: underline;
@@ -1739,7 +1739,7 @@
   background: var(--neutral-100);
   box-shadow: 0 1px 2px color-mix(in srgb, var(--neutral-900) 4%, transparent);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 500;
   line-height: 1.4;
   color: var(--neutral-900);
@@ -1797,7 +1797,7 @@
   border: 0;
   background: var(--neutral-100);
   font-family: var(--font-family);
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 1.25;
   color: var(--neutral-900);
   text-align: left;
@@ -1863,7 +1863,7 @@
   margin: 0;
   align-items: baseline;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 700;
   line-height: 1.3;
   color: var(--neutral-900);
@@ -1871,7 +1871,7 @@
 
 .im-product-page__review-meta {
   font-weight: 400;
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   line-height: 108%;
   color: var(--neutral-600);
 }
@@ -1885,7 +1885,7 @@
   h3 {
     margin: 0 0 6px;
     font-family: var(--font-family);
-    font-size: 12px;
+    font-size: var(--font-2xs-size);
     font-weight: 700;
     line-height: 108%;
     color: var(--neutral-900);
@@ -1894,7 +1894,7 @@
   p {
     margin: 0;
     font-weight: 400;
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     line-height: 114%;
     color: var(--neutral-900);
   }
@@ -1907,7 +1907,7 @@
 
   p {
     margin: 0;
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     line-height: 114%;
     color: var(--neutral-900);
   }
@@ -1915,7 +1915,7 @@
 
 .im-product-page__review-reply-title {
   margin-bottom: 8px !important;
-  font-size: 12px !important;
+  font-size: var(--font-2xs-size) !important;
   font-weight: 700 !important;
   line-height: 108% !important;
 }
@@ -1980,7 +1980,7 @@
   width: 100%;
   height: 40px;
   font-weight: 700;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-800);
   box-shadow: 0 1px 2px 0 color-mix(in srgb, var(--blue-900) 4%, transparent);
@@ -2011,7 +2011,7 @@
 .im-product-page__details-placeholder {
   margin: 0;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   line-height: 1.5;
   color: var(--neutral-700);
 }
@@ -2034,7 +2034,7 @@
   h3 {
     margin: 0;
     font-weight: 500;
-    font-size: 18px;
+    font-size: var(--font-lg-size);
     line-height: 133%;
     color: var(--neutral-900);
   }
@@ -2063,7 +2063,7 @@
   gap: 12px;
   padding: 8px 0;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 500;
   line-height: 1.2;
   color: var(--neutral-900);
@@ -2103,7 +2103,7 @@
   h3 {
     margin: 0 0 12px;
     font-family: var(--font-family);
-    font-size: 24px;
+    font-size: var(--font-2xl-size);
     font-weight: 700;
     line-height: 1.2;
     color: var(--neutral-900);
@@ -2116,7 +2116,7 @@
   p {
     margin: 0 0 20px;
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     line-height: 114%;
     color: var(--neutral-600);
     text-align: center;
@@ -2128,7 +2128,7 @@
     border-radius: 8px;
     background: var(--blue-600);
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     font-weight: 700;
     line-height: 1.15;
     color: var(--neutral-100);
@@ -2202,7 +2202,7 @@
 .im-product-page__guarantee-title {
   margin: 0 0 20px;
   font-family: var(--font-family);
-  font-size: 20px;
+  font-size: var(--font-xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -2237,7 +2237,7 @@
 
   span:first-child {
     font-family: var(--font-family);
-    font-size: 20px;
+    font-size: var(--font-xl-size);
     font-weight: 700;
     line-height: 1.3;
     color: var(--neutral-900);
@@ -2265,7 +2265,7 @@
   padding: 0;
   max-width: 92%;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: var(--font-base-size);
   font-weight: 400;
   line-height: 1.5;
   color: var(--neutral-600);
@@ -2296,7 +2296,7 @@
 
   strong {
     font-family: var(--font-family);
-    font-size: 28px;
+    font-size: var(--font-3xl-size);
     font-weight: 700;
     line-height: 1;
     color: var(--brand-500);
@@ -2305,7 +2305,7 @@
   p {
     margin: 0;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-base-size);
     line-height: 1.4;
     color: var(--neutral-700);
   }
@@ -2450,7 +2450,7 @@
 
 .im-product-page__set-card-price {
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -2461,7 +2461,7 @@
   overflow: hidden;
   margin: 0;
   font-family: var(--font-family);
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   font-weight: 400;
   line-height: 1.35;
   color: var(--neutral-700);
@@ -2536,7 +2536,7 @@
 .im-product-page__cases-title {
   margin: 0;
   font-family: var(--font-family);
-  font-size: 28px;
+  font-size: var(--font-3xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -2673,7 +2673,7 @@
 .im-product-page__case-name {
   margin: 32px 0 0;
   font-family: var(--font-family);
-  font-size: 20px;
+  font-size: var(--font-xl-size);
   font-weight: 700;
   line-height: 1.25;
   color: var(--neutral-900);
@@ -2682,7 +2682,7 @@
 .im-product-page__case-description {
   margin: 12px 0 0;
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 1.5;
   color: var(--neutral-600);
 }
@@ -2700,7 +2700,7 @@
   dt {
     margin-bottom: 2px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-base-size);
     font-weight: 700;
     line-height: 1.25;
     color: var(--neutral-900);
@@ -2709,7 +2709,7 @@
   dd {
     margin: 0;
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     line-height: 1.4;
     color: var(--neutral-500);
   }
@@ -2730,7 +2730,7 @@
     display: block;
     margin: 0 0 8px;
     font-family: var(--font-family);
-    font-size: 16px;
+    font-size: var(--font-base-size);
     font-weight: 700;
     line-height: 1.4;
     color: var(--neutral-900);
@@ -2742,7 +2742,7 @@
     max-height: 63px;
     overflow: hidden;
     font-family: var(--font-family);
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     line-height: 1.5;
     color: var(--neutral-500);
     transition: max-height var(--transition-normal);
@@ -2780,7 +2780,7 @@
   border-radius: 6px;
   background: var(--brand-500);
   font-family: var(--font-family);
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   font-weight: 700;
   line-height: 1;
   color: var(--neutral-100);
@@ -2855,7 +2855,7 @@
 
   .im-product-page__bundle-title {
     margin-bottom: 16px;
-    font-size: 20px;
+    font-size: var(--font-xl-size);
   }
 
   .im-product-page__bundle-row {
@@ -2904,11 +2904,11 @@
   }
 
   .im-product-page__bundle-summary-old-price {
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__bundle-benefit {
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     margin-bottom: 20px;
   }
 
@@ -3054,7 +3054,7 @@
 
   .im-product-page__badge {
     order: 3;
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     min-width: 100px;
     min-height: 26px;
     border-radius: 6px;
@@ -3062,7 +3062,7 @@
 
   .im-product-page__title {
     order: 3;
-    font-size: 24px;
+    font-size: var(--font-2xl-size);
   }
 
   .im-product-page__icons-row {
@@ -3126,7 +3126,7 @@
   }
 
   .im-product-page__details-title {
-    font-size: 24px;
+    font-size: var(--font-2xl-size);
   }
 
   .im-product-page__details-specs {
@@ -3139,7 +3139,7 @@
   }
 
   .im-product-page__reviews-section-title {
-    font-size: 24px;
+    font-size: var(--font-2xl-size);
   }
 
   .im-product-page__reviews {
@@ -3168,7 +3168,7 @@
   }
 
   .im-product-page__cases-title {
-    font-size: 24px;
+    font-size: var(--font-2xl-size);
   }
 
   .im-product-page__cases-shell {
@@ -3244,7 +3244,7 @@
 
   .im-product-page__sticky-title {
     display: -webkit-box;
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     font-weight: 500;
     line-height: 1.15;
     white-space: normal;
@@ -3269,12 +3269,12 @@
   }
 
   .im-product-page__sticky-price {
-    font-size: 18px;
+    font-size: var(--font-lg-size);
     line-height: 1;
   }
 
   .im-product-page__sticky-old-price {
-    font-size: 12px;
+    font-size: var(--font-2xs-size);
     color: var(--neutral-400);
   }
 
@@ -3320,7 +3320,7 @@
   .im-product-page__sticky-tabs .im-product-page__details-tab {
     min-height: 30px;
     padding: 0 10px;
-    font-size: 12px;
+    font-size: var(--font-2xs-size);
     white-space: nowrap;
     flex-shrink: 0;
   }
@@ -3337,7 +3337,7 @@
   }
 
   .im-product-page__breadcrumbs {
-    font-size: 13px;
+    font-size: var(--font-xs-size);
     margin-bottom: 14px;
     gap: 4px;
   }
@@ -3345,7 +3345,7 @@
   .im-product-page__meta {
     order: 3;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: var(--font-sm-size);
   }
 
   .im-product-page__details {
@@ -3354,7 +3354,7 @@
   }
 
   .im-product-page__details-title {
-    font-size: 20px;
+    font-size: var(--font-xl-size);
     margin-bottom: 16px;
   }
 
@@ -3365,7 +3365,7 @@
 
   .im-product-page__faq-title,
   .im-product-page__guarantee-title {
-    font-size: 24px;
+    font-size: var(--font-2xl-size);
     margin-bottom: 12px;
   }
 
@@ -3373,7 +3373,7 @@
     padding: 8px 0;
 
     span:first-child {
-      font-size: 14px;
+      font-size: var(--font-sm-size);
     }
   }
 
@@ -3384,7 +3384,7 @@
   .im-product-page__faq-answer {
     max-width: 100%;
 font-weight: 400;
-font-size: 14px;
+font-size: var(--font-sm-size);
 line-height: 114%;
 color: var(--neutral-600);
   }
@@ -3393,7 +3393,7 @@ color: var(--neutral-600);
     padding: 14px;
 
     strong {
-      font-size: 24px;
+      font-size: var(--font-2xl-size);
     }
 
     p {
@@ -3502,7 +3502,7 @@ color: var(--neutral-600);
 
   .im-product-page__badge {
     order: 3;
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     min-width: 100px;
     min-height: 26px;
     border-radius: 6px;
@@ -3510,7 +3510,7 @@ color: var(--neutral-600);
 
   .im-product-page__title {
     order: 3;
-    font-size: 24px;
+    font-size: var(--font-2xl-size);
   }
 
   .im-product-page__icons-row {
@@ -3533,7 +3533,7 @@ color: var(--neutral-600);
   }
 
   .im-product-page__extra-text span {
-    font-size: 14px;
+    font-size: var(--font-sm-size);
   }
 
   .im-product-page__specs-short {
@@ -3541,19 +3541,19 @@ color: var(--neutral-600);
   }
 
   .im-product-page__specs-label {
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__specs-value {
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__specs-heading {
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__option-label {
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__sidebar-actions {
@@ -3584,22 +3584,22 @@ color: var(--neutral-600);
   }
 
   .im-product-page__banner-title {
-    font-size: 20px;
+    font-size: var(--font-xl-size);
   }
 
   .im-product-page__banner-text {
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     max-width: 250px;
   }
 
   .im-product-page__banner-btn {
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     min-width: 100%;
     margin-top: 8px;
   }
 
   .im-product-page__price {
-    font-size: 28px;
+    font-size: var(--font-3xl-size);
   }
 
   .im-product-page__banner--secondary .im-product-page__banner-title br {
@@ -3643,7 +3643,7 @@ color: var(--neutral-600);
 
   .im-product-page__bundle-title {
     margin-bottom: 16px;
-    font-size: 20px;
+    font-size: var(--font-xl-size);
   }
 
   .im-product-page__bundle-row {
@@ -3712,7 +3712,7 @@ height: 32px;
     border-radius: 8px;
     font-weight: 400;
     padding: 4px 8px;
-    font-size: 16px;
+    font-size: var(--font-base-size);
     background: var(--neutral-100);
     white-space: nowrap;
   }
@@ -3776,7 +3776,7 @@ height: 32px;
   .im-product-page__reviews-select-option {
     min-height: 48px;
     padding: 0 16px;
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__reviews-summary {
@@ -3806,7 +3806,7 @@ height: 32px;
   .im-product-page__reviews-write {
     min-height: 48px;
     padding: 12px 16px;
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__reviews-breakdown-link,
@@ -3847,11 +3847,11 @@ height: 32px;
   }
 
   .im-product-page__bundle-summary-old-price {
-    font-size: 16px;
+    font-size: var(--font-base-size);
   }
 
   .im-product-page__bundle-benefit {
-    font-size: 14px;
+    font-size: var(--font-sm-size);
     margin-bottom: 20px;
   }
 
@@ -3859,11 +3859,11 @@ height: 32px;
     width: 42px;
     height: 42px;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: var(--font-2xs-size);
   }
 
   .im-product-page__icon-item-number {
-    font-size: 20px;
+    font-size: var(--font-xl-size);
   }
 
   .im-product-page__details-foot {
@@ -3875,7 +3875,7 @@ height: 32px;
   }
 
   .im-product-page__reviews-section-title {
-    font-size: 20px;
+    font-size: var(--font-xl-size);
   }
 
   .im-product-page__set-nav {
@@ -3959,13 +3959,13 @@ height: 32px;
     }
 
     .im-goods__price {
-      font-size: 18px;
+      font-size: var(--font-lg-size);
       font-weight: 700;
       line-height: 1.1;
     }
 
     .im-goods__name {
-      font-size: 14px;
+      font-size: var(--font-sm-size);
       line-height: 1.2;
       -webkit-line-clamp: 2;
     }

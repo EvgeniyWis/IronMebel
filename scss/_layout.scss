@@ -13,7 +13,7 @@
 .im-header__top {
   padding: 20px;
   border-bottom: 1px solid var(--neutral-200);
-  font-size: 12px;
+  font-size: var(--font-2xs-size);
   color: var(--neutral-500);
 }
 
@@ -50,7 +50,7 @@
   display: flex;
   align-items: center;
   gap: 24px;
-  font-size: 13px;
+  font-size: var(--font-xs-size);
 }
 
 .im-bottom-nav {
@@ -126,7 +126,7 @@
   background: var(--brand-200);
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   text-align: center;
   color: var(--brand-900);
@@ -188,7 +188,7 @@
   font-weight: 700;
   display: flex;
   flex-direction: column;
-  font-size: 56px;
+  font-size: var(--font-6xl-size);
   line-height: 114%;
   color: var(--neutral-100);
 }
@@ -200,19 +200,19 @@
 .im-hero__subtitle {
   margin: 0;
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
 }
 
 .im-hero__subtitle-accent {
   font-weight: 700;
-  font-size: 32px;
+  font-size: var(--font-4xl-size);
   line-height: 125%;
   color: var(--brand-500);
 }
 
 .im-hero__text {
   font-weight: 400;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 133%;
   color: var(--neutral-270);
   max-width: 46ch;
@@ -222,7 +222,7 @@
 .im-hero__benefits {
   font-family: var(--font-family);
   font-weight: 500;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
   line-height: 133%;
   color: var(--neutral-100);
   padding-left: 0;
@@ -236,7 +236,7 @@
   align-items: center;
   white-space: nowrap;
   gap: 8px;
-  font-size: 18px;
+  font-size: var(--font-lg-size);
 }
 
 .im-hero__benefit-icon {
@@ -300,14 +300,14 @@
 
 .im-hero__side-title {
   font-weight: 700;
-  font-size: 20px;
+  font-size: var(--font-xl-size);
   line-height: 140%;
   color: var(--neutral-100);
 }
 
 .im-hero__side-text {
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-300);
 }
@@ -326,7 +326,7 @@
   background-color: var(--brand-600);
   color: var(--neutral-100);
   font-weight: 600;
-  font-size: 13px;
+  font-size: var(--font-xs-size);
   line-height: 1.2;
   border: none;
   transition:

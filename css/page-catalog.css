@@ -28,12 +28,16 @@
   font-display: swap;
 }
 :root {
-  --font-family: "Exo 2", sans-serif;
-  --second-family: "Montserrat", sans-serif;
-  --third-family: "Inter", sans-serif;
-  --font3: "Exo", sans-serif;
-  --font4: "ABC Solar Plus Variable Unlicensed Trial", sans-serif;
-  --font5: "SF Pro", sans-serif;
+  --font-family: "Inter", sans-serif;
+  --second-family: "Exo 2", sans-serif;
+  --third-family: "Montserrat", sans-serif;
+  --font3: "SF Pro", sans-serif;
+  --font4: "Exo", sans-serif;
+  --font5: "ABC Solar Plus Variable Unlicensed Trial", sans-serif;
+  --font6: "Geist", sans-serif;
+  --font7: "Roboto Mono", sans-serif;
+  --font8: "Exo 2.0", sans-serif;
+  --font9: "Nunito Sans", sans-serif;
   --neutral-100: #fff;
   --neutral-110: #fdfdfd;
   --neutral-120: #fafafa;
