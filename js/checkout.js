@@ -386,6 +386,75 @@
   }
 
   // ═══════════════════════════════════════
+  // Promo code
+  // ═══════════════════════════════════════
+
+  const VALID_PROMOS = {
+    'SALE50': { discount: 50, label: 'Скидка -50% применена' }
+  };
+
+  const promoContainer = document.querySelector('.im-checkout-page__promo');
+  const promoInput = document.getElementById('promo-input');
+  const promoClear = document.querySelector('.im-checkout-page__promo-clear');
+  const promoSubmit = document.querySelector('.im-checkout-page__promo-submit');
+  const promoMessage = document.querySelector('.im-checkout-page__promo-message');
+
+  if (promoContainer && promoInput) {
+    function updatePromoHasValue() {
+      const hasValue = promoInput.value.trim().length > 0;
+      promoContainer.classList.toggle('im-checkout-page__promo--has-value', hasValue);
+    }
+
+    function resetPromoState() {
+      promoContainer.classList.remove(
+        'im-checkout-page__promo--applied',
+        'im-checkout-page__promo--error'
+      );
+      promoMessage.textContent = '';
+    }
+
+    function applyPromo() {
+      const code = promoInput.value.trim().toUpperCase();
+      if (!code) return;
+
+      resetPromoState();
+
+      const promo = VALID_PROMOS[code];
+      if (promo) {
+        promoContainer.classList.add('im-checkout-page__promo--applied');
+        promoMessage.textContent = promo.label;
+      } else {
+        promoContainer.classList.add('im-checkout-page__promo--error');
+        promoMessage.textContent = 'Промокод не найден';
+      }
+    }
+
+    function clearPromo() {
+      promoInput.value = '';
+      resetPromoState();
+      updatePromoHasValue();
+      promoInput.focus();
+    }
+
+    promoInput.addEventListener('input', () => {
+      resetPromoState();
+      updatePromoHasValue();
+    });
+
+    promoInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        applyPromo();
+      }
+    });
+
+    promoSubmit.addEventListener('click', applyPromo);
+    promoClear.addEventListener('click', clearPromo);
+
+    updatePromoHasValue();
+  }
+
+  // ═══════════════════════════════════════
   // Delivery date picker
   // ═══════════════════════════════════════
 

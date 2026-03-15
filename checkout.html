@@ -393,11 +393,34 @@
                 </div>
 
                 <div class="im-checkout-page__promo">
-                  <input
-                    class="im-checkout-page__promo-input"
-                    type="text"
-                    placeholder="Ваш промокод"
-                  />
+                  <div class="im-checkout-page__promo-field">
+                    <label class="im-checkout-page__promo-label" for="promo-input">Промокод</label>
+                    <input
+                      class="im-checkout-page__promo-input"
+                      id="promo-input"
+                      type="text"
+                      placeholder="Ваш промокод"
+                    />
+                    <button
+                      class="im-checkout-page__promo-clear"
+                      type="button"
+                      aria-label="Очистить промокод"
+                    >
+                      <svg width="13" height="12" viewBox="0 0 13 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.758756 0C0.566831 0 0.366131 0.0645044 0.219656 0.210754C-0.0732188 0.504004 -0.0732188 0.995995 0.219656 1.28925L4.93063 6L0.219656 10.7108C-0.0732188 11.004 -0.0732188 11.496 0.219656 11.7892C0.512606 12.0817 1.00491 12.0817 1.29786 11.7892L6.00876 7.0785L10.7197 11.7892C11.0126 12.0817 11.5049 12.0817 11.7979 11.7892C12.0907 11.496 12.0907 11.004 11.7979 10.7108L7.08688 6L11.7979 1.28925C12.0907 0.995995 12.0907 0.504004 11.7979 0.210754C11.6514 0.0645044 11.4506 0 11.2588 0C11.0668 0 10.8662 0.0645044 10.7197 0.210754L6.00876 4.9215L1.29786 0.210754C1.15138 0.0645044 0.950681 0 0.758756 0Z" fill="currentColor"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <button
+                    class="im-checkout-page__promo-submit"
+                    type="button"
+                    aria-label="Применить промокод"
+                  >
+                    <svg width="5" height="11" viewBox="0 0 5 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.895488 0.0184698C0.707989 -0.0197801 0.506239 -0.00328014 0.334489 0.11222C-0.00826 0.341719 -0.104259 0.821722 0.124491 1.16672L2.83348 5.24447L0.124491 9.32295C-0.104259 9.6672 -0.00826 10.148 0.334489 10.3775C0.677988 10.607 1.15649 10.5109 1.38524 10.1667L4.37472 5.66671C4.54197 5.41471 4.54197 5.07496 4.37472 4.82296L1.38524 0.322973C1.27124 0.150474 1.08299 0.0559697 0.895488 0.0184698Z" fill="currentColor"/>
+                    </svg>
+                  </button>
+                  <p class="im-checkout-page__promo-message"></p>
                 </div>
                 <div
                   class="im-checkout-page__summary-row im-checkout-page__summary-row--total"
