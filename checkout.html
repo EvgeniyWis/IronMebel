@@ -151,6 +151,142 @@
                     <div class="im-checkout-page__pickup-map" id="checkout-map"></div>
                   </div>
                 </div>
+
+                <!-- Moscow delivery (visible when moscow is selected) -->
+                <div class="im-checkout-page__delivery" id="delivery-section" style="display: none">
+                  <h3 class="im-checkout-page__delivery-title">Куда доставить заказ</h3>
+
+                  <div class="im-checkout-page__delivery-layout">
+                    <div class="im-checkout-page__delivery-addresses">
+                      <div class="im-checkout-page__delivery-list" id="delivery-address-list">
+                        <div class="im-checkout-page__delivery-address is-active" data-lat="55.747580" data-lng="37.628950">
+                          <span class="im-checkout-page__delivery-address-text">Москва, ул. Балчуг, 2</span>
+                          <span class="im-checkout-page__delivery-address-radio"></span>
+                        </div>
+
+                        <div class="im-checkout-page__delivery-address" data-lat="55.780262" data-lng="37.598264">
+                          <span class="im-checkout-page__delivery-address-text">Москва, ул. Лесная, 7</span>
+                          <span class="im-checkout-page__delivery-address-radio"></span>
+                        </div>
+                      </div>
+
+                      <button class="im-checkout-page__delivery-add" id="add-address-btn" type="button">
+                        <span class="im-checkout-page__delivery-add-text">Добавить адрес</span>
+                        <svg class="im-checkout-page__delivery-add-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M6.75 0C6.336 0 6 0.336 6 0.75V6H0.75C0.336 6 0 6.336 0 6.75C0 7.164 0.336 7.5 0.75 7.5H6V12.75C6 13.164 6.336 13.5 6.75 13.5C7.164 13.5 7.5 13.164 7.5 12.75V7.5H12.75C13.164 7.5 13.5 7.164 13.5 6.75C13.5 6.336 13.164 6 12.75 6H7.5V0.75C7.5 0.336 7.164 0 6.75 0Z" fill="currentColor" />
+                        </svg>
+                      </button>
+
+                  
+                  <!-- Additional services -->
+                  <div class="im-checkout-page__services">
+                    <h4 class="im-checkout-page__services-title">Доп. услуги</h4>
+
+                    <label class="im-checkout-page__service">
+                      <input type="checkbox" name="service-unload" value="500" checked />
+                      <span class="im-checkout-page__service-text">Разгрузка и подъем: 500 ₽</span>
+                    </label>
+
+                    <label class="im-checkout-page__service">
+                      <input type="checkbox" name="service-assembly" value="3000" />
+                      <span class="im-checkout-page__service-text">Сборка оборудования: 3 000 ₽</span>
+                    </label>
+
+                    <label class="im-checkout-page__service im-checkout-page__service--disabled">
+                      <input type="checkbox" name="service-garbage" value="1000" disabled />
+                      <span class="im-checkout-page__service-text">Сбор мусора: 1 000 ₽</span>
+                    </label>
+                  </div>
+
+                  <!-- Desired delivery date -->
+                  <div class="im-checkout-page__date">
+                    <h4 class="im-checkout-page__date-title">Желаемая дата доставки</h4>
+
+                    <div class="im-checkout-page__date-picker">
+                      <div class="im-checkout-page__date-field">
+                        <span class="im-checkout-page__date-label">Выберите дату</span>
+                        <span class="im-checkout-page__date-value" id="delivery-date-value">01.02.2026</span>
+                        <input class="im-checkout-page__date-input" type="date" id="delivery-date" value="2026-02-01" />
+                        <svg class="im-checkout-page__date-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 0.5C5 0.224 4.776 0 4.5 0C4.224 0 4 0.224 4 0.5V1H3C1.343 1 0 2.343 0 4V13C0 14.657 1.343 16 3 16H13C14.657 16 16 14.657 16 13V4C16 2.343 14.657 1 13 1H12V0.5C12 0.224 11.776 0 11.5 0C11.224 0 11 0.224 11 0.5V1H5V0.5ZM1 5H15V13C15 14.105 14.105 15 13 15H3C1.895 15 1 14.105 1 13V5ZM3 2H4V2.5C4 2.776 4.224 3 4.5 3C4.776 3 5 2.776 5 2.5V2H11V2.5C11 2.776 11.224 3 11.5 3C11.776 3 12 2.776 12 2.5V2H13C14.105 2 15 2.895 15 4V4H1V4C1 2.895 1.895 2 3 2Z" fill="currentColor"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                    </div>
+
+                    <div class="im-checkout-page__delivery-map" id="delivery-map"></div>
+                  </div>
+                </div>
+
+                <!-- Transport company (visible when transport is selected) -->
+                <div class="im-checkout-page__transport" id="transport-section" style="display: none">
+                  <h3 class="im-checkout-page__transport-title">Куда доставить заказ</h3>
+
+                  <div class="im-checkout-page__transport-addresses">
+                    <div class="im-checkout-page__transport-address is-active">
+                      <span class="im-checkout-page__transport-address-text">Москва, ул. Балчуг, 2</span>
+                      <span class="im-checkout-page__transport-address-radio"></span>
+                    </div>
+
+                    <div class="im-checkout-page__transport-address">
+                      <span class="im-checkout-page__transport-address-text">Москва, ул. Лесная, 7</span>
+                      <span class="im-checkout-page__transport-address-radio"></span>
+                    </div>
+
+                    <div class="im-checkout-page__transport-address">
+                      <span class="im-checkout-page__transport-address-text">Москва, пер. Сивцев Вражек, 29...</span>
+                      <span class="im-checkout-page__transport-address-radio"></span>
+                    </div>
+                  </div>
+
+                  <button class="im-checkout-page__delivery-add" type="button">
+                    <span class="im-checkout-page__delivery-add-text">Добавить адрес</span>
+                    <svg class="im-checkout-page__delivery-add-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.75 0C6.336 0 6 0.336 6 0.75V6H0.75C0.336 6 0 6.336 0 6.75C0 7.164 0.336 7.5 0.75 7.5H6V12.75C6 13.164 6.336 13.5 6.75 13.5C7.164 13.5 7.5 13.164 7.5 12.75V7.5H12.75C13.164 7.5 13.5 7.164 13.5 6.75C13.5 6.336 13.164 6 12.75 6H7.5V0.75C7.5 0.336 7.164 0 6.75 0Z" fill="currentColor" />
+                    </svg>
+                  </button>
+
+                  <h3 class="im-checkout-page__transport-title">Выберите компанию</h3>
+
+                  <div class="im-checkout-page__transport-companies">
+                    <div class="im-checkout-page__transport-company">
+                      <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/pek.png" alt="ПЭК" width="40" height="40" />
+                      <span class="im-checkout-page__transport-company-info">
+                        <span class="im-checkout-page__transport-company-name">ПЭК</span>
+                        <span class="im-checkout-page__transport-company-details">16 фев, от 390 ₽</span>
+                      </span>
+                      <span class="im-checkout-page__transport-company-radio"></span>
+                    </div>
+
+                    <div class="im-checkout-page__transport-company">
+                      <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/baikal.png" alt="Байкал Сервис" width="40" height="40" />
+                      <span class="im-checkout-page__transport-company-info">
+                        <span class="im-checkout-page__transport-company-name">Байкал Сервис</span>
+                        <span class="im-checkout-page__transport-company-details">16 фев, от 390 ₽</span>
+                      </span>
+                      <span class="im-checkout-page__transport-company-radio"></span>
+                    </div>
+
+                    <div class="im-checkout-page__transport-company">
+                      <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/delovie_linii.png" alt="Деловые Линии" width="40" height="40" />
+                      <span class="im-checkout-page__transport-company-info">
+                        <span class="im-checkout-page__transport-company-name">Деловые Линии</span>
+                        <span class="im-checkout-page__transport-company-details">16 фев, от 390 ₽</span>
+                      </span>
+                      <span class="im-checkout-page__transport-company-radio"></span>
+                    </div>
+
+                    <div class="im-checkout-page__transport-company">
+                      <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/other.png" alt="Другая ТК" width="40" height="40" />
+                      <span class="im-checkout-page__transport-company-info">
+                        <span class="im-checkout-page__transport-company-name">Другая ТК</span>
+                        <span class="im-checkout-page__transport-company-details">16 фев, от 390 ₽</span>
+                      </span>
+                      <span class="im-checkout-page__transport-company-radio"></span>
+                    </div>
+                  </div>
+                </div>
               </section>
 
               <!-- Payment method (shown for logged-in users) -->
