@@ -18,6 +18,16 @@
       <div data-layout-header></div>
 
       <main class="im-checkout-page">
+        <!-- Mobile header bar -->
+        <div class="im-checkout-page__mobile-header">
+          <a class="im-checkout-page__mobile-back" href="./index.html" aria-label="На главную">
+            <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 6.30117C14 5.65717 13.4785 5.13568 12.8345 5.13568C12.2768 5.13568 5.75868 5.13568 4.02035 5.13568L7.48065 1.63917L5.84149 0L0.341832 5.4635C0.113166 5.691 0 5.99668 0 6.30234C0 6.60684 0.114332 6.91134 0.341832 7.13884L5.84149 12.6023L7.48065 10.9632L4.02035 7.46668C5.75868 7.46668 12.2768 7.46668 12.8345 7.46668C13.4785 7.46668 14 6.94517 14 6.30117Z" fill="#999999" />
+            </svg>
+          </a>
+          <span class="im-checkout-page__mobile-header-title">Оформление заказа</span>
+        </div>
+
         <div class="im-container">
           <!-- Хлебные крошки -->
           <nav
@@ -65,19 +75,83 @@
                   <!-- Buyer -->
                   <div class="im-checkout-page__party">
                     <span class="im-checkout-page__party-label">Покупатель</span>
-                    <button class="im-checkout-page__party-add" type="button">
-                      <span class="im-checkout-page__party-add-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.25 0C7.744 0 7.33333 0.410667 7.33333 0.916667V7.33333H0.916667C0.410667 7.33333 0 7.744 0 8.25C0 8.756 0.410667 9.16667 0.916667 9.16667H7.33333V15.5833C7.33333 16.0893 7.744 16.5 8.25 16.5C8.756 16.5 9.16667 16.0893 9.16667 15.5833V9.16667H15.5833C16.0893 9.16667 16.5 8.756 16.5 8.25C16.5 7.744 16.0893 7.33333 15.5833 7.33333H9.16667V0.916667C9.16667 0.410667 8.756 0 8.25 0Z" fill="currentColor"/></svg></span>
-                      <span class="im-checkout-page__party-add-text">Добавить организацию</span>
-                    </button>
+                    <div class="im-checkout-page__party-cards">
+                      <label class="im-checkout-page__party-card is-active">
+                        <input type="radio" name="buyer" value="1" checked />
+                        <span class="im-checkout-page__party-card-info">
+                          <span class="im-checkout-page__party-card-name">ООО "ПК Димакс"</span>
+                          <span class="im-checkout-page__party-card-detail">ИНН: 5902187634</span>
+                        </span>
+                        <span class="im-checkout-page__party-card-radio"></span>
+                      </label>
+
+                      <label class="im-checkout-page__party-card">
+                        <input type="radio" name="buyer" value="2" />
+                        <span class="im-checkout-page__party-card-info">
+                          <span class="im-checkout-page__party-card-name">ООО "Альфа-Строй"</span>
+                          <span class="im-checkout-page__party-card-detail">ИНН: 3649278501</span>
+                        </span>
+                        <span class="im-checkout-page__party-card-radio"></span>
+                      </label>
+
+                      <label class="im-checkout-page__party-card">
+                        <input type="radio" name="buyer" value="3" />
+                        <span class="im-checkout-page__party-card-info">
+                          <span class="im-checkout-page__party-card-name">ООО "Бета-Инвест"</span>
+                          <span class="im-checkout-page__party-card-detail">ИНН: 8163925470</span>
+                        </span>
+                        <span class="im-checkout-page__party-card-radio"></span>
+                      </label>
+
+                      <label class="im-checkout-page__party-card">
+                        <input type="radio" name="buyer" value="4" />
+                        <span class="im-checkout-page__party-card-info">
+                          <span class="im-checkout-page__party-card-name">ООО "Гамма-Торг"</span>
+                          <span class="im-checkout-page__party-card-detail">ИНН: 6475039182</span>
+                        </span>
+                        <span class="im-checkout-page__party-card-radio"></span>
+                      </label>
+
+                      <button class="im-checkout-page__party-add" type="button">
+                        <span class="im-checkout-page__party-add-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.25 0C7.744 0 7.33333 0.410667 7.33333 0.916667V7.33333H0.916667C0.410667 7.33333 0 7.744 0 8.25C0 8.756 0.410667 9.16667 0.916667 9.16667H7.33333V15.5833C7.33333 16.0893 7.744 16.5 8.25 16.5C8.756 16.5 9.16667 16.0893 9.16667 15.5833V9.16667H15.5833C16.0893 9.16667 16.5 8.756 16.5 8.25C16.5 7.744 16.0893 7.33333 15.5833 7.33333H9.16667V0.916667C9.16667 0.410667 8.756 0 8.25 0Z" fill="currentColor"/></svg></span>
+                        <span class="im-checkout-page__party-add-text">Добавить организацию</span>
+                      </button>
+                    </div>
                   </div>
 
                   <!-- Recipient -->
                   <div class="im-checkout-page__party">
                     <span class="im-checkout-page__party-label">Грузополучатель</span>
-                    <button class="im-checkout-page__party-add" type="button">
-                      <span class="im-checkout-page__party-add-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.25 0C7.744 0 7.33333 0.410667 7.33333 0.916667V7.33333H0.916667C0.410667 7.33333 0 7.744 0 8.25C0 8.756 0.410667 9.16667 0.916667 9.16667H7.33333V15.5833C7.33333 16.0893 7.744 16.5 8.25 16.5C8.756 16.5 9.16667 16.0893 9.16667 15.5833V9.16667H15.5833C16.0893 9.16667 16.5 8.756 16.5 8.25C16.5 7.744 16.0893 7.33333 15.5833 7.33333H9.16667V0.916667C9.16667 0.410667 8.756 0 8.25 0Z" fill="currentColor"/></svg></span>
-                      <span class="im-checkout-page__party-add-text">Добавить грузополучателя</span>
-                    </button>
+                    <div class="im-checkout-page__party-cards">
+                      <label class="im-checkout-page__party-card im-checkout-page__party-card-gruzo is-active">
+                        <input type="radio" name="recipient" value="1" checked />
+                        <span class="im-checkout-page__party-card-info">
+                          <span class="im-checkout-page__party-card-name">Константинопольский Александр Ярославович</span>
+                          <span class="im-checkout-page__party-card-details">
+                            <span class="im-checkout-page__party-card-detail">+7 (918) 088-46-35</span>
+                            <span class="im-checkout-page__party-card-detail">example@mail.ru</span>
+                          </span>
+                        </span>
+                        <span class="im-checkout-page__party-card-radio"></span>
+                      </label>
+
+                      <label class="im-checkout-page__party-card im-checkout-page__party-card-gruzo">
+                        <input type="radio" name="recipient" value="2" />
+                        <span class="im-checkout-page__party-card-info">
+                          <span class="im-checkout-page__party-card-name">Ломакин Олег Викторович</span>
+                          <span class="im-checkout-page__party-card-details">
+                            <span class="im-checkout-page__party-card-detail">+7 (918) 088-46-35</span>
+                            <span class="im-checkout-page__party-card-detail">example@mail.ru</span>
+                          </span>
+                        </span>
+                        <span class="im-checkout-page__party-card-radio"></span>
+                      </label>
+
+                      <button class="im-checkout-page__party-add" type="button">
+                        <span class="im-checkout-page__party-add-icon"><svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.25 0C7.744 0 7.33333 0.410667 7.33333 0.916667V7.33333H0.916667C0.410667 7.33333 0 7.744 0 8.25C0 8.756 0.410667 9.16667 0.916667 9.16667H7.33333V15.5833C7.33333 16.0893 7.744 16.5 8.25 16.5C8.756 16.5 9.16667 16.0893 9.16667 15.5833V9.16667H15.5833C16.0893 9.16667 16.5 8.756 16.5 8.25C16.5 7.744 16.0893 7.33333 15.5833 7.33333H9.16667V0.916667C9.16667 0.410667 8.756 0 8.25 0Z" fill="currentColor"/></svg></span>
+                        <span class="im-checkout-page__party-add-text">Добавить грузополучателя</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -240,7 +314,7 @@
                     </div>
                   </div>
 
-                  <button class="im-checkout-page__delivery-add" type="button">
+                  <button class="im-checkout-page__delivery-add" id="add-transport-address-btn" type="button">
                     <span class="im-checkout-page__delivery-add-text">Добавить адрес</span>
                     <svg class="im-checkout-page__delivery-add-icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M6.75 0C6.336 0 6 0.336 6 0.75V6H0.75C0.336 6 0 6.336 0 6.75C0 7.164 0.336 7.5 0.75 7.5H6V12.75C6 13.164 6.336 13.5 6.75 13.5C7.164 13.5 7.5 13.164 7.5 12.75V7.5H12.75C13.164 7.5 13.5 7.164 13.5 6.75C13.5 6.336 13.164 6 12.75 6H7.5V0.75C7.5 0.336 7.164 0 6.75 0Z" fill="currentColor" />

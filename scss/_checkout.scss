@@ -159,7 +159,7 @@ body.im-user-logged-in {
 
   &--total {
     margin-bottom: 20px;
-    margin-top: 24px;
+    margin-top: 20px;
 
     .im-checkout-page__summary-label {
       font-weight: var(--font-xl-bold-fw);
@@ -228,11 +228,11 @@ body.im-user-logged-in {
 .im-checkout-page__items-toggle {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   font-family: var(--font-family);
   font-size: var(--font-xs-size);
   color: var(--neutral-500);
-  margin-top: 4px;
+  margin-top: 7px;
 
   &:hover {
     color: var(--neutral-700);
@@ -498,11 +498,107 @@ body.im-user-logged-in {
 .im-checkout-page__party-label {
   display: block;
   font-family: var(--font-family);
-  font-weight: var(--font-lg-medium-fw);
-  font-size: var(--font-lg-size);
-  line-height: var(--font-lg-lh);
+  font-weight: var(--font-base-medium-fw);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-lh);
   color: var(--neutral-900);
   margin-bottom: 10px;
+}
+
+.im-checkout-page__party-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.im-checkout-page__party-card {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  width: 260px;
+  height: 84px;
+  padding: 16px;
+  border: 1.5px solid var(--neutral-300);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+
+  &-gruzo {
+    height: 116px;
+  }
+
+  input {
+    display: none;
+  }
+
+  &.is-active {
+    border-color: var(--neutral-900);
+
+    .im-checkout-page__party-card-radio {
+      border-color: var(--neutral-900);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.im-checkout-page__party-card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: 2px;
+  min-width: 0;
+  flex: 1;
+}
+
+.im-checkout-page__party-card-name {
+  font-family: var(--font-family);
+  font-weight: var(--font-sm-medium-fw);
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-lh);
+  color: var(--neutral-900);
+}
+
+.im-checkout-page__party-card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.im-checkout-page__party-card-detail {
+  font-family: var(--font-family);
+  font-weight: var(--font-sm-normal-fw);
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-lh);
+  color: var(--neutral-600);
+}
+
+.im-checkout-page__party-card-radio {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid var(--neutral-400);
+  border-radius: 50%;
+  position: relative;
+  margin-left: auto;
+  transition: border-color var(--transition-fast);
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--neutral-900);
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+  }
 }
 
 .im-checkout-page__party-add {
@@ -512,7 +608,7 @@ body.im-user-logged-in {
   justify-content: center;
   gap: 8px;
   width: 260px;
-  height: 92px;
+  height: auto;
   border: 1.5px solid var(--blue-200);
   border-radius: 8px;
   padding: 16px;
@@ -1260,6 +1356,11 @@ body.im-user-logged-in {
   min-width: 0;
 }
 
+// ── Mobile header bar ──
+.im-checkout-page__mobile-header {
+  display: none;
+}
+
 // ═══════════════════════════════════════
 // Responsive
 // ═══════════════════════════════════════
@@ -1319,7 +1420,34 @@ body.im-user-logged-in {
   }
 
   .im-checkout-page {
-    padding: 16px 0;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+
+  // Mobile header bar
+  .im-checkout-page__mobile-header {
+    display: flex;
+    align-items: center;
+    gap: 25%;
+    padding: 12px 16px;
+    background: var(--neutral-100);
+    border-bottom: 1px solid var(--neutral-300);
+  }
+
+  .im-checkout-page__mobile-back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .im-checkout-page__mobile-header-title {
+    font-family: var(--second-family);
+    font-weight: var(--font-lg-bold-fw);
+    font-size: var(--font-lg-size);
+    line-height: var(--font-lg-lh);
+    color: var(--neutral-900);
   }
 
   .im-checkout-page__title {
@@ -1333,11 +1461,31 @@ body.im-user-logged-in {
   }
 
   .im-checkout-page__section-title {
-    font-size: var(--font-lg-size);
+    font-size: var(--font-base-size);
+    margin-bottom: 8px;
+  }
+
+  .im-checkout-page__section-text {
+    font-size: var(--font-sm-size);
+    margin: 0 0 24px;
+  }
+
+  .im-checkout-page__login-btn {
+    width: 100%;
+    font-size: var(--font-sm-size);
+  }
+
+  // Auth section fixed height
+  .im-checkout-page__guest-only {
+    min-height: 160px;
   }
 
   .im-checkout-page__summary-inner {
     padding: 16px;
+  }
+
+  .im-checkout-page__summary-row {
+    margin-bottom: 6px;
   }
 
   .im-checkout-page__summary-row--total .im-checkout-page__summary-label {
@@ -1345,12 +1493,19 @@ body.im-user-logged-in {
   }
 
   .im-checkout-page__summary-row--total .im-checkout-page__summary-value {
-    font-size: var(--font-2xl-size);
+    font-size: var(--font-xl-size);
+  }
+
+  .im-checkout-page__items-toggle {
+    font-weight: var(--font-sm-medium-fw);
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+    color: var(--neutral-600);
   }
 
   .im-checkout-page__breadcrumbs {
-    font-size: var(--font-2xs-size);
-    margin-bottom: 14px;
+    font-size: var(--font-xs-size);
+    margin: 12px 0;
   }
 }
 
@@ -1360,15 +1515,62 @@ body.im-user-logged-in {
     display: none;
   }
 
-  // Dividers between summary rows (except first and total)
-  .im-checkout-page__items-list {
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--neutral-300);
+  // Party add button — full width
+  .im-checkout-page__party-add {
+    height: 116px;
+    width: 100%;
   }
 
-  .im-checkout-page__summary-row:not(:first-child):not(.im-checkout-page__summary-row--total) {
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--neutral-300);
+  // Delivery add button — full width
+  .im-checkout-page__delivery-add {
+    width: 100%;
+  }
+
+  // Transport address items — full width
+  .im-checkout-page__transport-address {
+    width: 100%;
+  }
+
+  // Date picker — full width
+  .im-checkout-page__date-picker {
+    display: flex;
+    width: 100%;
+  }
+
+  .im-checkout-page__date-field {
+    width: 100%;
+  }
+
+  // Pickup point — auto height for variable content
+  .im-checkout-page__pickup-point {
+    height: auto;
+  }
+
+  // Pickup map — reduced min-height
+  .im-checkout-page__pickup-map {
+    min-height: 200px;
+  }
+
+  // Delivery map — cap height for smaller screens
+  .im-checkout-page__delivery-map {
+    max-height: 260px;
+  }
+
+  // Dividers between summary rows (except first and total)
+  .im-checkout-page__items-list {
+    padding-bottom: 12px;
+    margin-bottom: 0;
+  }
+
+  .im-checkout-page__summary-row:not(:first-child):not(
+      .im-checkout-page__summary-row--total
+    ) {
+    padding-bottom: 12px;
+    margin-bottom: 0;
+  }
+
+  .im-checkout-page__summary-row--total {
+    margin-bottom: 20px;
   }
 
   // Promo field — bordered single-line input
@@ -1377,12 +1579,207 @@ body.im-user-logged-in {
   }
 
   .im-checkout-page__promo-field {
-    background: transparent;
-    border: 1px solid var(--neutral-300);
-    padding: 12px 14px;
+    height: 50px;
+    padding: 10px 14px;
   }
 
   .im-checkout-page__promo-input {
     font-weight: var(--font-base-normal-fw);
+  }
+
+  // ── Section cards — tighter padding ──
+  .im-checkout-page__section {
+    padding: 16px;
+  }
+
+  .im-checkout-page__section-title {
+    font-size: var(--font-base-size);
+    margin-bottom: 20px;
+  }
+
+  // ── Parties (buyer / recipient) ──
+  .im-checkout-page__parties {
+    gap: 16px;
+  }
+
+  .im-checkout-page__party-label {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__party-add-text {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  // Party cards — single column, fixed height
+  .im-checkout-page__party-cards {
+    flex-direction: column;
+  }
+
+  .im-checkout-page__party-card {
+    width: 100%;
+    height: 108px;
+  }
+
+  .im-checkout-page__party-card-name {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__party-card-detail {
+    font-size: var(--font-2xs-size);
+    line-height: var(--font-2xs-lh);
+  }
+
+  // ── Delivery options ──
+  .im-checkout-page__delivery-options {
+    margin-top: 0;
+  }
+
+  .im-checkout-page__radio-option {
+    height: 55px;
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+
+  .im-checkout-page__radio-title {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__radio-subtitle {
+    font-size: var(--font-2xs-size);
+    line-height: var(--font-2xs-lh);
+  }
+
+  // ── Pickup points ──
+  .im-checkout-page__pickup-title {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .im-checkout-page__pickup-name {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__pickup-address {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__pickup-schedule {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__pickup-map {
+    min-height: 274px;
+  }
+
+  // ── Moscow delivery ──
+  .im-checkout-page__delivery-title {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+    margin-top: 20px;
+    margin-bottom: 12px;
+  }
+
+  .im-checkout-page__delivery-address {
+    height: 38px;
+    padding: 10px 12px;
+  }
+
+  .im-checkout-page__delivery-address-text {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__delivery-add-text {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  // Services
+  .im-checkout-page__services-title {
+    font-size: var(--font-2xs-size);
+    line-height: var(--font-2xs-lh);
+    margin-bottom: 17px;
+  }
+
+  .im-checkout-page__service-text {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  // Date
+  .im-checkout-page__date-title {
+    font-size: var(--font-2xs-size);
+    line-height: var(--font-2xs-lh);
+  }
+
+  .im-checkout-page__date-field {
+    height: 50px;
+    padding: 10px 14px;
+  }
+
+  .im-checkout-page__date-label {
+    font-size: var(--font-2xs-size);
+    line-height: var(--font-2xs-lh);
+  }
+
+  .im-checkout-page__date-value {
+    font-size: var(--font-base-size);
+    line-height: var(--font-base-lh);
+  }
+
+  // Delivery map
+  .im-checkout-page__delivery-map {
+    min-height: 274px;
+    max-height: 274px;
+  }
+
+  // ── Transport company ──
+  .im-checkout-page__transport-title {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+    margin-top: 24px;
+    margin-bottom: 12px;
+  }
+
+  .im-checkout-page__transport-company {
+    height: 56px;
+    padding: 10px;
+  }
+
+  .im-checkout-page__transport-company-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .im-checkout-page__transport-company-name {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-checkout-page__transport-company-details {
+    font-size: var(--font-2xs-size);
+    line-height: var(--font-2xs-lh);
+  }
+
+  // ── Payment section ──
+  .im-checkout-page__section--payment {
+    .im-checkout-page__section-title {
+      margin-bottom: 16px;
+    }
+  }
+
+  .im-checkout-page__payment-options {
+    .im-checkout-page__radio-option {
+      height: 63px;
+    }
   }
 }

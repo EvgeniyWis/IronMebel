@@ -38,6 +38,24 @@
     });
   }
 
+  // Buyer & recipient party cards
+  function initPartyCards(radioName) {
+    const radios = document.querySelectorAll('input[name="' + radioName + '"]');
+    radios.forEach(function(radio) {
+      radio.addEventListener('change', function() {
+        radios.forEach(function(r) {
+          var card = r.closest('.im-checkout-page__party-card');
+          if (card) card.classList.remove('is-active');
+        });
+        var activeCard = radio.closest('.im-checkout-page__party-card');
+        if (activeCard) activeCard.classList.add('is-active');
+      });
+    });
+  }
+
+  initPartyCards('buyer');
+  initPartyCards('recipient');
+
   initRadioGroup('delivery', '.im-checkout-page__delivery-options .im-checkout-page__radio-option');
   initRadioGroup('payment', '.im-checkout-page__payment-options .im-checkout-page__radio-option');
 
@@ -383,6 +401,93 @@
 
   if (delivery.addBtn) {
     delivery.addBtn.addEventListener('click', showAddressInput);
+  }
+
+  // ═══════════════════════════════════════
+  // Transport — "Добавить адрес" inline input
+  // ═══════════════════════════════════════
+
+  const transportAddBtn = document.getElementById('add-transport-address-btn');
+  const transportAddressList = document.querySelector('.im-checkout-page__transport-addresses');
+  let transportInputVisible = false;
+
+  function addTransportAddress(text) {
+    if (!transportAddressList) return;
+
+    const el = document.createElement('div');
+    el.className = 'im-checkout-page__transport-address';
+    el.innerHTML =
+      '<span class="im-checkout-page__transport-address-text">' + escapeHtml(text) + '</span>' +
+      '<span class="im-checkout-page__transport-address-radio"></span>';
+
+    // Select on click
+    el.addEventListener('click', () => {
+      transportAddressList.querySelectorAll('.im-checkout-page__transport-address').forEach(a => a.classList.remove('is-active'));
+      el.classList.add('is-active');
+    });
+
+    transportAddressList.appendChild(el);
+
+    // Select the newly added address
+    transportAddressList.querySelectorAll('.im-checkout-page__transport-address').forEach(a => a.classList.remove('is-active'));
+    el.classList.add('is-active');
+  }
+
+  function showTransportAddressInput() {
+    if (transportInputVisible || !transportAddBtn) return;
+    transportInputVisible = true;
+
+    const wrapper = document.createElement('div');
+    wrapper.className = 'im-checkout-page__transport-address im-checkout-page__delivery-address--input';
+
+    const input = document.createElement('input');
+    input.className = 'im-checkout-page__delivery-address-field';
+    input.type = 'text';
+    input.placeholder = 'Введите адрес';
+
+    wrapper.appendChild(input);
+
+    transportAddBtn.parentNode.insertBefore(wrapper, transportAddBtn);
+    transportAddBtn.style.display = 'none';
+    input.focus();
+
+    function removeInput() {
+      transportInputVisible = false;
+      wrapper.remove();
+      transportAddBtn.style.display = '';
+    }
+
+    function submitAddress() {
+      const query = input.value.trim();
+      if (!query) {
+        removeInput();
+        return;
+      }
+      removeInput();
+      addTransportAddress(query);
+    }
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        submitAddress();
+      }
+      if (e.key === 'Escape') {
+        removeInput();
+      }
+    });
+
+    input.addEventListener('blur', () => {
+      setTimeout(() => {
+        if (transportInputVisible && !input.value.trim()) {
+          removeInput();
+        }
+      }, 150);
+    });
+  }
+
+  if (transportAddBtn) {
+    transportAddBtn.addEventListener('click', showTransportAddressInput);
   }
 
   // ═══════════════════════════════════════

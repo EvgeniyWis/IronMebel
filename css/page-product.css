@@ -2803,6 +2803,15 @@ body.im-user-logged-in .im-header__user {
     display: none;
   }
 }
+@media (max-width: 600px) {
+  .im-header__logo svg {
+    width: 120px;
+    height: auto;
+  }
+  .im-header__logo-subtitle {
+    font-size: 5px;
+  }
+}
 @media (max-width: 390px) {
   .im-header {
     position: sticky;
