@@ -1111,7 +1111,7 @@ const initIndustriesSlider = () => {
 initIndustriesSlider();
 
 /* ─── Goods card slider (Keen Slider inside product card) ─── */
-const initGoodsCardSliders = () => {
+const initHomeGoodsCardSliders = () => {
   const containers = document.querySelectorAll("[data-goods-slider]");
   containers.forEach((container) => {
     const root = container.querySelector(".keen-slider");
@@ -1197,7 +1197,7 @@ const initGoodsCardSliders = () => {
   });
 };
 
-initGoodsCardSliders();
+initHomeGoodsCardSliders();
 
 // ─── Goods favorites (heart toggle) ───────────────────────────
 const initGoodsFavorites = () => {
@@ -1321,7 +1321,7 @@ const initBlogSlider = () => {
 initBlogSlider();
 
 /* ─── CTA custom selects (replace native dropdown UI) ───────── */
-const initCtaCustomSelects = () => {
+const initHomeCtaCustomSelects = () => {
   const wraps = document.querySelectorAll(".im-cta__select-wrap");
   if (!wraps.length) return;
 
@@ -1500,7 +1500,7 @@ const initCtaCustomSelects = () => {
   });
 };
 
-initCtaCustomSelects();
+initHomeCtaCustomSelects();
 
 /* ── Catalog sidebar: dual-handle range sliders ── */
 const initCatalogRangeSliders = () => {
