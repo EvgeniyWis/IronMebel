@@ -1674,6 +1674,7 @@
   .im-century__inner {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
+    height: auto;
   }
 
   .im-century__main {
@@ -2393,7 +2394,7 @@
   }
 
   .im-cta__select-label {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 
@@ -2417,7 +2418,7 @@
   }
 
   .im-cta__select-label {
-    font-size: 6px;
+    font-size: 8px;
   }
 }
 

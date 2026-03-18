@@ -4077,7 +4077,7 @@ body.im-user-logged-in .im-header__user {
 .im-cta__select-label {
   font-family: var(--font-family);
   font-weight: 400;
-  font-size: var(--font-2xs-size);
+  font-size: 15px;
   line-height: 1;
   color: var(--neutral-300);
   position: absolute;
@@ -9364,6 +9364,7 @@ body.im-user-logged-in .im-header__user {
   .im-century__inner {
     grid-template-columns: minmax(0, 1fr);
     gap: 16px;
+    height: auto;
   }
   .im-century__main {
     flex-direction: column;
@@ -9951,7 +9952,7 @@ body.im-user-logged-in .im-header__user {
     font-size: 12px;
   }
   .im-cta__select-label {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 @media (max-width: 1150px) {
@@ -9970,7 +9971,7 @@ body.im-user-logged-in .im-header__user {
     font-size: 8px;
   }
   .im-cta__select-label {
-    font-size: 6px;
+    font-size: 8px;
   }
 }
 @media (max-width: 480px) {
