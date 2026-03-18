@@ -12,7 +12,11 @@
       "Bash(grep -n \"^\\\\.im-[a-z-]*\\\\s*{$\" /d/Web/FrontEnd/Projects/IronMebel/scss/_components.scss)",
       "Bash(/tmp/blocks_analysis.txt:*)",
       "Read(//tmp/**)",
-      "Bash(grep -o \"@media[^{]*\" /d/Web/FrontEnd/Projects/IronMebel/scss/*.scss)"
+      "Bash(grep -o \"@media[^{]*\" /d/Web/FrontEnd/Projects/IronMebel/scss/*.scss)",
+      "Bash(pip show:*)",
+      "Bash(pip install:*)",
+      "Bash(playwright install:*)",
+      "Bash(python -c \":*)"
     ]
   }
 }

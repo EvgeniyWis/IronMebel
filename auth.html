@@ -404,6 +404,10 @@
 
         }
 
+        document.querySelector('.auth__bg').addEventListener('click', () => {
+          history.back();
+        });
+
         authLoginInput.addEventListener('input', clearAuthError);
 
         registerPhoneInput.addEventListener('input', () => {
@@ -474,16 +478,12 @@
             showRegisterError('name', 'Введите имя');
             valid = false;
           }
-          if (phone && !isPhone(phone)) {
-            showRegisterError('phone', 'Введите корректный номер телефона');
+          if (!phone || !isPhone(phone)) {
+            showRegisterError('phone', !phone ? 'Введите номер телефона' : 'Введите корректный номер телефона');
             valid = false;
           }
-          if (email && !isEmail(email)) {
-            showRegisterError('email', 'Введите корректную почту');
-            valid = false;
-          }
-          if (!phone && !email) {
-            showRegisterError(registerPreferredMethod === 'phone' ? 'phone' : 'email', 'Заполните телефон или почту');
+          if (!email || !isEmail(email)) {
+            showRegisterError('email', !email ? 'Введите почту' : 'Введите корректную почту');
             valid = false;
           }
           if (!agreement) {
@@ -508,13 +508,23 @@
         });
 
         registerBack.addEventListener('click', closeRegisterOverlay);
+        let registerMouseDownTarget = null;
+        registerOverlay.addEventListener('mousedown', (event) => {
+          registerMouseDownTarget = event.target;
+        });
         registerOverlay.addEventListener('click', (event) => {
-          if (event.target === registerOverlay) closeRegisterOverlay();
+          if (event.target === registerOverlay && registerMouseDownTarget === registerOverlay) closeRegisterOverlay();
+          registerMouseDownTarget = null;
         });
 
         confirmBack.addEventListener('click', closeConfirm);
+        let confirmMouseDownTarget = null;
+        confirmOverlay.addEventListener('mousedown', (event) => {
+          confirmMouseDownTarget = event.target;
+        });
         confirmOverlay.addEventListener('click', (event) => {
-          if (event.target === confirmOverlay) closeConfirm();
+          if (event.target === confirmOverlay && confirmMouseDownTarget === confirmOverlay) closeConfirm();
+          confirmMouseDownTarget = null;
         });
 
         codeInputs.forEach((input, index) => {
