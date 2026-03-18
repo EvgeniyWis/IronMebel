@@ -598,4 +598,461 @@
       initDeliveryMap();
     });
   }
+
+  // ═══════════════════════════════════════
+  // Organization modal
+  // ═══════════════════════════════════════
+
+  const orgModal = document.querySelector('[data-org-modal]');
+  if (orgModal) {
+    const panel = orgModal.querySelector('.im-org-modal__panel');
+    const subtitle = orgModal.querySelector('[data-org-subtitle]');
+
+    // Step elements
+    const steps = {
+      inn: orgModal.querySelector('[data-org-step="inn"]'),
+      branchInn: orgModal.querySelector('[data-org-step="branch-inn"]'),
+      address: orgModal.querySelector('[data-org-step="address"]'),
+      bank: orgModal.querySelector('[data-org-step="bank"]')
+    };
+
+    // Inputs
+    const innInput = orgModal.querySelector('[data-org-inn]');
+    const branchInnInput = orgModal.querySelector('[data-org-branch-inn]');
+    const branchKppInput = orgModal.querySelector('[data-org-branch-kpp]');
+    const legalAddressInput = orgModal.querySelector('[data-org-legal-address]');
+    const actualAddressInput = orgModal.querySelector('[data-org-actual-address]');
+    const sameAddressCheckbox = orgModal.querySelector('[data-org-same-address]');
+    const suggestionsEl = orgModal.querySelector('[data-org-suggestions]');
+
+    // Buttons
+    const innNextBtn = orgModal.querySelector('[data-org-inn-next]');
+    const branchInnNextBtn = orgModal.querySelector('[data-org-branch-inn-next]');
+    const addressNextBtn = orgModal.querySelector('[data-org-address-next]');
+    const backAddressBtn = orgModal.querySelector('[data-org-back-address]');
+    const orgSubmitBtn = orgModal.querySelector('[data-org-submit]');
+
+    // State
+    let currentStep = 'inn';
+    let orgData = {};
+    let isBranch = false;
+
+    // Demo: mock org data by INN
+    const MOCK_ORGS = {
+      '2310119892': {
+        name: 'ООО "АФФИНИТИ ИНДЕКС"',
+        inn: '23101198925',
+        kpp: '231001001',
+        address: 'г Краснодар, ул Красноармейская, д 55/1, офис 50'
+      }
+    };
+
+    function openModal() {
+      orgModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      resetModal();
+      innInput.focus();
+    }
+
+    function closeModal() {
+      orgModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    function resetModal() {
+      orgData = {};
+      isBranch = false;
+      currentStep = 'inn';
+
+      // Clear inputs
+      innInput.value = '';
+      branchInnInput.value = '';
+      branchKppInput.value = '';
+      legalAddressInput.value = '';
+      actualAddressInput.value = '';
+      sameAddressCheckbox.checked = false;
+      actualAddressInput.closest('.im-org-modal__field').style.display = '';
+
+      orgModal.querySelectorAll('[data-org-account], [data-org-bik], [data-org-bank-name-input], [data-org-corr-account]').forEach(function(input) {
+        input.value = '';
+      });
+
+      innNextBtn.disabled = true;
+      branchInnNextBtn.disabled = true;
+      suggestionsEl.classList.remove('is-visible');
+      suggestionsEl.innerHTML = '';
+
+      showStep('inn');
+      subtitle.textContent = 'Укажите ИНН организации или ИП';
+    }
+
+    function showStep(step) {
+      Object.keys(steps).forEach(function(key) {
+        if (steps[key]) steps[key].hidden = true;
+      });
+      if (steps[step]) steps[step].hidden = false;
+      currentStep = step;
+    }
+
+    function fillOrgInfo(stepEl) {
+      var nameEl = stepEl.querySelector('[data-org-info-name], [data-org-bank-name]');
+      var innEl = stepEl.querySelector('[data-org-info-inn], [data-org-bank-inn]');
+      var kppEl = stepEl.querySelector('[data-org-info-kpp], [data-org-bank-kpp]');
+      if (nameEl) nameEl.textContent = orgData.name || '';
+      if (innEl) innEl.textContent = orgData.inn || '';
+      if (kppEl) kppEl.textContent = orgData.kpp || '';
+    }
+
+    // Build and show suggestions dropdown
+    function showSuggestions(inn) {
+      suggestionsEl.innerHTML = '';
+
+      var matches = Object.keys(MOCK_ORGS).map(function(key) {
+        return MOCK_ORGS[key];
+      });
+
+      matches.forEach(function(org) {
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'im-org-modal__suggestion';
+        btn.innerHTML =
+          '<span class="im-org-modal__suggestion-name">' + escapeHtml(org.name) + '</span>' +
+          '<span class="im-org-modal__suggestion-details">ИНН: ' + escapeHtml(org.inn) + ', КПП: ' + escapeHtml(org.kpp) + '</span>' +
+          '<span class="im-org-modal__suggestion-address">' + escapeHtml(org.address) + '</span>';
+
+        btn.addEventListener('click', function() {
+          orgData = {
+            name: org.name,
+            inn: org.inn,
+            kpp: org.kpp,
+            legalAddress: org.address
+          };
+          isBranch = false;
+          goToAddress();
+        });
+
+        suggestionsEl.appendChild(btn);
+      });
+
+      // Add "Другой филиал" option
+      var branchBtn = document.createElement('button');
+      branchBtn.type = 'button';
+      branchBtn.className = 'im-org-modal__suggestion im-org-modal__suggestion--branch';
+      branchBtn.innerHTML =
+        '<span class="im-org-modal__suggestion-name">Другой филиал</span>' +
+        '<span class="im-org-modal__suggestion-details">Выберите, если ИНН введен правильно, но вашего филиала нет в списке</span>';
+
+      branchBtn.addEventListener('click', function() {
+        isBranch = true;
+        orgData.inn = inn;
+        branchInnInput.value = inn;
+        branchKppInput.value = '';
+        branchInnNextBtn.disabled = true;
+        subtitle.textContent = 'Укажите ИНН организации или ИП';
+        showStep('branchInn');
+        branchKppInput.focus();
+      });
+
+      suggestionsEl.appendChild(branchBtn);
+      suggestionsEl.classList.add('is-visible');
+    }
+
+    // INN input → enable/disable next + show suggestions on typing
+    innInput.addEventListener('input', function() {
+      var val = innInput.value.replace(/\D/g, '');
+      innInput.value = val;
+      innNextBtn.disabled = val.length < 10;
+
+      if (val.length >= 10) {
+        showSuggestions(val);
+      } else {
+        suggestionsEl.classList.remove('is-visible');
+        suggestionsEl.innerHTML = '';
+      }
+    });
+
+    // "Продолжить" — if no suggestions matched, go to branch flow
+    innNextBtn.addEventListener('click', function() {
+      var inn = innInput.value.trim();
+      if (inn.length < 10) return;
+
+      if (suggestionsEl.classList.contains('is-visible')) return;
+
+      isBranch = true;
+      orgData.inn = inn;
+      branchInnInput.value = inn;
+      branchKppInput.value = '';
+      branchInnNextBtn.disabled = true;
+      subtitle.textContent = 'Укажите ИНН организации или ИП';
+      showStep('branchInn');
+      branchKppInput.focus();
+    });
+
+    // Branch INN step
+    branchKppInput.addEventListener('input', function() {
+      var val = branchKppInput.value.replace(/\D/g, '');
+      branchKppInput.value = val;
+      branchInnNextBtn.disabled = val.length < 9;
+    });
+
+    branchInnNextBtn.addEventListener('click', function() {
+      orgData.kpp = branchKppInput.value.trim();
+      var foundOrg = null;
+      Object.keys(MOCK_ORGS).forEach(function(key) {
+        if (orgData.inn.indexOf(key) === 0 || key.indexOf(orgData.inn) === 0) {
+          foundOrg = MOCK_ORGS[key];
+        }
+      });
+      orgData.name = foundOrg ? foundOrg.name : 'Организация ИНН ' + orgData.inn;
+      orgData.legalAddress = foundOrg ? foundOrg.address : '';
+      goToAddress();
+    });
+
+    var addressInfoEl = orgModal.querySelector('[data-org-address-info]');
+    var addressNameField = orgModal.querySelector('[data-org-address-name-field]');
+    var orgNameInput = orgModal.querySelector('[data-org-name]');
+
+    function goToAddress() {
+      legalAddressInput.value = orgData.legalAddress || '';
+      actualAddressInput.value = '';
+      sameAddressCheckbox.checked = false;
+      actualAddressInput.closest('.im-org-modal__field').style.display = '';
+
+      if (isBranch) {
+        subtitle.textContent = 'Укажите наименование организации и адрес';
+        addressInfoEl.hidden = true;
+        addressNameField.hidden = false;
+        orgNameInput.value = orgData.name || '';
+      } else {
+        subtitle.textContent = 'Укажите адрес организации';
+        addressInfoEl.hidden = false;
+        addressNameField.hidden = true;
+        fillOrgInfo(steps.address);
+      }
+
+      showStep('address');
+    }
+
+    // "Совпадает с фактическим" checkbox
+    sameAddressCheckbox.addEventListener('change', function() {
+      var field = actualAddressInput.closest('.im-org-modal__field');
+      if (sameAddressCheckbox.checked) {
+        actualAddressInput.value = legalAddressInput.value;
+        field.style.display = 'none';
+      } else {
+        actualAddressInput.value = '';
+        field.style.display = '';
+      }
+    });
+
+    // Address → Bank
+    addressNextBtn.addEventListener('click', function() {
+      if (isBranch && orgNameInput) {
+        orgData.name = orgNameInput.value.trim();
+      }
+      orgData.legalAddress = legalAddressInput.value.trim();
+      orgData.actualAddress = sameAddressCheckbox.checked
+        ? orgData.legalAddress
+        : actualAddressInput.value.trim();
+
+      subtitle.textContent = 'Укажите банковские реквизиты';
+      fillOrgInfo(steps.bank);
+      showStep('bank');
+    });
+
+    // Back buttons
+    orgModal.querySelector('[data-org-cancel]').addEventListener('click', closeModal);
+    orgModal.querySelector('[data-org-modal-close]').addEventListener('click', closeModal);
+
+    orgModal.querySelector('[data-org-back="inn"]').addEventListener('click', function() {
+      subtitle.textContent = 'Укажите ИНН организации или ИП';
+      showStep('inn');
+    });
+
+    backAddressBtn.addEventListener('click', function() {
+      if (isBranch) {
+        subtitle.textContent = 'Укажите ИНН организации или ИП';
+        showStep('branchInn');
+      } else {
+        subtitle.textContent = 'Укажите ИНН организации или ИП';
+        showStep('inn');
+      }
+    });
+
+    orgModal.querySelector('[data-org-back="address"]').addEventListener('click', function() {
+      subtitle.textContent = "Укажите адрес организации";
+      showStep('address');
+    });
+
+    // Submit → add org card
+    orgSubmitBtn.addEventListener('click', function() {
+      orgData.account = orgModal.querySelector('[data-org-account]').value.trim();
+      orgData.bik = orgModal.querySelector('[data-org-bik]').value.trim();
+      orgData.bankName = orgModal.querySelector('[data-org-bank-name-input]').value.trim();
+      orgData.corrAccount = orgModal.querySelector('[data-org-corr-account]').value.trim();
+
+      var buyerCards = document.querySelector('.im-checkout-page__parties .im-checkout-page__party-cards');
+      if (buyerCards) {
+        var addBtn = buyerCards.querySelector('.im-checkout-page__party-add');
+        var cardCount = buyerCards.querySelectorAll('.im-checkout-page__party-card').length;
+        var newValue = String(cardCount + 1);
+
+        var card = document.createElement('label');
+        card.className = 'im-checkout-page__party-card';
+
+        var radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'buyer';
+        radio.value = newValue;
+
+        var info = document.createElement('span');
+        info.className = 'im-checkout-page__party-card-info';
+        info.innerHTML =
+          '<span class="im-checkout-page__party-card-name">' + escapeHtml(orgData.name) + '</span>' +
+          '<span class="im-checkout-page__party-card-detail">ИНН: ' + escapeHtml(orgData.inn) + '</span>';
+
+        var radioMark = document.createElement('span');
+        radioMark.className = 'im-checkout-page__party-card-radio';
+
+        card.appendChild(radio);
+        card.appendChild(info);
+        card.appendChild(radioMark);
+
+        buyerCards.insertBefore(card, addBtn);
+
+        buyerCards.querySelectorAll('.im-checkout-page__party-card').forEach(function(c) {
+          c.classList.remove('is-active');
+        });
+        card.classList.add('is-active');
+        radio.checked = true;
+
+        initPartyCards('buyer');
+      }
+
+      closeModal();
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && orgModal.classList.contains('is-open')) {
+        closeModal();
+      }
+    });
+
+    panel.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    // Open modal from "Добавить организацию" button
+    var addOrgBtns = document.querySelectorAll('.im-checkout-page__party-add');
+    if (addOrgBtns.length > 0) {
+      addOrgBtns[0].addEventListener('click', openModal);
+    }
+  }
+
+  // ═══════════════════════════════════════
+  // Recipient modal
+  // ═══════════════════════════════════════
+
+  const recipientModal = document.querySelector('[data-recipient-modal]');
+  if (recipientModal) {
+    const recipientPanel = recipientModal.querySelector('.im-org-modal__panel');
+    const recipientNameInput = recipientModal.querySelector('[data-recipient-name]');
+    const recipientPhoneInput = recipientModal.querySelector('[data-recipient-phone]');
+    const recipientEmailInput = recipientModal.querySelector('[data-recipient-email]');
+
+    function openRecipientModal() {
+      recipientModal.classList.add('is-open');
+      document.body.style.overflow = 'hidden';
+      recipientNameInput.value = '';
+      recipientPhoneInput.value = '+7';
+      recipientEmailInput.value = '';
+      recipientNameInput.focus();
+    }
+
+    function closeRecipientModal() {
+      recipientModal.classList.remove('is-open');
+      document.body.style.overflow = '';
+    }
+
+    recipientModal.querySelector('[data-recipient-cancel]').addEventListener('click', closeRecipientModal);
+    recipientModal.querySelector('[data-recipient-modal-close]').addEventListener('click', closeRecipientModal);
+
+    recipientPanel.addEventListener('click', function(e) {
+      e.stopPropagation();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && recipientModal.classList.contains('is-open')) {
+        closeRecipientModal();
+      }
+    });
+
+    recipientModal.querySelector('[data-recipient-submit]').addEventListener('click', function() {
+      var name = recipientNameInput.value.trim();
+      var phone = recipientPhoneInput.value.trim();
+      var email = recipientEmailInput.value.trim();
+
+      if (!name) {
+        recipientNameInput.focus();
+        return;
+      }
+
+      var recipientParty = document.querySelectorAll('.im-checkout-page__party')[1];
+      if (recipientParty) {
+        var cardsContainer = recipientParty.querySelector('.im-checkout-page__party-cards');
+        var addBtn = cardsContainer.querySelector('.im-checkout-page__party-add');
+        var cardCount = cardsContainer.querySelectorAll('.im-checkout-page__party-card').length;
+        var newValue = String(cardCount + 1);
+
+        var card = document.createElement('label');
+        card.className = 'im-checkout-page__party-card im-checkout-page__party-card-gruzo';
+
+        var radio = document.createElement('input');
+        radio.type = 'radio';
+        radio.name = 'recipient';
+        radio.value = newValue;
+
+        var info = document.createElement('span');
+        info.className = 'im-checkout-page__party-card-info';
+
+        var detailsHtml = '';
+        if (phone && phone !== '+7') {
+          detailsHtml += '<span class="im-checkout-page__party-card-detail">' + escapeHtml(phone) + '</span>';
+        }
+        if (email) {
+          detailsHtml += '<span class="im-checkout-page__party-card-detail">' + escapeHtml(email) + '</span>';
+        }
+
+        info.innerHTML =
+          '<span class="im-checkout-page__party-card-name">' + escapeHtml(name) + '</span>' +
+          (detailsHtml ? '<span class="im-checkout-page__party-card-details">' + detailsHtml + '</span>' : '');
+
+        var radioMark = document.createElement('span');
+        radioMark.className = 'im-checkout-page__party-card-radio';
+
+        card.appendChild(radio);
+        card.appendChild(info);
+        card.appendChild(radioMark);
+
+        cardsContainer.insertBefore(card, addBtn);
+
+        cardsContainer.querySelectorAll('.im-checkout-page__party-card').forEach(function(c) {
+          c.classList.remove('is-active');
+        });
+        card.classList.add('is-active');
+        radio.checked = true;
+
+        initPartyCards('recipient');
+      }
+
+      closeRecipientModal();
+    });
+
+    // Open from "Добавить грузополучателя" button (second party-add button)
+    var allPartyAddBtns = document.querySelectorAll('.im-checkout-page__party-add');
+    if (allPartyAddBtns.length > 1) {
+      allPartyAddBtns[1].addEventListener('click', openRecipientModal);
+    }
+  }
 })();

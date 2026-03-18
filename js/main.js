@@ -949,7 +949,7 @@ const initPartnersSlider = () => {
 
   const slider = new KeenSlider(baseSliderRoot, {
     slides: {
-      perView: 6,
+      perView: 6.2,
       spacing: 0,
     },
     loop: false,

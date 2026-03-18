@@ -526,6 +526,169 @@
       <div data-layout-footer></div>
     </div>
 
+    <!-- Recipient modal -->
+    <div class="im-org-modal" data-recipient-modal>
+      <span class="im-org-modal__handle im-org-modal__handle--2"></span>
+      <div class="im-org-modal__backdrop" data-recipient-modal-close></div>
+      <div class="im-org-modal__panel">
+        <h3 class="im-org-modal__title">Новый грузополучатель</h3>
+        <p class="im-org-modal__subtitle">Укажите контактные данные грузополучателя</p>
+
+        <div class="im-org-modal__step">
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="recipient-name" type="text" placeholder="ФИО" data-recipient-name />
+            <label class="im-org-modal__label" for="recipient-name">ФИО</label>
+          </div>
+
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="recipient-phone" type="tel" placeholder="Телефон" value="+7" data-recipient-phone />
+            <label class="im-org-modal__label" for="recipient-phone">Телефон</label>
+          </div>
+
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="recipient-email" type="email" placeholder="Почта" data-recipient-email />
+            <label class="im-org-modal__label" for="recipient-email">Почта</label>
+          </div>
+
+          <div class="im-org-modal__actions">
+            <button class="im-org-modal__btn im-org-modal__btn--secondary" type="button" data-recipient-cancel>Отмена</button>
+            <button class="im-org-modal__btn im-org-modal__btn--primary" type="button" data-recipient-submit>Добавить</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Organization modal -->
+    <div class="im-org-modal" data-org-modal>
+      <span class="im-org-modal__handle"></span>
+      <div class="im-org-modal__backdrop" data-org-modal-close></div>
+      <div class="im-org-modal__panel">
+        <h3 class="im-org-modal__title">Новая организация</h3>
+        <p class="im-org-modal__subtitle" data-org-subtitle>Укажите ИНН организации или ИП</p>
+
+        <!-- Step 1: Enter INN -->
+        <div class="im-org-modal__step" data-org-step="inn">
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-inn" type="text" placeholder="ИНН" inputmode="numeric" maxlength="12" data-org-inn />
+            <label class="im-org-modal__label" for="org-inn">инн</label>
+          </div>
+
+          <!-- Suggestions dropdown -->
+          <div class="im-org-modal__suggestions" data-org-suggestions>
+            <!-- Filled dynamically -->
+          </div>
+
+          <div class="im-org-modal__actions">
+            <button class="im-org-modal__btn im-org-modal__btn--secondary" type="button" data-org-cancel>Отмена</button>
+            <button class="im-org-modal__btn im-org-modal__btn--primary" type="button" data-org-inn-next disabled>Продолжить</button>
+          </div>
+        </div>
+
+        <!-- Step 2: Branch INN + KPP (Другой филиал) -->
+        <div class="im-org-modal__step" data-org-step="branch-inn" hidden>
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-branch-inn" type="text" placeholder="ИНН" inputmode="numeric" maxlength="12" data-org-branch-inn readonly />
+            <label class="im-org-modal__label" for="org-branch-inn">инн</label>
+          </div>
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-branch-kpp" type="text" placeholder="КПП" inputmode="numeric" maxlength="9" data-org-branch-kpp />
+            <label class="im-org-modal__label" for="org-branch-kpp">кпп</label>
+          </div>
+
+          <div class="im-org-modal__actions">
+            <button class="im-org-modal__btn im-org-modal__btn--secondary" type="button" data-org-back="inn">Назад</button>
+            <button class="im-org-modal__btn im-org-modal__btn--primary" type="button" data-org-branch-inn-next disabled>Продолжить</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Address -->
+        <div class="im-org-modal__step" data-org-step="address" hidden>
+          <!-- Shown when selecting existing org -->
+          <div class="im-org-modal__info" data-org-address-info>
+            <span class="im-org-modal__info-label">Наименование организации</span>
+            <span class="im-org-modal__info-value" data-org-info-name></span>
+            <div class="im-org-modal__info-row">
+              <span class="im-org-modal__info-col">
+                <span class="im-org-modal__info-label">инн</span>
+                <span class="im-org-modal__info-value" data-org-info-inn></span>
+              </span>
+              <span class="im-org-modal__info-col">
+                <span class="im-org-modal__info-label">кпп</span>
+                <span class="im-org-modal__info-value" data-org-info-kpp></span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Shown in branch flow (editable name) -->
+          <div class="im-org-modal__field" data-org-address-name-field hidden>
+            <input class="im-org-modal__input" id="org-name" type="text" placeholder="Наименование" data-org-name />
+            <label class="im-org-modal__label" for="org-name">Наименование</label>
+          </div>
+
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-legal-address" type="text" placeholder="Юридический адрес" data-org-legal-address />
+            <label class="im-org-modal__label" for="org-legal-address">Юридический адрес</label>
+          </div>
+
+          <label class="im-org-modal__checkbox">
+            <input type="checkbox" data-org-same-address />
+            <span class="im-org-modal__checkbox-mark"></span>
+            <span class="im-org-modal__checkbox-text">Совпадает с фактическим</span>
+          </label>
+
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-actual-address" type="text" placeholder="Фактический адрес" data-org-actual-address />
+            <label class="im-org-modal__label" for="org-actual-address">Фактический адрес</label>
+          </div>
+
+          <div class="im-org-modal__actions">
+            <button class="im-org-modal__btn im-org-modal__btn--secondary" type="button" data-org-back-address>Назад</button>
+            <button class="im-org-modal__btn im-org-modal__btn--primary" type="button" data-org-address-next>Продолжить</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Bank details -->
+        <div class="im-org-modal__step" data-org-step="bank" hidden>
+          <div class="im-org-modal__info">
+            <span class="im-org-modal__info-label">Наименование организации</span>
+            <span class="im-org-modal__info-value" data-org-bank-name></span>
+            <div class="im-org-modal__info-row">
+              <span class="im-org-modal__info-col">
+                <span class="im-org-modal__info-label">инн</span>
+                <span class="im-org-modal__info-value" data-org-bank-inn></span>
+              </span>
+              <span class="im-org-modal__info-col">
+                <span class="im-org-modal__info-label">кпп</span>
+                <span class="im-org-modal__info-value" data-org-bank-kpp></span>
+              </span>
+            </div>
+          </div>
+
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-account" type="text" placeholder="Расчетный счет" inputmode="numeric" maxlength="20" data-org-account />
+            <label class="im-org-modal__label" for="org-account">Расчетный счет</label>
+          </div>
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-bik" type="text" placeholder="БИК банка" inputmode="numeric" maxlength="9" data-org-bik />
+            <label class="im-org-modal__label" for="org-bik">БИК банка</label>
+          </div>
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-bank-name-input" type="text" placeholder="Наименование банка" data-org-bank-name-input />
+            <label class="im-org-modal__label" for="org-bank-name-input">Наименование банка</label>
+          </div>
+          <div class="im-org-modal__field">
+            <input class="im-org-modal__input" id="org-corr-account" type="text" placeholder="Корреспондентский счет" inputmode="numeric" maxlength="20" data-org-corr-account />
+            <label class="im-org-modal__label" for="org-corr-account">Корреспондентский счет</label>
+          </div>
+
+          <div class="im-org-modal__actions">
+            <button class="im-org-modal__btn im-org-modal__btn--secondary" type="button" data-org-back="address">Назад</button>
+            <button class="im-org-modal__btn im-org-modal__btn--primary" type="button" data-org-submit>Добавить организацию</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="./js/layout-include.js"></script>
     <script src="./js/checkout.js"></script>
   </body>

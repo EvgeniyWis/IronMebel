@@ -1362,6 +1362,374 @@ body.im-user-logged-in {
 }
 
 // ═══════════════════════════════════════
+// Organization modal
+// ═══════════════════════════════════════
+
+.im-org-modal {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-header) + 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: color-mix(in srgb, var(--neutral-black) 60%, transparent);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--transition-normal),
+    visibility var(--transition-normal);
+
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    .im-org-modal__panel {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+.im-org-modal__backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.im-org-modal__handle {
+  display: block;
+  width: 48px;
+  height: 4px;
+  border-radius: 400px;
+  background: var(--neutral-100);
+  margin: 0 auto 12px;
+  position: absolute;
+  top: 75%;
+  z-index: 100;
+
+  &--2 {
+    top: 62%;
+  }
+}
+
+.im-org-modal__panel {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  background: var(--neutral-100);
+  border-radius: 8px;
+  padding: 16px 24px 24px;
+  box-shadow: 0 8px 32px
+    color-mix(in srgb, var(--neutral-black) 20%, transparent);
+  transform: translateY(16px);
+  opacity: 0;
+  transition:
+    transform var(--transition-normal),
+    opacity var(--transition-normal);
+  max-height: calc(100vh - 32px);
+  overflow-y: auto;
+}
+
+.im-org-modal__title {
+  font-family: var(--second-family);
+  font-weight: var(--font-xl-bold-fw);
+  font-size: var(--font-xl-size);
+  line-height: var(--font-xl-lh);
+  color: var(--neutral-900);
+  margin-bottom: 4px;
+}
+
+.im-org-modal__subtitle {
+  font-family: var(--font-family);
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-lh);
+  color: var(--neutral-500);
+  margin-bottom: 20px;
+}
+
+.im-org-modal__step {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+// ── Input field (floating label) ──
+.im-org-modal__field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: var(--neutral-200);
+  transition: border-color var(--transition-fast);
+
+  &:focus-within {
+    background: var(--neutral-250);
+  }
+}
+
+.im-org-modal__label {
+  font-family: var(--font-family);
+  font-size: var(--font-2xs-size);
+  line-height: var(--font-2xs-lh);
+  color: var(--neutral-500);
+  pointer-events: none;
+  display: none;
+}
+
+// Show label when input has value
+.im-org-modal__input:not(:placeholder-shown) + .im-org-modal__label,
+.im-org-modal__field:has(.im-org-modal__input:not(:placeholder-shown))
+  .im-org-modal__label {
+  display: block;
+}
+
+// Reverse order: label above input visually
+.im-org-modal__field {
+  .im-org-modal__label {
+    order: -1;
+  }
+}
+
+.im-org-modal__input {
+  width: 100%;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: var(--font-family);
+  font-weight: var(--font-base-normal-fw);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-lh);
+  color: var(--neutral-900);
+
+  &::placeholder {
+    font-weight: var(--font-base-normal-fw);
+    color: var(--neutral-600);
+  }
+
+  &[readonly] {
+    color: var(--neutral-600);
+  }
+}
+
+// ── Suggestions dropdown ──
+.im-org-modal__suggestions {
+  display: none;
+  flex-direction: column;
+  background: var(--neutral-100);
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 16px 32px 0 rgba(22, 34, 51, 0.1);
+  overflow: hidden;
+
+  &.is-visible {
+    display: flex;
+  }
+}
+
+.im-org-modal__suggestion {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: background var(--transition-fast);
+
+  &:hover {
+    background: var(--neutral-200);
+  }
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--neutral-250);
+  }
+}
+
+.im-org-modal__suggestion-name {
+  font-weight: var(--font-base-normal-fw);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-lh);
+  color: var(--neutral-900);
+}
+
+.im-org-modal__suggestion-details,
+.im-org-modal__suggestion-address {
+  font-size: var(--font-sm-size);
+  line-height: var(--font-sm-lh);
+  color: var(--neutral-600);
+}
+
+.im-org-modal__suggestion--branch {
+  .im-org-modal__suggestion-name {
+    font-weight: var(--font-sm-normal-fw);
+    color: var(--neutral-900);
+  }
+
+  .im-org-modal__suggestion-details {
+    font-size: var(--font-2xs-size);
+    color: var(--neutral-500);
+  }
+}
+
+// ── Org info block ──
+.im-org-modal__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px;
+  border: 1px solid var(--neutral-200);
+  border-radius: 8px;
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.im-org-modal__info-label {
+  font-family: var(--font-family);
+  font-weight: var(--font-2xs-bold-fw);
+  font-size: var(--font-2xs-size);
+  line-height: 108%;
+  color: var(--neutral-600);
+}
+
+.im-org-modal__info-value {
+  font-family: var(--font-family);
+  font-weight: var(--font-base-normal-fw);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-lh);
+  color: var(--neutral-900);
+}
+
+.im-org-modal__info-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 4px;
+}
+
+.im-org-modal__info-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+// ── Checkbox ──
+.im-org-modal__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+
+  input {
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid var(--neutral-300);
+    border-radius: 4px;
+    background: var(--neutral-100);
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    margin: 0;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition:
+      background 0.2s ease,
+      border-color 0.2s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 8px;
+      background-image: url("data:image/svg+xml,%3Csvg width='11' height='8' viewBox='0 0 11 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.61905 0C9.31209 0 8.99068 0.104036 8.75595 0.339914L4.29007 4.87604C3.98071 5.18813 3.67013 5.13005 3.42698 4.76353L2.22687 2.94908C1.85853 2.39264 1.08932 2.23783 0.538003 2.60798C-0.0133116 2.97934 -0.167398 3.75351 0.199744 4.30873L1.4011 6.12319C2.48447 7.76103 4.59825 7.96906 5.97894 6.57798L10.4821 2.07936C10.9504 1.60639 10.9504 0.812882 10.4821 0.339914C10.2474 0.104036 9.926 0 9.61905 0Z' fill='white'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: contain;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    &:checked {
+      border-color: var(--blue-600);
+      background: var(--blue-600);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.im-org-modal__checkbox-text {
+  font-family: var(--font-family);
+  font-weight: var(--font-base-normal-fw);
+  font-size: var(--font-base-size);
+  line-height: var(--font-base-lh);
+  color: var(--neutral-600);
+}
+
+// ── Actions ──
+.im-org-modal__actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.im-org-modal__btn {
+  flex: 1;
+  height: 44px;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: var(--font-sm-medium-fw);
+  font-size: var(--font-sm-size);
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+
+  &--secondary {
+    background: var(--neutral-200);
+    color: var(--neutral-900);
+
+    &:hover {
+      background: var(--neutral-250);
+    }
+  }
+
+  &--primary {
+    background: var(--brand-500);
+    color: var(--neutral-100);
+
+    &:hover {
+      background: var(--brand-600);
+    }
+
+    &:disabled {
+      background: var(--brand-200);
+      color: var(--brand-100);
+      cursor: default;
+      pointer-events: none;
+    }
+  }
+}
+
+// ═══════════════════════════════════════
 // Responsive
 // ═══════════════════════════════════════
 
@@ -1781,5 +2149,114 @@ body.im-user-logged-in {
     .im-checkout-page__radio-option {
       height: 63px;
     }
+  }
+
+  // ── Organization modal (bottom sheet) ──
+  .im-org-modal {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .im-org-modal__panel {
+    max-width: 100%;
+    padding: 20px 16px 16px;
+    border-radius: 8px 8px 0 0;
+    max-height: 90vh;
+    transform: translateY(100%);
+    position: relative;
+
+  }
+
+
+  .im-org-modal.is-open .im-org-modal__panel {
+    transform: translateY(0);
+  }
+
+  .im-org-modal__title {
+    font-size: var(--font-lg-size);
+    line-height: var(--font-lg-lh);
+    margin-bottom: 2px;
+    text-align: center;
+  }
+
+  .im-org-modal__subtitle {
+    font-size: var(--font-xs-size);
+    line-height: var(--font-xs-lh);
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .im-org-modal__step {
+    gap: 12px;
+  }
+
+  .im-org-modal__field {
+    padding: 10px 14px;
+  }
+
+  .im-org-modal__input {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-org-modal__label {
+    font-size: 11px;
+  }
+
+  .im-org-modal__info {
+    padding: 10px 12px;
+  }
+
+  .im-org-modal__info-label {
+    font-size: 11px;
+    line-height: 1.2;
+  }
+
+  .im-org-modal__info-value {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-org-modal__info-row {
+    gap: 20px;
+  }
+
+  .im-org-modal__checkbox-text {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-org-modal__suggestions {
+    border-radius: 12px;
+    padding: 8px;
+  }
+
+  .im-org-modal__suggestion {
+    padding: 10px 12px;
+  }
+
+  .im-org-modal__suggestion-name {
+    font-size: var(--font-sm-size);
+    line-height: var(--font-sm-lh);
+  }
+
+  .im-org-modal__suggestion-details,
+  .im-org-modal__suggestion-address {
+    font-size: var(--font-2xs-size);
+    line-height: var(--font-2xs-lh);
+  }
+
+  .im-org-modal__actions {
+    margin-top: 4px;
+  }
+
+  .im-org-modal__btn {
+    height: 48px;
+  }
+
+  // ── Party card gruzo — auto height ──
+  .im-checkout-page__party-card-gruzo {
+    height: auto;
+    min-height: 108px;
   }
 }

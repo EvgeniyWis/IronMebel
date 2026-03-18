@@ -105,7 +105,7 @@
 
 .im-footer__columns {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1.5fr 1fr 1fr 2fr 1.7fr;
   gap: 70px;
   padding-bottom: 40px;
   border-bottom: 1px solid
@@ -138,7 +138,7 @@
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 1.4;
-  color: var(--neutral-300);
+  color: #ccc;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -148,7 +148,12 @@
 }
 
 .im-footer__link--underline {
-  text-decoration: none;
+  font-weight: 400;
+font-size: 14px;
+line-height: 114%;
+text-decoration: underline;
+text-decoration-skip-ink: none;
+color: var(--blue-200);
 }
 
 .im-footer__company-name {
@@ -163,16 +168,17 @@
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 114%;
-  color: var(--neutral-300);
-  margin: 0 0 16px;
+  color: #ccc;
+  margin: 0 0 24px;
 }
 
 .im-footer__company-detail {
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 114%;
-  color: var(--neutral-300);
-  margin: 0 0 4px;
+  color: #ccc;
+  font-family: var(--second-family);
+  margin: 0 0 24px;
 }
 
 .im-footer__downloads {
@@ -213,7 +219,7 @@
 }
 
 .im-footer__phone {
-  font-weight: 600;
+  font-weight: 700;
   font-size: var(--font-sm-size);
   line-height: 114%;
   color: var(--neutral-100);
@@ -249,7 +255,7 @@
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 1.4;
-  color: var(--neutral-300);
+  color: #ccc;
 }
 
 .im-footer__address {

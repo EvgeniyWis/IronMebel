@@ -11,7 +11,7 @@
 }
 
 .im-header__top {
-  padding: 20px;
+  padding: 8px 20px;
   border-bottom: 1px solid var(--neutral-200);
   font-size: var(--font-2xs-size);
   color: var(--neutral-500);
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 70px;
+  gap: 24px;
 }
 
 .im-header__top-mobile {
