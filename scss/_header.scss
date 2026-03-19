@@ -483,8 +483,7 @@
   }
 
   &:focus-visible {
-    outline: 2px solid var(--brand-600);
-    outline-offset: -2px;
+    outline: none;
   }
 }
 
@@ -520,7 +519,7 @@
 .im-header__actions {
   display: inline-flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
 }
 
 .im-header__action {
@@ -578,6 +577,7 @@
   cursor: pointer;
   text-decoration: none;
   @include interactive-transition;
+  margin-left: 12px;
 
   &:hover {
     background-color: var(--neutral-700);
@@ -595,6 +595,12 @@
     outline: 2px solid var(--neutral-900);
     outline-offset: 2px;
   }
+}
+
+.im-header__login--top {
+  padding: 6px 12px;
+  font-size: var(--font-2xs-size);
+  border-radius: 6px;
 }
 
 .im-header__login--reg {

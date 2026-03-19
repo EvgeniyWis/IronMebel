@@ -839,7 +839,7 @@ const initProjectsSlider = () => {
 
   const slider = new KeenSlider(sliderRoot, {
     slides: {
-      perView: 3.15,
+      perView: 3,
       spacing: 16,
     },
     loop: false,

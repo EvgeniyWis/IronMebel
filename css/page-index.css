@@ -348,7 +348,7 @@ h6 {
 
 .im-header__main-inner {
   display: grid;
-  grid-template-columns: auto auto minmax(200px, 1fr) auto auto;
+  grid-template-columns: auto auto minmax(200px, 0.92fr) auto auto;
   align-items: center;
   -moz-column-gap: 12px;
        column-gap: 12px;
@@ -356,7 +356,6 @@ h6 {
 
 .im-header__bottom {
   padding: 10px 24px 14px;
-  border-top: 1px solid var(--neutral-200);
 }
 
 .im-header__bottom-nav {
@@ -1194,8 +1193,7 @@ h6 {
   color: var(--neutral-900);
 }
 .im-header__search-input:focus-visible {
-  outline: 2px solid var(--brand-600);
-  outline-offset: -2px;
+  outline: none;
 }
 
 .im-header__search-btn {
@@ -1232,7 +1230,7 @@ h6 {
 .im-header__actions {
   display: inline-flex;
   align-items: center;
-  gap: 28px;
+  gap: 20px;
 }
 
 .im-header__action {
@@ -1298,6 +1296,9 @@ h6 {
     transition: none;
   }
 }
+.im-header__login {
+  margin-left: 12px;
+}
 .im-header__login:hover {
   background-color: var(--neutral-700);
   transform: translateY(-1px);
@@ -1310,6 +1311,12 @@ h6 {
 .im-header__login:focus-visible {
   outline: 2px solid var(--neutral-900);
   outline-offset: 2px;
+}
+
+.im-header__login--top {
+  padding: 6px 12px;
+  font-size: var(--font-2xs-size);
+  border-radius: 6px;
 }
 
 .im-header__login--reg {
@@ -2919,7 +2926,7 @@ body.im-user-logged-in .im-header__user {
 }
 .im-footer {
   width: 100%;
-  background-color: var(--neutral-900);
+  background: var(--blue-900);
   color: var(--neutral-100);
   border-radius: 8px;
   padding: 20px 40px 32px;
@@ -2939,6 +2946,7 @@ body.im-user-logged-in .im-header__user {
   align-items: flex-start;
   gap: 2px;
   text-decoration: none;
+  margin-left: 10px;
   color: inherit;
 }
 
@@ -3019,7 +3027,7 @@ body.im-user-logged-in .im-header__user {
 
 .im-footer__columns {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 2fr 1.7fr;
+  grid-template-columns: 1.5fr 1fr 1fr 2.5fr 1.7fr;
   gap: 70px;
   padding-bottom: 40px;
   border-bottom: 1px solid color-mix(in srgb, var(--neutral-100) 10%, transparent);
@@ -3051,7 +3059,7 @@ body.im-user-logged-in .im-header__user {
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 1.4;
-  color: #ccc;
+  color: var(--blue-200);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -3082,7 +3090,7 @@ body.im-user-logged-in .im-header__user {
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 114%;
-  color: #ccc;
+  color: var(--blue-200);
   margin: 0 0 24px;
 }
 
@@ -3090,7 +3098,7 @@ body.im-user-logged-in .im-header__user {
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 114%;
-  color: #ccc;
+  color: var(--blue-200);
   font-family: var(--second-family);
   margin: 0 0 24px;
 }
@@ -3099,7 +3107,7 @@ body.im-user-logged-in .im-header__user {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-top: 24px;
+  margin-top: 16px;
 }
 
 .im-footer__download {
@@ -3107,7 +3115,7 @@ body.im-user-logged-in .im-header__user {
   align-items: center;
   gap: 10px;
   padding: 8px 12px;
-  border: 1px solid color-mix(in srgb, var(--neutral-100) 20%, transparent);
+  border: 1px solid var(--blue-600);
   border-radius: 8px;
   text-decoration: none;
   font-weight: 500;
@@ -3168,7 +3176,7 @@ body.im-user-logged-in .im-header__user {
   font-weight: 400;
   font-size: var(--font-sm-size);
   line-height: 1.4;
-  color: #ccc;
+  color: var(--blue-200);
 }
 
 .im-footer__address {
@@ -3179,6 +3187,7 @@ body.im-user-logged-in .im-header__user {
 
 .im-footer__address-line {
   font-weight: 600;
+  white-space: nowrap;
   font-size: var(--font-sm-size);
   line-height: 1.4;
   color: var(--neutral-100);
@@ -3193,7 +3202,7 @@ body.im-user-logged-in .im-header__user {
   font-weight: 400;
   font-size: var(--font-xs-size);
   line-height: 1.4;
-  color: var(--neutral-400);
+  color: var(--blue-200);
 }
 
 @media (max-width: 1200px) {
@@ -3971,7 +3980,7 @@ body.im-user-logged-in .im-header__user {
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 40px;
-  background: var(--neutral-900);
+  background: var(--blue-900);
   border-radius: 8px;
   padding: 28px 28px 48px;
   overflow: hidden;

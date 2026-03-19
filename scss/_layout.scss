@@ -36,14 +36,13 @@
 
 .im-header__main-inner {
   display: grid;
-  grid-template-columns: auto auto minmax(200px, 1fr) auto auto;
+  grid-template-columns: auto auto minmax(200px, 0.92fr) auto auto;
   align-items: center;
   column-gap: 12px;
 }
 
 .im-header__bottom {
   padding: 10px 24px 14px;
-  border-top: 1px solid var(--neutral-200);
 }
 
 .im-header__bottom-nav {
