@@ -1586,3 +1586,61 @@ const initGoodsCardLinks = () => {
 };
 
 initGoodsCardLinks();
+
+/* Ready Solutions Popup */
+(function initReadySolutions() {
+  const toggles = document.querySelectorAll("[data-ready-solutions-toggle]");
+  const popup = document.querySelector("[data-ready-solutions]");
+  const backdrop = document.querySelector("[data-ready-solutions-backdrop]");
+
+  if (!toggles.length || !popup) {
+    return;
+  }
+
+  function open() {
+    popup.classList.add("is-open");
+    popup.setAttribute("aria-hidden", "false");
+    if (backdrop) {
+      backdrop.classList.add("is-open");
+    }
+  }
+
+  function close() {
+    popup.classList.remove("is-open");
+    popup.setAttribute("aria-hidden", "true");
+    if (backdrop) {
+      backdrop.classList.remove("is-open");
+    }
+  }
+
+  toggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (popup.classList.contains("is-open")) {
+        close();
+      } else {
+        open();
+      }
+    });
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!popup.classList.contains("is-open")) return;
+    if (popup.contains(e.target)) return;
+
+    const clickedToggle = Array.from(toggles).some((t) => t.contains(e.target));
+    if (clickedToggle) return;
+
+    close();
+  });
+
+  if (backdrop) {
+    backdrop.addEventListener("click", close);
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && popup.classList.contains("is-open")) {
+      close();
+    }
+  });
+})();
