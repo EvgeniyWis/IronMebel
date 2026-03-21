@@ -1590,12 +1590,17 @@ initGoodsCardLinks();
 /* Ready Solutions Popup */
 (function initReadySolutions() {
   const toggles = document.querySelectorAll("[data-ready-solutions-toggle]");
+  const mobileToggles = document.querySelectorAll("[data-ready-solutions-mobile]");
   const popup = document.querySelector("[data-ready-solutions]");
   const backdrop = document.querySelector("[data-ready-solutions-backdrop]");
 
-  if (!toggles.length || !popup) {
+  const allToggles = [...toggles, ...mobileToggles];
+
+  if (!allToggles.length || !popup) {
     return;
   }
+
+  const MOBILE_BREAKPOINT = 600;
 
   function open() {
     popup.classList.add("is-open");
@@ -1624,11 +1629,23 @@ initGoodsCardLinks();
     });
   });
 
+  mobileToggles.forEach((toggle) => {
+    toggle.addEventListener("click", (e) => {
+      if (window.innerWidth >= MOBILE_BREAKPOINT) return;
+      e.preventDefault();
+      if (popup.classList.contains("is-open")) {
+        close();
+      } else {
+        open();
+      }
+    });
+  });
+
   document.addEventListener("click", (e) => {
     if (!popup.classList.contains("is-open")) return;
     if (popup.contains(e.target)) return;
 
-    const clickedToggle = Array.from(toggles).some((t) => t.contains(e.target));
+    const clickedToggle = allToggles.some((t) => t.contains(e.target));
     if (clickedToggle) return;
 
     close();

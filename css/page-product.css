@@ -5626,6 +5626,11 @@ body.im-user-logged-in .im-header__user {
           text-decoration-skip-ink: none;
   color: var(--blue-500);
   text-align: center;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .im-product-page__bundle-operator {
