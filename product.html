@@ -4309,7 +4309,7 @@
                   </div>
                 </div>
 
-                <button class="im-cta__button" type="submit">
+                <button class="im-cta__button" type="button" data-feedback-modal-open>
                   <span class="im-cta__button-text">Получить решение</span>
                   <span class="im-cta__button-icon" aria-hidden="true">
                     <svg
@@ -4342,7 +4342,113 @@
       <div data-layout-footer></div>
     </div>
 
+    <div
+      class="im-feedback-modal"
+      data-feedback-modal
+      hidden
+      aria-hidden="true"
+    >
+      <span class="im-feedback-modal__handle" aria-hidden="true"></span>
+      <div class="im-feedback-modal__backdrop" data-feedback-modal-close></div>
+      <div
+        class="im-feedback-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="feedback-modal-title"
+        aria-describedby="feedback-modal-description"
+      >
+        <div class="im-feedback-modal__content">
+          <h2 class="im-feedback-modal__title" id="feedback-modal-title">
+            Получите лучшее решение для вашего бизнеса
+          </h2>
+          <p class="im-feedback-modal__subtitle" id="feedback-modal-description">
+            КП с учётом масштаба и нагрузки
+          </p>
+
+          <form class="im-feedback-modal__form" action="#" method="post">
+            <p class="im-feedback-modal__label">Контактные данные</p>
+
+            <div class="im-feedback-modal__group">
+              <input
+                class="im-feedback-modal__input"
+                type="text"
+                name="name"
+                placeholder="Имя"
+              />
+              <input
+                class="im-feedback-modal__input"
+                type="tel"
+                name="phone"
+                placeholder="Телефон"
+              />
+              <input
+                class="im-feedback-modal__input"
+                type="email"
+                name="email"
+                placeholder="Почта для отправки КП"
+              />
+            </div>
+
+            <p class="im-feedback-modal__label">Тема запроса</p>
+
+            <div class="im-feedback-modal__group im-feedback-modal__group--selects">
+              <div class="im-feedback-modal__select-wrap" data-feedback-select>
+                <span class="im-feedback-modal__select-label">Тип бизнеса</span>
+                <select class="im-feedback-modal__select" name="business-type">
+                  <option>Склад</option>
+                  <option>Производство</option>
+                  <option>Офис</option>
+                  <option>Магазин</option>
+                </select>
+                <span class="im-feedback-modal__select-arrow" aria-hidden="true">
+                  <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.5 5L10 1" stroke="#777777" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="im-feedback-modal__select-wrap" data-feedback-select>
+                <span class="im-feedback-modal__select-label">Категория мебели</span>
+                <select class="im-feedback-modal__select" name="furniture-category">
+                  <option>Стеллажи, Верстаки, Шкафы</option>
+                  <option>Стеллажи</option>
+                  <option>Верстаки</option>
+                  <option>Шкафы</option>
+                  <option>Системы хранения</option>
+                </select>
+                <span class="im-feedback-modal__select-arrow" aria-hidden="true">
+                  <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.5 5L10 1" stroke="#777777" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="im-feedback-modal__select-wrap" data-feedback-select>
+                <span class="im-feedback-modal__select-label">Масштаб проекта</span>
+                <select class="im-feedback-modal__select" name="project-scale">
+                  <option>5–20 единиц</option>
+                  <option>20–50 единиц</option>
+                  <option>50–100 единиц</option>
+                  <option>100+ единиц</option>
+                </select>
+                <span class="im-feedback-modal__select-arrow" aria-hidden="true">
+                  <svg width="11" height="6" viewBox="0 0 11 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.5 5L10 1" stroke="#777777" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+            </div>
+
+            <button class="im-feedback-modal__submit" type="submit">
+              Получить решение
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="./js/layout-include.js"></script>
     <script src="./js/product.js"></script>
+    <script src="./js/feedback-modal-page.js"></script>
   </body>
 </html>

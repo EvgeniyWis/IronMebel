@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
   const MODAL_ANIMATION_DURATION = 340;
   const modal = document.querySelector("[data-feedback-modal]");
-  const openButton = document.querySelector("[data-feedback-modal-open]");
+  const openButtons = document.querySelectorAll("[data-feedback-modal-open]");
 
-  if (!(modal instanceof HTMLElement) || !(openButton instanceof HTMLElement)) {
+  if (!(modal instanceof HTMLElement) || !openButtons.length) {
     return;
   }
+
+  let lastOpenButton = null;
 
   const selectWraps = modal.querySelectorAll("[data-feedback-select]");
   const closeElements = modal.querySelectorAll("[data-feedback-modal-close]");
@@ -41,10 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }, MODAL_ANIMATION_DURATION);
 
     document.body.style.overflow = "";
-    openButton.focus();
+    if (lastOpenButton instanceof HTMLElement) {
+      lastOpenButton.focus();
+    }
   };
 
-  const openModal = () => {
+  const openModal = (triggerButton) => {
+    if (triggerButton instanceof HTMLElement) {
+      lastOpenButton = triggerButton;
+    }
     window.clearTimeout(closeTimeoutId);
     modal.hidden = false;
     modal.classList.add("is-animating");
@@ -192,7 +199,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   selectWraps.forEach((wrap) => initSelect(wrap));
 
-  openButton.addEventListener("click", openModal);
+  openButtons.forEach((button) => {
+    button.addEventListener("click", () => openModal(button));
+  });
 
   closeElements.forEach((element) => {
     element.addEventListener("click", closeModal);
