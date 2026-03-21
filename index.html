@@ -1734,34 +1734,124 @@
               </div>
             </div>
 
-            <form class="im-header__search" action="#" method="get">
-              <input
-                class="im-header__search-input"
-                type="search"
-                name="q"
-                placeholder="Начните вводить название товара"
-              />
-              <button
-                class="im-header__search-btn"
-                type="submit"
-                aria-label="Поиск"
-              >
-                <span class="im-header__search-btn-icon" aria-hidden="true">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M6.66667 0C2.98475 0 0 2.98501 0 6.66668C0 10.3484 2.98475 13.3334 6.66667 13.3334C8.19725 13.3334 9.648 12.8075 10.7733 11.9409L14.401 15.5992C14.7265 15.9242 15.2735 15.9242 15.599 15.5992C15.9244 15.2734 15.9244 14.7267 15.599 14.4009L11.9461 10.7675C12.8134 9.64251 13.3333 8.19752 13.3333 6.66668C13.3333 2.98501 10.3486 0 6.66667 0ZM6.66667 1.66667C9.42808 1.66667 11.6667 3.90501 11.6667 6.66668C11.6667 9.42835 9.42808 11.6667 6.66667 11.6667C3.90525 11.6667 1.66667 9.42835 1.66667 6.66668C1.66667 3.90501 3.90525 1.66667 6.66667 1.66667Z"
-                      fill="#666666"
-                    />
-                  </svg>
-                </span>
-              </button>
-            </form>
+            <div class="im-header__search-wrapper">
+              <form class="im-header__search" action="./catalog.html" method="get">
+                <input
+                  class="im-header__search-input"
+                  type="search"
+                  name="q"
+                  placeholder="Начните вводить название товара"
+                  data-search-input
+                  autocomplete="off"
+                />
+                <button
+                  class="im-header__search-btn"
+                  type="submit"
+                  aria-label="Поиск"
+                >
+                  <span class="im-header__search-btn-icon" aria-hidden="true">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M6.66667 0C2.98475 0 0 2.98501 0 6.66668C0 10.3484 2.98475 13.3334 6.66667 13.3334C8.19725 13.3334 9.648 12.8075 10.7733 11.9409L14.401 15.5992C14.7265 15.9242 15.2735 15.9242 15.599 15.5992C15.9244 15.2734 15.9244 14.7267 15.599 14.4009L11.9461 10.7675C12.8134 9.64251 13.3333 8.19752 13.3333 6.66668C13.3333 2.98501 10.3486 0 6.66667 0ZM6.66667 1.66667C9.42808 1.66667 11.6667 3.90501 11.6667 6.66668C11.6667 9.42835 9.42808 11.6667 6.66667 11.6667C3.90525 11.6667 1.66667 9.42835 1.66667 6.66668C1.66667 3.90501 3.90525 1.66667 6.66667 1.66667Z"
+                        fill="#666666"
+                      />
+                    </svg>
+                  </span>
+                </button>
+              </form>
+
+              <div class="im-header__search-dropdown" data-search-dropdown>
+                <div class="im-header__search-dropdown-categories" data-search-categories>
+                  <a href="./catalog.html?q=%D0%9F%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8" class="im-header__search-dropdown-category">
+                    <img class="im-header__search-dropdown-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                    <span>Полочные стеллажи</span>
+                  </a>
+                  <a href="./catalog.html?q=%D0%A1%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8+%D0%B4%D0%BB%D1%8F+%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0" class="im-header__search-dropdown-category">
+                    <img class="im-header__search-dropdown-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                    <span>Стеллажи для склада</span>
+                  </a>
+                  <a href="./catalog.html?q=%D0%9F%D0%B0%D0%BB%D0%BB%D0%B5%D1%82%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8" class="im-header__search-dropdown-category">
+                    <img class="im-header__search-dropdown-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                    <span>Паллетные стеллажи</span>
+                  </a>
+                  <a href="./catalog.html?q=%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8" class="im-header__search-dropdown-category">
+                    <img class="im-header__search-dropdown-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                    <span>Специализированные стеллажи</span>
+                  </a>
+                  <a href="./catalog.html?q=%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D1%8E%D1%89%D0%B8%D0%B5+%D0%B4%D0%BB%D1%8F+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B5%D0%B9" class="im-header__search-dropdown-category">
+                    <img class="im-header__search-dropdown-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                    <span>Комплектующие для стеллажей</span>
+                  </a>
+                </div>
+
+                <div class="im-header__search-dropdown-divider"></div>
+
+                <div class="im-header__search-dropdown-products" data-search-products>
+                  <a href="#" class="im-header__search-dropdown-product">
+                    <img class="im-header__search-dropdown-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                    <div class="im-header__search-dropdown-product-info">
+                      <p class="im-header__search-dropdown-product-title">Металлический стеллаж Ironmeb...</p>
+                      <p class="im-header__search-dropdown-product-price">48 900 ₽</p>
+                      <span class="im-header__search-dropdown-product-btn im-header__search-dropdown-product-btn--in-cart">В корзине</span>
+                    </div>
+                  </a>
+                  <a href="#" class="im-header__search-dropdown-product">
+                    <img class="im-header__search-dropdown-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                    <div class="im-header__search-dropdown-product-info">
+                      <p class="im-header__search-dropdown-product-title">Шкаф металлический Secure для...</p>
+                      <p class="im-header__search-dropdown-product-price">48 900 ₽</p>
+                      <span class="im-header__search-dropdown-product-btn im-header__search-dropdown-product-btn--in-cart">В корзине</span>
+                    </div>
+                  </a>
+                  <a href="#" class="im-header__search-dropdown-product">
+                    <img class="im-header__search-dropdown-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                    <div class="im-header__search-dropdown-product-info">
+                      <p class="im-header__search-dropdown-product-title">Металлический стеллаж Ironmebel</p>
+                      <p class="im-header__search-dropdown-product-price">48 900 ₽</p>
+                      <span class="im-header__search-dropdown-product-btn">В корзину</span>
+                    </div>
+                  </a>
+                  <a href="#" class="im-header__search-dropdown-product">
+                    <img class="im-header__search-dropdown-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                    <div class="im-header__search-dropdown-product-info">
+                      <p class="im-header__search-dropdown-product-title">Металлический стеллаж Ironmebel</p>
+                      <p class="im-header__search-dropdown-product-price">48 900 ₽</p>
+                      <span class="im-header__search-dropdown-product-btn">В корзину</span>
+                    </div>
+                  </a>
+                  <a href="#" class="im-header__search-dropdown-product">
+                    <img class="im-header__search-dropdown-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                    <div class="im-header__search-dropdown-product-info">
+                      <p class="im-header__search-dropdown-product-title">Металлический стеллаж Ironmebel</p>
+                      <p class="im-header__search-dropdown-product-price">48 900 ₽</p>
+                      <span class="im-header__search-dropdown-product-btn">В корзину</span>
+                    </div>
+                  </a>
+                  <a href="#" class="im-header__search-dropdown-product">
+                    <img class="im-header__search-dropdown-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                    <div class="im-header__search-dropdown-product-info">
+                      <p class="im-header__search-dropdown-product-title">Металлический стеллаж Ironmebel</p>
+                      <p class="im-header__search-dropdown-product-price">48 900 ₽</p>
+                      <span class="im-header__search-dropdown-product-btn">В корзину</span>
+                    </div>
+                  </a>
+                  <a href="#" class="im-header__search-dropdown-product">
+                    <img class="im-header__search-dropdown-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                    <div class="im-header__search-dropdown-product-info">
+                      <p class="im-header__search-dropdown-product-title">Металлический стеллаж Ironmebel</p>
+                      <p class="im-header__search-dropdown-product-price">48 900 ₽</p>
+                      <span class="im-header__search-dropdown-product-btn">В корзину</span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
 
             <div class="im-header__actions">
               <button class="im-header__action" type="button">
@@ -2482,7 +2572,7 @@
                 <span class="im-header__catalog-text">Каталог</span>
               </button>
 
-              <form class="im-header__search" action="#" method="get">
+              <form class="im-header__search" action="./catalog.html" method="get">
                 <input
                   class="im-header__search-input"
                   type="search"
@@ -2711,6 +2801,104 @@
             </li>
           </ul>
         </div>
+
+        <!-- Mobile search overlay (< 1200px) -->
+        <div class="im-header__mobile-search" data-mobile-search>
+          <div class="im-header__mobile-search-head">
+            <button
+              class="im-header__mobile-search-back"
+              type="button"
+              aria-label="Закрыть поиск"
+              data-mobile-search-close
+            >
+              <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.707 0.293a1 1 0 0 0-1.414 0l-6 6a1 1 0 0 0 0 1.414l6 6a1 1 0 0 0 1.414-1.414L3.414 8H17a1 1 0 1 0 0-2H3.414l4.293-4.293a1 1 0 0 0 0-1.414Z" fill="#111111"/>
+              </svg>
+            </button>
+            <form class="im-header__mobile-search-form" action="./catalog.html" method="get" data-mobile-search-form>
+              <input
+                class="im-header__mobile-search-input"
+                type="search"
+                name="q"
+                placeholder="Поиск товаров"
+                autocomplete="off"
+                data-mobile-search-input
+              />
+              <button
+                class="im-header__mobile-search-clear"
+                type="button"
+                aria-label="Очистить"
+                data-mobile-search-clear
+              >
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1.707.293A1 1 0 0 0 .293 1.707L5.586 7 .293 12.293a1 1 0 1 0 1.414 1.414L7 8.414l5.293 5.293a1 1 0 0 0 1.414-1.414L8.414 7l5.293-5.293A1 1 0 0 0 12.293.293L7 5.586 1.707.293Z" fill="#999999"/>
+                </svg>
+              </button>
+            </form>
+          </div>
+          <div class="im-header__mobile-search-results" data-mobile-search-results>
+            <div class="im-header__mobile-search-categories" data-mobile-search-categories>
+              <a href="./catalog.html?q=%D0%9F%D0%BE%D0%BB%D0%BE%D1%87%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8" class="im-header__mobile-search-category">
+                <img class="im-header__mobile-search-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                <span>Полочные стеллажи</span>
+              </a>
+              <a href="./catalog.html?q=%D0%A1%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8+%D0%B4%D0%BB%D1%8F+%D1%81%D0%BA%D0%BB%D0%B0%D0%B4%D0%B0" class="im-header__mobile-search-category">
+                <img class="im-header__mobile-search-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                <span>Стеллажи для склада</span>
+              </a>
+              <a href="./catalog.html?q=%D0%9F%D0%B0%D0%BB%D0%BB%D0%B5%D1%82%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8" class="im-header__mobile-search-category">
+                <img class="im-header__mobile-search-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                <span>Паллетные стеллажи</span>
+              </a>
+              <a href="./catalog.html?q=%D0%A1%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B8" class="im-header__mobile-search-category">
+                <img class="im-header__mobile-search-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                <span>Специализированные стеллажи</span>
+              </a>
+              <a href="./catalog.html?q=%D0%9A%D0%BE%D0%BC%D0%BF%D0%BB%D0%B5%D0%BA%D1%82%D1%83%D1%8E%D1%89%D0%B8%D0%B5+%D0%B4%D0%BB%D1%8F+%D1%81%D1%82%D0%B5%D0%BB%D0%BB%D0%B0%D0%B6%D0%B5%D0%B9" class="im-header__mobile-search-category">
+                <img class="im-header__mobile-search-category-icon" src="images/catalogue/mock_catalogue_item.png" alt="" width="32" height="32" />
+                <span>Комплектующие для стеллажей</span>
+              </a>
+            </div>
+
+            <div class="im-header__mobile-search-divider"></div>
+
+            <div class="im-header__mobile-search-products" data-mobile-search-products>
+              <a href="#" class="im-header__mobile-search-product">
+                <img class="im-header__mobile-search-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                <div class="im-header__mobile-search-product-info">
+                  <p class="im-header__mobile-search-product-title">Металлический стеллаж Ironmebel PRO...</p>
+                  <p class="im-header__mobile-search-product-price">48 900 ₽</p>
+                  <span class="im-header__mobile-search-product-btn im-header__mobile-search-product-btn--in-cart">В корзине</span>
+                </div>
+              </a>
+              <a href="#" class="im-header__mobile-search-product">
+                <img class="im-header__mobile-search-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                <div class="im-header__mobile-search-product-info">
+                  <p class="im-header__mobile-search-product-title">Шкаф металлический Secure для хране...</p>
+                  <p class="im-header__mobile-search-product-price">48 900 ₽</p>
+                  <span class="im-header__mobile-search-product-btn im-header__mobile-search-product-btn--in-cart">В корзине</span>
+                </div>
+              </a>
+              <a href="#" class="im-header__mobile-search-product">
+                <img class="im-header__mobile-search-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                <div class="im-header__mobile-search-product-info">
+                  <p class="im-header__mobile-search-product-title">Металлический стеллаж Ironmebel</p>
+                  <p class="im-header__mobile-search-product-price">48 900 ₽</p>
+                  <span class="im-header__mobile-search-product-btn">В корзину</span>
+                </div>
+              </a>
+              <a href="#" class="im-header__mobile-search-product">
+                <img class="im-header__mobile-search-product-img" src="images/catalogue/mock_catalogue_item.png" alt="" width="64" height="64" />
+                <div class="im-header__mobile-search-product-info">
+                  <p class="im-header__mobile-search-product-title">Металлический стеллаж Ironmebel</p>
+                  <p class="im-header__mobile-search-product-price">48 900 ₽</p>
+                  <span class="im-header__mobile-search-product-btn">В корзину</span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
       </header>
 
       <section class="im-hero">

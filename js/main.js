@@ -1661,3 +1661,150 @@ initGoodsCardLinks();
     }
   });
 })();
+
+// ─── Search Dropdown ─────────────────────────────────────────
+(() => {
+  const searchInput = document.querySelector("[data-search-input]");
+  const searchDropdown = document.querySelector("[data-search-dropdown]");
+
+  if (!searchInput || !searchDropdown) return;
+
+  const searchForm = searchInput.closest(".im-header__search");
+
+  const openDropdown = () => {
+    searchDropdown.classList.add("is-open");
+    if (searchForm) searchForm.classList.add("is-dropdown-open");
+  };
+  const closeDropdown = () => {
+    searchDropdown.classList.remove("is-open");
+    if (searchForm) searchForm.classList.remove("is-dropdown-open");
+  };
+
+  searchInput.addEventListener("input", () => {
+    const query = searchInput.value.trim();
+    if (query.length > 0) {
+      openDropdown();
+    } else {
+      closeDropdown();
+    }
+  });
+
+  searchInput.addEventListener("focus", () => {
+    if (searchInput.value.trim().length > 0) {
+      openDropdown();
+    }
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!searchDropdown.classList.contains("is-open")) return;
+    const wrapper = searchInput.closest(".im-header__search-wrapper");
+    if (wrapper && !wrapper.contains(e.target)) {
+      closeDropdown();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && searchDropdown.classList.contains("is-open")) {
+      closeDropdown();
+      searchInput.blur();
+    }
+  });
+
+  if (searchForm) {
+    searchForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const query = searchInput.value.trim();
+      if (!query) return;
+
+      const encoded = encodeURIComponent(query);
+      if (query.toLowerCase() === "not found") {
+        window.location.href = `./search_404.html?q=${encoded}`;
+      } else {
+        window.location.href = `./catalog.html?q=${encoded}`;
+      }
+    });
+  }
+})();
+
+// ─── Mobile Search Overlay ──────────────────────────────────
+(() => {
+  const overlay = document.querySelector("[data-mobile-search]");
+  if (!overlay) return;
+
+  const openBtn = document.querySelector(
+    ".im-header__mobile-action--search",
+  );
+  const closeBtn = overlay.querySelector("[data-mobile-search-close]");
+  const input = overlay.querySelector("[data-mobile-search-input]");
+  const clearBtn = overlay.querySelector("[data-mobile-search-clear]");
+  const form = overlay.querySelector("[data-mobile-search-form]");
+  const results = overlay.querySelector("[data-mobile-search-results]");
+
+  const open = () => {
+    overlay.classList.add("is-open");
+    document.body.style.overflow = "hidden";
+    if (input) {
+      requestAnimationFrame(() => input.focus());
+    }
+  };
+
+  const close = () => {
+    overlay.classList.remove("is-open");
+    document.body.style.overflow = "";
+    if (input) {
+      input.value = "";
+      updateClear();
+      toggleResults();
+    }
+  };
+
+  const updateClear = () => {
+    if (!clearBtn || !input) return;
+    clearBtn.classList.toggle("is-visible", input.value.length > 0);
+  };
+
+  const toggleResults = () => {
+    if (!results || !input) return;
+    results.classList.toggle("is-visible", input.value.trim().length > 0);
+  };
+
+  if (openBtn) openBtn.addEventListener("click", open);
+  if (closeBtn) closeBtn.addEventListener("click", close);
+
+  if (clearBtn && input) {
+    clearBtn.addEventListener("click", () => {
+      input.value = "";
+      updateClear();
+      toggleResults();
+      input.focus();
+    });
+  }
+
+  if (input) {
+    input.addEventListener("input", () => {
+      updateClear();
+      toggleResults();
+    });
+  }
+
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const query = input ? input.value.trim() : "";
+      if (!query) return;
+
+      const encoded = encodeURIComponent(query);
+      if (query.toLowerCase() === "not found") {
+        window.location.href = `./search_404.html?q=${encoded}`;
+      } else {
+        window.location.href = `./catalog.html?q=${encoded}`;
+      }
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("is-open")) {
+      close();
+    }
+  });
+})();

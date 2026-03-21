@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Универсальная модалка | IronMebel</title>
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <meta
+      name="description"
+      content="Демонстрационная страница универсальной модалки IronMebel."
+    />
+
+    <link rel="stylesheet" href="./css/page-universal-modal.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div data-layout-header></div>
+
+      <main class="im-universal-modal-page">
+        <div class="im-container">
+          <section class="im-universal-modal-page__hero" aria-labelledby="universal-modal-demo-title">
+            <h1 class="im-universal-modal-page__title" id="universal-modal-demo-title">
+              Универсальная модалка
+            </h1>
+            <p class="im-universal-modal-page__text">
+              На странице оставлена только кнопка для открытия демонстрационной модалки.
+            </p>
+            <button
+              class="im-universal-modal-page__trigger"
+              type="button"
+              data-universal-modal-open
+            >
+              Открыть модалку
+            </button>
+          </section>
+        </div>
+      </main>
+
+      <div data-layout-footer></div>
+    </div>
+
+    <div
+      class="im-universal-modal"
+      data-universal-modal
+      hidden
+      aria-hidden="true"
+    >
+      <div class="im-universal-modal__backdrop" data-universal-modal-close></div>
+      <div
+        class="im-universal-modal__dialog"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="universal-modal-title"
+        aria-describedby="universal-modal-description"
+      >
+        <div class="im-universal-modal__content">
+          <h2 class="im-universal-modal__title" id="universal-modal-title">
+            Это универсальная модалка
+          </h2>
+          <p class="im-universal-modal__text" id="universal-modal-description">
+            Описание и кнопки опционально могут быть отключены или включены по той или иной причине
+          </p>
+        </div>
+
+        <div class="im-universal-modal__actions">
+          <button
+            class="im-universal-modal__button im-universal-modal__button--secondary"
+            type="button"
+            data-universal-modal-cancel
+          >
+            Отмена
+          </button>
+          <button
+            class="im-universal-modal__button im-universal-modal__button--primary"
+            type="button"
+            data-universal-modal-confirm
+          >
+            Подтвердить
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/layout-include.js"></script>
+    <script src="./js/universal-modal-page.js"></script>
+  </body>
+</html>

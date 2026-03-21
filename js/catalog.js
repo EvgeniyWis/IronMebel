@@ -411,3 +411,49 @@ document
     });
   });
 })();
+
+// ─── Search query in catalog title ───────────────────────────
+(() => {
+  const params = new URLSearchParams(window.location.search);
+  const query = params.get("q");
+  if (!query) return;
+
+  const heroMain = document.querySelector(".im-catalog-page__hero-main");
+  if (heroMain) {
+    const titleEl = heroMain.querySelector(".im-catalog-page__title");
+    const countEl = heroMain.querySelector(".im-catalog-page__count--desktop");
+    const count = countEl ? countEl.textContent.trim().match(/\d+/)?.[0] || "34" : "34";
+
+    if (titleEl) {
+      titleEl.innerHTML = `По запросу &laquo;${query}&raquo; найдено ${count} товаров`;
+    }
+
+    if (countEl) {
+      countEl.style.display = "none";
+    }
+  }
+
+  const categoryGrid = document.querySelector(".im-catalog-page__grid");
+  if (categoryGrid) {
+    categoryGrid.style.display = "none";
+  }
+
+  const collections = document.querySelector(".im-catalog-collections");
+  if (collections) {
+    collections.style.display = "none";
+  }
+
+  document.querySelectorAll(".im-catalog-toolbar__filter-chip, .im-catalog-toolbar__reset").forEach(function (el) {
+    el.style.display = "none";
+  });
+
+  const downloadBtn = document.querySelector(".im-catalog-page__download");
+  if (downloadBtn) {
+    downloadBtn.style.display = "none";
+  }
+
+  const pageTitle = document.querySelector("title");
+  if (pageTitle) {
+    pageTitle.textContent = `Поиск: ${query} | IronMebel`;
+  }
+})();

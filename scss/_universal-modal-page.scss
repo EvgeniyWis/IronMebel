@@ -1,0 +1,229 @@
+.im-universal-modal-page {
+  padding: 40px 0 56px;
+}
+
+.im-universal-modal-page__hero {
+  min-height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 20px;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.5), transparent 44%),
+    linear-gradient(180deg, var(--neutral-130) 0%, var(--neutral-205) 100%);
+  text-align: center;
+}
+
+.im-universal-modal-page__title {
+  margin: 0;
+  font-size: 36px;
+  line-height: 1.12;
+  font-weight: 700;
+  color: var(--neutral-900);
+}
+
+.im-universal-modal-page__text {
+  max-width: 560px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--neutral-600);
+}
+
+.im-universal-modal-page__trigger {
+  min-width: 220px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: var(--brand-500);
+  font-size: 15px;
+  line-height: 1;
+  font-weight: 700;
+  color: var(--neutral-100);
+  transition:
+    background var(--transition-fast),
+    transform var(--transition-fast);
+
+  &:hover {
+    background: var(--brand-575);
+    transform: translateY(-1px);
+  }
+}
+
+.im-universal-modal {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-modal) + 10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  &[hidden] {
+    display: none !important;
+  }
+
+  &.is-animating {
+    display: flex;
+  }
+
+  &.is-open {
+    .im-universal-modal__backdrop {
+      opacity: 1;
+    }
+
+    .im-universal-modal__dialog {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  &__backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 17, 17, 0.44);
+    opacity: 0;
+    transition: opacity 220ms ease;
+  }
+
+  &__dialog {
+    position: relative;
+    width: min(360px, 100%);
+    min-height: 202px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 8px;
+    background: var(--neutral-100);
+    box-shadow: 0 12px 32px rgba(24, 39, 75, 0.12);
+    opacity: 0;
+    transform: translateY(12px) scale(0.96);
+    transition:
+      opacity 220ms ease,
+      transform 220ms ease;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin: 0 0 10px;
+    font-size: 20px;
+    line-height: 1.2;
+    font-weight: 700;
+    color: var(--neutral-900);
+  }
+
+  &__text {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.35;
+    font-weight: 400;
+    color: var(--neutral-600);
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__button {
+    width: 158px;
+    min-width: 158px;
+    height: 36px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 700;
+    transition:
+      background var(--transition-fast),
+      color var(--transition-fast);
+
+    &--secondary {
+      background: var(--neutral-200);
+      color: var(--neutral-900);
+
+      &:hover {
+        background: var(--neutral-300);
+      }
+    }
+
+    &--primary {
+      background: var(--brand-500);
+      color: var(--neutral-100);
+
+      &:hover {
+        background: var(--brand-575);
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .im-universal-modal-page {
+    padding-top: 24px;
+  }
+
+  .im-universal-modal-page__hero {
+    min-height: 320px;
+    padding: 24px 16px;
+  }
+
+  .im-universal-modal-page__title {
+    font-size: 28px;
+  }
+
+  .im-universal-modal-page__text {
+    font-size: 14px;
+  }
+
+  .im-universal-modal {
+    &__dialog {
+      width: min(360px, calc(100vw - 32px));
+      min-height: 170px;
+      padding: 14px 12px 12px;
+    }
+
+    &__title {
+      font-size: 16px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    &__text {
+      font-size: 14px;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    &__actions {
+      gap: 12px;
+    }
+
+    &__button {
+      width: 158px;
+      min-width: 0;
+      height: 36px;
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .im-universal-modal__actions {
+    flex-direction: column;
+  }
+
+  .im-universal-modal__button {
+    width: 100%;
+    min-width: 0;
+  }
+}
