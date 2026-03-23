@@ -803,6 +803,8 @@ const initDecisionsSliders = () => {
 
     if (instances.length) return;
 
+    let isSyncing = false;
+
     sliders.forEach((slider) => {
       const root = slider.querySelector(".keen-slider") || slider;
 
@@ -817,6 +819,20 @@ const initDecisionsSliders = () => {
       });
 
       instances.push(instance);
+    });
+
+    instances.forEach((instance, i) => {
+      instance.on("slideChanged", (s) => {
+        if (isSyncing) return;
+        isSyncing = true;
+        const idx = s.track.details.rel;
+        instances.forEach((other, j) => {
+          if (i !== j) other.moveToIdx(idx);
+        });
+        requestAnimationFrame(() => {
+          isSyncing = false;
+        });
+      });
     });
   };
 
