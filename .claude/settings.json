@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -l \"im-header__mobile-list\\\\|im-header__mobile-submenu-list\" \"d:/Web/FrontEnd/Projects/IronMebel\"/*.html)"
+    ]
+  }
+}

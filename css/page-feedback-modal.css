@@ -1750,6 +1750,7 @@ body.im-user-logged-in .im-header__user {
   align-items: center;
   gap: 12px;
   flex-shrink: 0;
+  padding-top: 32px;
 }
 
 .im-header__mobile-submenu-back {
@@ -1896,7 +1897,7 @@ body.im-user-logged-in .im-header__user {
 .im-header__mobile-list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 32px 0 0;
   display: flex;
   flex-direction: column;
   gap: 30px;
