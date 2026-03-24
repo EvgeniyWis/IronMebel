@@ -1399,19 +1399,12 @@ body.im-user-logged-in {
 }
 
 .im-org-modal__handle {
-  display: block;
+  display: none;
   width: 48px;
   height: 4px;
   border-radius: 400px;
   background: var(--neutral-100);
   margin: 0 auto 12px;
-  position: absolute;
-  top: 75%;
-  z-index: 100;
-
-  &--2 {
-    top: 62%;
-  }
 }
 
 .im-org-modal__panel {
@@ -2154,7 +2147,13 @@ body.im-user-logged-in {
   // ── Organization modal (bottom sheet) ──
   .im-org-modal {
     padding: 0;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .im-org-modal__handle {
+    display: block;
   }
 
   .im-org-modal__panel {
@@ -2164,9 +2163,7 @@ body.im-user-logged-in {
     max-height: 90vh;
     transform: translateY(100%);
     position: relative;
-
   }
-
 
   .im-org-modal.is-open .im-org-modal__panel {
     transform: translateY(0);

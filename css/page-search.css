@@ -4255,7 +4255,7 @@ body.im-user-logged-in .im-header__user {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  z-index: 2;
+  z-index: var(--z-base);
 }
 
 .im-goods__dot {
@@ -5039,7 +5039,7 @@ body.im-user-logged-in .im-header__user {
     text-align: center;
     width: 100%;
     position: absolute;
-    z-index: 100;
+    z-index: var(--z-base);
     order: -1;
   }
   .im-search-page__card-image {

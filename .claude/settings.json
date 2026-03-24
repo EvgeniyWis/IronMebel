@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -l \"im-header__mobile-list\\\\|im-header__mobile-submenu-list\" \"d:/Web/FrontEnd/Projects/IronMebel\"/*.html)"
+      "Bash(grep -l \"im-header__mobile-list\\\\|im-header__mobile-submenu-list\" \"d:/Web/FrontEnd/Projects/IronMebel\"/*.html)",
+      "Bash(find d:WebFrontEndProjectsIronMebel -type f \\\\\\(-name *search* -o -name *404* \\\\\\))",
+      "Bash(grep -n \"z-index\" \"d:\\\\Web\\\\FrontEnd\\\\Projects\\\\IronMebel/scss/_search-page.scss\" \"d:\\\\Web\\\\FrontEnd\\\\Projects\\\\IronMebel/scss\"/*.scss)",
+      "Bash(find d:WebFrontEndProjectsIronMebel/scss -name *header* -o -name *components*)"
     ]
   }
 }

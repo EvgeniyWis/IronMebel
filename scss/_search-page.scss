@@ -230,7 +230,7 @@
       text-align: center;
       width: 100%;
       position: absolute;
-      z-index: 100;
+      z-index: var(--z-base);
       order: -1;
     }
 

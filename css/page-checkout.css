@@ -4255,7 +4255,7 @@ body.im-user-logged-in .im-header__user {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  z-index: 2;
+  z-index: var(--z-base);
 }
 
 .im-goods__dot {
@@ -6096,18 +6096,12 @@ body.im-user-logged-in .im-checkout-page__auth-only {
 }
 
 .im-org-modal__handle {
-  display: block;
+  display: none;
   width: 48px;
   height: 4px;
   border-radius: 400px;
   background: var(--neutral-100);
   margin: 0 auto 12px;
-  position: absolute;
-  top: 75%;
-  z-index: 100;
-}
-.im-org-modal__handle--2 {
-  top: 62%;
 }
 
 .im-org-modal__panel {
@@ -6708,7 +6702,12 @@ body.im-user-logged-in .im-checkout-page__auth-only {
   }
   .im-org-modal {
     padding: 0;
-    align-items: flex-end;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .im-org-modal__handle {
+    display: block;
   }
   .im-org-modal__panel {
     max-width: 100%;

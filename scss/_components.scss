@@ -344,7 +344,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  z-index: 2;
+  z-index: var(--z-base);
 }
 
 .im-goods__dot {
