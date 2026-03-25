@@ -376,13 +376,39 @@ h6 {
   background-color: var(--neutral-100);
 }
 
+.im-bottom-nav__shell {
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.im-bottom-nav__cta {
+  display: none;
+  padding: 0 0 8px;
+}
+
+.im-bottom-nav__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 42px;
+  padding: 0 16px;
+  border-radius: 8px;
+  background: var(--brand-600);
+  color: var(--neutral-100);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+
 .im-bottom-nav__inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 480px;
-  margin: 0 auto;
-  padding: 0 10px;
 }
 
 .im-bottom-nav__link {
