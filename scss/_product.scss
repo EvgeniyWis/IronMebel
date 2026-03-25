@@ -339,7 +339,6 @@
   flex-direction: column;
   gap: 8px;
   padding-top: 8px;
-  border-top: 1px solid var(--neutral-300);
 }
 
 .im-product-page__extra-link {
@@ -1296,7 +1295,7 @@
 .im-product-page__details-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
   margin-bottom: 20px;
   padding: 0;
 }
@@ -1306,13 +1305,14 @@
   align-items: center;
   justify-content: center;
   min-height: 34px;
-  padding: 8px 14px;
+  padding: 0 14px;
+  border: 0;
   border-radius: 8px;
-  background: var(--neutral-200);
+  background: var(--neutral-100);
   font-family: var(--font-family);
-  font-size: var(--font-xs-size);
+  font-size: var(--font-base-size);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1;
   color: var(--neutral-700);
   text-decoration: none;
   white-space: nowrap;
@@ -1320,7 +1320,7 @@
   @include interactive-transition;
 
   &:hover {
-    background: var(--neutral-300);
+    background: var(--neutral-100);
     color: var(--neutral-900);
   }
 
@@ -1335,8 +1335,8 @@
   color: var(--neutral-100);
 
   &:hover {
-    background: var(--neutral-100) !important;
-    color: var(--neutral-900);
+    background: var(--neutral-900) !important;
+    color: var(--neutral-100);
   }
 }
 
@@ -1845,7 +1845,6 @@
 }
 
 .im-product-page__review-card:last-child {
-  padding-bottom: 0;
   border-bottom: 0;
 }
 
@@ -2181,7 +2180,7 @@
 .im-product-page__guarantee-title {
   margin: 0 0 20px;
   font-family: var(--font-family);
-  font-size: var(--font-xl-size);
+  font-size: var(--font-3xl-size);
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
@@ -2519,6 +2518,14 @@
   font-weight: 700;
   line-height: 1.15;
   color: var(--neutral-900);
+}
+
+.im-product-page .im-cta {
+  margin-bottom: 0;
+}
+
+.im-product-page + [data-layout-footer] .im-footer {
+  margin-top: 24px;
 }
 
 .im-product-page__cases-nav {
@@ -3689,6 +3696,7 @@
 
   .im-product-page__details-tab {
     min-height: 32px;
+    border: 0;
     border-radius: 8px;
     font-weight: 400;
     padding: 4px 8px;
