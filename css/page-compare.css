@@ -121,7 +121,7 @@
   --blue-575: #1b8ff8;
   --blue-580: #1a85ea;
   --blue-590: #0d99ff;
-  --blue-600: #004479;
+  --blue-600: #0067B6;
   --blue-650: #103768;
   --blue-700: #00355d;
   --blue-800: #002440;
@@ -5113,8 +5113,10 @@ body.im-user-logged-in .im-header__user {
   opacity: 0;
   transition: opacity var(--transition-fast);
 }
-.im-compare-page__card:hover .im-compare-page__card-favorite, .im-compare-page__card:hover .im-compare-page__card-remove {
+.im-compare-page__card:hover .im-compare-page__card-favorite, .im-compare-page__card:hover .im-compare-page__card-remove, .im-compare-page__card:hover .im-compare-page__card-cart, .im-compare-page__card:focus-within .im-compare-page__card-favorite, .im-compare-page__card:focus-within .im-compare-page__card-remove, .im-compare-page__card:focus-within .im-compare-page__card-cart {
   opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 .im-compare-page__card-body {
   padding: 12px;
@@ -5140,7 +5142,7 @@ body.im-user-logged-in .im-header__user {
   color: var(--brand-500);
 }
 .im-compare-page__card-cart {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -5151,7 +5153,10 @@ body.im-user-logged-in .im-header__user {
   border-radius: 8px;
   background: var(--brand-500);
   cursor: pointer;
-  transition: background var(--transition-fast);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: background var(--transition-fast), opacity var(--transition-fast), visibility var(--transition-fast);
 }
 .im-compare-page__card-cart:hover {
   background: var(--brand-575);
@@ -5563,6 +5568,9 @@ body.im-user-logged-in .im-header__user {
     width: 32px;
     height: 32px;
     padding: 8px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   .im-compare-page__values {
     overflow-x: auto;

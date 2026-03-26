@@ -164,7 +164,14 @@
 
                 <div class="im-checkout-page__delivery-options">
                   <label class="im-checkout-page__radio-option is-active">
-                    <input type="radio" name="delivery" value="pickup" checked />
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value="pickup"
+                      checked
+                      data-delivery-label="Самовывоз"
+                      data-delivery-price="0"
+                    />
                     <svg class="im-checkout-page__delivery-icon" width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M9.33332 0C4.17899 0 0 4.179 0 9.33333C0 13.3782 2.62267 17.9806 6.16116 21.8026C6.2755 21.9251 6.36883 22.0208 6.489 22.1305C7.49117 23.0277 8.52948 23.345 9.33332 23.3333C9.34382 23.3333 9.36132 23.3333 9.36949 23.3333C10.2072 23.3333 11.3878 22.9565 12.5055 21.8388C15.9005 18.4438 18.6666 13.4377 18.6666 9.33333C18.6666 4.179 14.4876 0 9.33332 0ZM9.33332 5.83333C11.2665 5.83333 12.8333 7.40016 12.8333 9.33333C12.8333 11.2665 11.2665 12.8333 9.33332 12.8333C7.40015 12.8333 5.83332 11.2665 5.83332 9.33333C5.83332 7.40016 7.40015 5.83333 9.33332 5.83333Z" fill="currentColor"/>
                     </svg>
@@ -176,7 +183,13 @@
                   </label>
 
                   <label class="im-checkout-page__radio-option">
-                    <input type="radio" name="delivery" value="moscow" />
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value="moscow"
+                      data-delivery-label="Доставка по Москве"
+                      data-delivery-price="1450"
+                    />
                     <svg class="im-checkout-page__delivery-icon" width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M4.66667 0C2.08938 0 0 2.0895 0 4.66667V11.6667C0 13.4353 0.877218 14.8703 2.39354 15.7232C2.65242 17.4008 4.08333 18.6667 5.83333 18.6667C7.31243 18.6667 8.6324 17.7404 9.12217 16.3322L13.039 16.331C13.568 17.724 14.8542 18.6667 16.3333 18.6667C17.8539 18.6667 19.1343 17.7193 19.6568 16.2692C21.9042 15.9542 23.3333 14.3698 23.3333 11.6667C23.3333 11.6667 23.3333 11.6667 23.3333 10.5C23.3333 7.52267 20.4777 4.66667 17.5 4.66667C17.5 2.0895 15.4106 0 12.8333 0C11.8125 0 5.6875 0 4.66667 0ZM17.5 7C19.189 7 21 8.81067 21 10.5C21 11.6667 21 11.6667 21 11.6667C21 13.0632 20.5848 13.6698 19.6004 13.9032C19.3022 13.0387 18.4072 12.1578 17.5074 11.8801L17.5 7ZM5.83333 14C6.45552 13.9907 6.99907 14.518 7 15.1667C7 15.8107 6.47768 16.3333 5.83333 16.3333C5.18898 16.3333 4.66667 15.8107 4.66667 15.1667C4.76315 14.5238 5.22807 14.0093 5.83333 14ZM16.3333 14C16.9777 14 17.5 14.5227 17.5 15.1667C17.5 15.8107 16.9777 16.3333 16.3333 16.3333C15.689 16.3333 15.1667 15.8107 15.1667 15.1667C15.1667 14.8447 15.2837 14.539 15.4947 14.3278C15.7059 14.1167 16.0112 14 16.3333 14Z" fill="currentColor"/>
                     </svg>
@@ -188,7 +201,13 @@
                   </label>
 
                   <label class="im-checkout-page__radio-option">
-                    <input type="radio" name="delivery" value="transport" />
+                    <input
+                      type="radio"
+                      name="delivery"
+                      value="transport"
+                      data-delivery-label="Транспортная компания"
+                      data-delivery-price="390"
+                    />
                     <svg class="im-checkout-page__delivery-icon" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M10.4277 0.000445899C9.597 0.00977923 8.78383 0.177786 8.16667 0.474119C7.09683 0.988619 1.16667 3.97412 1.16667 3.97412C3.1745 4.98212 8.449 7.61412 9.114 7.94779C9.83733 8.31062 11.1253 8.31179 11.8487 7.94779L19.8333 4.01143C19.8333 4.01143 14.4678 1.29312 12.7972 0.474119C12.0902 0.127619 11.2572 -0.00888743 10.4277 0.000445899ZM1.67767 6.41711C0.901837 6.02861 0 6.60728 0 7.47412V13.8908C0 15.2954 0.931 16.8354 2.1875 17.4643L8.34867 20.5268C9.57484 21.1393 11.4252 21.1404 12.6513 20.5268L18.7763 17.4643C20.0433 16.8308 21 15.2709 21 13.8546V7.47412C21 6.60728 20.0982 6.02861 19.3223 6.41711C18.389 6.88378 12.782 9.70477 11.8487 10.1726C11.1463 10.5238 9.85366 10.5238 9.15133 10.1726L1.67767 6.41711Z" fill="currentColor"/>
                     </svg>
@@ -324,7 +343,11 @@
                   <h3 class="im-checkout-page__transport-title">Выберите компанию</h3>
 
                   <div class="im-checkout-page__transport-companies">
-                    <div class="im-checkout-page__transport-company">
+                    <div
+                      class="im-checkout-page__transport-company is-active"
+                      data-company-name="ПЭК"
+                      data-company-price="390"
+                    >
                       <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/pek.png" alt="ПЭК" width="40" height="40" />
                       <span class="im-checkout-page__transport-company-info">
                         <span class="im-checkout-page__transport-company-name">ПЭК</span>
@@ -333,7 +356,11 @@
                       <span class="im-checkout-page__transport-company-radio"></span>
                     </div>
 
-                    <div class="im-checkout-page__transport-company">
+                    <div
+                      class="im-checkout-page__transport-company"
+                      data-company-name="Байкал Сервис"
+                      data-company-price="390"
+                    >
                       <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/baikal.png" alt="Байкал Сервис" width="40" height="40" />
                       <span class="im-checkout-page__transport-company-info">
                         <span class="im-checkout-page__transport-company-name">Байкал Сервис</span>
@@ -342,7 +369,11 @@
                       <span class="im-checkout-page__transport-company-radio"></span>
                     </div>
 
-                    <div class="im-checkout-page__transport-company">
+                    <div
+                      class="im-checkout-page__transport-company"
+                      data-company-name="Деловые Линии"
+                      data-company-price="390"
+                    >
                       <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/delovie_linii.png" alt="Деловые Линии" width="40" height="40" />
                       <span class="im-checkout-page__transport-company-info">
                         <span class="im-checkout-page__transport-company-name">Деловые Линии</span>
@@ -351,7 +382,11 @@
                       <span class="im-checkout-page__transport-company-radio"></span>
                     </div>
 
-                    <div class="im-checkout-page__transport-company">
+                    <div
+                      class="im-checkout-page__transport-company"
+                      data-company-name="Другая ТК"
+                      data-company-price="390"
+                    >
                       <img class="im-checkout-page__transport-company-logo" src="./images/checkout/logos/other.png" alt="Другая ТК" width="40" height="40" />
                       <span class="im-checkout-page__transport-company-info">
                         <span class="im-checkout-page__transport-company-name">Другая ТК</span>
@@ -463,7 +498,12 @@
 
                 <div class="im-checkout-page__summary-row">
                   <span class="im-checkout-page__summary-label">Доставка</span>
-                  <span class="im-checkout-page__summary-value">Самовывоз</span>
+                  <span class="im-checkout-page__summary-value" data-summary-delivery-label>Самовывоз</span>
+                </div>
+
+                <div class="im-checkout-page__summary-row">
+                  <span class="im-checkout-page__summary-label">Стоимость доставки</span>
+                  <span class="im-checkout-page__summary-value" data-summary-delivery-price>Бесплатно</span>
                 </div>
 
                 <div class="im-checkout-page__promo">
@@ -500,7 +540,12 @@
                   class="im-checkout-page__summary-row im-checkout-page__summary-row--total"
                 >
                   <span class="im-checkout-page__summary-label">Итого</span>
-                  <span class="im-checkout-page__summary-value">137 587 ₽</span>
+                  <span
+                    class="im-checkout-page__summary-value"
+                    data-summary-total
+                    data-base-total="137587"
+                    >137 587 ₽</span
+                  >
                 </div>
 
                 <button class="im-checkout-page__submit-btn" type="button">

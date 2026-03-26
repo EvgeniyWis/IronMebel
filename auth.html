@@ -404,10 +404,6 @@
 
         }
 
-        document.querySelector('.auth__bg').addEventListener('click', () => {
-          history.back();
-        });
-
         authLoginInput.addEventListener('input', clearAuthError);
 
         registerPhoneInput.addEventListener('input', () => {
@@ -508,24 +504,8 @@
         });
 
         registerBack.addEventListener('click', closeRegisterOverlay);
-        let registerMouseDownTarget = null;
-        registerOverlay.addEventListener('mousedown', (event) => {
-          registerMouseDownTarget = event.target;
-        });
-        registerOverlay.addEventListener('click', (event) => {
-          if (event.target === registerOverlay && registerMouseDownTarget === registerOverlay) closeRegisterOverlay();
-          registerMouseDownTarget = null;
-        });
 
         confirmBack.addEventListener('click', closeConfirm);
-        let confirmMouseDownTarget = null;
-        confirmOverlay.addEventListener('mousedown', (event) => {
-          confirmMouseDownTarget = event.target;
-        });
-        confirmOverlay.addEventListener('click', (event) => {
-          if (event.target === confirmOverlay && confirmMouseDownTarget === confirmOverlay) closeConfirm();
-          confirmMouseDownTarget = null;
-        });
 
         codeInputs.forEach((input, index) => {
           input.addEventListener('input', () => {

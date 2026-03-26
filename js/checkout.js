@@ -64,6 +64,58 @@
   const deliverySection = document.getElementById('delivery-section');
   const transportSection = document.getElementById('transport-section');
   const deliveryRadios = document.querySelectorAll('input[name="delivery"]');
+  const summaryDeliveryLabel = document.querySelector('[data-summary-delivery-label]');
+  const summaryDeliveryPrice = document.querySelector('[data-summary-delivery-price]');
+  const summaryTotal = document.querySelector('[data-summary-total]');
+  const transportCompaniesSelector = '.im-checkout-page__transport-company';
+
+  function formatCurrency(value) {
+    return new Intl.NumberFormat('ru-RU').format(value) + ' ₽';
+  }
+
+  function getSelectedTransportCompany() {
+    return document.querySelector(transportCompaniesSelector + '.is-active')
+      || document.querySelector(transportCompaniesSelector);
+  }
+
+  function getSelectedDeliveryData() {
+    const selectedRadio = document.querySelector('input[name="delivery"]:checked');
+    if (!selectedRadio) {
+      return {
+        label: 'Самовывоз',
+        price: 0
+      };
+    }
+
+    if (selectedRadio.value === 'transport') {
+      const selectedCompany = getSelectedTransportCompany();
+      const companyName = selectedCompany?.dataset.companyName?.trim() || selectedRadio.dataset.deliveryLabel || 'Транспортная компания';
+      const companyPrice = Number.parseInt(selectedCompany?.dataset.companyPrice || selectedRadio.dataset.deliveryPrice || '0', 10);
+
+      return {
+        label: companyName,
+        price: Number.isFinite(companyPrice) ? companyPrice : 0
+      };
+    }
+
+    const basePrice = Number.parseInt(selectedRadio.dataset.deliveryPrice || '0', 10);
+    return {
+      label: selectedRadio.dataset.deliveryLabel || selectedRadio.value,
+      price: Number.isFinite(basePrice) ? basePrice : 0
+    };
+  }
+
+  function updateOrderSummary() {
+    if (!summaryDeliveryLabel || !summaryDeliveryPrice || !summaryTotal) return;
+
+    const baseTotal = Number.parseInt(summaryTotal.dataset.baseTotal || '0', 10);
+    const deliveryData = getSelectedDeliveryData();
+    const nextTotal = baseTotal + deliveryData.price;
+
+    summaryDeliveryLabel.textContent = deliveryData.label;
+    summaryDeliveryPrice.textContent = deliveryData.price > 0 ? formatCurrency(deliveryData.price) : 'Бесплатно';
+    summaryTotal.textContent = formatCurrency(nextTotal);
+  }
 
   if (deliveryRadios.length) {
     deliveryRadios.forEach(radio => {
@@ -77,6 +129,8 @@
         if (transportSection) {
           transportSection.style.display = radio.value === 'transport' && radio.checked ? '' : 'none';
         }
+
+        updateOrderSummary();
       });
     });
   }
@@ -93,7 +147,13 @@
   }
 
   initClickableGroup('.im-checkout-page__transport-address');
-  initClickableGroup('.im-checkout-page__transport-company');
+  initClickableGroup(transportCompaniesSelector);
+
+  document.querySelectorAll(transportCompaniesSelector).forEach(company => {
+    company.addEventListener('click', updateOrderSummary);
+  });
+
+  updateOrderSummary();
 
   // Pickup point selection helper
   const pickupPoints = document.querySelectorAll('.im-checkout-page__pickup-point');

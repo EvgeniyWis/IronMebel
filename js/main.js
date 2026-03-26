@@ -1554,8 +1554,19 @@ const initCatalogRangeSliders = () => {
       fill.style.left = leftPct + "%";
       fill.style.width = rightPct - leftPct + "%";
 
-      if (minLabel) minLabel.textContent = minVal;
-      if (maxLabel) maxLabel.textContent = maxVal;
+      if (minLabel) {
+        const prefix = minLabel.dataset.rangePrefix
+          ? minLabel.dataset.rangePrefix + " "
+          : "";
+        minLabel.textContent = prefix + minVal;
+      }
+
+      if (maxLabel) {
+        const prefix = maxLabel.dataset.rangePrefix
+          ? maxLabel.dataset.rangePrefix + " "
+          : "";
+        maxLabel.textContent = prefix + maxVal;
+      }
     };
 
     minInput.addEventListener("input", update);
@@ -1573,7 +1584,11 @@ const initShowAllButtons = () => {
     btn.addEventListener("click", () => {
       const group = btn.closest(".im-catalog-sidebar__group");
       if (!group) return;
+      const wrapper = group.querySelector(".im-catalog-sidebar__group-content");
       group.classList.toggle("is-expanded");
+      if (wrapper && !group.classList.contains("is-collapsed")) {
+        wrapper.style.maxHeight = wrapper.scrollHeight + "px";
+      }
       btn.textContent = group.classList.contains("is-expanded")
         ? "Скрыть"
         : "Показать все";

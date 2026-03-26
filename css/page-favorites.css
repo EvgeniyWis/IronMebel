@@ -121,7 +121,7 @@
   --blue-575: #1b8ff8;
   --blue-580: #1a85ea;
   --blue-590: #0d99ff;
-  --blue-600: #004479;
+  --blue-600: #0067B6;
   --blue-650: #103768;
   --blue-700: #00355d;
   --blue-800: #002440;
@@ -5054,6 +5054,13 @@ body.im-user-logged-in .im-header__user {
   }
 }
 @media (max-width: 600px) {
+  .im-favorites-page .im-goods__card .im-goods__favorite,
+  .im-favorites-page .im-goods__card .im-goods__compare-top,
+  .im-favorites-page .im-goods__card .im-goods__cart {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
   .im-favorites-page__empty-title {
     font-size: var(--font-base-size);
     line-height: var(--font-base-lh);
