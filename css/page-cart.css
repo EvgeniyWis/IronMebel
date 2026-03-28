@@ -1117,7 +1117,7 @@ h6 {
   padding: 10px 12px;
   border-radius: 8px;
   border: none;
-  background-color: var(--brand-600);
+  background: var(--blue-700);
   color: var(--neutral-100);
   font-weight: 600;
   cursor: pointer;
@@ -1449,7 +1449,7 @@ h6 {
   border-radius: 8px;
   padding: 10px 12px;
   border: none;
-  background: var(--blue-600);
+  background: var(--neutral-700);
   color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 600;
@@ -4971,15 +4971,15 @@ body.im-user-logged-in .im-header__user {
   transform: translate(-50%, -50%);
   width: 12px;
   height: 9px;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.2423 0C11.0503 0 10.85 0.0630007 10.7038 0.207001L4.17352 6.65249C3.98077 6.84224 3.78727 6.80701 3.63577 6.58351L1.38877 3.2685C1.15926 2.93025 0.679265 2.83575 0.335014 3.0615C-0.00848637 3.28725 -0.104486 3.75901 0.125015 4.09726L2.37127 7.41224C3.04777 8.40899 4.36552 8.53575 5.22727 7.68825L11.7808 1.26599C12.0725 0.977991 12.0725 0.495 11.7808 0.207001C11.6345 0.0630007 11.4335 0 11.2423 0Z' fill='%23FF2E2E'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.2423 0C11.0503 0 10.85 0.0630007 10.7038 0.207001L4.17352 6.65249C3.98077 6.84224 3.78727 6.80701 3.63577 6.58351L1.38877 3.2685C1.15926 2.93025 0.679265 2.83575 0.335014 3.0615C-0.00848637 3.28725 -0.104486 3.75901 0.125015 4.09726L2.37127 7.41224C3.04777 8.40899 4.36552 8.53575 5.22727 7.68825L11.7808 1.26599C12.0725 0.977991 12.0725 0.495 11.7808 0.207001C11.6345 0.0630007 11.4335 0 11.2423 0Z' fill='%23ffffff'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 .im-cart-page__select-all input:checked {
-  border-color: var(--brand-500);
-  background: var(--neutral-100);
+  border-color: var(--blue-600);
+  background: var(--blue-600);
 }
 .im-cart-page__select-all input:checked::after {
   opacity: 1;
@@ -5044,15 +5044,15 @@ body.im-user-logged-in .im-header__user {
   transform: translate(-50%, -50%);
   width: 12px;
   height: 9px;
-  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.2423 0C11.0503 0 10.85 0.0630007 10.7038 0.207001L4.17352 6.65249C3.98077 6.84224 3.78727 6.80701 3.63577 6.58351L1.38877 3.2685C1.15926 2.93025 0.679265 2.83575 0.335014 3.0615C-0.00848637 3.28725 -0.104486 3.75901 0.125015 4.09726L2.37127 7.41224C3.04777 8.40899 4.36552 8.53575 5.22727 7.68825L11.7808 1.26599C12.0725 0.977991 12.0725 0.495 11.7808 0.207001C11.6345 0.0630007 11.4335 0 11.2423 0Z' fill='%23FF2E2E'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='9' viewBox='0 0 12 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.2423 0C11.0503 0 10.85 0.0630007 10.7038 0.207001L4.17352 6.65249C3.98077 6.84224 3.78727 6.80701 3.63577 6.58351L1.38877 3.2685C1.15926 2.93025 0.679265 2.83575 0.335014 3.0615C-0.00848637 3.28725 -0.104486 3.75901 0.125015 4.09726L2.37127 7.41224C3.04777 8.40899 4.36552 8.53575 5.22727 7.68825L11.7808 1.26599C12.0725 0.977991 12.0725 0.495 11.7808 0.207001C11.6345 0.0630007 11.4335 0 11.2423 0Z' fill='%23ffffff'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: contain;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
 .im-cart-page__item-check input:checked {
-  border-color: var(--brand-500);
-  background: var(--neutral-100);
+  border-color: var(--blue-600);
+  background: var(--blue-600);
 }
 .im-cart-page__item-check input:checked::after {
   opacity: 1;
@@ -5283,12 +5283,12 @@ body.im-user-logged-in .im-header__user {
   opacity: 1;
 }
 .im-cart-page__extras-toggle--active {
-  transform: rotate(45deg);
+  transform: rotate(180deg);
 }
 .im-cart-page__extras-list {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   max-height: 500px;
   overflow: hidden;
   transition: max-height 0.3s ease, opacity 0.3s ease;
@@ -5306,9 +5306,6 @@ body.im-user-logged-in .im-header__user {
 .im-cart-page__extras-list--mobile {
   display: none;
 }
-.im-cart-page__item-body:has(.im-cart-page__extras-list:not(.im-cart-page__extras-list--hidden)) .im-cart-page__item-right {
-  padding-right: 100px;
-}
 .im-cart-page__extras-card {
   position: relative;
   display: flex;
@@ -5316,12 +5313,50 @@ body.im-user-logged-in .im-header__user {
   background: var(--neutral-200);
   border-radius: 8px;
   padding: 10px 14px;
-  min-width: 220px;
-  max-width: 280px;
+  flex: 0 0 calc(50% - 6px);
+  min-width: 0;
 }
 .im-cart-page__extras-list--slider .im-cart-page__extras-card {
-  min-width: 280px;
-  max-width: 280px;
+  min-width: 0;
+  max-width: none;
+}
+.im-cart-page__extras-list--scrollable {
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.im-cart-page__extras-list--scrollable::-webkit-scrollbar {
+  display: none;
+}
+.im-cart-page__extras-wrapper {
+  position: relative;
+}
+.im-cart-page__extras-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--neutral-100);
+  box-shadow: 0 4px 4px -2px color-mix(in srgb, var(--blue-900) 8%, transparent), 0 2px 4px -2px color-mix(in srgb, var(--blue-900) 12%, transparent);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+.im-cart-page__extras-nav--visible {
+  display: flex;
+}
+.im-cart-page__extras-nav--prev {
+  left: -14px;
+}
+.im-cart-page__extras-nav--prev svg {
+  transform: rotate(180deg);
+}
+.im-cart-page__extras-nav--next {
+  right: -14px;
 }
 .im-cart-page__extras-card-grid {
   position: absolute;
@@ -5393,6 +5428,12 @@ body.im-user-logged-in .im-header__user {
 }
 .im-cart-page__extras-card-add:hover {
   background: var(--brand-500);
+}
+.im-cart-page__extras-card-add--active {
+  background: var(--brand-100);
+}
+.im-cart-page__extras-card-add--active:hover {
+  background: var(--brand-100);
 }
 @media (max-width: 600px) {
   .im-cart-page__extras-list--slider {

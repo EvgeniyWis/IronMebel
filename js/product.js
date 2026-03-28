@@ -762,6 +762,33 @@ function syncCasesGallery(caseCard, index) {
   caseCard.dataset.caseIndex = String(nextIndex);
 }
 
+function syncCaseMoreButton(caseCard) {
+  if (!(caseCard instanceof HTMLElement)) {
+    return;
+  }
+
+  const caseExtra = caseCard.querySelector("[data-case-extra-out]");
+  const caseMoreButton = caseCard.querySelector(".im-product-page__case-more");
+
+  if (!(caseExtra instanceof HTMLElement) || !(caseMoreButton instanceof HTMLElement)) {
+    return;
+  }
+
+  if (caseExtra.classList.contains("is-expanded")) {
+    caseMoreButton.hidden = false;
+    return;
+  }
+
+  const hasOverflow = caseExtra.scrollHeight - caseExtra.clientHeight > 1;
+  caseMoreButton.hidden = !hasOverflow;
+}
+
+function syncCaseMoreButtons() {
+  document.querySelectorAll("[data-case-card]").forEach((caseCard) => {
+    syncCaseMoreButton(caseCard);
+  });
+}
+
 function initCasesGalleries() {
   document.querySelectorAll("[data-case-card]").forEach((caseCard) => {
     syncCasesGallery(
@@ -769,6 +796,8 @@ function initCasesGalleries() {
       Number.parseInt(caseCard.dataset.caseIndex || "0", 10),
     );
   });
+
+  syncCaseMoreButtons();
 }
 
 function stopFaqAnimation(answer) {
@@ -1318,6 +1347,7 @@ document.addEventListener("click", (event) => {
       caseExtra.classList.toggle("is-expanded", shouldExpand);
       caseMoreButton.textContent = shouldExpand ? "Скрыть" : "Читать полностью";
       caseMoreButton.setAttribute("aria-expanded", String(shouldExpand));
+      syncCaseMoreButton(caseCard);
     }
 
     return;
@@ -1386,4 +1416,5 @@ initProductStickyHeader();
 
 window.addEventListener("resize", () => {
   initProductGallerySliders();
+  syncCaseMoreButtons();
 });

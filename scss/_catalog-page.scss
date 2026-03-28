@@ -129,7 +129,7 @@
     height: 34px;
     padding: 8px;
     border-radius: 8px;
-    background: var(--blue-600);
+    background: var(--blue-700);
     color: var(--neutral-100);
     text-decoration: none;
     font-family: var(--font-family);
@@ -733,7 +733,7 @@
     align-items: center;
     gap: 7px;
     min-height: 20px;
-    font-size: var(--font-2xs-size);
+    font-size: 16px;
     line-height: 1.15;
     color: var(--neutral-800);
     cursor: pointer;
@@ -853,7 +853,7 @@
     padding: 8px 10px;
     border-radius: 4px;
     font-weight: 600;
-    font-size: 10px;
+    font-size: 14px;
     @include interactive-transition;
   }
 
@@ -1299,7 +1299,7 @@
   justify-content: flex-start;
   height: 100%;
   padding: 28px 16px 24px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--neutral-255);
   background-image:
     linear-gradient(

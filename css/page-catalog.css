@@ -1117,7 +1117,7 @@ h6 {
   padding: 10px 12px;
   border-radius: 8px;
   border: none;
-  background-color: var(--brand-600);
+  background: var(--blue-700);
   color: var(--neutral-100);
   font-weight: 600;
   cursor: pointer;
@@ -1449,7 +1449,7 @@ h6 {
   border-radius: 8px;
   padding: 10px 12px;
   border: none;
-  background: var(--blue-600);
+  background: var(--neutral-700);
   color: var(--neutral-100);
   font-family: var(--font-family);
   font-weight: 600;
@@ -4974,7 +4974,7 @@ body.im-user-logged-in .im-header__user {
   height: 34px;
   padding: 8px;
   border-radius: 8px;
-  background: var(--blue-600);
+  background: var(--blue-700);
   color: var(--neutral-100);
   text-decoration: none;
   font-family: var(--font-family);
@@ -5540,7 +5540,7 @@ input:checked ~ .im-catalog-sidebar__radio-mark::after {
   align-items: center;
   gap: 7px;
   min-height: 20px;
-  font-size: var(--font-2xs-size);
+  font-size: 16px;
   line-height: 1.15;
   color: var(--neutral-800);
   cursor: pointer;
@@ -5657,7 +5657,7 @@ input:checked ~ .im-catalog-sidebar__radio-mark::after {
   padding: 8px 10px;
   border-radius: 4px;
   font-weight: 600;
-  font-size: 10px;
+  font-size: 14px;
   transition: all var(--transition-normal);
 }
 @media (prefers-reduced-motion: reduce) {
@@ -6073,7 +6073,7 @@ input:checked ~ .im-catalog-sidebar__radio-mark::after {
   justify-content: flex-start;
   height: 100%;
   padding: 28px 16px 24px;
-  border-radius: 12px;
+  border-radius: 8px;
   background: var(--neutral-255);
   background-image: linear-gradient(140deg, transparent 0, transparent 57%, color-mix(in srgb, var(--neutral-100) 45%, transparent) 57%, color-mix(in srgb, var(--neutral-100) 45%, transparent) 74%, transparent 74%, transparent 100%), linear-gradient(40deg, transparent 0, transparent 62%, color-mix(in srgb, var(--neutral-100) 35%, transparent) 62%, color-mix(in srgb, var(--neutral-100) 35%, transparent) 78%, transparent 78%, transparent 100%);
   background-size: 220px 220px, 180px 180px;
