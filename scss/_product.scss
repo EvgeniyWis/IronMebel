@@ -3190,6 +3190,11 @@
     order: 2;
   }
 
+  .im-product-page__info .im-product-page__gallery-extras {
+    margin-top: 16px;
+    padding-top: 0;
+  }
+
   .im-product-page__specs-short {
     order: 3;
   }
@@ -3642,11 +3647,11 @@
     order: 2;
     gap: 12px;
     width: 100%;
-    margin-top: -8px;
+    margin-top: 16px;
     padding: 0;
-    border-radius: 0 0 8px 8px;
+    border-radius: 0;
     border-top: 0;
-    background: var(--neutral-100);
+    background: transparent;
   }
 
   .im-product-page__extra-text span {

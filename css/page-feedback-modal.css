@@ -1,28 +1,28 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Exo 2";
-  src: url("../@fonts/Exo_2/Exo2-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Exo_2/Exo2-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Exo";
-  src: url("../@fonts/Exo/Exo-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Exo/Exo-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Inter";
-  src: url("../@fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Inter/Inter-VariableFont_opsz,wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../@fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -4073,18 +4073,13 @@ body.im-user-logged-in .im-header__user {
   text-align: center;
   border-radius: 12px;
   border: 1px solid var(--neutral-260);
-  background: var(--neutral-200);
+  background: #fff;
   padding: 40px;
   overflow: hidden;
 }
 
 .im-goods__help-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: url("../images/catalogue_page/help_us.png") center/cover no-repeat;
+  content: none;
 }
 
 .im-goods__help-logo {
@@ -4100,6 +4095,12 @@ body.im-user-logged-in .im-header__user {
   display: block;
   height: 42px;
   width: auto;
+}
+.im-goods__help-logo .im-goods__help-logo-svg {
+  display: block;
+  width: 168px;
+  max-width: 100%;
+  height: auto;
 }
 
 .im-goods__help-title {
@@ -5908,39 +5909,49 @@ body.im-user-logged-in .im-header__user {
     background-color: var(--neutral-100);
   }
   .im-catalog-collections__tags {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 8px;
     padding: 0;
     border-bottom: 0;
   }
-  .im-catalog-collections__tags.is-mobile-sliders {
+  .im-catalog-collections__tags.is-mobile-rows-slider {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: nowrap;
     gap: 8px;
+    overflow: hidden;
   }
-  .im-catalog-collections__tags.is-mobile-sliders .im-catalog-collections__row {
-    min-width: 0;
+  .im-catalog-collections__row-slider {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .im-catalog-collections__row-slider::-webkit-scrollbar {
+    display: none;
   }
   .im-catalog-collections__tag {
-    width: 100%;
-    min-height: 48px;
-    padding: 8px 12px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    display: -webkit-box;
-    white-space: normal;
-    overflow: hidden;
-    text-overflow: clip;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-align: left;
+    width: auto;
+    min-height: 28px;
+    padding: 6px 10px;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: initial;
+    text-align: center;
     font-size: 14px;
     line-height: 114%;
-    border-radius: 10px;
-  }
-  .im-catalog-collections__tags.is-mobile-sliders .im-catalog-collections__tag {
-    width: auto;
+    border-radius: 8px;
   }
   .im-catalog-page__layout {
     grid-template-columns: 1fr;
@@ -6300,6 +6311,21 @@ body.im-user-logged-in .im-header__user {
   .im-goods__help-logo img {
     height: 30px;
   }
+  .im-goods__help-logo .im-footer__logo-top {
+    gap: 8px;
+  }
+  .im-goods__help-logo .im-footer__logo-icon svg {
+    width: 22px;
+    height: 20px;
+  }
+  .im-goods__help-logo .im-footer__logo-title svg {
+    width: 96px;
+    height: auto;
+  }
+  .im-goods__help-logo .help_us__logo-subtitle {
+    font-size: 7px;
+    letter-spacing: 0.14em;
+  }
   .im-goods__help-title {
     font-size: 24px;
   }
@@ -6361,6 +6387,14 @@ body.im-user-logged-in .im-header__user {
   .im-goods__favorite svg {
     width: 13px;
     height: 13px;
+  }
+  .im-goods__badge,
+  .im-goods__favorite,
+  .im-goods__compare-top,
+  .im-goods__cart {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
   }
   .im-goods__body {
     padding: 8px;
@@ -7209,7 +7243,7 @@ body.im-user-logged-in .im-header__user {
   }
   /* Recommendations "Смотреть все" button — only on mobile */
   .im-goods--cart .im-goods__all--bottom {
-    display: none;
+    display: inline-flex;
   }
   .im-goods--cart .im-goods__all--bottom .im-goods__all-arrow svg path {
     fill: var(--neutral-100);

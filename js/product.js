@@ -4,6 +4,7 @@ const reviewMediaSliders = new WeakMap();
 const productGoodsSliders = new WeakMap();
 const goodsCardSliders = new WeakMap();
 const productGallerySliders = new WeakMap();
+const productMobileExtrasPlaceholders = new WeakMap();
 let reviewMediaInitAttempts = 0;
 let productGoodsInitAttempts = 0;
 let goodsCardInitAttempts = 0;
@@ -186,6 +187,44 @@ function scheduleProductGalleryInit(root = document) {
   window.setTimeout(() => {
     scheduleProductGalleryInit(root);
   }, 250);
+}
+
+function syncMobileExtrasPlacement(root = document) {
+  const isMobile = window.matchMedia("(max-width: 900px)").matches;
+
+  root.querySelectorAll(".im-product-page__hero").forEach((hero) => {
+    const extras = hero.querySelector("[data-product-mobile-extras]");
+    const anchor = hero.querySelector("[data-product-mobile-extras-anchor]");
+    const gallery = hero.querySelector(".im-product-page__gallery");
+
+    if (!(extras instanceof HTMLElement) || !(anchor instanceof HTMLElement)) {
+      return;
+    }
+
+    if (isMobile) {
+      if (!productMobileExtrasPlaceholders.has(extras)) {
+        const placeholder = document.createComment("product-mobile-extras-placeholder");
+        extras.parentNode?.insertBefore(placeholder, extras);
+        productMobileExtrasPlaceholders.set(extras, placeholder);
+      }
+
+      anchor.insertAdjacentElement("afterend", extras);
+      return;
+    }
+
+    const placeholder = productMobileExtrasPlaceholders.get(extras);
+
+    if (placeholder?.parentNode) {
+      placeholder.parentNode.insertBefore(extras, placeholder);
+      placeholder.parentNode.removeChild(placeholder);
+      productMobileExtrasPlaceholders.delete(extras);
+      return;
+    }
+
+    if (gallery instanceof HTMLElement && extras.parentNode !== gallery) {
+      gallery.appendChild(extras);
+    }
+  });
 }
 
 function resolveRatingValue(ratingNode) {
@@ -1409,6 +1448,7 @@ initRatingStars();
 scheduleReviewMediaInit();
 scheduleGoodsCardInit();
 scheduleProductGalleryInit();
+syncMobileExtrasPlacement();
 initCasesGalleries();
 scheduleProductGoodsInit();
 initFaqAccordions();
@@ -1416,5 +1456,6 @@ initProductStickyHeader();
 
 window.addEventListener("resize", () => {
   initProductGallerySliders();
+  syncMobileExtrasPlacement();
   syncCaseMoreButtons();
 });

@@ -859,6 +859,34 @@
     pointer-events: auto;
   }
 
+  .im-compare-page__card-favorite,
+  .im-compare-page__card-remove {
+    width: 28px;
+    height: 28px;
+    right: 6px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .im-compare-page__card-favorite {
+    top: 6px;
+  }
+
+  .im-compare-page__card-remove {
+    top: 36px;
+  }
+
+  .im-compare-page__card-favorite svg {
+    width: 15px;
+    height: 14px;
+  }
+
+  .im-compare-page__card-remove svg {
+    width: 12px;
+    height: 15px;
+  }
+
   // Values as horizontal slider
   .im-compare-page__values {
     overflow-x: auto;

@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Exo 2";
-  src: url("../@fonts/Exo_2/Exo2-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Exo_2/Exo2-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -8,7 +9,8 @@
 
 @font-face {
   font-family: "Exo";
-  src: url("../@fonts/Exo/Exo-VariableFont_wght.ttf") format("truetype");
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Exo/Exo-VariableFont_wght.ttf")
+    format("truetype");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -16,7 +18,7 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("../@fonts/Inter/Inter-VariableFont_opsz,wght.ttf")
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Inter/Inter-VariableFont_opsz,wght.ttf")
     format("truetype");
   font-weight: 100 900;
   font-style: normal;
@@ -25,7 +27,7 @@
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../@fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+  src: url("../fonts/Exo,Exo_2,Inter,Montserrat/Montserrat/Montserrat-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 100 900;
   font-style: normal;
