@@ -86,6 +86,7 @@ const menuOpenButtons = document.querySelectorAll("[data-menu-open]");
 
 if (headerMenuOverlay) {
   const openMenu = () => {
+    closeMobileCatalog();
     headerMenuOverlay.classList.add("is-open");
   };
 
@@ -504,6 +505,15 @@ if (catalogItems.length) {
 
 const openMobileCatalog = () => {
   if (!mobileCatalog || !isMobileCatalogScreen()) return;
+
+  if (headerMenuOverlay) {
+    headerMenuOverlay.classList.remove("is-open");
+    const sub = headerMenuOverlay.querySelector("[data-mobile-submenu]");
+    if (sub) {
+      sub.classList.remove("is-open");
+      sub.setAttribute("aria-hidden", "true");
+    }
+  }
 
   mobileCatalog.classList.add("is-open");
   mobileCatalog.setAttribute("aria-hidden", "false");
