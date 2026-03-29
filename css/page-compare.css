@@ -6661,6 +6661,8 @@ body.im-user-logged-in .im-header__user {
   }
   .im-goods__image img {
     max-height: 140px;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
   .im-goods__compare-top {
     right: 8px;
