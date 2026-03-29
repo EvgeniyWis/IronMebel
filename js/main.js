@@ -56,11 +56,13 @@ const cityModalOptions = document.querySelectorAll("[data-city-modal-option]");
 
 const catalogModal = document.querySelector("[data-catalog-modal]");
 const catalogModalTitle = document.querySelector(".im-catalog-modal__title");
-const CATALOG_CATEGORY_CLASS_PREFIX = "im-catalog-modal--category-";
 const catalogModalCloseButtons = document.querySelectorAll(
   "[data-catalog-modal-close]",
 );
 const catalogItems = document.querySelectorAll("[data-catalog-category]");
+const catalogModalLists = document.querySelectorAll(
+  ".im-catalog-modal__list[data-catalog-category]",
+);
 
 const mobileCatalog = document.querySelector("[data-mobile-catalog]");
 const mobileCatalogOpenButtons = document.querySelectorAll(
@@ -420,12 +422,11 @@ if (topDropdowns.length) {
 const openCatalogModal = (categoryKey, titleText) => {
   if (!catalogModal || !isSmallScreenCity()) return;
 
-  Array.from(catalogModal.classList).forEach((cls) => {
-    if (cls.startsWith(CATALOG_CATEGORY_CLASS_PREFIX)) {
-      catalogModal.classList.remove(cls);
-    }
+  catalogModalLists.forEach((list) => {
+    const isActive = list.getAttribute("data-catalog-category") === categoryKey;
+    list.classList.toggle("is-active", isActive);
+    list.setAttribute("aria-hidden", isActive ? "false" : "true");
   });
-  catalogModal.classList.add(`${CATALOG_CATEGORY_CLASS_PREFIX}${categoryKey}`);
 
   if (catalogModalTitle && titleText) {
     catalogModalTitle.textContent = titleText;
@@ -447,10 +448,9 @@ const closeCatalogModal = () => {
   );
 
   catalogModal.classList.remove("is-open");
-  Array.from(catalogModal.classList).forEach((cls) => {
-    if (cls.startsWith(CATALOG_CATEGORY_CLASS_PREFIX)) {
-      catalogModal.classList.remove(cls);
-    }
+  catalogModalLists.forEach((list) => {
+    list.classList.remove("is-active");
+    list.setAttribute("aria-hidden", "true");
   });
   catalogModal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";

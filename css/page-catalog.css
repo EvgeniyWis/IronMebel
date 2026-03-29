@@ -2240,6 +2240,10 @@ body.im-user-logged-in .im-header__user {
   display: none;
 }
 
+.im-catalog-modal__list[data-catalog-category].is-active {
+  display: flex;
+}
+
 .im-catalog-modal__card {
   display: flex;
   flex-direction: column;
@@ -2273,14 +2277,6 @@ body.im-user-logged-in .im-header__user {
   opacity: 1;
   transform: translateY(0);
   margin-top: 4px;
-}
-
-.im-catalog-modal--category-metal-shelves .im-catalog-modal__list[data-catalog-category=metal-shelves],
-.im-catalog-modal--category-production-furniture .im-catalog-modal__list[data-catalog-category=production-furniture],
-.im-catalog-modal--category-storage-systems .im-catalog-modal__list[data-catalog-category=storage-systems],
-.im-catalog-modal--category-services .im-catalog-modal__list[data-catalog-category=services],
-.im-catalog-modal--category-ironmebel-pro .im-catalog-modal__list[data-catalog-category=ironmebel-pro] {
-  display: flex;
 }
 
 .im-catalog-modal__item {
