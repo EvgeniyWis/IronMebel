@@ -7747,6 +7747,18 @@ body.im-user-logged-in .im-header__user {
   .im-product-page__bundle-summary {
     min-height: 220px;
   }
+  .im-product-page__bundle-item .im-goods__card {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+  .im-product-page__bundle-item .im-goods__image {
+    height: 160px;
+    min-height: 160px;
+  }
+  .im-product-page__bundle-item .im-goods__image img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
   .im-product-page__bundle-title {
     margin-bottom: 16px;
     font-size: var(--font-xl-size);
@@ -7754,6 +7766,7 @@ body.im-user-logged-in .im-header__user {
   .im-product-page__bundle-row {
     display: flex;
     overflow-x: auto;
+    align-items: stretch;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     gap: 8px;
@@ -7767,6 +7780,7 @@ body.im-user-logged-in .im-header__user {
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
   .im-product-page__reviews-write {
@@ -7788,7 +7802,9 @@ body.im-user-logged-in .im-header__user {
     width: calc((100% - 8px) / 2);
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
+    height: auto;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
   .im-product-page__bundle-summary-price {
@@ -8429,6 +8445,18 @@ body.im-user-logged-in .im-header__user {
   .im-product-page__bundle-summary {
     min-height: 220px;
   }
+  .im-product-page__bundle-item .im-goods__card {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+  .im-product-page__bundle-item .im-goods__image {
+    height: 160px;
+    min-height: 160px;
+  }
+  .im-product-page__bundle-item .im-goods__image img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
   .im-product-page__bundle-title {
     margin-bottom: 16px;
     font-size: var(--font-xl-size);
@@ -8436,6 +8464,7 @@ body.im-user-logged-in .im-header__user {
   .im-product-page__bundle-row {
     display: flex;
     overflow-x: auto;
+    align-items: stretch;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     gap: 8px;
@@ -8460,6 +8489,7 @@ body.im-user-logged-in .im-header__user {
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
   .im-product-page__bundle-operator {
@@ -8478,7 +8508,9 @@ body.im-user-logged-in .im-header__user {
     width: calc((100% - 8px) / 2);
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
+    height: auto;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
   .im-product-page__details-tabs {

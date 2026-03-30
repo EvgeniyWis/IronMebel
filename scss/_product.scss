@@ -2653,7 +2653,7 @@
   width: 100%;
   max-width: none;
   flex: 1 1 auto;
-      max-height: 337px;
+  max-height: 337px;
   min-height: 0;
   aspect-ratio: auto;
 }
@@ -2933,6 +2933,20 @@
     min-height: 220px;
   }
 
+  .im-product-page__bundle-item .im-goods__card {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+
+  .im-product-page__bundle-item .im-goods__image {
+    height: 160px;
+    min-height: 160px;
+  }
+
+  .im-product-page__bundle-item .im-goods__image img {
+    object-fit: contain;
+  }
+
   .im-product-page__bundle-title {
     margin-bottom: 16px;
     font-size: var(--font-xl-size);
@@ -2941,6 +2955,7 @@
   .im-product-page__bundle-row {
     display: flex;
     overflow-x: auto;
+    align-items: stretch;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     gap: 8px;
@@ -2956,6 +2971,7 @@
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
 
@@ -2980,7 +2996,9 @@
     width: calc((100% - 8px) / 2);
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
+    height: auto;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
 
@@ -3763,6 +3781,20 @@
     min-height: 220px;
   }
 
+  .im-product-page__bundle-item .im-goods__card {
+    flex: 1 1 auto;
+    height: 100%;
+  }
+
+  .im-product-page__bundle-item .im-goods__image {
+    height: 160px;
+    min-height: 160px;
+  }
+
+  .im-product-page__bundle-item .im-goods__image img {
+    object-fit: contain;
+  }
+
   .im-product-page__bundle-title {
     margin-bottom: 16px;
     font-size: var(--font-xl-size);
@@ -3771,6 +3803,7 @@
   .im-product-page__bundle-row {
     display: flex;
     overflow-x: auto;
+    align-items: stretch;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     gap: 8px;
@@ -3799,6 +3832,7 @@
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
 
@@ -3819,7 +3853,9 @@
     width: calc((100% - 8px) / 2);
     min-width: calc((100% - 8px) / 2);
     min-height: 200px;
+    height: auto;
     flex-shrink: 0;
+    align-self: stretch;
     scroll-snap-align: start;
   }
 
