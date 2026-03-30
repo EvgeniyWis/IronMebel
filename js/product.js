@@ -721,6 +721,7 @@ function initProductGoodsCarousels(root = document) {
       mode: "free-snap",
       rubberband: false,
       drag: true,
+      loop: true,
       slides: {
         origin: "auto",
         perView: 4,
