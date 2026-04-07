@@ -784,65 +784,50 @@ const initDecisionsSliders = () => {
   if (typeof KeenSlider === "undefined") return;
 
   const MOBILE_DECISIONS_BREAKPOINT = 600;
-  const sliders = document.querySelectorAll(".im-decisions__slider");
+  const sliderRoot = document.querySelector("[data-decisions-slider]");
 
-  if (!sliders.length) return;
+  if (!sliderRoot) return;
 
-  const instances = [];
+  let instance = null;
 
-  const destroyAll = () => {
-    instances.forEach((instance) => {
-      try {
-        instance.destroy();
-      } catch (e) {
-        // ignore
-      }
+  const destroy = () => {
+    if (!instance) return;
+
+    try {
+      instance.destroy();
+    } catch (e) {
+      // ignore
+    }
+
+    instance = null;
+    sliderRoot.classList.remove("keen-slider");
+    sliderRoot.removeAttribute("style");
+
+    sliderRoot.querySelectorAll(".keen-slider__slide").forEach((slide) => {
+      slide.removeAttribute("style");
     });
-    instances.length = 0;
   };
 
   const setup = () => {
     const isMobile = window.innerWidth <= MOBILE_DECISIONS_BREAKPOINT;
 
     if (!isMobile) {
-      if (instances.length) {
-        destroyAll();
-      }
+      destroy();
       return;
     }
 
-    if (instances.length) return;
+    if (instance) return;
 
-    let isSyncing = false;
+    sliderRoot.classList.add("keen-slider");
 
-    sliders.forEach((slider) => {
-      const root = slider.querySelector(".keen-slider") || slider;
-
-      const instance = new KeenSlider(root, {
-        slides: {
-          perView: 2.2,
-          spacing: 8,
-        },
-        loop: false,
-        drag: true,
-        rubberband: false,
-      });
-
-      instances.push(instance);
-    });
-
-    instances.forEach((instance, i) => {
-      instance.on("slideChanged", (s) => {
-        if (isSyncing) return;
-        isSyncing = true;
-        const idx = s.track.details.rel;
-        instances.forEach((other, j) => {
-          if (i !== j) other.moveToIdx(idx);
-        });
-        requestAnimationFrame(() => {
-          isSyncing = false;
-        });
-      });
+    instance = new KeenSlider(sliderRoot, {
+      slides: {
+        perView: "auto",
+        spacing: 12,
+      },
+      loop: false,
+      drag: true,
+      rubberband: false,
     });
   };
 
@@ -852,60 +837,6 @@ const initDecisionsSliders = () => {
 
 initDecisionsSliders();
 
-/* ─── Projects Slider ──────────────────────────────────────── */
-const initProjectsSlider = () => {
-  const container = document.querySelector(".im-projects");
-  if (!container) return;
-
-  const sliderRoot = container.querySelector("#projects-slider");
-  if (!sliderRoot) return;
-
-  const prevBtn = container.querySelector(".im-projects__arrow--prev");
-  const nextBtn = container.querySelector(".im-projects__arrow--next");
-
-  const slider = new KeenSlider(sliderRoot, {
-    slides: {
-      perView: 3,
-      spacing: 16,
-    },
-    loop: false,
-    drag: true,
-    rubberband: false,
-    breakpoints: {
-      "(max-width: 1200px)": {
-        slides: { perView: 2.5, spacing: 14 },
-      },
-      "(max-width: 900px)": {
-        slides: { perView: 2.15, spacing: 12 },
-      },
-      "(max-width: 600px)": {
-        slides: { perView: 1.15, spacing: 10 },
-      },
-    },
-    created(s) {
-      updateArrows(s);
-    },
-    slideChanged(s) {
-      updateArrows(s);
-    },
-  });
-
-  function updateArrows(s) {
-    if (!prevBtn || !nextBtn) return;
-    prevBtn.disabled = s.track.details.rel === 0;
-    nextBtn.disabled = s.track.details.rel === s.track.details.maxIdx;
-  }
-
-  if (prevBtn) {
-    prevBtn.addEventListener("click", () => slider.prev());
-  }
-  if (nextBtn) {
-    nextBtn.addEventListener("click", () => slider.next());
-  }
-};
-
-initProjectsSlider();
-
 /* ─── Partners Slider ──────────────────────────────────────── */
 const initPartnersSlider = () => {
   if (typeof KeenSlider === "undefined") return;
@@ -913,40 +844,121 @@ const initPartnersSlider = () => {
   const container = document.querySelector(".im-partners");
   if (!container) return;
 
-  const baseSliderRoot = container.querySelector("#partners-slider");
-  if (!baseSliderRoot) return;
+  const sliderWrapper = container.querySelector(".im-partners__slider");
+  const initialRoot = sliderWrapper?.querySelector("#partners-slider");
+  if (!sliderWrapper || !initialRoot) return;
 
-  const isMobile = window.matchMedia("(max-width: 600px)").matches;
+  const prevBtn = container.querySelector(".im-partners__nav-btn--prev");
+  const nextBtn = container.querySelector(".im-partners__nav-btn--next");
+  const originalItems = Array.from(initialRoot.children).map((item) =>
+    item.cloneNode(true),
+  );
+  const mobileMediaQuery = window.matchMedia("(max-width: 600px)");
+  const mobileStep = 2;
+  let desktopSlider = null;
+  let mobileSliders = [];
+  let currentMode = null;
+  let isSyncingMobileRows = false;
 
-  // Мобильная версия: 2 отдельных слайдера (2 строки партнёров)
-  if (isMobile) {
-    const items = Array.from(
-      baseSliderRoot.querySelectorAll(".im-partners__item"),
-    );
-    if (!items.length || !baseSliderRoot.parentElement) return;
+  const buildDesktopList = () => {
+    const desktopRoot = document.createElement("div");
+    desktopRoot.className = "im-partners__list keen-slider";
+    desktopRoot.id = "partners-slider";
+    originalItems.forEach((item) => desktopRoot.appendChild(item.cloneNode(true)));
+    return desktopRoot;
+  };
 
-    const sliderWrapper = baseSliderRoot.parentElement;
+  const buildMobileRows = () => {
+    const rowTop = document.createElement("div");
+    rowTop.className = "im-partners__list keen-slider im-partners__list--mobile";
 
-    // Создаём два отдельных корня слайдера
-    const row1 = document.createElement("div");
-    row1.className = "im-partners__list keen-slider im-partners__list--mobile";
-    row1.id = "partners-slider-mobile-1";
+    const rowBottom = document.createElement("div");
+    rowBottom.className =
+      "im-partners__list keen-slider im-partners__list--mobile";
 
-    const row2 = document.createElement("div");
-    row2.className = "im-partners__list keen-slider im-partners__list--mobile";
-    row2.id = "partners-slider-mobile-2";
+    const midpoint = Math.ceil(originalItems.length / 2);
 
-    const half = Math.ceil(items.length / 2);
-
-    items.forEach((item, index) => {
-      const target = index < half ? row1 : row2;
-      target.appendChild(item);
+    originalItems.forEach((item, index) => {
+      const targetRow = index < midpoint ? rowTop : rowBottom;
+      targetRow.appendChild(item.cloneNode(true));
     });
 
-    // Заменяем исходный слайдер двумя мобильными
+    return [rowTop, rowBottom];
+  };
+
+  const destroySliders = () => {
+    if (desktopSlider) {
+      desktopSlider.destroy();
+      desktopSlider = null;
+    }
+
+    mobileSliders.forEach((slider) => slider.destroy());
+    mobileSliders = [];
+    isSyncingMobileRows = false;
+  };
+
+  const setDesktopArrowsState = (slider) => {
+    if (!prevBtn || !nextBtn) return;
+
+    const details = slider.track.details;
+    if (!details) return;
+
+    prevBtn.disabled = details.rel === 0;
+    nextBtn.disabled = details.rel === details.maxIdx;
+  };
+
+  const clampSliderIndex = (slider, index) => {
+    const details = slider.track.details;
+    if (!details) return 0;
+    return Math.max(0, Math.min(index, details.maxIdx));
+  };
+
+  const syncMobileRows = (sourceSlider) => {
+    if (isSyncingMobileRows || !sourceSlider.track.details) return;
+
+    const currentIndex = sourceSlider.track.details.rel;
+    const groupedIndex = Math.round(currentIndex / mobileStep) * mobileStep;
+    const targetIndex = clampSliderIndex(sourceSlider, groupedIndex);
+
+    isSyncingMobileRows = true;
+
+    mobileSliders.forEach((slider) => {
+      const sliderIndex = clampSliderIndex(slider, targetIndex);
+      if (slider.track.details && slider.track.details.rel !== sliderIndex) {
+        slider.moveToIdx(sliderIndex);
+      }
+    });
+
+    requestAnimationFrame(() => {
+      isSyncingMobileRows = false;
+    });
+  };
+
+  const setupDesktopSlider = () => {
     sliderWrapper.innerHTML = "";
-    sliderWrapper.appendChild(row1);
-    sliderWrapper.appendChild(row2);
+    const desktopRoot = buildDesktopList();
+    sliderWrapper.appendChild(desktopRoot);
+
+    desktopSlider = new KeenSlider(desktopRoot, {
+      slides: {
+        perView: "auto",
+        spacing: 12,
+      },
+      loop: false,
+      drag: true,
+      rubberband: false,
+    });
+
+    desktopSlider.on("created", setDesktopArrowsState);
+    desktopSlider.on("slideChanged", setDesktopArrowsState);
+    desktopSlider.on("updated", setDesktopArrowsState);
+  };
+
+  const setupMobileSliders = () => {
+    sliderWrapper.innerHTML = "";
+    const [rowTop, rowBottom] = buildMobileRows();
+    sliderWrapper.appendChild(rowTop);
+    sliderWrapper.appendChild(rowBottom);
 
     const mobileOptions = {
       slides: {
@@ -958,60 +970,52 @@ const initPartnersSlider = () => {
       rubberband: false,
       breakpoints: {
         "(max-width: 400px)": {
-          slides: { perView: 2.2, spacing: 8 },
+          slides: { perView: 2, spacing: 8 },
         },
       },
     };
 
-    new KeenSlider(row1, mobileOptions);
-    new KeenSlider(row2, mobileOptions);
+    mobileSliders = [
+      new KeenSlider(rowTop, mobileOptions),
+      new KeenSlider(rowBottom, mobileOptions),
+    ];
 
-    return;
-  }
+    mobileSliders.forEach((slider) => {
+      slider.on("created", () => syncMobileRows(slider));
+      slider.on("animationEnded", () => syncMobileRows(slider));
+      slider.on("updated", () => syncMobileRows(slider));
+    });
+  };
 
-  // Десктоп/планшет: один слайдер с навигацией
-  const prevBtn = container.querySelector(".im-partners__nav-btn--prev");
-  const nextBtn = container.querySelector(".im-partners__nav-btn--next");
+  const setupPartnersSlider = () => {
+    const nextMode = mobileMediaQuery.matches ? "mobile" : "desktop";
+    if (nextMode === currentMode) return;
 
-  const slider = new KeenSlider(baseSliderRoot, {
-    slides: {
-      perView: 6.2,
-      spacing: 0,
-    },
-    loop: false,
-    drag: true,
-    rubberband: false,
-    breakpoints: {
-      "(max-width: 1200px)": {
-        slides: { perView: 5, spacing: 14 },
-      },
-      "(max-width: 900px)": {
-        slides: { perView: 4, spacing: 12 },
-      },
-      "(max-width: 600px)": {
-        slides: { perView: 2.4, spacing: 10 },
-      },
-      "(max-width: 400px)": {
-        slides: { perView: 1.6, spacing: 8 },
-      },
-    },
-  });
+    destroySliders();
 
-  function updateArrows(s) {
-    if (!prevBtn || !nextBtn) return;
-    prevBtn.disabled = s.track.details.rel === 0;
-    nextBtn.disabled = s.track.details.rel === s.track.details.maxIdx;
-  }
+    if (nextMode === "mobile") {
+      setupMobileSliders();
+    } else {
+      setupDesktopSlider();
+    }
 
-  slider.on("created", updateArrows);
-  slider.on("slideChanged", updateArrows);
+    currentMode = nextMode;
+  };
 
   if (prevBtn) {
-    prevBtn.addEventListener("click", () => slider.prev());
+    prevBtn.addEventListener("click", () => {
+      if (desktopSlider) desktopSlider.prev();
+    });
   }
+
   if (nextBtn) {
-    nextBtn.addEventListener("click", () => slider.next());
+    nextBtn.addEventListener("click", () => {
+      if (desktopSlider) desktopSlider.next();
+    });
   }
+
+  setupPartnersSlider();
+  mobileMediaQuery.addEventListener("change", setupPartnersSlider);
 };
 
 initPartnersSlider();
@@ -1031,18 +1035,15 @@ const initProfessionalsSlider = () => {
 
   const slider = new KeenSlider(sliderRoot, {
     slides: {
-      perView: 3,
+      perView: "auto",
       spacing: 12,
     },
     loop: false,
     drag: true,
     rubberband: false,
     breakpoints: {
-      "(max-width: 1200px)": {
-        slides: { perView: 2, spacing: 12 },
-      },
       "(max-width: 768px)": {
-        slides: { perView: 1.2, spacing: 10 },
+        slides: { perView: "auto", spacing: 10 },
       },
     },
   });
@@ -1068,6 +1069,8 @@ initProfessionalsSlider();
 
 /* ─── Industries Slider ───────────────────────────────────── */
 const initIndustriesSlider = () => {
+  if (typeof KeenSlider === "undefined") return;
+
   const container = document.querySelector(".im-industries");
   if (!container) return;
 
@@ -1077,47 +1080,14 @@ const initIndustriesSlider = () => {
   const prevBtn = container.querySelector(".im-industries__arrow--prev");
   const nextBtn = container.querySelector(".im-industries__arrow--next");
 
-  // Pair slides into two-row columns
-  const slides = Array.from(sliderRoot.querySelectorAll(".keen-slider__slide"));
-  sliderRoot.innerHTML = "";
-  for (let i = 0; i < slides.length; i += 2) {
-    const col = document.createElement("div");
-    col.className = "keen-slider__slide im-industries__column";
-    col.appendChild(slides[i].querySelector(".im-industries__card"));
-    if (slides[i + 1]) {
-      col.appendChild(slides[i + 1].querySelector(".im-industries__card"));
-    }
-    sliderRoot.appendChild(col);
-  }
-
   const slider = new KeenSlider(sliderRoot, {
     slides: {
-      perView: 3,
-      spacing: 16,
+      perView: "auto",
+      spacing: 0,
     },
     loop: false,
     drag: true,
     rubberband: false,
-    breakpoints: {
-      "(max-width: 1200px)": {
-        slides: { perView: 2.5, spacing: 14 },
-      },
-      "(max-width: 900px)": {
-        slides: { perView: 2, spacing: 12 },
-      },
-      "(max-width: 600px)": {
-        slides: { perView: 1.4, spacing: 10 },
-      },
-      "(max-width: 350px)": {
-        slides: { perView: 1, spacing: 10 },
-      },
-    },
-    created(s) {
-      updateArrows(s);
-    },
-    slideChanged(s) {
-      updateArrows(s);
-    },
   });
 
   function updateArrows(s) {
@@ -1125,6 +1095,10 @@ const initIndustriesSlider = () => {
     prevBtn.disabled = s.track.details.rel === 0;
     nextBtn.disabled = s.track.details.rel === s.track.details.maxIdx;
   }
+
+  slider.on("created", updateArrows);
+  slider.on("slideChanged", updateArrows);
+  slider.on("updated", updateArrows);
 
   if (prevBtn) {
     prevBtn.addEventListener("click", () => slider.prev());
@@ -1135,6 +1109,73 @@ const initIndustriesSlider = () => {
 };
 
 initIndustriesSlider();
+
+const initHeroSlider = () => {
+  const container = document.querySelector("[data-hero-slider]");
+  const sliderRoot = container?.querySelector("[data-hero-slider-track]");
+  const pagination = container?.querySelector("[data-hero-slider-pagination]");
+
+  if (!container || !sliderRoot || !pagination) return;
+  if (container.dataset.sliderReady === "true") return;
+  if (typeof KeenSlider === "undefined") return;
+
+  /** @type {HTMLButtonElement[]} */
+  let dots = [];
+
+  const syncPagination = (current) => {
+    if (!dots.length) return;
+
+    dots.forEach((dot, index) => {
+      const isActive = index === current;
+      dot.classList.toggle("is-active", isActive);
+      dot.setAttribute("aria-current", isActive ? "true" : "false");
+    });
+  };
+
+  const slider = new KeenSlider(sliderRoot, {
+    slides: {
+      perView: 1,
+      spacing: 0,
+    },
+    loop: false,
+    drag: true,
+    rubberband: false,
+    created(instance) {
+      const slideCount = instance.slides.length;
+      pagination.innerHTML = "";
+      dots = [];
+
+      if (slideCount <= 1) {
+        pagination.hidden = true;
+        return;
+      }
+
+      pagination.hidden = false;
+
+      for (let index = 0; index < slideCount; index += 1) {
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "im-hero__slider-dot";
+        dot.setAttribute("aria-label", `Перейти к слайду ${index + 1}`);
+        dot.setAttribute("aria-current", index === 0 ? "true" : "false");
+        dot.addEventListener("click", () => {
+          slider.moveToIdx(index);
+        });
+        pagination.appendChild(dot);
+        dots.push(dot);
+      }
+
+      syncPagination(0);
+    },
+    slideChanged(instance) {
+      syncPagination(instance.track.details.rel);
+    },
+  });
+
+  container.dataset.sliderReady = "true";
+};
+
+initHeroSlider();
 
 /* ─── Goods card slider (Keen Slider inside product card) ─── */
 const initHomeGoodsCardSliders = () => {
@@ -1307,37 +1348,29 @@ const initBlogSlider = () => {
   };
 
   const setup = () => {
-    const shouldBeSlider = window.innerWidth < 1200;
+    const shouldBeSlider = window.innerWidth <= 600;
 
-    if (shouldBeSlider) {
-      if (sliderInstance) return;
-
-      sliderRoot.classList.add("keen-slider");
-      cards.forEach((card) => card.classList.add("keen-slider__slide"));
-
-      sliderInstance = new KeenSlider(sliderRoot, {
-        slides: {
-          perView: 3,
-          spacing: 16,
-        },
-        loop: false,
-        drag: true,
-        rubberband: false,
-        breakpoints: {
-          "(max-width: 900px)": {
-            slides: { perView: 2.1, spacing: 14 },
-          },
-          "(max-width: 600px)": {
-            // Мобильный вид: одна карточка, как на макете
-            slides: { perView: 1.4, spacing: 8 },
-          },
-        },
-      });
-    } else {
-      if (sliderInstance) {
-        destroySlider();
-      }
+    if (!shouldBeSlider) {
+      destroySlider();
+      sliderRoot.classList.remove("keen-slider");
+      cards.forEach((card) => card.classList.remove("keen-slider__slide"));
+      return;
     }
+
+    if (sliderInstance) return;
+
+    sliderRoot.classList.add("keen-slider");
+    cards.forEach((card) => card.classList.add("keen-slider__slide"));
+
+    sliderInstance = new KeenSlider(sliderRoot, {
+      slides: {
+        perView: "auto",
+        spacing: 12,
+      },
+      loop: false,
+      drag: true,
+      rubberband: false,
+    });
   };
 
   setup();

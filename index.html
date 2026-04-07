@@ -3502,25 +3502,19 @@
         <div class="im-container">
           <div class="im-hero__inner">
             <article class="im-hero__main">
-              <img
-                class="im-hero__main-bg"
-                src="images/main/main_photo.png"
-                alt="Металлические стеллажи IronMebel на складе"
-              />
               <div class="im-hero__main-content">
-                <h1 class="im-hero__title">
-                  Металлическая мебель
-                  <span class="im-hero__title-accent">для бизнеса</span>
-                </h1>
-                <p class="im-hero__subtitle">
-                  <span class="im-hero__subtitle-accent">
-                    Со сроком службы 50+ лет
-                  </span>
-                </p>
-                <p class="im-hero__text">
-                  Наша мебель — это актив, который сокращает потери, ускоряет
-                  процессы и масштабируется вместе с бизнесом.
-                </p>
+                <div class="im-hero__content-head">
+                  <h1 class="im-hero__title">
+                    Металлическая<br />
+                    мебель<br />
+                    для бизнеса
+                  </h1>
+                  <p class="im-hero__subtitle">
+                    <span class="im-hero__subtitle-accent">
+                      со сроком службы 50+ лет
+                    </span>
+                  </p>
+                </div>
                 <ul class="im-hero__benefits">
                   <li class="im-hero__benefit">
                     <span class="im-hero__benefit-icon" aria-hidden="true">
@@ -3554,9 +3548,9 @@
                         />
                       </svg>
                     </span>
-                    <span class="im-hero__benefit-text"
-                      >Собственное производство</span
-                    >
+                    <span class="im-hero__benefit-text">
+                      Повышенная нагрузка
+                    </span>
                   </li>
                   <li class="im-hero__benefit">
                     <span class="im-hero__benefit-icon" aria-hidden="true">
@@ -3573,50 +3567,78 @@
                         />
                       </svg>
                     </span>
-                    <span class="im-hero__benefit-text"
-                      >Доставка по всей России</span
-                    >
+                    <span class="im-hero__benefit-text">
+                      Высокие стандарты качества
+                    </span>
                   </li>
                 </ul>
               </div>
-            </article>
-
-            <aside class="im-hero__side" aria-label="Тест-драйв продукции">
-              <div class="im-hero__side-main">
-                <div class="im-hero__side-image">
-                  <img
-                    src="images/main/test_drive.png"
-                    alt="Стеллаж IronMebel для тест-драйва"
-                  />
-                </div>
-                <div class="im-hero__side-content">
-                  <div class="im-hero__side-header">
-                    <h2 class="im-hero__side-title">Тест-драйв прямо у вас</h2>
-                    <p class="im-hero__side-text">
-                      Протестируйте нашу продукцию в реальных условиях своего
-                      бизнеса.
-                    </p>
+              <div class="im-hero__slider" data-hero-slider>
+                <div
+                  class="im-hero__slider-track keen-slider"
+                  data-hero-slider-track
+                >
+                  <div class="im-hero__slider-slide keen-slider__slide">
+                    <img
+                      src="images/main/frame-rediz.png"
+                      alt="Металлические стеллажи IronMebel на складе"
+                    />
+                  </div>
+                  <div class="im-hero__slider-slide keen-slider__slide">
+                    <img
+                      src="images/main/frame-rediz.png"
+                      alt="Металлические стеллажи IronMebel на складе"
+                    />
+                  </div>
+                  <div class="im-hero__slider-slide keen-slider__slide">
+                    <img
+                      src="images/main/frame-rediz.png"
+                      alt="Металлические стеллажи IronMebel на складе"
+                    />
+                  </div>
+                  <div class="im-hero__slider-slide keen-slider__slide">
+                    <img
+                      src="images/main/frame-rediz.png"
+                      alt="Металлические стеллажи IronMebel на складе"
+                    />
                   </div>
                 </div>
+                <div
+                  class="im-hero__slider-pagination"
+                  data-hero-slider-pagination
+                  aria-label="Пагинация слайдера"
+                ></div>
               </div>
-              <button class="im-hero__cta" type="button">
-                <span class="im-hero__cta-text">Заказать тест-драйв</span>
-                <span class="im-hero__cta-icon" aria-hidden="true">
-                  <svg
-                    width="9"
-                    height="9"
-                    viewBox="0 0 9 9"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                      fill="white"
-                    />
-                  </svg>
-                </span>
+            </article>
+
+            <section
+              class="im-hero__test-drive"
+              aria-labelledby="im-hero-test-drive-title"
+            >
+              <div class="im-hero__test-drive-heading">
+                <h2 class="im-hero__test-drive-title" id="im-hero-test-drive-title">
+                  <span class="im-hero__test-drive-title-accent">Тест-драйв</span>
+                  <span class="im-hero__test-drive-title-main">прямо у вас</span>
+                </h2>
+              </div>
+              <button
+                class="im-hero__test-drive-arrow"
+                type="button"
+                aria-label="Подробнее о тест-драйве"
+              >
+                <img
+                  src="images/main/arrow.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
               </button>
-            </aside>
+              <p class="im-hero__test-drive-text">
+                Протестируйте нашу продукцию в реальных условиях своего бизнеса
+              </p>
+              <button class="im-hero__cta" type="button">
+                Заказать тест-драйв
+              </button>
+            </section>
           </div>
         </div>
       </section>
@@ -3628,7 +3650,6 @@
               Все решения в одном каталоге
             </h2>
             <button class="im-decisions__download" type="button">
-              <span class="im-decisions__download-text">Скачать каталог</span>
               <span class="im-decisions__download-icon" aria-hidden="true">
                 <svg
                   width="14"
@@ -3643,1098 +3664,254 @@
                   />
                 </svg>
               </span>
+              <span class="im-decisions__download-text">Скачать каталог</span>
             </button>
           </header>
 
-          <div class="im-decisions__grid" role="list">
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--1"
+          <div class="im-decisions__grid" data-decisions-slider role="list">
+            <article
+              class="im-decisions__item im-decisions__item--promo keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img src="images/decisions/decision_7.png" alt="Стеллажи" />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">Стеллажи</span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content im-decisions__content--promo">
+                <span class="im-decisions__promo-ribbon">10 лет гарантия</span>
+                <div class="im-decisions__promo-copy">
+                  <div class="im-decisions__promo-title-group">
+                    <span class="im-decisions__promo-series">Серия</span>
+                    <span class="im-decisions__promo-brand">Ironmebel</span>
+                    <span class="im-decisions__promo-brand im-decisions__promo-brand--accent">
+                      PRO
+                    </span>
+                  </div>
+                  <p class="im-decisions__promo-text">
+                    Инвестируйте в основу. Выбирайте ПРО
+                  </p>
+                </div>
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--primary"
+                >
+                  Перейти в каталог
+                </a>
               </div>
-            </a>
+            </article>
 
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--2"
+            <article
+              class="im-decisions__item im-decisions__item--default keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img src="images/decisions/decision_6.png" alt="Верстаки" />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">Верстаки</span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content">
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--label"
+                >
+                  Стеллажи для склада
+                </a>
               </div>
-            </a>
+            </article>
 
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--3"
+            <article
+              class="im-decisions__item im-decisions__item--default keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img
-                  src="images/decisions/decision_1.png"
-                  alt="Системы хранения"
-                />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">Системы хранения</span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content">
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--label"
+                >
+                  Полочные стеллажи
+                </a>
               </div>
-            </a>
+            </article>
 
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--4"
+            <article
+              class="im-decisions__item im-decisions__item--default keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img src="images/decisions/decision_2.png" alt="Шкафы" />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">Шкафы</span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content">
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--label"
+                >
+                  Инструментальные шкафы
+                </a>
               </div>
-            </a>
+            </article>
 
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--5"
+            <article
+              class="im-decisions__item im-decisions__item--default keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img src="images/decisions/decision_1.png" alt="Услуги" />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">Услуги</span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content">
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--label"
+                >
+                  Верстаки слесарные
+                </a>
               </div>
-            </a>
+            </article>
 
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--6"
+            <article
+              class="im-decisions__item im-decisions__item--default keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img
-                  src="images/decisions/decision_5.png"
-                  alt="Монтажные столы"
-                />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">Монтажные столы</span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content">
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--label"
+                >
+                  Верстаки слесарные
+                </a>
               </div>
-            </a>
+            </article>
 
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--7"
+            <article
+              class="im-decisions__item im-decisions__item--default keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img
-                  src="images/decisions/decision_4.png"
-                  alt="Упаковочные столы"
-                />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">Упаковочные столы</span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content">
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--label"
+                >
+                  Системы хранения
+                </a>
               </div>
-            </a>
+            </article>
 
-            <a
-              href="#"
-              class="im-decisions__item im-decisions__item--8 im-decisions__item--accent"
+            <article
+              class="im-decisions__item im-decisions__item--cta keen-slider__slide"
               role="listitem"
             >
-              <div class="im-decisions__image">
-                <img src="images/decisions/decision_3.png" alt="Серия PRO" />
+              <div class="im-decisions__media" aria-hidden="true">
+                <img src="images/main/frame-decisions.png" alt="" />
               </div>
-              <div class="im-decisions__label">
-                <span class="im-decisions__label-text">
-                  Серия <span class="im-decisions__label-accent">ПРО</span>
-                </span>
-                <span class="im-decisions__label-arrow" aria-hidden="true">
-                  <svg
-                    width="5"
-                    height="12"
-                    viewBox="0 0 5 12"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                      fill="#999999"
-                    />
-                  </svg>
-                </span>
+              <div class="im-decisions__content im-decisions__content--cta">
+                <a
+                  href="#"
+                  class="im-decisions__action im-decisions__action--secondary"
+                >
+                  Подробнее
+                </a>
               </div>
-            </a>
-          </div>
-
-          <div class="im-decisions__sliders" aria-hidden="true">
-            <div class="im-decisions__slider im-decisions__slider--primary">
-              <div class="keen-slider">
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--1">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_7.png"
-                        alt="Стеллажи"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Стеллажи</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--2">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_6.png"
-                        alt="Верстаки"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Верстаки</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--3">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_1.png"
-                        alt="Системы хранения"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Системы хранения</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--4">
-                    <div class="im-decisions__image">
-                      <img src="images/decisions/decision_2.png" alt="Шкафы" />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Шкафы</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--1">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_7.png"
-                        alt="Стеллажи"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Стеллажи</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--2">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_6.png"
-                        alt="Верстаки"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Верстаки</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--3">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_1.png"
-                        alt="Системы хранения"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Системы хранения</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--4">
-                    <div class="im-decisions__image">
-                      <img src="images/decisions/decision_2.png" alt="Шкафы" />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Шкафы</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--1">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_7.png"
-                        alt="Стеллажи"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Стеллажи</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--2">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_6.png"
-                        alt="Верстаки"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Верстаки</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--3">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_1.png"
-                        alt="Системы хранения"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Системы хранения</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--4">
-                    <div class="im-decisions__image">
-                      <img src="images/decisions/decision_2.png" alt="Шкафы" />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Шкафы</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <div class="im-decisions__slider im-decisions__slider--secondary">
-              <div class="keen-slider">
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--5">
-                    <div class="im-decisions__image">
-                      <img src="images/decisions/decision_1.png" alt="Услуги" />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Услуги</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--6">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_5.png"
-                        alt="Монтажные столы"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Монтажные столы</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--7">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_4.png"
-                        alt="Упаковочные столы"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Упаковочные столы</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a
-                    href="#"
-                    class="im-decisions__item im-decisions__item--8 im-decisions__item--accent"
-                  >
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_3.png"
-                        alt="Серия PRO"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">
-                        Серия
-                        <span class="im-decisions__label-accent">ПРО</span>
-                      </span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--5">
-                    <div class="im-decisions__image">
-                      <img src="images/decisions/decision_1.png" alt="Услуги" />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Услуги</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--6">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_5.png"
-                        alt="Монтажные столы"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Монтажные столы</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--7">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_4.png"
-                        alt="Упаковочные столы"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Упаковочные столы</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a
-                    href="#"
-                    class="im-decisions__item im-decisions__item--8 im-decisions__item--accent"
-                  >
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_3.png"
-                        alt="Серия PRO"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">
-                        Серия
-                        <span class="im-decisions__label-accent">ПРО</span>
-                      </span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--5">
-                    <div class="im-decisions__image">
-                      <img src="images/decisions/decision_1.png" alt="Услуги" />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">Услуги</span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--6">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_5.png"
-                        alt="Монтажные столы"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Монтажные столы</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a href="#" class="im-decisions__item im-decisions__item--7">
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_4.png"
-                        alt="Упаковочные столы"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text"
-                        >Упаковочные столы</span
-                      >
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-
-                <div class="keen-slider__slide">
-                  <a
-                    href="#"
-                    class="im-decisions__item im-decisions__item--8 im-decisions__item--accent"
-                  >
-                    <div class="im-decisions__image">
-                      <img
-                        src="images/decisions/decision_3.png"
-                        alt="Серия PRO"
-                      />
-                    </div>
-                    <div class="im-decisions__label">
-                      <span class="im-decisions__label-text">
-                        Серия
-                        <span class="im-decisions__label-accent">ПРО</span>
-                      </span>
-                      <span
-                        class="im-decisions__label-arrow"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="5"
-                          height="12"
-                          viewBox="0 0 5 12"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                            fill="#999999"
-                          />
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
+            </article>
           </div>
         </div>
       </section>
 
       <section class="im-best-choice" aria-labelledby="best-choice-title">
         <div class="im-container">
-          <header class="im-best-choice__head">
-            <h2 class="im-best-choice__title" id="best-choice-title">
-              <span class="im-best-choice__title-brand">Ironmebel</span>
-              &mdash; лучший выбор, и&nbsp;вот&nbsp;почему
-            </h2>
-          </header>
-
-          <div class="im-best-choice__grid" role="list">
-            <article class="im-best-choice__item" role="listitem">
-              <div class="im-best-choice__icon">
-                <img
-                  src="images/best_choice/best_choice_5.png"
-                  alt="Цифровая платформа"
-                />
-              </div>
-              <div class="im-best-choice__item-body">
-                <h3 class="im-best-choice__item-title">Цифровая платформа</h3>
-                <p class="im-best-choice__item-text">
-                  Контроль и управление всеми заказами в одном месте.
-                </p>
+          <div class="im-best-choice__layout">
+            <article class="im-best-choice__promo" aria-labelledby="best-choice-title">
+              <img
+                class="im-best-choice__promo-logo"
+                src="images/main/logo2.svg"
+                alt="Ironmebel"
+              />
+              <div class="im-best-choice__promo-copy">
+                <h2 class="im-best-choice__promo-title" id="best-choice-title">
+                  Лучший<br />
+                  выбор
+                </h2>
+                <p class="im-best-choice__promo-accent">И вот почему</p>
               </div>
             </article>
 
-            <article class="im-best-choice__item" role="listitem">
-              <div class="im-best-choice__icon">
-                <img
-                  src="images/best_choice/best_choice_4.png"
-                  alt="Персональный менеджер"
-                />
-              </div>
-              <div class="im-best-choice__item-body">
-                <h3 class="im-best-choice__item-title">
-                  Персональный менеджер
-                </h3>
-                <p class="im-best-choice__item-text">
-                  Единая точка контакта по всем вопросам.
-                </p>
-              </div>
-            </article>
+            <div class="im-best-choice__grid" role="list">
+              <article class="im-best-choice__item" role="listitem">
+                <div class="im-best-choice__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-best-choice__item-body">
+                  <h3 class="im-best-choice__item-title">Цифровая платформа</h3>
+                  <p class="im-best-choice__item-text">
+                    Контроль и управление всеми заказами в одном месте
+                  </p>
+                </div>
+              </article>
 
-            <article class="im-best-choice__item" role="listitem">
-              <div class="im-best-choice__icon">
-                <img
-                  src="images/best_choice/best_choice_3.png"
-                  alt="Отсрочка платежа"
-                />
-              </div>
-              <div class="im-best-choice__item-body">
-                <h3 class="im-best-choice__item-title">Отсрочка платежа</h3>
-                <p class="im-best-choice__item-text">
-                  Удобные финансовые условия для юридических лиц.
-                </p>
-              </div>
-            </article>
+              <article class="im-best-choice__item" role="listitem">
+                <div class="im-best-choice__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-best-choice__item-body">
+                  <h3 class="im-best-choice__item-title">Возврат НДС и ЭДО</h3>
+                  <p class="im-best-choice__item-text">
+                    Контроль и управление всеми заказами в одном месте
+                  </p>
+                </div>
+              </article>
 
-            <article class="im-best-choice__item" role="listitem">
-              <div class="im-best-choice__icon">
-                <img
-                  src="images/best_choice/best_choice_1.png"
-                  alt="Гарантия 10 лет"
-                />
-              </div>
-              <div class="im-best-choice__item-body">
-                <h3 class="im-best-choice__item-title">Гарантия 10 лет</h3>
-                <p class="im-best-choice__item-text">
-                  Гибкие условия для бизнеса и крупных закупок.
-                </p>
-              </div>
-            </article>
+              <article class="im-best-choice__item" role="listitem">
+                <div class="im-best-choice__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-best-choice__item-body">
+                  <h3 class="im-best-choice__item-title">Персональный менеджер</h3>
+                  <p class="im-best-choice__item-text">
+                    Единая точка контакта по всем вопросам
+                  </p>
+                </div>
+              </article>
 
-            <article class="im-best-choice__item" role="listitem">
-              <div class="im-best-choice__icon">
-                <img
-                  src="images/best_choice/best_choice_2.png"
-                  alt="Возврат НДС и ЭДО"
-                />
-              </div>
-              <div class="im-best-choice__item-body">
-                <h3 class="im-best-choice__item-title">Возврат НДС и ЭДО</h3>
-                <p class="im-best-choice__item-text">
-                  Быстрый и безопасный документооборот.
-                </p>
-              </div>
-            </article>
+              <article class="im-best-choice__item" role="listitem">
+                <div class="im-best-choice__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-best-choice__item-body">
+                  <h3 class="im-best-choice__item-title">Гарантия 10 лет</h3>
+                  <p class="im-best-choice__item-text">
+                    Гибкие условия для бизнеса и крупных закупок
+                  </p>
+                </div>
+              </article>
+
+              <article class="im-best-choice__item" role="listitem">
+                <div class="im-best-choice__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-best-choice__item-body">
+                  <h3 class="im-best-choice__item-title">Отсрочка платежа</h3>
+                  <p class="im-best-choice__item-text">
+                    Удобные финансовые условия для юридических лиц
+                  </p>
+                </div>
+              </article>
+
+              <article class="im-best-choice__item" role="listitem">
+                <div class="im-best-choice__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-best-choice__item-body">
+                  <h3 class="im-best-choice__item-title">Срок службы 50 лет</h3>
+                  <p class="im-best-choice__item-text">
+                    Гибкие условия для бизнеса и крупных закупок
+                  </p>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
@@ -4742,67 +3919,140 @@
       <section class="im-century" aria-labelledby="century-title">
         <div class="im-container">
           <div class="im-century__inner">
-            <article class="im-century__main" role="article">
+            <div class="im-century__content-block">
               <div class="im-century__content">
-                <p class="im-century__eyebrow">IRONMEBEL</p>
+                <p class="im-century__eyebrow">Инженерный стандарт</p>
                 <h2 class="im-century__title" id="century-title">
-                  Вековые решения из&nbsp;металла для бизнеса
+                  металлической<br />
+                  мебели
                 </h2>
-                <p class="im-century__text">
-                  Мы комплексно подходим к задачам бизнеса — от консультаций и
-                  подбора до монтажа на месте с гарантийными обязательствами.
-                </p>
-                <p class="im-century__text">
-                  Мы понимаем, что простое оборудование — это деньги, поэтому
-                  предлагаем надёжное и функциональное оборудование с гарантией
-                  от 10 лет.
-                </p>
-                <a href="#about" class="im-century__button"
-                  >Подробнее о компании</a
-                >
+                <div class="im-century__text-group">
+                  <p class="im-century__text">
+                    Мы комплексно подходим к задачам бизнеса — от консультаций и
+                    подбора до монтажа на месте с гарантийными обязательствами.
+                  </p>
+                  <p class="im-century__text">
+                    Мы понимаем, что простое оборудование — это деньги, поэтому
+                    предлагаем надёжное и функциональное оборудование с гарантией
+                    от 10 лет.
+                  </p>
+                </div>
+                <div class="im-century__metrics" role="list">
+                  <article class="im-century__metric" role="listitem">
+                    <p class="im-century__metric-value">95%</p>
+                    <p class="im-century__metric-text">
+                      Задач закрываем модульными решениями с проверенной
+                      надежностью
+                    </p>
+                  </article>
+                  <article class="im-century__metric" role="listitem">
+                    <p class="im-century__metric-value">100%</p>
+                    <p class="im-century__metric-text">
+                      Гарантия заявленных нагрузок даже в тяжелых условиях
+                      производства
+                    </p>
+                  </article>
+                </div>
               </div>
-              <div class="im-century__logo" aria-hidden="true">
-                <img src="images/century_decisions/logo.png" alt="" />
+            </div>
+
+            <div class="im-century__media" aria-hidden="true">
+              <img src="images/main/mujik.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="im-how-work" aria-labelledby="how-work-title">
+        <div class="im-container">
+          <div class="im-how-work__layout">
+            <article class="im-how-work__promo" aria-labelledby="how-work-title">
+              <img
+                class="im-how-work__promo-logo"
+                src="images/main/logo2.svg"
+                alt="Ironmebel"
+              />
+              <div class="im-how-work__promo-copy">
+                <h2 class="im-how-work__promo-title" id="how-work-title">
+                  Как мы<br />
+                  работаем
+                </h2>
+                <p class="im-how-work__promo-text">
+                  Создаем бескомпромиссные проекты, которые являются, частью
+                  производственной инфраструктуры вашего бизнеса.
+                </p>
               </div>
             </article>
 
-            <div class="im-century__stats" role="list">
-              <article class="im-century__stat" role="listitem">
-                <div class="im-century__stat-number">
-                  <span class="im-century__stat-value">50</span>
-                  <span class="im-century__stat-unit">лет</span>
+            <div class="im-how-work__grid" role="list">
+              <article class="im-how-work__item" role="listitem">
+                <div class="im-how-work__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
                 </div>
-                <div class="im-century__stat-body">
-                  <h3 class="im-century__stat-title">
-                    Эксплуатация без ремонта
-                  </h3>
-                  <p class="im-century__stat-text">
-                    1 контракт на весь жизненный цикл
+                <div class="im-how-work__item-body">
+                  <h3 class="im-how-work__item-title">Цифровая платформа</h3>
+                  <p class="im-how-work__item-text">
+                    Контроль и управление всеми заказами в одном месте
                   </p>
                 </div>
               </article>
 
-              <article class="im-century__stat" role="listitem">
-                <div class="im-century__stat-number">
-                  <span class="im-century__stat-value">99</span>
-                  <span class="im-century__stat-unit">%</span>
+              <article class="im-how-work__item" role="listitem">
+                <div class="im-how-work__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
                 </div>
-                <div class="im-century__stat-body">
-                  <h3 class="im-century__stat-title">
-                    Задач бизнеса закрываем готовыми решениями
-                  </h3>
+                <div class="im-how-work__item-body">
+                  <h3 class="im-how-work__item-title">Возврат НДС и ЭДО</h3>
+                  <p class="im-how-work__item-text">
+                    Контроль и управление всеми заказами в одном месте
+                  </p>
                 </div>
               </article>
 
-              <article class="im-century__stat" role="listitem">
-                <div class="im-century__stat-number">
-                  <span class="im-century__stat-value">0</span>
-                  <span class="im-century__stat-unit">часов</span>
+              <article class="im-how-work__item" role="listitem">
+                <div class="im-how-work__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
                 </div>
-                <div class="im-century__stat-body">
-                  <h3 class="im-century__stat-title">Времени заказчика</h3>
-                  <p class="im-century__stat-text">
-                    Мы сами всё спроектируем и реализуем
+                <div class="im-how-work__item-body">
+                  <h3 class="im-how-work__item-title">Персональный менеджер</h3>
+                  <p class="im-how-work__item-text">
+                    Единая точка контакта по всем вопросам
+                  </p>
+                </div>
+              </article>
+
+              <article class="im-how-work__item" role="listitem">
+                <div class="im-how-work__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-how-work__item-body">
+                  <h3 class="im-how-work__item-title">Гарантия 10 лет</h3>
+                  <p class="im-how-work__item-text">
+                    Гибкие условия для бизнеса и крупных закупок
+                  </p>
+                </div>
+              </article>
+
+              <article class="im-how-work__item" role="listitem">
+                <div class="im-how-work__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-how-work__item-body">
+                  <h3 class="im-how-work__item-title">Отсрочка платежа</h3>
+                  <p class="im-how-work__item-text">
+                    Удобные финансовые условия для юридических лиц
+                  </p>
+                </div>
+              </article>
+
+              <article class="im-how-work__item" role="listitem">
+                <div class="im-how-work__icon" aria-hidden="true">
+                  <img src="images/main/pcsv.svg" alt="" />
+                </div>
+                <div class="im-how-work__item-body">
+                  <h3 class="im-how-work__item-title">Срок службы 50 лет</h3>
+                  <p class="im-how-work__item-text">
+                    Гибкие условия для бизнеса и крупных закупок
                   </p>
                 </div>
               </article>
@@ -4955,359 +4205,12 @@
         </div>
       </main>
 
-      <section class="im-projects" aria-labelledby="projects-title">
-        <div class="im-container">
-          <header class="im-projects__head">
-            <h2 class="im-projects__title" id="projects-title">
-              Реализованные проекты
-            </h2>
-            <div class="im-projects__nav">
-              <button
-                class="im-projects__arrow im-projects__arrow--prev"
-                type="button"
-                aria-label="Предыдущий проект"
-              >
-                <svg
-                  width="5"
-                  height="11"
-                  viewBox="0 0 5 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.60467 0.0184698C3.41717 0.0559698 3.22892 0.150474 3.11492 0.322974L0.125437 4.82297C-0.0418124 5.07497 -0.0418124 5.41472 0.125437 5.66672L3.11492 10.1667C3.34367 10.511 3.82217 10.6077 4.16567 10.3775C4.50842 10.148 4.60442 9.66721 4.37567 9.32296L1.66668 5.24448L4.37567 1.16672C4.60442 0.821723 4.50842 0.341719 4.16567 0.11222C3.99392 -0.00328015 3.79217 -0.0197801 3.60467 0.0184698Z"
-                    fill="#222222"
-                  />
-                </svg>
-              </button>
-              <button
-                class="im-projects__arrow im-projects__arrow--next"
-                type="button"
-                aria-label="Следующий проект"
-              >
-                <svg
-                  width="5"
-                  height="11"
-                  viewBox="0 0 5 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.895488 0.0184698C0.707989 -0.0197801 0.506239 -0.00328014 0.334489 0.11222C-0.00826 0.341719 -0.104259 0.821722 0.124491 1.16672L2.83348 5.24447L0.124491 9.32295C-0.104259 9.6672 -0.00826 10.148 0.334489 10.3775C0.677988 10.607 1.15649 10.5109 1.38524 10.1667L4.37472 5.66671C4.54197 5.41471 4.54197 5.07496 4.37472 4.82296L1.38524 0.322973C1.27124 0.150474 1.08299 0.0559697 0.895488 0.0184698Z"
-                    fill="#222222"
-                  />
-                </svg>
-              </button>
-            </div>
-          </header>
-
-          <div class="im-projects__slider">
-            <div class="keen-slider" id="projects-slider">
-              <div class="keen-slider__slide">
-                <article class="im-projects__card">
-                  <div class="im-projects__image">
-                    <img
-                      src="images/projects/project_1.png"
-                      alt="Оснащение склада под ключ"
-                    />
-                  </div>
-                  <div class="im-projects__body">
-                    <h3 class="im-projects__card-title">
-                      Оснащение склада под ключ
-                    </h3>
-                    <div class="im-projects__stats">
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">12 000 м²</span>
-                        <span class="im-projects__stat-label">Площадь</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">720 ед.</span>
-                        <span class="im-projects__stat-label">Стеллажей</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">38 дней</span>
-                        <span class="im-projects__stat-label"
-                          >Срок реализации</span
-                        >
-                      </div>
-                    </div>
-                    <a href="#" class="im-projects__link">
-                      <span class="im-projects__link-text">Смотреть</span>
-                      <span class="im-projects__link-icon" aria-hidden="true">
-                        <svg
-                          width="9"
-                          height="9"
-                          viewBox="0 0 9 9"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                            fill="#666666"
-                          />
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </article>
-              </div>
-
-              <div class="keen-slider__slide">
-                <article class="im-projects__card">
-                  <div class="im-projects__image">
-                    <img
-                      src="images/projects/project_2.png"
-                      alt="Рабочие места для производства"
-                    />
-                  </div>
-                  <div class="im-projects__body">
-                    <h3 class="im-projects__card-title">
-                      Рабочие места для производства
-                    </h3>
-                    <div class="im-projects__stats">
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">9 500 м²</span>
-                        <span class="im-projects__stat-label">Площадь</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">410 ед.</span>
-                        <span class="im-projects__stat-label">Стеллажей</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">39 дней</span>
-                        <span class="im-projects__stat-label"
-                          >Срок реализации</span
-                        >
-                      </div>
-                    </div>
-                    <a href="#" class="im-projects__link">
-                      <span class="im-projects__link-text">Смотреть</span>
-                      <span class="im-projects__link-icon" aria-hidden="true">
-                        <svg
-                          width="9"
-                          height="9"
-                          viewBox="0 0 9 9"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                            fill="#666666"
-                          />
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </article>
-              </div>
-
-              <div class="keen-slider__slide">
-                <article class="im-projects__card">
-                  <div class="im-projects__image">
-                    <img
-                      src="images/projects/project_3.png"
-                      alt="Функциональное пространство для работы"
-                    />
-                  </div>
-                  <div class="im-projects__body">
-                    <h3 class="im-projects__card-title">
-                      Функциональное пространство для работы
-                    </h3>
-                    <div class="im-projects__stats">
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">14 объектов</span>
-                        <span class="im-projects__stat-label">Площадь</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">260 ед.</span>
-                        <span class="im-projects__stat-label">Стеллажей</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">26 дней</span>
-                        <span class="im-projects__stat-label"
-                          >Срок реализации</span
-                        >
-                      </div>
-                    </div>
-                    <a href="#" class="im-projects__link">
-                      <span class="im-projects__link-text">Смотреть</span>
-                      <span class="im-projects__link-icon" aria-hidden="true">
-                        <svg
-                          width="9"
-                          height="9"
-                          viewBox="0 0 9 9"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                            fill="#666666"
-                          />
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </article>
-              </div>
-
-              <div class="keen-slider__slide">
-                <article class="im-projects__card">
-                  <div class="im-projects__image">
-                    <img
-                      src="images/projects/project_1.png"
-                      alt="Фулфилмент-центр"
-                    />
-                  </div>
-                  <div class="im-projects__body">
-                    <h3 class="im-projects__card-title">Фулфилмент-центр</h3>
-                    <div class="im-projects__stats">
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">8 000 м²</span>
-                        <span class="im-projects__stat-label">Площадь</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">540 ед.</span>
-                        <span class="im-projects__stat-label">Стеллажей</span>
-                      </div>
-                      <div class="im-projects__stat">
-                        <span class="im-projects__stat-value">14 дней</span>
-                        <span class="im-projects__stat-label"
-                          >Срок реализации</span
-                        >
-                      </div>
-                    </div>
-                    <a href="#" class="im-projects__link">
-                      <span class="im-projects__link-text">Смотреть</span>
-                      <span class="im-projects__link-icon" aria-hidden="true">
-                        <svg
-                          width="9"
-                          height="9"
-                          viewBox="0 0 9 9"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                            fill="#666666"
-                          />
-                        </svg>
-                      </span>
-                    </a>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="im-how-we-work" aria-labelledby="how-we-work-title">
-        <div class="im-container im-how-we-work-container">
-          <header class="im-how-we-work__head">
-            <h2 class="im-how-we-work__title" id="how-we-work-title">
-              Как мы работаем
-            </h2>
-          </header>
-
-          <div class="im-how-we-work__grid" role="list">
-            <article class="im-how-we-work__item" role="listitem">
-              <span class="im-how-we-work__number">01</span>
-              <h3 class="im-how-we-work__item-title">Анализ задач бизнеса</h3>
-              <p class="im-how-we-work__item-text">
-                Создаём конфигурации, оптимальные для вашей отрасли.
-              </p>
-              <span class="im-how-we-work__arrow" aria-hidden="true">
-                <svg
-                  width="5"
-                  height="12"
-                  viewBox="0 0 5 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                    fill="#999999"
-                  />
-                </svg>
-              </span>
-            </article>
-
-            <article class="im-how-we-work__item" role="listitem">
-              <span class="im-how-we-work__number">02</span>
-              <h3 class="im-how-we-work__item-title">Проектирование</h3>
-              <p class="im-how-we-work__item-text">
-                Создаём конфигурации, оптимальные для вашей отрасли.
-              </p>
-              <span class="im-how-we-work__arrow" aria-hidden="true">
-                <svg
-                  width="5"
-                  height="12"
-                  viewBox="0 0 5 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                    fill="#999999"
-                  />
-                </svg>
-              </span>
-            </article>
-
-            <article class="im-how-we-work__item" role="listitem">
-              <span class="im-how-we-work__number">03</span>
-              <h3 class="im-how-we-work__item-title">Реализация</h3>
-              <p class="im-how-we-work__item-text">
-                Поставка, сборка и внедрение проверенных промышленных решений.
-              </p>
-            </article>
-
-            <article class="im-how-we-work__item" role="listitem">
-              <span class="im-how-we-work__number">04</span>
-              <h3 class="im-how-we-work__item-title">Личный кабинет</h3>
-              <p class="im-how-we-work__item-text">
-                Создаём конфигурации, оптимальные для вашей отрасли.
-              </p>
-              <span class="im-how-we-work__arrow" aria-hidden="true">
-                <svg
-                  width="5"
-                  height="12"
-                  viewBox="0 0 5 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.994987 0.020522C0.786654 -0.0219779 0.562487 -0.0036446 0.371655 0.124688C-0.00917777 0.379688 -0.115843 0.913025 0.138323 1.29636L3.14831 5.82719L0.138323 10.3588C-0.115843 10.7413 -0.00917777 11.2755 0.371655 11.5305C0.75332 11.7855 1.28499 11.6788 1.53915 11.2963L4.8608 6.29634C5.04664 6.01634 5.04664 5.63885 4.8608 5.35885L1.53915 0.358859C1.41249 0.167193 1.20332 0.0621886 0.994987 0.020522Z"
-                    fill="#999999"
-                  />
-                </svg>
-              </span>
-            </article>
-
-            <article class="im-how-we-work__item" role="listitem">
-              <span class="im-how-we-work__number">05</span>
-              <h3 class="im-how-we-work__item-title">
-                Эксплуатация, гарантия, ответственность
-              </h3>
-              <p class="im-how-we-work__item-text">
-                Создаём конфигурации, оптимальные для вашей отрасли.
-              </p>
-            </article>
-
-            <div class="im-how-we-work__logo" aria-hidden="true">
-              <img src="images/logo.png" alt="" width="200" height="200" />
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section class="im-industries" aria-labelledby="industries-title">
         <div class="im-container">
           <header class="im-industries__head">
             <div class="im-industries__titles">
               <h2 class="im-industries__title" id="industries-title">
                 Отраслевые решения
-                <span class="im-industries__brand">IRONMEBEL</span>
               </h2>
               <p class="im-industries__subtitle">
                 Мы работаем с бизнесами, где простой инфраструктуры напрямую
@@ -5320,58 +4223,32 @@
                 type="button"
                 aria-label="Предыдущая отрасль"
               >
-                <svg
-                  width="5"
-                  height="11"
-                  viewBox="0 0 5 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M3.60467 0.0184698C3.41717 0.0559698 3.22892 0.150474 3.11492 0.322974L0.125437 4.82297C-0.0418124 5.07497 -0.0418124 5.41472 0.125437 5.66672L3.11492 10.1667C3.34367 10.511 3.82217 10.6077 4.16567 10.3775C4.50842 10.148 4.60442 9.66721 4.37567 9.32296L1.66668 5.24448L4.37567 1.16672C4.60442 0.821723 4.50842 0.341719 4.16567 0.11222C3.99392 -0.00328015 3.79217 -0.0197801 3.60467 0.0184698Z"
-                    fill="#222222"
-                  />
-                </svg>
+                <img
+                  class="im-industries__arrow-icon"
+                  src="images/main/arrow.svg"
+                  alt=""
+                />
               </button>
               <button
                 class="im-industries__arrow im-industries__arrow--next"
                 type="button"
                 aria-label="Следующая отрасль"
               >
-                <svg
-                  width="5"
-                  height="11"
-                  viewBox="0 0 5 11"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0.895488 0.0184698C0.707989 -0.0197801 0.506239 -0.00328014 0.334489 0.11222C-0.00826 0.341719 -0.104259 0.821722 0.124491 1.16672L2.83348 5.24447L0.124491 9.32295C-0.104259 9.6672 -0.00826 10.148 0.334489 10.3775C0.677988 10.607 1.15649 10.5109 1.38524 10.1667L4.37472 5.66671C4.54197 5.41471 4.54197 5.07496 4.37472 4.82296L1.38524 0.322973C1.27124 0.150474 1.08299 0.0559697 0.895488 0.0184698Z"
-                    fill="#222222"
-                  />
-                </svg>
+                <img
+                  class="im-industries__arrow-icon"
+                  src="images/main/arrow.svg"
+                  alt=""
+                />
               </button>
             </div>
           </header>
 
           <div class="im-industries__slider">
-            <div class="keen-slider" id="industries-slider">
-              <!-- Slide 1 -->
-              <div class="keen-slider__slide">
+            <div class="im-industries__track keen-slider" id="industries-slider">
+              <div class="im-industries__slide keen-slider__slide">
                 <article class="im-industries__card">
                   <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.33333 23.3333C1.69167 23.3333 1.14256 23.1051 0.686 22.6485C0.229445 22.1919 0.000777778 21.6424 0 21V10.85C0 10.3833 0.126389 9.95555 0.379167 9.56667C0.631945 9.17778 0.981944 8.88611 1.42917 8.69167L6.53333 6.53333C6.92222 6.37778 7.29167 6.40694 7.64167 6.62083C7.99167 6.83472 8.16667 7.15556 8.16667 7.58333V8.16667L12.3958 6.475C12.7847 6.31944 13.1491 6.35833 13.489 6.59167C13.8289 6.825 13.9992 7.14583 14 7.55417V9.33333H23.3333V21C23.3333 21.6417 23.1051 22.1912 22.6485 22.6485C22.1919 23.1058 21.6424 23.3341 21 23.3333H2.33333ZM2.33333 21H21V11.6667H11.6667V9.275L5.83333 11.6083V9.33333L2.33333 10.8792V21ZM10.5 18.6667H12.8333V14H10.5V18.6667ZM5.83333 18.6667H8.16667V14H5.83333V18.6667ZM15.1667 18.6667H17.5V14H15.1667V18.6667ZM23.3333 9.33333H17.5L18.55 1.02083C18.5889 0.729167 18.7153 0.486111 18.9292 0.291667C19.1431 0.0972222 19.3958 0 19.6875 0H21.1458C21.4375 0 21.6903 0.0972222 21.9042 0.291667C22.1181 0.486111 22.2444 0.729167 22.2833 1.02083L23.3333 9.33333Z"
-                        fill="#C80400"
-                      />
-                    </svg>
+                    <img src="images/main/pcsv.svg" alt="" />
                   </div>
                   <div class="im-industries__card-content">
                     <h3 class="im-industries__card-title">
@@ -5383,24 +4260,11 @@
                   </div>
                 </article>
               </div>
-              <!-- Slide 2 -->
-              <div class="keen-slider__slide">
+
+              <div class="im-industries__slide keen-slider__slide">
                 <article class="im-industries__card">
                   <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M11.8326 2.25101C11.9407 2.21249 12.0588 2.21249 12.1668 2.25101C15.7224 3.51143 19.0611 5.63584 20.67 6.82338C20.7601 6.89093 20.8193 6.97864 20.8478 7.08649C21.8985 11.1895 21.8736 17.0774 21.6585 20.5796C21.651 20.7089 21.5983 20.8314 21.5095 20.9256C21.4208 21.0199 21.3017 21.0799 21.1731 21.0952C19.182 21.3512 15.3491 21.7778 11.9997 21.7778C8.65037 21.7778 4.81746 21.3512 2.82633 21.0969C2.69776 21.0817 2.57866 21.0217 2.48991 20.9274C2.40117 20.8331 2.34845 20.7106 2.34099 20.5814C2.12588 17.0792 2.10099 11.1895 3.15344 7.08649C3.17977 6.98054 3.24275 6.88734 3.33122 6.82338C4.93835 5.63584 8.27703 3.51143 11.8326 2.25101ZM12.91 0.156817C12.3211 -0.0522723 11.6783 -0.0522723 11.0895 0.156817C7.26014 1.51324 3.72412 3.7692 2.01033 5.03674C1.50956 5.40354 1.15245 5.93354 1.00054 6.53538C-0.142577 10.9922 -0.0945773 17.1734 0.124091 20.7165C0.162886 21.3618 0.425911 21.9733 0.867706 22.4453C1.3095 22.9172 1.9023 23.22 2.54366 23.3013C4.55612 23.5591 8.50281 24 11.9997 24C15.4966 24 19.4433 23.5591 21.4558 23.3013C22.0975 23.2204 22.6907 22.9178 23.1328 22.4458C23.575 21.9738 23.8383 21.3621 23.8771 20.7165C24.094 17.1734 24.142 10.9922 22.9989 6.53538C22.8475 5.9338 22.491 5.40383 21.9909 5.03674C20.2753 3.7692 16.7393 1.51146 12.91 0.156817ZM8.88859 8.44469V11.1113C8.88859 11.5828 9.0759 12.035 9.4093 12.3684C9.7427 12.7018 10.1949 12.8891 10.6664 12.8891H13.3331C13.8046 12.8891 14.2568 12.7018 14.5902 12.3684C14.9236 12.035 15.1109 11.5828 15.1109 11.1113V8.44469C15.1109 7.9732 14.9236 7.52102 14.5902 7.18763C14.2568 6.85424 13.8046 6.66694 13.3331 6.66694H10.6664C10.1949 6.66694 9.7427 6.85424 9.4093 7.18763C9.0759 7.52102 8.88859 7.9732 8.88859 8.44469ZM4.88857 15.5557V18.2223C4.88857 18.6938 5.07587 19.146 5.40927 19.4794C5.74267 19.8128 6.19486 20.0001 6.66636 20.0001H9.33304C9.80454 20.0001 10.2567 19.8128 10.5901 19.4794C10.9235 19.146 11.1108 18.6938 11.1108 18.2223V15.5557C11.1108 15.0842 10.9235 14.632 10.5901 14.2986C10.2567 13.9652 9.80454 13.7779 9.33304 13.7779H6.66636C6.19486 13.7779 5.74267 13.9652 5.40927 14.2986C5.07587 14.632 4.88857 15.0842 4.88857 15.5557ZM12.8886 18.2223V15.5557C12.8886 15.0842 13.0759 14.632 13.4093 14.2986C13.7427 13.9652 14.1949 13.7779 14.6664 13.7779H17.3331C17.8046 13.7779 18.2568 13.9652 18.5902 14.2986C18.9236 14.632 19.1109 15.0842 19.1109 15.5557V18.2223C19.1109 18.6938 18.9236 19.146 18.5902 19.4794C18.2568 19.8128 17.8046 20.0001 17.3331 20.0001H14.6664C14.1949 20.0001 13.7427 19.8128 13.4093 19.4794C13.0759 19.146 12.8886 18.6938 12.8886 18.2223Z"
-                        fill="#C80400"
-                      />
-                    </svg>
+                    <img src="images/main/pcsv.svg" alt="" />
                   </div>
                   <div class="im-industries__card-content">
                     <h3 class="im-industries__card-title">
@@ -5412,109 +4276,10 @@
                   </div>
                 </article>
               </div>
-              <!-- Slide 3 -->
-              <div class="keen-slider__slide">
+              <div class="im-industries__slide keen-slider__slide">
                 <article class="im-industries__card">
                   <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="21"
-                      height="21"
-                      viewBox="0 0 21 21"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3144 1.26318C14.2447 1.26318 15.1253 1.4754 15.9098 1.8534L14.3921 3.35973C14.1841 3.56545 14.019 3.81037 13.9063 4.08031C13.7937 4.35026 13.7357 4.63987 13.7357 4.93238C13.7357 5.2249 13.7937 5.51451 13.9063 5.78445C14.019 6.05439 14.1841 6.29931 14.3921 6.50503C14.8136 6.92224 15.3827 7.15627 15.9758 7.15627C16.5689 7.15627 17.1381 6.92224 17.5596 6.50503L18.911 5.16354C19.1384 5.78976 19.263 6.46524 19.263 7.16914C19.263 10.4314 16.5994 13.0756 13.3144 13.0756C12.5281 13.0756 11.7778 12.924 11.0914 12.6493L5.08548 18.6121C4.66416 19.0293 4.09515 19.2634 3.50217 19.2634C2.90919 19.2634 2.34019 19.0293 1.91887 18.6121C1.71113 18.4064 1.54622 18.1615 1.43367 17.8917C1.32113 17.6219 1.26318 17.3325 1.26318 17.0401C1.26318 16.7478 1.32113 16.4583 1.43367 16.1885C1.54622 15.9187 1.71113 15.6739 1.91887 15.4682L7.87172 9.55748C7.53683 8.80584 7.36429 7.99201 7.36535 7.16914C7.36535 3.90779 10.0289 1.26318 13.3144 1.26318Z"
-                        stroke="#C80400"
-                        stroke-width="2.52634"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </div>
-                  <div class="im-industries__card-content">
-                    <h3 class="im-industries__card-title">
-                      Мастерские и сборка
-                    </h3>
-                    <p class="im-industries__card-desc">
-                      Верстаки и рабочие места для постоянной эксплуатации
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Slide 4 -->
-              <div class="keen-slider__slide">
-                <article class="im-industries__card">
-                  <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M11.8326 2.25101C11.9407 2.21249 12.0588 2.21249 12.1668 2.25101C15.7224 3.51143 19.0611 5.63584 20.67 6.82338C20.7601 6.89093 20.8193 6.97864 20.8478 7.08649C21.8985 11.1895 21.8736 17.0774 21.6585 20.5796C21.651 20.7089 21.5983 20.8314 21.5095 20.9256C21.4208 21.0199 21.3017 21.0799 21.1731 21.0952C19.182 21.3512 15.3491 21.7778 11.9997 21.7778C8.65037 21.7778 4.81746 21.3512 2.82633 21.0969C2.69776 21.0817 2.57866 21.0217 2.48991 20.9274C2.40117 20.8331 2.34845 20.7106 2.34099 20.5814C2.12588 17.0792 2.10099 11.1895 3.15344 7.08649C3.17977 6.98054 3.24275 6.88734 3.33122 6.82338C4.93835 5.63584 8.27703 3.51143 11.8326 2.25101ZM12.91 0.156817C12.3211 -0.0522723 11.6783 -0.0522723 11.0895 0.156817C7.26014 1.51324 3.72412 3.7692 2.01033 5.03674C1.50956 5.40354 1.15245 5.93354 1.00054 6.53538C-0.142577 10.9922 -0.0945773 17.1734 0.124091 20.7165C0.162886 21.3618 0.425911 21.9733 0.867706 22.4453C1.3095 22.9172 1.9023 23.22 2.54366 23.3013C4.55612 23.5591 8.50281 24 11.9997 24C15.4966 24 19.4433 23.5591 21.4558 23.3013C22.0975 23.2204 22.6907 22.9178 23.1328 22.4458C23.575 21.9738 23.8383 21.3621 23.8771 20.7165C24.094 17.1734 24.142 10.9922 22.9989 6.53538C22.8475 5.9338 22.491 5.40383 21.9909 5.03674C20.2753 3.7692 16.7393 1.51146 12.91 0.156817ZM8.88859 8.44469V11.1113C8.88859 11.5828 9.0759 12.035 9.4093 12.3684C9.7427 12.7018 10.1949 12.8891 10.6664 12.8891H13.3331C13.8046 12.8891 14.2568 12.7018 14.5902 12.3684C14.9236 12.035 15.1109 11.5828 15.1109 11.1113V8.44469C15.1109 7.9732 14.9236 7.52102 14.5902 7.18763C14.2568 6.85424 13.8046 6.66694 13.3331 6.66694H10.6664C10.1949 6.66694 9.7427 6.85424 9.4093 7.18763C9.0759 7.52102 8.88859 7.9732 8.88859 8.44469ZM4.88857 15.5557V18.2223C4.88857 18.6938 5.07587 19.146 5.40927 19.4794C5.74267 19.8128 6.19486 20.0001 6.66636 20.0001H9.33304C9.80454 20.0001 10.2567 19.8128 10.5901 19.4794C10.9235 19.146 11.1108 18.6938 11.1108 18.2223V15.5557C11.1108 15.0842 10.9235 14.632 10.5901 14.2986C10.2567 13.9652 9.80454 13.7779 9.33304 13.7779H6.66636C6.19486 13.7779 5.74267 13.9652 5.40927 14.2986C5.07587 14.632 4.88857 15.0842 4.88857 15.5557ZM12.8886 18.2223V15.5557C12.8886 15.0842 13.0759 14.632 13.4093 14.2986C13.7427 13.9652 14.1949 13.7779 14.6664 13.7779H17.3331C17.8046 13.7779 18.2568 13.9652 18.5902 14.2986C18.9236 14.632 19.1109 15.0842 19.1109 15.5557V18.2223C19.1109 18.6938 18.9236 19.146 18.5902 19.4794C18.2568 19.8128 17.8046 20.0001 17.3331 20.0001H14.6664C14.1949 20.0001 13.7427 19.8128 13.4093 19.4794C13.0759 19.146 12.8886 18.6938 12.8886 18.2223Z"
-                        fill="#C80400"
-                      />
-                    </svg>
-                  </div>
-                  <div class="im-industries__card-content">
-                    <h3 class="im-industries__card-title">
-                      Склады и логистика
-                    </h3>
-                    <p class="im-industries__card-desc">
-                      Стеллажи и системы хранения под высокие нагрузки
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Slide 5 (duplicate of 1) -->
-              <div class="keen-slider__slide">
-                <article class="im-industries__card">
-                  <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M2.33333 23.3333C1.69167 23.3333 1.14256 23.1051 0.686 22.6485C0.229445 22.1919 0.000777778 21.6424 0 21V10.85C0 10.3833 0.126389 9.95555 0.379167 9.56667C0.631945 9.17778 0.981944 8.88611 1.42917 8.69167L6.53333 6.53333C6.92222 6.37778 7.29167 6.40694 7.64167 6.62083C7.99167 6.83472 8.16667 7.15556 8.16667 7.58333V8.16667L12.3958 6.475C12.7847 6.31944 13.1491 6.35833 13.489 6.59167C13.8289 6.825 13.9992 7.14583 14 7.55417V9.33333H23.3333V21C23.3333 21.6417 23.1051 22.1912 22.6485 22.6485C22.1919 23.1058 21.6424 23.3341 21 23.3333H2.33333ZM2.33333 21H21V11.6667H11.6667V9.275L5.83333 11.6083V9.33333L2.33333 10.8792V21ZM10.5 18.6667H12.8333V14H10.5V18.6667ZM5.83333 18.6667H8.16667V14H5.83333V18.6667ZM15.1667 18.6667H17.5V14H15.1667V18.6667ZM23.3333 9.33333H17.5L18.55 1.02083C18.5889 0.729167 18.7153 0.486111 18.9292 0.291667C19.1431 0.0972222 19.3958 0 19.6875 0H21.1458C21.4375 0 21.6903 0.0972222 21.9042 0.291667C22.1181 0.486111 22.2444 0.729167 22.2833 1.02083L23.3333 9.33333Z"
-                        fill="#C80400"
-                      />
-                    </svg>
-                  </div>
-                  <div class="im-industries__card-content">
-                    <h3 class="im-industries__card-title">
-                      Сельское хозяйство
-                    </h3>
-                    <p class="im-industries__card-desc">
-                      Мебель для цехов и производственных участков
-                    </p>
-                  </div>
-                </article>
-              </div>
-              <!-- Slide 6 (duplicate of 2) -->
-              <div class="keen-slider__slide">
-                <article class="im-industries__card">
-                  <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M11.8326 2.25101C11.9407 2.21249 12.0588 2.21249 12.1668 2.25101C15.7224 3.51143 19.0611 5.63584 20.67 6.82338C20.7601 6.89093 20.8193 6.97864 20.8478 7.08649C21.8985 11.1895 21.8736 17.0774 21.6585 20.5796C21.651 20.7089 21.5983 20.8314 21.5095 20.9256C21.4208 21.0199 21.3017 21.0799 21.1731 21.0952C19.182 21.3512 15.3491 21.7778 11.9997 21.7778C8.65037 21.7778 4.81746 21.3512 2.82633 21.0969C2.69776 21.0817 2.57866 21.0217 2.48991 20.9274C2.40117 20.8331 2.34845 20.7106 2.34099 20.5814C2.12588 17.0792 2.10099 11.1895 3.15344 7.08649C3.17977 6.98054 3.24275 6.88734 3.33122 6.82338C4.93835 5.63584 8.27703 3.51143 11.8326 2.25101ZM12.91 0.156817C12.3211 -0.0522723 11.6783 -0.0522723 11.0895 0.156817C7.26014 1.51324 3.72412 3.7692 2.01033 5.03674C1.50956 5.40354 1.15245 5.93354 1.00054 6.53538C-0.142577 10.9922 -0.0945773 17.1734 0.124091 20.7165C0.162886 21.3618 0.425911 21.9733 0.867706 22.4453C1.3095 22.9172 1.9023 23.22 2.54366 23.3013C4.55612 23.5591 8.50281 24 11.9997 24C15.4966 24 19.4433 23.5591 21.4558 23.3013C22.0975 23.2204 22.6907 22.9178 23.1328 22.4458C23.575 21.9738 23.8383 21.3621 23.8771 20.7165C24.094 17.1734 24.142 10.9922 22.9989 6.53538C22.8475 5.9338 22.491 5.40383 21.9909 5.03674C20.2753 3.7692 16.7393 1.51146 12.91 0.156817ZM8.88859 8.44469V11.1113C8.88859 11.5828 9.0759 12.035 9.4093 12.3684C9.7427 12.7018 10.1949 12.8891 10.6664 12.8891H13.3331C13.8046 12.8891 14.2568 12.7018 14.5902 12.3684C14.9236 12.035 15.1109 11.5828 15.1109 11.1113V8.44469C15.1109 7.9732 14.9236 7.52102 14.5902 7.18763C14.2568 6.85424 13.8046 6.66694 13.3331 6.66694H10.6664C10.1949 6.66694 9.7427 6.85424 9.4093 7.18763C9.0759 7.52102 8.88859 7.9732 8.88859 8.44469ZM4.88857 15.5557V18.2223C4.88857 18.6938 5.07587 19.146 5.40927 19.4794C5.74267 19.8128 6.19486 20.0001 6.66636 20.0001H9.33304C9.80454 20.0001 10.2567 19.8128 10.5901 19.4794C10.9235 19.146 11.1108 18.6938 11.1108 18.2223V15.5557C11.1108 15.0842 10.9235 14.632 10.5901 14.2986C10.2567 13.9652 9.80454 13.7779 9.33304 13.7779H6.66636C6.19486 13.7779 5.74267 13.9652 5.40927 14.2986C5.07587 14.632 4.88857 15.0842 4.88857 15.5557ZM12.8886 18.2223V15.5557C12.8886 15.0842 13.0759 14.632 13.4093 14.2986C13.7427 13.9652 14.1949 13.7779 14.6664 13.7779H17.3331C17.8046 13.7779 18.2568 13.9652 18.5902 14.2986C18.9236 14.632 19.1109 15.0842 19.1109 15.5557V18.2223C19.1109 18.6938 18.9236 19.146 18.5902 19.4794C18.2568 19.8128 17.8046 20.0001 17.3331 20.0001H14.6664C14.1949 20.0001 13.7427 19.8128 13.4093 19.4794C13.0759 19.146 12.8886 18.6938 12.8886 18.2223Z"
-                        fill="#C80400"
-                      />
-                    </svg>
+                    <img src="images/main/pcsv.svg" alt="" />
                   </div>
                   <div class="im-industries__card-content">
                     <h3 class="im-industries__card-title">
@@ -5526,24 +4291,41 @@
                   </div>
                 </article>
               </div>
-              <!-- Slide 7 (duplicate of 3) -->
-              <div class="keen-slider__slide">
+              <div class="im-industries__slide keen-slider__slide">
                 <article class="im-industries__card">
                   <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="21"
-                      height="21"
-                      viewBox="0 0 21 21"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M13.3144 1.26318C14.2447 1.26318 15.1253 1.4754 15.9098 1.8534L14.3921 3.35973C14.1841 3.56545 14.019 3.81037 13.9063 4.08031C13.7937 4.35026 13.7357 4.63987 13.7357 4.93238C13.7357 5.2249 13.7937 5.51451 13.9063 5.78445C14.019 6.05439 14.1841 6.29931 14.3921 6.50503C14.8136 6.92224 15.3827 7.15627 15.9758 7.15627C16.5689 7.15627 17.1381 6.92224 17.5596 6.50503L18.911 5.16354C19.1384 5.78976 19.263 6.46524 19.263 7.16914C19.263 10.4314 16.5994 13.0756 13.3144 13.0756C12.5281 13.0756 11.7778 12.924 11.0914 12.6493L5.08548 18.6121C4.66416 19.0293 4.09515 19.2634 3.50217 19.2634C2.90919 19.2634 2.34019 19.0293 1.91887 18.6121C1.71113 18.4064 1.54622 18.1615 1.43367 17.8917C1.32113 17.6219 1.26318 17.3325 1.26318 17.0401C1.26318 16.7478 1.32113 16.4583 1.43367 16.1885C1.54622 15.9187 1.71113 15.6739 1.91887 15.4682L7.87172 9.55748C7.53683 8.80584 7.36429 7.99201 7.36535 7.16914C7.36535 3.90779 10.0289 1.26318 13.3144 1.26318Z"
-                        stroke="#C80400"
-                        stroke-width="2.52634"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
+                    <img src="images/main/pcsv.svg" alt="" />
+                  </div>
+                  <div class="im-industries__card-content">
+                    <h3 class="im-industries__card-title">
+                      Автомобилестроение
+                    </h3>
+                    <p class="im-industries__card-desc">
+                      Стеллажи и системы хранения под высокие нагрузки
+                    </p>
+                  </div>
+                </article>
+              </div>
+              <div class="im-industries__slide keen-slider__slide">
+                <article class="im-industries__card">
+                  <div class="im-industries__icon" aria-hidden="true">
+                    <img src="images/main/pcsv.svg" alt="" />
+                  </div>
+                  <div class="im-industries__card-content">
+                    <h3 class="im-industries__card-title">
+                      Автомобилестроение
+                    </h3>
+                    <p class="im-industries__card-desc">
+                      Стеллажи и системы хранения под высокие нагрузки
+                    </p>
+                  </div>
+                </article>
+              </div>
+
+              <div class="im-industries__slide keen-slider__slide">
+                <article class="im-industries__card">
+                  <div class="im-industries__icon" aria-hidden="true">
+                    <img src="images/main/pcsv.svg" alt="" />
                   </div>
                   <div class="im-industries__card-content">
                     <h3 class="im-industries__card-title">
@@ -5555,24 +4337,11 @@
                   </div>
                 </article>
               </div>
-              <!-- Slide 8 (duplicate of 4) -->
-              <div class="keen-slider__slide">
+
+              <div class="im-industries__slide keen-slider__slide">
                 <article class="im-industries__card">
                   <div class="im-industries__icon" aria-hidden="true">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M11.8326 2.25101C11.9407 2.21249 12.0588 2.21249 12.1668 2.25101C15.7224 3.51143 19.0611 5.63584 20.67 6.82338C20.7601 6.89093 20.8193 6.97864 20.8478 7.08649C21.8985 11.1895 21.8736 17.0774 21.6585 20.5796C21.651 20.7089 21.5983 20.8314 21.5095 20.9256C21.4208 21.0199 21.3017 21.0799 21.1731 21.0952C19.182 21.3512 15.3491 21.7778 11.9997 21.7778C8.65037 21.7778 4.81746 21.3512 2.82633 21.0969C2.69776 21.0817 2.57866 21.0217 2.48991 20.9274C2.40117 20.8331 2.34845 20.7106 2.34099 20.5814C2.12588 17.0792 2.10099 11.1895 3.15344 7.08649C3.17977 6.98054 3.24275 6.88734 3.33122 6.82338C4.93835 5.63584 8.27703 3.51143 11.8326 2.25101ZM12.91 0.156817C12.3211 -0.0522723 11.6783 -0.0522723 11.0895 0.156817C7.26014 1.51324 3.72412 3.7692 2.01033 5.03674C1.50956 5.40354 1.15245 5.93354 1.00054 6.53538C-0.142577 10.9922 -0.0945773 17.1734 0.124091 20.7165C0.162886 21.3618 0.425911 21.9733 0.867706 22.4453C1.3095 22.9172 1.9023 23.22 2.54366 23.3013C4.55612 23.5591 8.50281 24 11.9997 24C15.4966 24 19.4433 23.5591 21.4558 23.3013C22.0975 23.2204 22.6907 22.9178 23.1328 22.4458C23.575 21.9738 23.8383 21.3621 23.8771 20.7165C24.094 17.1734 24.142 10.9922 22.9989 6.53538C22.8475 5.9338 22.491 5.40383 21.9909 5.03674C20.2753 3.7692 16.7393 1.51146 12.91 0.156817ZM8.88859 8.44469V11.1113C8.88859 11.5828 9.0759 12.035 9.4093 12.3684C9.7427 12.7018 10.1949 12.8891 10.6664 12.8891H13.3331C13.8046 12.8891 14.2568 12.7018 14.5902 12.3684C14.9236 12.035 15.1109 11.5828 15.1109 11.1113V8.44469C15.1109 7.9732 14.9236 7.52102 14.5902 7.18763C14.2568 6.85424 13.8046 6.66694 13.3331 6.66694H10.6664C10.1949 6.66694 9.7427 6.85424 9.4093 7.18763C9.0759 7.52102 8.88859 7.9732 8.88859 8.44469ZM4.88857 15.5557V18.2223C4.88857 18.6938 5.07587 19.146 5.40927 19.4794C5.74267 19.8128 6.19486 20.0001 6.66636 20.0001H9.33304C9.80454 20.0001 10.2567 19.8128 10.5901 19.4794C10.9235 19.146 11.1108 18.6938 11.1108 18.2223V15.5557C11.1108 15.0842 10.9235 14.632 10.5901 14.2986C10.2567 13.9652 9.80454 13.7779 9.33304 13.7779H6.66636C6.19486 13.7779 5.74267 13.9652 5.40927 14.2986C5.07587 14.632 4.88857 15.0842 4.88857 15.5557ZM12.8886 18.2223V15.5557C12.8886 15.0842 13.0759 14.632 13.4093 14.2986C13.7427 13.9652 14.1949 13.7779 14.6664 13.7779H17.3331C17.8046 13.7779 18.2568 13.9652 18.5902 14.2986C18.9236 14.632 19.1109 15.0842 19.1109 15.5557V18.2223C19.1109 18.6938 18.9236 19.146 18.5902 19.4794C18.2568 19.8128 17.8046 20.0001 17.3331 20.0001H14.6664C14.1949 20.0001 13.7427 19.8128 13.4093 19.4794C13.0759 19.146 12.8886 18.6938 12.8886 18.2223Z"
-                        fill="#C80400"
-                      />
-                    </svg>
+                    <img src="images/main/pcsv.svg" alt="" />
                   </div>
                   <div class="im-industries__card-content">
                     <h3 class="im-industries__card-title">
@@ -6203,46 +4972,172 @@
                 type="button"
                 aria-label="Предыдущие партнёры"
               >
-                <span class="im-partners__nav-icon">
-                  <svg
-                    width="5"
-                    height="11"
-                    viewBox="0 0 5 11"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.60467 0.0184698C3.41717 0.0559698 3.22892 0.150474 3.11492 0.322974L0.125437 4.82297C-0.0418124 5.07497 -0.0418124 5.41472 0.125437 5.66672L3.11492 10.1667C3.34367 10.511 3.82217 10.6077 4.16567 10.3775C4.50842 10.148 4.60442 9.66721 4.37567 9.32296L1.66668 5.24448L4.37567 1.16672C4.60442 0.821723 4.50842 0.341719 4.16567 0.11222C3.99392 -0.00328015 3.79217 -0.0197801 3.60467 0.0184698Z"
-                      fill="#222222"
-                    />
-                  </svg>
-                </span>
+                <img
+                  class="im-partners__nav-icon"
+                  src="images/main/arrow.svg"
+                  alt=""
+                />
               </button>
               <button
                 class="im-partners__nav-btn im-partners__nav-btn--next"
                 type="button"
                 aria-label="Следующие партнёры"
               >
-                <span class="im-partners__nav-icon">
-                  <svg
-                    width="5"
-                    height="11"
-                    viewBox="0 0 5 11"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.895488 0.0184698C0.707989 -0.0197801 0.506239 -0.00328014 0.334489 0.11222C-0.00826 0.341719 -0.104259 0.821722 0.124491 1.16672L2.83348 5.24447L0.124491 9.32295C-0.104259 9.6672 -0.00826 10.148 0.334489 10.3775C0.677988 10.607 1.15649 10.5109 1.38524 10.1667L4.37472 5.66671C4.54197 5.41471 4.54197 5.07496 4.37472 4.82296L1.38524 0.322973C1.27124 0.150474 1.08299 0.0559697 0.895488 0.0184698Z"
-                      fill="#222222"
-                    />
-                  </svg>
-                </span>
+                <img
+                  class="im-partners__nav-icon"
+                  src="images/main/arrow.svg"
+                  alt=""
+                />
               </button>
             </div>
           </header>
 
           <div class="im-partners__slider">
             <div class="im-partners__list keen-slider" id="partners-slider">
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="45"
+                    height="50"
+                    viewBox="0 0 45 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.6984 25.0947C24.1255 26.0249 23.1569 27.7438 23.1569 29.604V32.3857L39.2992 22.839V34.2177L23.1569 43.7648L10.7766 36.4434C9.40129 35.6299 7.70653 35.6299 6.33123 36.4434L3.65984 38.0229L2.12036 38.9329L4.75438 39.1635C5.39954 39.22 6.02467 39.421 6.58573 39.7527L6.68495 39.8115L7.19263 40.1119L23.1569 49.5524L44.1935 37.1114V19.9447V14.1562L25.6984 25.0947Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M4.60432 31.7049C5.79763 30.9994 6.53267 29.6956 6.53267 28.2843V15.3347L22.6749 5.78755L30.6571 10.5087L25.2164 13.7265C23.6436 14.6566 22.6749 16.3756 22.6749 18.2358V21.0175L35.5514 13.4025L40.4457 10.5087L35.5469 7.61496L22.6749 0L1.63838 12.441V28.8421V30.031C1.63838 31.1525 1.33003 32.2508 0.749393 33.2014L0.00012207 34.4273L1.63882 33.4584L4.60432 31.7049Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="45"
+                    height="50"
+                    viewBox="0 0 45 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.6984 25.0947C24.1255 26.0249 23.1569 27.7438 23.1569 29.604V32.3857L39.2992 22.839V34.2177L23.1569 43.7648L10.7766 36.4434C9.40129 35.6299 7.70653 35.6299 6.33123 36.4434L3.65984 38.0229L2.12036 38.9329L4.75438 39.1635C5.39954 39.22 6.02467 39.421 6.58573 39.7527L6.68495 39.8115L7.19263 40.1119L23.1569 49.5524L44.1935 37.1114V19.9447V14.1562L25.6984 25.0947Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M4.60432 31.7049C5.79763 30.9994 6.53267 29.6956 6.53267 28.2843V15.3347L22.6749 5.78755L30.6571 10.5087L25.2164 13.7265C23.6436 14.6566 22.6749 16.3756 22.6749 18.2358V21.0175L35.5514 13.4025L40.4457 10.5087L35.5469 7.61496L22.6749 0L1.63838 12.441V28.8421V30.031C1.63838 31.1525 1.33003 32.2508 0.749393 33.2014L0.00012207 34.4273L1.63882 33.4584L4.60432 31.7049Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="45"
+                    height="50"
+                    viewBox="0 0 45 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.6984 25.0947C24.1255 26.0249 23.1569 27.7438 23.1569 29.604V32.3857L39.2992 22.839V34.2177L23.1569 43.7648L10.7766 36.4434C9.40129 35.6299 7.70653 35.6299 6.33123 36.4434L3.65984 38.0229L2.12036 38.9329L4.75438 39.1635C5.39954 39.22 6.02467 39.421 6.58573 39.7527L6.68495 39.8115L7.19263 40.1119L23.1569 49.5524L44.1935 37.1114V19.9447V14.1562L25.6984 25.0947Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M4.60432 31.7049C5.79763 30.9994 6.53267 29.6956 6.53267 28.2843V15.3347L22.6749 5.78755L30.6571 10.5087L25.2164 13.7265C23.6436 14.6566 22.6749 16.3756 22.6749 18.2358V21.0175L35.5514 13.4025L40.4457 10.5087L35.5469 7.61496L22.6749 0L1.63838 12.441V28.8421V30.031C1.63838 31.1525 1.33003 32.2508 0.749393 33.2014L0.00012207 34.4273L1.63882 33.4584L4.60432 31.7049Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="45"
+                    height="50"
+                    viewBox="0 0 45 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.6984 25.0947C24.1255 26.0249 23.1569 27.7438 23.1569 29.604V32.3857L39.2992 22.839V34.2177L23.1569 43.7648L10.7766 36.4434C9.40129 35.6299 7.70653 35.6299 6.33123 36.4434L3.65984 38.0229L2.12036 38.9329L4.75438 39.1635C5.39954 39.22 6.02467 39.421 6.58573 39.7527L6.68495 39.8115L7.19263 40.1119L23.1569 49.5524L44.1935 37.1114V19.9447V14.1562L25.6984 25.0947Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M4.60432 31.7049C5.79763 30.9994 6.53267 29.6956 6.53267 28.2843V15.3347L22.6749 5.78755L30.6571 10.5087L25.2164 13.7265C23.6436 14.6566 22.6749 16.3756 22.6749 18.2358V21.0175L35.5514 13.4025L40.4457 10.5087L35.5469 7.61496L22.6749 0L1.63838 12.441V28.8421V30.031C1.63838 31.1525 1.33003 32.2508 0.749393 33.2014L0.00012207 34.4273L1.63882 33.4584L4.60432 31.7049Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="45"
+                    height="50"
+                    viewBox="0 0 45 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.6984 25.0947C24.1255 26.0249 23.1569 27.7438 23.1569 29.604V32.3857L39.2992 22.839V34.2177L23.1569 43.7648L10.7766 36.4434C9.40129 35.6299 7.70653 35.6299 6.33123 36.4434L3.65984 38.0229L2.12036 38.9329L4.75438 39.1635C5.39954 39.22 6.02467 39.421 6.58573 39.7527L6.68495 39.8115L7.19263 40.1119L23.1569 49.5524L44.1935 37.1114V19.9447V14.1562L25.6984 25.0947Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M4.60432 31.7049C5.79763 30.9994 6.53267 29.6956 6.53267 28.2843V15.3347L22.6749 5.78755L30.6571 10.5087L25.2164 13.7265C23.6436 14.6566 22.6749 16.3756 22.6749 18.2358V21.0175L35.5514 13.4025L40.4457 10.5087L35.5469 7.61496L22.6749 0L1.63838 12.441V28.8421V30.031C1.63838 31.1525 1.33003 32.2508 0.749393 33.2014L0.00012207 34.4273L1.63882 33.4584L4.60432 31.7049Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="45"
+                    height="50"
+                    viewBox="0 0 45 50"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M25.6984 25.0947C24.1255 26.0249 23.1569 27.7438 23.1569 29.604V32.3857L39.2992 22.839V34.2177L23.1569 43.7648L10.7766 36.4434C9.40129 35.6299 7.70653 35.6299 6.33123 36.4434L3.65984 38.0229L2.12036 38.9329L4.75438 39.1635C5.39954 39.22 6.02467 39.421 6.58573 39.7527L6.68495 39.8115L7.19263 40.1119L23.1569 49.5524L44.1935 37.1114V19.9447V14.1562L25.6984 25.0947Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M4.60432 31.7049C5.79763 30.9994 6.53267 29.6956 6.53267 28.2843V15.3347L22.6749 5.78755L30.6571 10.5087L25.2164 13.7265C23.6436 14.6566 22.6749 16.3756 22.6749 18.2358V21.0175L35.5514 13.4025L40.4457 10.5087L35.5469 7.61496L22.6749 0L1.63838 12.441V28.8421V30.031C1.63838 31.1525 1.33003 32.2508 0.749393 33.2014L0.00012207 34.4273L1.63882 33.4584L4.60432 31.7049Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
               <article class="im-partners__item keen-slider__slide">
                 <div class="im-partners__logo" aria-hidden="true">
                   <svg
@@ -6491,6 +5386,72 @@
                   <div class="im-partners__caption">LETTER LOGO</div>
                 </div>
               </article>
+
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="58"
+                    height="52"
+                    viewBox="0 0 58 52"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M47.4449 2.97461L40.7062 6.91144V6.91099L33.1568 11.3211L31.6521 12.2021L28.8791 13.8215L26.1056 12.2021L23.5895 13.6742L28.8791 16.7653L34.1682 13.6742L35.6783 12.7932L43.2276 8.38311L43.2272 8.38266L47.4449 5.91797L55.241 10.471V41.2753L47.4449 45.8278L43.2237 43.3627L43.2223 43.3631L40.7062 44.8348L47.4449 48.7716L57.7576 42.742V9.0042L47.4449 2.97461Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M26.1108 39.5437L28.8789 37.9243L31.6466 39.5437L34.1632 38.0721L28.8789 34.9809L23.5942 38.0721L22.0842 38.953L10.3122 45.8278L2.5166 41.2753V10.471L10.3122 5.91797L14.5304 8.38266L17.0514 6.91144L10.3122 2.97461L0 9.0042V42.742L10.3122 48.7716L17.0514 44.8348L24.6008 40.4247L26.1108 39.5437Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M14.5297 8.38222L13.0196 9.26317L6.73364 12.9348V38.8043L13.0249 42.4813L20.5743 38.0662L14.283 34.3946V17.3449L20.569 13.6733L22.0791 12.7923L24.6005 11.3202L26.1053 10.4393L28.8787 8.8198L31.6517 10.4393L33.1564 11.3202L40.7058 6.9101L39.201 6.02915L28.8787 0L18.5559 6.02915L17.0511 6.9101V6.91055L14.5301 8.38177L14.5297 8.38222Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M43.2235 43.3623L44.7323 42.4818L51.0236 38.8048V12.9353L44.7371 9.26367L37.1877 13.6738L43.4742 17.3454V34.3951L37.1829 38.0667L35.6728 38.9526L33.1567 40.4243L31.6466 41.3052L28.8789 42.9198L26.1108 41.3052L24.6008 40.4243L17.0514 44.8344L18.5614 45.7154L28.8789 51.74L39.196 45.7154L40.7061 44.8344L43.2222 43.3627L43.2235 43.3623Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
+
+              <article class="im-partners__item keen-slider__slide">
+                <div class="im-partners__logo" aria-hidden="true">
+                  <svg
+                    width="56"
+                    height="52"
+                    viewBox="0 0 56 52"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.3733 24.3381C15.3733 31.213 20.8763 36.7803 27.6609 36.7803C34.4455 36.7803 39.9485 31.213 39.9485 24.3381C39.9485 19.7192 37.454 15.6946 33.7626 13.5483C33.0267 14.4914 32.3381 15.5193 31.7082 16.6236C34.4319 18.0979 36.2899 20.997 36.2899 24.3381C36.2899 29.1674 32.4253 33.0753 27.6609 33.0753C22.8969 33.0753 19.0323 29.167 19.0323 24.3381C19.0323 20.9952 20.8872 18.0953 23.6122 16.6262C22.9815 15.5207 22.292 14.4919 21.5557 13.5479C17.8642 15.6937 15.3733 19.7188 15.3733 24.3381Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M27.6594 51.4299C42.9384 51.4299 55.3233 38.8897 55.3233 23.4219C55.3233 21.7056 55.1704 20.0258 54.8785 18.3947C54.8789 18.4089 54.8793 18.4182 54.8793 18.4182C52.878 10.5754 45.5078 9.42366 39.4 13.5344C43.0651 13.1016 47.5416 14.2338 48.594 17.8177C49.0603 19.6072 49.3137 21.4837 49.3137 23.4215C49.3137 35.5299 39.6178 45.3438 27.6603 45.3438C15.7062 45.3438 6.01036 35.5299 6.01036 23.4215C6.01036 21.4695 6.26764 19.5788 6.74058 17.7778C7.81488 14.2267 12.2694 13.1034 15.9201 13.5344C9.81314 9.42455 2.4447 10.575 0.442059 18.4133C0.152336 20.0382 0.000244245 21.7119 0.000244245 23.4215C-0.00107069 38.8897 12.3834 51.4299 27.6594 51.4299Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M21.5552 13.5473C22.292 14.4913 22.9814 15.5201 23.6117 16.6257C23.6757 16.7375 23.7424 16.8458 23.805 16.959C24.1916 17.6598 24.5537 18.3903 24.8885 19.1488C24.8894 19.151 24.8907 19.1532 24.8916 19.1555C24.892 19.1563 24.8925 19.1572 24.8929 19.1581C24.8925 19.1563 24.892 19.1546 24.8916 19.1532C24.6707 18.1724 24.4358 17.2395 24.1916 16.3389C24.1623 16.2298 24.1342 16.1153 24.1044 16.0074C18.2543 -5.14353 6.32258 -3.96472 1.91187 11.5394C6.20029 3.69304 15.4522 5.7262 21.5552 13.5473Z"
+                      fill="#666666"
+                    />
+                    <path
+                      d="M53.4059 11.5397C48.9943 -3.96533 37.063 -5.14279 31.2111 16.0068C31.1813 16.1155 31.1533 16.2314 31.1235 16.3415C30.882 17.2411 30.647 18.1722 30.4261 19.1522C30.4257 19.1544 30.4252 19.1562 30.4248 19.158C30.7601 18.3955 31.1243 17.6618 31.5131 16.9579C31.5762 16.8439 31.6433 16.7351 31.7073 16.6224C32.3372 15.5182 33.0262 14.4903 33.7617 13.5471C39.8647 5.7256 49.117 3.69021 53.4059 11.5397Z"
+                      fill="#666666"
+                    />
+                  </svg>
+                </div>
+                <div class="im-partners__info">
+                  <div class="im-partners__name">LETTER LOGO</div>
+                  <div class="im-partners__caption">LETTER LOGO</div>
+                </div>
+              </article>
             </div>
           </div>
         </div>
@@ -6506,40 +5467,22 @@
                 type="button"
                 aria-label="Предыдущий отзыв"
               >
-                <span class="im-professionals__nav-icon">
-                  <svg
-                    width="5"
-                    height="11"
-                    viewBox="0 0 5 11"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M3.60467 0.0184698C3.41717 0.0559698 3.22892 0.150474 3.11492 0.322974L0.125437 4.82297C-0.0418124 5.07497 -0.0418124 5.41472 0.125437 5.66672L3.11492 10.1667C3.34367 10.511 3.82217 10.6077 4.16567 10.3775C4.50842 10.148 4.60442 9.66721 4.37567 9.32296L1.66668 5.24448L4.37567 1.16672C4.60442 0.821723 4.50842 0.341719 4.16567 0.11222C3.99392 -0.00328015 3.79217 -0.0197801 3.60467 0.0184698Z"
-                      fill="#222222"
-                    />
-                  </svg>
-                </span>
+                <img
+                  class="im-professionals__nav-icon"
+                  src="images/main/arrow.svg"
+                  alt=""
+                />
               </button>
               <button
                 class="im-professionals__nav-btn im-professionals__nav-btn--next"
                 type="button"
                 aria-label="Следующий отзыв"
               >
-                <span class="im-professionals__nav-icon">
-                  <svg
-                    width="5"
-                    height="11"
-                    viewBox="0 0 5 11"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M0.895488 0.0184698C0.707989 -0.0197801 0.506239 -0.00328014 0.334489 0.11222C-0.00826 0.341719 -0.104259 0.821722 0.124491 1.16672L2.83348 5.24447L0.124491 9.32295C-0.104259 9.6672 -0.00826 10.148 0.334489 10.3775C0.677988 10.607 1.15649 10.5109 1.38524 10.1667L4.37472 5.66671C4.54197 5.41471 4.54197 5.07496 4.37472 4.82296L1.38524 0.322973C1.27124 0.150474 1.08299 0.0559697 0.895488 0.0184698Z"
-                      fill="#222222"
-                    />
-                  </svg>
-                </span>
+                <img
+                  class="im-professionals__nav-icon"
+                  src="images/main/arrow.svg"
+                  alt=""
+                />
               </button>
             </div>
           </header>
@@ -6550,280 +5493,124 @@
               id="professionals-slider"
             >
               <article class="im-professionals__card keen-slider__slide">
-                <div class="im-professionals__card-head">
-                  <div class="im-professionals__avatar" aria-hidden="true">
-                    <img
-                      src="images/professionals/avatar.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="im-professionals__person">
-                    <div class="im-professionals__name">Алексей Кузнецов</div>
-                    <div class="im-professionals__role">
-                      Руководитель производства, Москва
-                    </div>
-                    <div class="im-professionals__text">
-                      <span
-                        class="im-professionals__quote-mark"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="12"
-                          height="11"
-                          viewBox="0 0 12 11"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.74305 10.4C1.0755 10.4 0.618102 10.2735 0.370861 10.0204C0.12362 9.7674 0 9.29927 0 8.61606V6.37664C0 5.46569 0.0618101 4.64331 0.18543 3.90949C0.333775 3.15036 0.531567 2.46715 0.778808 1.85985C1.05077 1.22725 1.35982 0.607299 1.70596 0L3.7457 0.645256C3.5479 1.40438 3.41192 2.1382 3.33775 2.84671C3.2883 3.55523 3.25121 4.31435 3.22649 5.12409C4.166 5.12409 4.64812 5.65547 4.67285 6.71825L4.63576 8.61606C4.61104 9.29927 4.46269 9.7674 4.19073 10.0204C3.94349 10.2735 3.49845 10.4 2.85563 10.4H1.74305ZM8.2702 10.4C7.62737 10.4 7.18234 10.2735 6.9351 10.0204C6.68786 9.7674 6.55188 9.29927 6.52715 8.61606V6.37664C6.55188 5.46569 6.62605 4.64331 6.74967 3.90949C6.89801 3.15036 7.09581 2.46715 7.34305 1.85985C7.59029 1.22725 7.89934 0.607299 8.2702 0L10.2728 0.645256C10.0751 1.40438 9.93907 2.1382 9.8649 2.84671C9.81545 3.55523 9.77837 4.31435 9.75364 5.12409C10.6932 5.12409 11.1753 5.65547 11.2 6.71825L11.1629 8.61606C11.1382 9.29927 10.9898 9.7674 10.7179 10.0204C10.4706 10.2735 10.0256 10.4 9.38278 10.4H8.2702Z"
-                            fill="#C80400"
-                          />
-                        </svg>
-                      </span>
-                      Заказывали стеллажи и верстаки для производственного цеха.
-                      Конструкция надёжная, сборка понятная, всё соответствует
-                      заявленным характеристикам.
-                    </div>
-                  </div>
+                <div class="im-professionals__avatar" aria-hidden="true">
+                  <img src="images/main/man.png" alt="" loading="lazy" />
                 </div>
+                <div class="im-professionals__name">Алексей Кузнецов</div>
+                <div class="im-professionals__role">
+                  Руководитель производства, Москва
+                </div>
+                <p class="im-professionals__text">
+                  Заказывали стеллажи и верстаки для производственного цеха.
+                  Конструкция надёжная, сборка понятная, всё соответствует
+                  заявленным характеристикам.
+                </p>
+                <button class="im-professionals__action" type="button">
+                  Читать полностью
+                </button>
               </article>
 
               <article class="im-professionals__card keen-slider__slide">
-                <div class="im-professionals__card-head">
-                  <div class="im-professionals__avatar" aria-hidden="true">
-                    <img
-                      src="images/professionals/avatar.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="im-professionals__person">
-                    <div class="im-professionals__name">Алексей Кузнецов</div>
-                    <div class="im-professionals__role">
-                      Руководитель производства, Москва
-                    </div>
-                    <div class="im-professionals__text">
-                      <span
-                        class="im-professionals__quote-mark"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="12"
-                          height="11"
-                          viewBox="0 0 12 11"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.74305 10.4C1.0755 10.4 0.618102 10.2735 0.370861 10.0204C0.12362 9.7674 0 9.29927 0 8.61606V6.37664C0 5.46569 0.0618101 4.64331 0.18543 3.90949C0.333775 3.15036 0.531567 2.46715 0.778808 1.85985C1.05077 1.22725 1.35982 0.607299 1.70596 0L3.7457 0.645256C3.5479 1.40438 3.41192 2.1382 3.33775 2.84671C3.2883 3.55523 3.25121 4.31435 3.22649 5.12409C4.166 5.12409 4.64812 5.65547 4.67285 6.71825L4.63576 8.61606C4.61104 9.29927 4.46269 9.7674 4.19073 10.0204C3.94349 10.2735 3.49845 10.4 2.85563 10.4H1.74305ZM8.2702 10.4C7.62737 10.4 7.18234 10.2735 6.9351 10.0204C6.68786 9.7674 6.55188 9.29927 6.52715 8.61606V6.37664C6.55188 5.46569 6.62605 4.64331 6.74967 3.90949C6.89801 3.15036 7.09581 2.46715 7.34305 1.85985C7.59029 1.22725 7.89934 0.607299 8.2702 0L10.2728 0.645256C10.0751 1.40438 9.93907 2.1382 9.8649 2.84671C9.81545 3.55523 9.77837 4.31435 9.75364 5.12409C10.6932 5.12409 11.1753 5.65547 11.2 6.71825L11.1629 8.61606C11.1382 9.29927 10.9898 9.7674 10.7179 10.0204C10.4706 10.2735 10.0256 10.4 9.38278 10.4H8.2702Z"
-                            fill="#C80400"
-                          />
-                        </svg>
-                      </span>
-                      Мебель выдерживает ежедневную нагрузку, ничего не люфтит.
-                      Понравился подход — не просто продажа, а помощь с подбором
-                      под...
-                    </div>
-                    <button class="im-professionals__more" type="button">
-                      Показать полностью
-                    </button>
-                  </div>
+                <div class="im-professionals__avatar" aria-hidden="true">
+                  <img src="images/main/man.png" alt="" loading="lazy" />
                 </div>
+                <div class="im-professionals__name">Яковлева Ирина</div>
+                <div class="im-professionals__role">
+                  Руководитель производства, Москва
+                </div>
+                <p class="im-professionals__text">
+                  Мебель выдерживает ежедневную нагрузку, ничего не люфтит.
+                  Понравился подход, не просто продажа, а помощь с подбором под
+                  конкретные задачи цеха.
+                </p>
+                <button class="im-professionals__action" type="button">
+                  Читать полностью
+                </button>
               </article>
 
               <article class="im-professionals__card keen-slider__slide">
-                <div class="im-professionals__card-head">
-                  <div class="im-professionals__avatar" aria-hidden="true">
-                    <img
-                      src="images/professionals/avatar.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="im-professionals__person">
-                    <div class="im-professionals__name">Алексей Кузнецов</div>
-                    <div class="im-professionals__role">
-                      Руководитель производства, Москва
-                    </div>
-                    <div class="im-professionals__text">
-                      <span
-                        class="im-professionals__quote-mark"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="12"
-                          height="11"
-                          viewBox="0 0 12 11"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.74305 10.4C1.0755 10.4 0.618102 10.2735 0.370861 10.0204C0.12362 9.7674 0 9.29927 0 8.61606V6.37664C0 5.46569 0.0618101 4.64331 0.18543 3.90949C0.333775 3.15036 0.531567 2.46715 0.778808 1.85985C1.05077 1.22725 1.35982 0.607299 1.70596 0L3.7457 0.645256C3.5479 1.40438 3.41192 2.1382 3.33775 2.84671C3.2883 3.55523 3.25121 4.31435 3.22649 5.12409C4.166 5.12409 4.64812 5.65547 4.67285 6.71825L4.63576 8.61606C4.61104 9.29927 4.46269 9.7674 4.19073 10.0204C3.94349 10.2735 3.49845 10.4 2.85563 10.4H1.74305ZM8.2702 10.4C7.62737 10.4 7.18234 10.2735 6.9351 10.0204C6.68786 9.7674 6.55188 9.29927 6.52715 8.61606V6.37664C6.55188 5.46569 6.62605 4.64331 6.74967 3.90949C6.89801 3.15036 7.09581 2.46715 7.34305 1.85985C7.59029 1.22725 7.89934 0.607299 8.2702 0L10.2728 0.645256C10.0751 1.40438 9.93907 2.1382 9.8649 2.84671C9.81545 3.55523 9.77837 4.31435 9.75364 5.12409C10.6932 5.12409 11.1753 5.65547 11.2 6.71825L11.1629 8.61606C11.1382 9.29927 10.9898 9.7674 10.7179 10.0204C10.4706 10.2735 10.0256 10.4 9.38278 10.4H8.2702Z"
-                            fill="#C80400"
-                          />
-                        </svg>
-                      </span>
-                      Используем металлические шкафы Ironmebel на складе.
-                      Качество материалов и сборки полностью устраивает, сроки
-                      поставки соблюдаются.
-                    </div>
-                  </div>
+                <div class="im-professionals__avatar" aria-hidden="true">
+                  <img src="images/main/man.png" alt="" loading="lazy" />
                 </div>
+                <div class="im-professionals__name">Егоров Кирилл</div>
+                <div class="im-professionals__role">
+                  Руководитель производства, Москва
+                </div>
+                <p class="im-professionals__text">
+                  Используем металлические шкафы Ironmebel на складе. Качество
+                  материалов и сборки полностью устраивает, сроки поставки
+                  соблюдаются.
+                </p>
+                <button class="im-professionals__action" type="button">
+                  Читать полностью
+                </button>
               </article>
 
               <article class="im-professionals__card keen-slider__slide">
-                <div class="im-professionals__card-head">
-                  <div class="im-professionals__avatar" aria-hidden="true">
-                    <img
-                      src="images/professionals/avatar.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="im-professionals__person">
-                    <div class="im-professionals__name">Алексей Кузнецов</div>
-                    <div class="im-professionals__role">
-                      Руководитель производства, Москва
-                    </div>
-                    <div class="im-professionals__text">
-                      <span
-                        class="im-professionals__quote-mark"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="12"
-                          height="11"
-                          viewBox="0 0 12 11"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.74305 10.4C1.0755 10.4 0.618102 10.2735 0.370861 10.0204C0.12362 9.7674 0 9.29927 0 8.61606V6.37664C0 5.46569 0.0618101 4.64331 0.18543 3.90949C0.333775 3.15036 0.531567 2.46715 0.778808 1.85985C1.05077 1.22725 1.35982 0.607299 1.70596 0L3.7457 0.645256C3.5479 1.40438 3.41192 2.1382 3.33775 2.84671C3.2883 3.55523 3.25121 4.31435 3.22649 5.12409C4.166 5.12409 4.64812 5.65547 4.67285 6.71825L4.63576 8.61606C4.61104 9.29927 4.46269 9.7674 4.19073 10.0204C3.94349 10.2735 3.49845 10.4 2.85563 10.4H1.74305ZM8.2702 10.4C7.62737 10.4 7.18234 10.2735 6.9351 10.0204C6.68786 9.7674 6.55188 9.29927 6.52715 8.61606V6.37664C6.55188 5.46569 6.62605 4.64331 6.74967 3.90949C6.89801 3.15036 7.09581 2.46715 7.34305 1.85985C7.59029 1.22725 7.89934 0.607299 8.2702 0L10.2728 0.645256C10.0751 1.40438 9.93907 2.1382 9.8649 2.84671C9.81545 3.55523 9.77837 4.31435 9.75364 5.12409C10.6932 5.12409 11.1753 5.65547 11.2 6.71825L11.1629 8.61606C11.1382 9.29927 10.9898 9.7674 10.7179 10.0204C10.4706 10.2735 10.0256 10.4 9.38278 10.4H8.2702Z"
-                            fill="#C80400"
-                          />
-                        </svg>
-                      </span>
-                      Заказывали стеллажи и верстаки для производственного цеха.
-                      Конструкция надёжная, сборка понятная, всё соответствует
-                      заявленным характеристикам.
-                    </div>
-                  </div>
+                <div class="im-professionals__avatar" aria-hidden="true">
+                  <img src="images/main/man.png" alt="" loading="lazy" />
                 </div>
+                <div class="im-professionals__name">Алексей Кузнецов</div>
+                <div class="im-professionals__role">
+                  Руководитель производства, Москва
+                </div>
+                <p class="im-professionals__text">
+                  Заказывали стеллажи и верстаки для производственного цеха.
+                  Конструкция надёжная, сборка понятная, всё соответствует
+                  заявленным характеристикам.
+                </p>
+                <button class="im-professionals__action" type="button">
+                  Читать полностью
+                </button>
               </article>
 
               <article class="im-professionals__card keen-slider__slide">
-                <div class="im-professionals__card-head">
-                  <div class="im-professionals__avatar" aria-hidden="true">
-                    <img
-                      src="images/professionals/avatar.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="im-professionals__person">
-                    <div class="im-professionals__name">Алексей Кузнецов</div>
-                    <div class="im-professionals__role">
-                      Руководитель производства, Москва
-                    </div>
-                    <div class="im-professionals__text">
-                      <span
-                        class="im-professionals__quote-mark"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="12"
-                          height="11"
-                          viewBox="0 0 12 11"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.74305 10.4C1.0755 10.4 0.618102 10.2735 0.370861 10.0204C0.12362 9.7674 0 9.29927 0 8.61606V6.37664C0 5.46569 0.0618101 4.64331 0.18543 3.90949C0.333775 3.15036 0.531567 2.46715 0.778808 1.85985C1.05077 1.22725 1.35982 0.607299 1.70596 0L3.7457 0.645256C3.5479 1.40438 3.41192 2.1382 3.33775 2.84671C3.2883 3.55523 3.25121 4.31435 3.22649 5.12409C4.166 5.12409 4.64812 5.65547 4.67285 6.71825L4.63576 8.61606C4.61104 9.29927 4.46269 9.7674 4.19073 10.0204C3.94349 10.2735 3.49845 10.4 2.85563 10.4H1.74305ZM8.2702 10.4C7.62737 10.4 7.18234 10.2735 6.9351 10.0204C6.68786 9.7674 6.55188 9.29927 6.52715 8.61606V6.37664C6.55188 5.46569 6.62605 4.64331 6.74967 3.90949C6.89801 3.15036 7.09581 2.46715 7.34305 1.85985C7.59029 1.22725 7.89934 0.607299 8.2702 0L10.2728 0.645256C10.0751 1.40438 9.93907 2.1382 9.8649 2.84671C9.81545 3.55523 9.77837 4.31435 9.75364 5.12409C10.6932 5.12409 11.1753 5.65547 11.2 6.71825L11.1629 8.61606C11.1382 9.29927 10.9898 9.7674 10.7179 10.0204C10.4706 10.2735 10.0256 10.4 9.38278 10.4H8.2702Z"
-                            fill="#C80400"
-                          />
-                        </svg>
-                      </span>
-                      Мебель выдерживает ежедневную нагрузку, ничего не люфтит.
-                      Понравился подход — не просто продажа, а помощь с подбором
-                      под...
-                    </div>
-                    <button class="im-professionals__more" type="button">
-                      Показать полностью
-                    </button>
-                  </div>
+                <div class="im-professionals__avatar" aria-hidden="true">
+                  <img src="images/main/man.png" alt="" loading="lazy" />
                 </div>
+                <div class="im-professionals__name">Яковлева Ирина</div>
+                <div class="im-professionals__role">
+                  Руководитель производства, Москва
+                </div>
+                <p class="im-professionals__text">
+                  Мебель выдерживает ежедневную нагрузку, ничего не люфтит.
+                  Понравился подход, не просто продажа, а помощь с подбором под
+                  конкретные задачи цеха.
+                </p>
+                <button class="im-professionals__action" type="button">
+                  Читать полностью
+                </button>
               </article>
 
               <article class="im-professionals__card keen-slider__slide">
-                <div class="im-professionals__card-head">
-                  <div class="im-professionals__avatar" aria-hidden="true">
-                    <img
-                      src="images/professionals/avatar.png"
-                      alt=""
-                      loading="lazy"
-                    />
-                  </div>
-                  <div class="im-professionals__person">
-                    <div class="im-professionals__name">Алексей Кузнецов</div>
-                    <div class="im-professionals__role">
-                      Руководитель производства, Москва
-                    </div>
-                    <div class="im-professionals__text">
-                      <span
-                        class="im-professionals__quote-mark"
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="12"
-                          height="11"
-                          viewBox="0 0 12 11"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M1.74305 10.4C1.0755 10.4 0.618102 10.2735 0.370861 10.0204C0.12362 9.7674 0 9.29927 0 8.61606V6.37664C0 5.46569 0.0618101 4.64331 0.18543 3.90949C0.333775 3.15036 0.531567 2.46715 0.778808 1.85985C1.05077 1.22725 1.35982 0.607299 1.70596 0L3.7457 0.645256C3.5479 1.40438 3.41192 2.1382 3.33775 2.84671C3.2883 3.55523 3.25121 4.31435 3.22649 5.12409C4.166 5.12409 4.64812 5.65547 4.67285 6.71825L4.63576 8.61606C4.61104 9.29927 4.46269 9.7674 4.19073 10.0204C3.94349 10.2735 3.49845 10.4 2.85563 10.4H1.74305ZM8.2702 10.4C7.62737 10.4 7.18234 10.2735 6.9351 10.0204C6.68786 9.7674 6.55188 9.29927 6.52715 8.61606V6.37664C6.55188 5.46569 6.62605 4.64331 6.74967 3.90949C6.89801 3.15036 7.09581 2.46715 7.34305 1.85985C7.59029 1.22725 7.89934 0.607299 8.2702 0L10.2728 0.645256C10.0751 1.40438 9.93907 2.1382 9.8649 2.84671C9.81545 3.55523 9.77837 4.31435 9.75364 5.12409C10.6932 5.12409 11.1753 5.65547 11.2 6.71825L11.1629 8.61606C11.1382 9.29927 10.9898 9.7674 10.7179 10.0204C10.4706 10.2735 10.0256 10.4 9.38278 10.4H8.2702Z"
-                            fill="#C80400"
-                          />
-                        </svg>
-                      </span>
-                      Используем металлические шкафы Ironmebel на складе.
-                      Качество материалов и сборки полностью устраивает, сроки
-                      поставки соблюдаются.
-                    </div>
-                  </div>
+                <div class="im-professionals__avatar" aria-hidden="true">
+                  <img src="images/main/man.png" alt="" loading="lazy" />
                 </div>
+                <div class="im-professionals__name">Егоров Кирилл</div>
+                <div class="im-professionals__role">
+                  Руководитель производства, Москва
+                </div>
+                <p class="im-professionals__text">
+                  Используем металлические шкафы Ironmebel на складе. Качество
+                  материалов и сборки полностью устраивает, сроки поставки
+                  соблюдаются.
+                </p>
+                <button class="im-professionals__action" type="button">
+                  Читать полностью
+                </button>
               </article>
             </div>
           </div>
 
           <div class="im-dealer">
-            <div class="im-dealer__content">
-              <h3 class="im-dealer__title">
-                Дилерская программа
-                <span class="im-dealer__brand">IRONMEBEL</span>
-              </h3>
-              <p class="im-dealer__subtitle">
-                Готовый продукт, поддержка и стабильные поставки
-              </p>
-            </div>
-            <a href="#" class="im-dealer__button">
-              <span class="im-dealer__button-text">Подробнее</span>
-              <span class="im-dealer__button-icon" aria-hidden="true">
-                <svg
-                  width="9"
-                  height="9"
-                  viewBox="0 0 9 9"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                    fill="#222222"
-                  />
-                </svg>
-              </span>
-            </a>
+            <h3 class="im-dealer__title">Дилерская программа</h3>
+            <span class="im-dealer__arrow" aria-hidden="true">
+              <img src="images/main/arrow.svg" alt="" />
+            </span>
+            <p class="im-dealer__subtitle">
+              Готовый продукт, поддержка и стабильные поставки
+            </p>
+            <a href="#" class="im-dealer__button">Подробнее</a>
           </div>
         </div>
       </section>
@@ -6833,7 +5620,7 @@
           <header class="im-blog__head">
             <h2 class="im-blog__title">Блог</h2>
             <a href="#" class="im-blog__all">
-              <span class="im-blog__all-text">Смотреть все</span>
+              <span class="im-blog__all-text">Все новости</span>
               <span class="im-blog__all-arrow" aria-hidden="true">
                 <svg
                   width="9"
@@ -6855,359 +5642,120 @@
             <article class="im-blog__card">
               <a href="#" class="im-blog__image">
                 <img
-                  src="images/blog/blog_1.png"
+                  src="images/main/main_photo.png"
                   alt="Как выбрать стеллаж под реальную нагрузку"
                   loading="lazy"
                 />
-                <span class="im-blog__tag">Гайд</span>
+                <span class="im-blog__tag">Событие</span>
               </a>
               <div class="im-blog__content">
-                <div class="im-blog__meta">
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 11 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.80016 0C0.803831 0 0 0.803832 0 1.80016V4.0915C0 4.5605 0.25025 5.14149 0.582166 5.47341C1.13808 6.02991 5.01899 9.9289 5.01899 9.9289C5.78083 10.6902 7.02099 10.6902 7.78283 9.9289L9.9289 7.78283C10.6901 7.02158 10.6901 5.78083 9.9289 5.019L5.4734 0.582158C5.14149 0.250241 4.56108 0 4.0915 0H1.80016ZM1.80016 1.16375H4.0915C4.25191 1.16375 4.54183 1.28683 4.655 1.39999L9.0924 5.85549C9.39924 6.16232 9.39924 6.65757 9.0924 6.96441L6.9644 9.09241C6.65757 9.39924 6.14423 9.39924 5.8374 9.09241C5.8374 9.09241 1.95649 5.2115 1.39999 4.655C1.28683 4.54183 1.16375 4.25192 1.16375 4.0915V1.80016C1.16375 1.44666 1.44666 1.16375 1.80016 1.16375ZM3.49124 2.32749C2.8484 2.32749 2.32749 2.8484 2.32749 3.49124C2.32749 4.13407 2.8484 4.655 3.49124 4.655C4.13407 4.655 4.655 4.13407 4.655 3.49124C4.655 2.8484 4.13407 2.32749 3.49124 2.32749Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    Склад
-                  </span>
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.83333 0C2.6117 0 0 2.61158 0 5.83333C0 9.05508 2.61164 11.6667 5.83333 11.6667C9.05497 11.6667 11.6667 9.05508 11.6667 5.83333C11.6667 2.61158 9.05497 0 5.83333 0ZM5.83333 1.16667C8.41068 1.16667 10.5 3.25617 10.5 5.83333C10.5 8.4105 8.41068 10.5 5.83333 10.5C3.25599 10.5 1.16667 8.4105 1.16667 5.83333C1.16667 3.25617 3.25599 1.16667 5.83333 1.16667ZM5.83333 2.33333C5.51116 2.33333 5.25 2.59467 5.25 2.91667V5.83333C5.25 5.98792 5.30466 6.14308 5.41403 6.25275L7.16403 8.00275C7.39188 8.23025 7.77478 8.23025 8.00263 8.00275C8.23043 7.77466 8.23043 7.392 8.00263 7.16392L6.41667 5.57784V2.91667C6.41667 2.59467 6.15551 2.33333 5.83333 2.33333Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    5 мин
-                  </span>
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="10"
-                        height="12"
-                        viewBox="0 0 10 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.07784 0C0.939757 0 0 0.86333 0 1.95066V9.71601C0 10.8033 0.939757 11.6667 2.07784 11.6667H7.25549C8.39358 11.6667 9.33333 10.8033 9.33333 9.71601C9.33333 9.33626 9.33333 5.16717 9.33333 4.08333C9.33333 4.0775 9.33333 4.07108 9.33333 4.06525C9.33333 1.98683 7.32725 0 5.25 0C2.79183 0 2.78601 0 2.07784 0ZM2.07784 1.16667C2.65592 1.16667 3.30983 1.16667 4.66667 1.16667V2.33333C4.66667 3.822 5.51133 4.66667 7 4.66667H8.16667C8.16667 6.14658 8.16667 9.37534 8.16667 9.71601C8.16667 10.1325 7.77349 10.5 7.25549 10.5H2.07784C1.55984 10.5 1.16667 10.1325 1.16667 9.71601V1.95066C1.16667 1.53416 1.55984 1.16667 2.07784 1.16667ZM5.83333 1.3125C6.867 1.58667 7.77117 2.46925 8.03892 3.5H7C6.15533 3.5 5.83333 3.178 5.83333 2.33333V1.3125ZM4.66667 4.66667C4.34467 4.66667 4.08333 4.928 4.08333 5.25V7.58334H2.91667L4.66667 9.33334L6.41667 7.58334H5.25V5.25C5.25 4.928 4.98867 4.66667 4.66667 4.66667Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    PDF
-                  </span>
-                </div>
                 <h3 class="im-blog__card-title">
                   Как выбрать стеллаж под реальную нагрузку
                 </h3>
                 <p class="im-blog__card-desc">
                   Разбираем ключевые параметры стеллажей, чтобы они
-                  выдерживали...
+                  выдерживали нагрузку и служили годами.
                 </p>
-                <a href="#" class="im-blog__read">
-                  <span class="im-blog__read-text">Читать</span>
-                  <span class="im-blog__read-arrow" aria-hidden="true">
-                    <svg
-                      width="9"
-                      height="9"
-                      viewBox="0 0 9 9"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                        fill="#666666"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </article>
-
-            <article class="im-blog__card">
-              <a href="#" class="im-blog__image">
-                <img
-                  src="images/blog/blog_2.png"
-                  alt="ГОСТ и сертификаты для металлической мебели"
-                  loading="lazy"
-                />
-                <span class="im-blog__tag">Обзор</span>
-              </a>
-              <div class="im-blog__content">
                 <div class="im-blog__meta">
                   <span class="im-blog__meta-item">
                     <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 11 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.80016 0C0.803831 0 0 0.803832 0 1.80016V4.0915C0 4.5605 0.25025 5.14149 0.582166 5.47341C1.13808 6.02991 5.01899 9.9289 5.01899 9.9289C5.78083 10.6902 7.02099 10.6902 7.78283 9.9289L9.9289 7.78283C10.6901 7.02158 10.6901 5.78083 9.9289 5.019L5.4734 0.582158C5.14149 0.250241 4.56108 0 4.0915 0H1.80016ZM1.80016 1.16375H4.0915C4.25191 1.16375 4.54183 1.28683 4.655 1.39999L9.0924 5.85549C9.39924 6.16232 9.39924 6.65757 9.0924 6.96441L6.9644 9.09241C6.65757 9.39924 6.14423 9.39924 5.8374 9.09241C5.8374 9.09241 1.95649 5.2115 1.39999 4.655C1.28683 4.54183 1.16375 4.25192 1.16375 4.0915V1.80016C1.16375 1.44666 1.44666 1.16375 1.80016 1.16375ZM3.49124 2.32749C2.8484 2.32749 2.32749 2.8484 2.32749 3.49124C2.32749 4.13407 2.8484 4.655 3.49124 4.655C4.13407 4.655 4.655 4.13407 4.655 3.49124C4.655 2.8484 4.13407 2.32749 3.49124 2.32749Z"
-                          fill="#666666"
-                        />
-                      </svg>
+                      <img src="images/main/birka.svg" alt="" />
                     </span>
-                    Документы
+                    Склад
                   </span>
                   <span class="im-blog__meta-item">
                     <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.83333 0C2.6117 0 0 2.61158 0 5.83333C0 9.05508 2.61164 11.6667 5.83333 11.6667C9.05497 11.6667 11.6667 9.05508 11.6667 5.83333C11.6667 2.61158 9.05497 0 5.83333 0ZM5.83333 1.16667C8.41068 1.16667 10.5 3.25617 10.5 5.83333C10.5 8.4105 8.41068 10.5 5.83333 10.5C3.25599 10.5 1.16667 8.4105 1.16667 5.83333C1.16667 3.25617 3.25599 1.16667 5.83333 1.16667ZM5.83333 2.33333C5.51116 2.33333 5.25 2.59467 5.25 2.91667V5.83333C5.25 5.98792 5.30466 6.14308 5.41403 6.25275L7.16403 8.00275C7.39188 8.23025 7.77478 8.23025 8.00263 8.00275C8.23043 7.77466 8.23043 7.392 8.00263 7.16392L6.41667 5.57784V2.91667C6.41667 2.59467 6.15551 2.33333 5.83333 2.33333Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    6 мин
-                  </span>
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="10"
-                        height="12"
-                        viewBox="0 0 10 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2.07784 0C0.939757 0 0 0.86333 0 1.95066V9.71601C0 10.8033 0.939757 11.6667 2.07784 11.6667H7.25549C8.39358 11.6667 9.33333 10.8033 9.33333 9.71601C9.33333 9.33626 9.33333 5.16717 9.33333 4.08333C9.33333 4.0775 9.33333 4.07108 9.33333 4.06525C9.33333 1.98683 7.32725 0 5.25 0C2.79183 0 2.78601 0 2.07784 0ZM2.07784 1.16667C2.65592 1.16667 3.30983 1.16667 4.66667 1.16667V2.33333C4.66667 3.822 5.51133 4.66667 7 4.66667H8.16667C8.16667 6.14658 8.16667 9.37534 8.16667 9.71601C8.16667 10.1325 7.77349 10.5 7.25549 10.5H2.07784C1.55984 10.5 1.16667 10.1325 1.16667 9.71601V1.95066C1.16667 1.53416 1.55984 1.16667 2.07784 1.16667ZM5.83333 1.3125C6.867 1.58667 7.77117 2.46925 8.03892 3.5H7C6.15533 3.5 5.83333 3.178 5.83333 2.33333V1.3125ZM4.66667 4.66667C4.34467 4.66667 4.08333 4.928 4.08333 5.25V7.58334H2.91667L4.66667 9.33334L6.41667 7.58334H5.25V5.25C5.25 4.928 4.98867 4.66667 4.66667 4.66667Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    PDF
-                  </span>
-                </div>
-                <h3 class="im-blog__card-title">
-                  ГОСТ и сертификаты для металлической мебели
-                </h3>
-                <p class="im-blog__card-desc">
-                  Объясняем, какие документы подтверждают качество и
-                  безопасно...
-                </p>
-                <a href="#" class="im-blog__read">
-                  <span class="im-blog__read-text">Читать</span>
-                  <span class="im-blog__read-arrow" aria-hidden="true">
-                    <svg
-                      width="9"
-                      height="9"
-                      viewBox="0 0 9 9"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                        fill="#666666"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </article>
-
-            <article class="im-blog__card">
-              <a href="#" class="im-blog__image">
-                <img
-                  src="images/blog/blog_3.png"
-                  alt="Верстак для мастерской: чек-лист выбора"
-                  loading="lazy"
-                />
-                <span class="im-blog__tag">Чек-лист</span>
-              </a>
-              <div class="im-blog__content">
-                <div class="im-blog__meta">
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 11 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.80016 0C0.803831 0 0 0.803832 0 1.80016V4.0915C0 4.5605 0.25025 5.14149 0.582166 5.47341C1.13808 6.02991 5.01899 9.9289 5.01899 9.9289C5.78083 10.6902 7.02099 10.6902 7.78283 9.9289L9.9289 7.78283C10.6901 7.02158 10.6901 5.78083 9.9289 5.019L5.4734 0.582158C5.14149 0.250241 4.56108 0 4.0915 0H1.80016ZM1.80016 1.16375H4.0915C4.25191 1.16375 4.54183 1.28683 4.655 1.39999L9.0924 5.85549C9.39924 6.16232 9.39924 6.65757 9.0924 6.96441L6.9644 9.09241C6.65757 9.39924 6.14423 9.39924 5.8374 9.09241C5.8374 9.09241 1.95649 5.2115 1.39999 4.655C1.28683 4.54183 1.16375 4.25192 1.16375 4.0915V1.80016C1.16375 1.44666 1.44666 1.16375 1.80016 1.16375ZM3.49124 2.32749C2.8484 2.32749 2.32749 2.8484 2.32749 3.49124C2.32749 4.13407 2.8484 4.655 3.49124 4.655C4.13407 4.655 4.655 4.13407 4.655 3.49124C4.655 2.8484 4.13407 2.32749 3.49124 2.32749Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    Мастерская
-                  </span>
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.83333 0C2.6117 0 0 2.61158 0 5.83333C0 9.05508 2.61164 11.6667 5.83333 11.6667C9.05497 11.6667 11.6667 9.05508 11.6667 5.83333C11.6667 2.61158 9.05497 0 5.83333 0ZM5.83333 1.16667C8.41068 1.16667 10.5 3.25617 10.5 5.83333C10.5 8.4105 8.41068 10.5 5.83333 10.5C3.25599 10.5 1.16667 8.4105 1.16667 5.83333C1.16667 3.25617 3.25599 1.16667 5.83333 1.16667ZM5.83333 2.33333C5.51116 2.33333 5.25 2.59467 5.25 2.91667V5.83333C5.25 5.98792 5.30466 6.14308 5.41403 6.25275L7.16403 8.00275C7.39188 8.23025 7.77478 8.23025 8.00263 8.00275C8.23043 7.77466 8.23043 7.392 8.00263 7.16392L6.41667 5.57784V2.91667C6.41667 2.59467 6.15551 2.33333 5.83333 2.33333Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    4 мин
-                  </span>
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 11 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.80016 0C0.803831 0 0 0.803832 0 1.80016V4.0915C0 4.5605 0.25025 5.14149 0.582166 5.47341C1.13808 6.02991 5.01899 9.9289 5.01899 9.9289C5.78083 10.6902 7.02099 10.6902 7.78283 9.9289L9.9289 7.78283C10.6901 7.02158 10.6901 5.78083 9.9289 5.019L5.4734 0.582158C5.14149 0.250241 4.56108 0 4.0915 0H1.80016ZM1.80016 1.16375H4.0915C4.25191 1.16375 4.54183 1.28683 4.655 1.39999L9.0924 5.85549C9.39924 6.16232 9.39924 6.65757 9.0924 6.96441L6.9644 9.09241C6.65757 9.39924 6.14423 9.39924 5.8374 9.09241C5.8374 9.09241 1.95649 5.2115 1.39999 4.655C1.28683 4.54183 1.16375 4.25192 1.16375 4.0915V1.80016C1.16375 1.44666 1.44666 1.16375 1.80016 1.16375ZM3.49124 2.32749C2.8484 2.32749 2.32749 2.8484 2.32749 3.49124C2.32749 4.13407 2.8484 4.655 3.49124 4.655C4.13407 4.655 4.655 4.13407 4.655 3.49124C4.655 2.8484 4.13407 2.32749 3.49124 2.32749Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    Чек-лист
-                  </span>
-                </div>
-                <h3 class="im-blog__card-title">
-                  Верстак для мастерской: чек-лист выбора
-                </h3>
-                <p class="im-blog__card-desc">
-                  Помогаем подобрать верстак под задачи: ящики, экраны,
-                  освещение и...
-                </p>
-                <a href="#" class="im-blog__read">
-                  <span class="im-blog__read-text">Читать</span>
-                  <span class="im-blog__read-arrow" aria-hidden="true">
-                    <svg
-                      width="9"
-                      height="9"
-                      viewBox="0 0 9 9"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                        fill="#666666"
-                      />
-                    </svg>
-                  </span>
-                </a>
-              </div>
-            </article>
-
-            <article class="im-blog__card">
-              <a href="#" class="im-blog__image">
-                <img
-                  src="images/blog/blog_4.png"
-                  alt="Как организовать рабочее пространство без лишних затрат"
-                  loading="lazy"
-                />
-                <span class="im-blog__tag">Гайд</span>
-              </a>
-              <div class="im-blog__content">
-                <div class="im-blog__meta">
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="11"
-                        height="11"
-                        viewBox="0 0 11 11"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M1.80016 0C0.803831 0 0 0.803832 0 1.80016V4.0915C0 4.5605 0.25025 5.14149 0.582166 5.47341C1.13808 6.02991 5.01899 9.9289 5.01899 9.9289C5.78083 10.6902 7.02099 10.6902 7.78283 9.9289L9.9289 7.78283C10.6901 7.02158 10.6901 5.78083 9.9289 5.019L5.4734 0.582158C5.14149 0.250241 4.56108 0 4.0915 0H1.80016ZM1.80016 1.16375H4.0915C4.25191 1.16375 4.54183 1.28683 4.655 1.39999L9.0924 5.85549C9.39924 6.16232 9.39924 6.65757 9.0924 6.96441L6.9644 9.09241C6.65757 9.39924 6.14423 9.39924 5.8374 9.09241C5.8374 9.09241 1.95649 5.2115 1.39999 4.655C1.28683 4.54183 1.16375 4.25192 1.16375 4.0915V1.80016C1.16375 1.44666 1.44666 1.16375 1.80016 1.16375ZM3.49124 2.32749C2.8484 2.32749 2.32749 2.8484 2.32749 3.49124C2.32749 4.13407 2.8484 4.655 3.49124 4.655C4.13407 4.655 4.655 4.13407 4.655 3.49124C4.655 2.8484 4.13407 2.32749 3.49124 2.32749Z"
-                          fill="#666666"
-                        />
-                      </svg>
-                    </span>
-                    Производство
-                  </span>
-                  <span class="im-blog__meta-item">
-                    <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.83333 0C2.6117 0 0 2.61158 0 5.83333C0 9.05508 2.61164 11.6667 5.83333 11.6667C9.05497 11.6667 11.6667 9.05508 11.6667 5.83333C11.6667 2.61158 9.05497 0 5.83333 0ZM5.83333 1.16667C8.41068 1.16667 10.5 3.25617 10.5 5.83333C10.5 8.4105 8.41068 10.5 5.83333 10.5C3.25599 10.5 1.16667 8.4105 1.16667 5.83333C1.16667 3.25617 3.25599 1.16667 5.83333 1.16667ZM5.83333 2.33333C5.51116 2.33333 5.25 2.59467 5.25 2.91667V5.83333C5.25 5.98792 5.30466 6.14308 5.41403 6.25275L7.16403 8.00275C7.39188 8.23025 7.77478 8.23025 8.00263 8.00275C8.23043 7.77466 8.23043 7.392 8.00263 7.16392L6.41667 5.57784V2.91667C6.41667 2.59467 6.15551 2.33333 5.83333 2.33333Z"
-                          fill="#666666"
-                        />
-                      </svg>
+                      <img src="images/main/birka.svg" alt="" />
                     </span>
                     5 мин
                   </span>
                   <span class="im-blog__meta-item">
                     <span class="im-blog__meta-icon" aria-hidden="true">
-                      <svg
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5.83333 0C2.6117 0 0 2.61158 0 5.83333C0 9.05508 2.61164 11.6667 5.83333 11.6667C9.05497 11.6667 11.6667 9.05508 11.6667 5.83333C11.6667 2.61158 9.05497 0 5.83333 0ZM5.83333 1.16667C8.41068 1.16667 10.5 3.25617 10.5 5.83333C10.5 8.4105 8.41068 10.5 5.83333 10.5C3.25599 10.5 1.16667 8.4105 1.16667 5.83333C1.16667 3.25617 3.25599 1.16667 5.83333 1.16667ZM5.25 3.50001V7.58334L3.65401 5.98735L2.82733 6.81401L5.41401 9.40069C5.64116 9.62784 6.02533 9.62784 6.25268 9.40069L8.83933 6.81401L8.01268 5.98735L6.41667 7.58334V3.50001H5.25Z"
-                          fill="#666666"
-                        />
-                      </svg>
+                      <img src="images/main/birka.svg" alt="" />
                     </span>
-                    Видео
+                    PDF
                   </span>
                 </div>
+              </div>
+            </article>
+
+            <article class="im-blog__card">
+              <a href="#" class="im-blog__image">
+                <img
+                  src="images/main/main_photo.png"
+                  alt="ГОСТ и сертификаты для металлической мебели"
+                  loading="lazy"
+                />
+                <span class="im-blog__tag">Событие</span>
+              </a>
+              <div class="im-blog__content">
                 <h3 class="im-blog__card-title">
-                  Как организовать рабочее пространство без лишних затр...
+                  ГОСТ и сертификаты для металлической мебели
                 </h3>
                 <p class="im-blog__card-desc">
-                  Практические советы по планированию рабочих зон и хранени...
+                  Объясняем, какие документы подтверждают качество и
+                  безопасность металлической мебели для бизнеса.
                 </p>
-                <a href="#" class="im-blog__read">
-                  <span class="im-blog__read-text">Читать</span>
-                  <span class="im-blog__read-arrow" aria-hidden="true">
-                    <svg
-                      width="9"
-                      height="9"
-                      viewBox="0 0 9 9"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M0 4.05075C0 3.63675 0.335475 3.30151 0.74925 3.30151C1.1076 3.30151 5.298 3.30151 6.4155 3.30151L4.191 1.05375L5.24475 0L8.78025 3.51226C8.92725 3.65851 9 3.85501 9 4.05151C9 4.24726 8.9265 4.44301 8.78025 4.58926L5.24475 8.1015L4.191 7.04775L6.4155 4.8C5.298 4.8 1.1076 4.8 0.74925 4.8C0.335475 4.8 0 4.46475 0 4.05075Z"
-                        fill="#666666"
-                      />
-                    </svg>
+                <div class="im-blog__meta">
+                  <span class="im-blog__meta-item">
+                    <span class="im-blog__meta-icon" aria-hidden="true">
+                      <img src="images/main/birka.svg" alt="" />
+                    </span>
+                    Документы
                   </span>
-                </a>
+                  <span class="im-blog__meta-item">
+                    <span class="im-blog__meta-icon" aria-hidden="true">
+                      <img src="images/main/birka.svg" alt="" />
+                    </span>
+                    6 мин
+                  </span>
+                  <span class="im-blog__meta-item">
+                    <span class="im-blog__meta-icon" aria-hidden="true">
+                      <img src="images/main/birka.svg" alt="" />
+                    </span>
+                    PDF
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="im-blog__card">
+              <a href="#" class="im-blog__image">
+                <img
+                  src="images/main/main_photo.png"
+                  alt="Верстак для мастерской: чек-лист выбора"
+                  loading="lazy"
+                />
+                <span class="im-blog__tag">Событие</span>
+              </a>
+              <div class="im-blog__content">
+                <h3 class="im-blog__card-title">
+                  Верстак для мастерской: чек-лист выбора
+                </h3>
+                <p class="im-blog__card-desc">
+                  Помогаем подобрать верстак под задачи: ящики, экраны,
+                  освещение и аксессуары без лишних затрат.
+                </p>
+                <div class="im-blog__meta">
+                  <span class="im-blog__meta-item">
+                    <span class="im-blog__meta-icon" aria-hidden="true">
+                      <img src="images/main/birka.svg" alt="" />
+                    </span>
+                    Мастерская
+                  </span>
+                  <span class="im-blog__meta-item">
+                    <span class="im-blog__meta-icon" aria-hidden="true">
+                      <img src="images/main/birka.svg" alt="" />
+                    </span>
+                    4 мин
+                  </span>
+                  <span class="im-blog__meta-item">
+                    <span class="im-blog__meta-icon" aria-hidden="true">
+                      <img src="images/main/birka.svg" alt="" />
+                    </span>
+                    Чек-лист
+                  </span>
+                </div>
               </div>
             </article>
           </div>
@@ -7234,9 +5782,15 @@
       <section class="im-cta">
         <div class="im-container">
           <div class="im-cta__inner">
+            <div class="im-cta__logo">
+              <img src="images/main/logo2.svg" alt="IronMebel" loading="lazy" />
+            </div>
+
             <div class="im-cta__content">
               <h2 class="im-cta__title">
-                Получите лучшее<br />решение для вашего бизнеса
+                Получите
+                <span class="im-cta__title-accent">лучшее решение</span><br />
+                для вашего бизнеса
               </h2>
               <p class="im-cta__subtitle">КП с учётом масштаба и нагрузки</p>
 
@@ -7356,10 +5910,6 @@
                   </span>
                 </button>
               </form>
-            </div>
-
-            <div class="im-cta__logo">
-              <img src="images/logo.png" alt="IronMebel" loading="lazy" />
             </div>
           </div>
         </div>
