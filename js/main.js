@@ -1609,7 +1609,6 @@ const initShowAllButtons = () => {
 initShowAllButtons();
 
 const initGoodsCardLinks = () => {
-  const productPageUrl = "./product.html";
   const blockedSelector =
     "a, button, input, select, textarea, label, [data-goods-slider], .keen-slider";
 
@@ -1621,6 +1620,18 @@ const initGoodsCardLinks = () => {
 
     const card = target.closest(".im-goods__card");
     if (!card) return;
+
+    const article = card.closest("article") || card.querySelector("article");
+
+    let productPageUrl = "";
+
+    if (article && article.dataset.productHref) {
+      productPageUrl = article.dataset.productHref;
+    } else if (card.dataset.productHref) {
+      productPageUrl = card.dataset.productHref;
+    }
+
+    if (!productPageUrl) return;
 
     window.location.href = productPageUrl;
   });

@@ -118,7 +118,6 @@ document
 })();
 
 (function initCatalogGoodsCardLinks() {
-  var productPageUrl = "./product.html";
   var blockedSelector =
     "a, button, input, select, textarea, label, [data-goods-slider], .keen-slider";
 
@@ -129,6 +128,17 @@ document
 
     var card = target.closest(".im-goods__card");
     if (!card) return;
+
+    var article = card.closest("article") || card.querySelector("article");
+    var productPageUrl = "";
+
+    if (article && article.dataset.productHref) {
+      productPageUrl = article.dataset.productHref;
+    } else if (card.dataset.productHref) {
+      productPageUrl = card.dataset.productHref;
+    }
+
+    if (!productPageUrl) return;
 
     window.location.href = productPageUrl;
   });
