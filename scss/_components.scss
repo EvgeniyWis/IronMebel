@@ -800,10 +800,6 @@
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--neutral-100) 10%, transparent);
 }
 
-.im-cta__select-wrap:focus-within .im-cta__select-arrow {
-  transform: translateY(-50%) rotate(180deg);
-}
-
 .im-cta__select-wrap:hover .im-cta__select-btn {
   background: color-mix(in srgb, var(--neutral-100) 10%, transparent);
 }
