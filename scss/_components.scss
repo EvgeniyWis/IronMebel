@@ -444,10 +444,34 @@
   svg {
     width: 21px;
     height: 21px;
+    circle,
+    path {
+      transition:
+        stroke var(--transition-fast),
+        fill var(--transition-fast);
+    }
+  }
+
+  &.is-active {
+    background: var(--brand-110);
+
+    svg {
+      circle,
+      path {
+        stroke: var(--brand-600);
+      }
+    }
   }
 
   &:hover {
     transform: scale(1.05);
+
+    svg {
+      circle,
+      path {
+        stroke: var(--brand-600);
+      }
+    }
   }
 }
 
