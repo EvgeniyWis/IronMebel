@@ -1333,27 +1333,28 @@ const initBlogSlider = () => {
   const cards = Array.from(sliderRoot.querySelectorAll(".im-blog__card"));
   if (!cards.length) return;
 
+  const BLOG_SLIDER_BREAKPOINT = 900;
   let sliderInstance = null;
 
   const destroySlider = () => {
-    if (!sliderInstance) return;
-    try {
-      sliderInstance.destroy();
-    } catch (e) {
-      // ignore
+    if (sliderInstance) {
+      try {
+        sliderInstance.destroy();
+      } catch (e) {
+        // ignore
+      }
+      sliderInstance = null;
     }
-    sliderInstance = null;
+
     sliderRoot.classList.remove("keen-slider");
     cards.forEach((card) => card.classList.remove("keen-slider__slide"));
   };
 
   const setup = () => {
-    const shouldBeSlider = window.innerWidth <= 600;
+    const shouldBeSlider = window.innerWidth <= BLOG_SLIDER_BREAKPOINT;
 
     if (!shouldBeSlider) {
       destroySlider();
-      sliderRoot.classList.remove("keen-slider");
-      cards.forEach((card) => card.classList.remove("keen-slider__slide"));
       return;
     }
 
