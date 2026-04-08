@@ -1,0 +1,349 @@
+.im-payment-page {
+  &__section {
+    padding: 12px 0;
+  }
+
+  &__section + &__section {
+    padding-top: 0;
+  }
+
+  &__title {
+    margin: 0 0 12px;
+    padding: 24px 0 24px 24px;
+    font-family: var(--font-family);
+    font-weight: var(--font-4xl-bold-fw);
+    font-size: var(--font-4xl-size);
+    line-height: 40px;
+    color: var(--neutral-900);
+  }
+
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__card {
+    min-height: 312px;
+    padding: 34px;
+    background: var(--neutral-100);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__card:nth-child(even) {
+    background: var(--neutral-300);
+  }
+
+  &__card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 28px;
+    border-radius: 8px;
+    background: #002139;
+
+    img {
+      display: block;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__card-title {
+    max-width: 248px;
+    margin: 0 0 12px;
+    font-family: var(--font-family);
+    font-weight: var(--font-xl-bold-fw);
+    font-size: var(--font-xl-size);
+    line-height: 28px;
+    color: var(--neutral-900);
+  }
+
+  &__card-text {
+    max-width: 248px;
+    margin: 0 0 12px;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-normal-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-600);
+  }
+
+  &__card-note {
+    max-width: 248px;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-normal-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-600);
+  }
+
+  &__card-note-accent {
+    color: #ff0000;
+  }
+
+  &__contact-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 8px;
+    overflow: hidden;
+    background: var(--neutral-100);
+  }
+
+  &__contact-promo {
+    min-height: 254px;
+    padding: 32px;
+    background: #002139;
+    color: var(--neutral-100);
+  }
+
+  &__contact-logo {
+    display: block;
+    width: 106px;
+    height: 84px;
+  }
+
+  &__contact-row {
+    margin-top: 130px;
+    display: grid;
+    grid-template-columns: max-content 32px minmax(0, 305px);
+    align-items: center;
+    column-gap: 40px;
+  }
+
+  &__contact-title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-3xl-bold-fw);
+    font-size: var(--font-3xl-size);
+    line-height: 36px;
+    color: var(--neutral-100);
+  }
+
+  &__contact-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--brand-500);
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast);
+
+    &:hover {
+      background: #ff4747;
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--neutral-100);
+      outline-offset: 2px;
+    }
+  }
+
+  &__contact-description {
+    max-width: 305px;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-normal-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-100);
+  }
+
+  &__contact-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    background: var(--neutral-100);
+    scroll-margin-top: 24px;
+  }
+
+  &__contact-details-inner {
+    width: 100%;
+    max-width: 315px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  &__phone,
+  &__email {
+    text-decoration: none;
+    transition:
+      color var(--transition-fast),
+      opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.85;
+    }
+  }
+
+  &__phone {
+    font-family: var(--font-family);
+    font-weight: var(--font-3xl-bold-fw);
+    font-size: var(--font-3xl-size);
+    line-height: 36px;
+    color: var(--neutral-900);
+  }
+
+  &__email {
+    font-family: var(--font-family);
+    font-weight: var(--font-lg-medium-fw);
+    font-size: var(--font-lg-size);
+    line-height: 24px;
+    color: #0f78ca;
+  }
+
+  &__messengers {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__messenger {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 36px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--blue-100);
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--blue-600);
+    transition:
+      opacity var(--transition-fast),
+      transform var(--transition-fast);
+
+    &:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__messenger-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+
+    img {
+      display: block;
+      width: 16px;
+      height: 16px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .im-payment-page {
+    &__cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &__card {
+      min-height: 280px;
+    }
+
+    &__card:nth-child(3) {
+      background: var(--neutral-300);
+    }
+
+    &__card:nth-child(4) {
+      background: var(--neutral-100);
+    }
+
+    &__contact-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    &__contact-row {
+      margin-top: 52px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 16px;
+      max-width: 305px;
+      align-items: flex-start;
+    }
+
+    &__contact-details {
+      justify-content: flex-start;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .im-payment-page {
+    &__section--contact {
+      padding-bottom: 24px;
+    }
+
+    &__title {
+      margin: 0 0 20px;
+      padding: 24px 0 0;
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__card {
+      min-height: 224px;
+      padding: 16px;
+    }
+
+    &__card-icon {
+      margin-bottom: 20px;
+    }
+
+    &__card-title,
+    &__card-text {
+      max-width: none;
+      font-size: var(--font-xs-size);
+      line-height: 15px;
+    }
+
+    &__card-note {
+      max-width: none;
+      font-size: var(--font-2xs-size);
+      line-height: 13px;
+    }
+
+    &__contact-logo {
+      width: 92px;
+      height: auto;
+    }
+
+    &__contact-row {
+      max-width: none;
+    }
+
+    &__contact-details-inner {
+      gap: 43px;
+      max-width: none;
+    }
+
+    &__phone {
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__email {
+      font-size: var(--font-base-size);
+      line-height: 24px;
+    }
+  }
+}

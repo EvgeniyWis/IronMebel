@@ -437,10 +437,9 @@
 
 // ─── Decisions section ─────────────────────────────────────
 .im-decisions {
-  margin: 48px 0 56px;
+  margin: 32px 0 0;
   padding: 32px 0 40px;
   background: var(--neutral-200);
-  margin-bottom: 0;
   padding-bottom: 0;
 
   &__head {
@@ -667,7 +666,7 @@
 
 // ─── Industries (Отраслевые решения) ───────────────────────
 .im-industries {
-  margin: 40px 0;
+  margin: 32px 0;
   --im-industries-card-size: 249px;
 }
 
@@ -811,7 +810,7 @@
 
 // ─── Partners (Партнёры) ───────────────────────────────────
 .im-partners {
-  margin: 40px 0 32px;
+  margin: 32px 0;
 }
 
 .im-partners .im-container {
@@ -943,7 +942,7 @@
 
 // ─── Professionals (Отзывы) ────────────────────────────────
 .im-professionals {
-  margin: 40px 0;
+  margin: 32px 0;
 }
 
 .im-professionals .im-container {
@@ -1214,7 +1213,7 @@
 // ─── Blog ──────────────────────────────────────────────────
 .im-blog {
   padding: 0;
-  margin: 40px 0;
+  margin: 32px 0;
 }
 
 .im-blog .im-container {
