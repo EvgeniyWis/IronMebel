@@ -1,5 +1,9 @@
 @use "animations" as *;
 
+.im-cta__inner--wide-gap {
+  gap: 260px;
+}
+
 // ─── Best choice benefits ──────────────────────────────────
 .im-best-choice {
   padding: 40px 0 32px;
@@ -342,7 +346,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 0 8px 8px 0;
-    clip-path: polygon(0 0, calc(100% - 126px) 0, 100% 126px, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
   }
 }
 
@@ -1140,6 +1144,8 @@
   justify-content: center;
   border-radius: 8px;
   background: var(--brand-500);
+  cursor: pointer;
+  text-decoration: none;
   transition:
     background-color var(--transition-fast),
     transform var(--transition-fast);
@@ -1158,6 +1164,11 @@
 
 .im-dealer__arrow:active {
   transform: translateY(0);
+}
+
+.im-dealer__arrow:focus-visible {
+  outline: 2px solid #002139;
+  outline-offset: 2px;
 }
 
 .im-dealer__subtitle {
@@ -1224,8 +1235,9 @@
 .im-blog__head {
   display: flex;
   align-items: center;
-  margin-bottom: 24px;
   gap: 24px;
+  padding: 24px 0 24px 24px;
+  margin-bottom: 12px;
 }
 
 .im-blog__title {

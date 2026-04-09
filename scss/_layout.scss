@@ -172,7 +172,6 @@
   grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
   overflow: hidden;
   border-radius: 8px;
-  background: var(--neutral-100);
   min-height: 362px;
 }
 
@@ -253,7 +252,6 @@
 .im-hero__slider {
   position: relative;
   min-height: 362px;
-  background: #f3f4f6;
   overflow: hidden;
 }
 
@@ -283,6 +281,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
 }
 
 .im-hero__slider-pagination {
@@ -360,6 +359,8 @@
   border: none;
   border-radius: 8px;
   background: var(--brand-500);
+  cursor: pointer;
+  text-decoration: none;
   transition:
     background-color var(--transition-fast),
     transform var(--transition-fast);
