@@ -1272,6 +1272,11 @@ const initGoodsFavorites = () => {
   if (!favoriteButtons.length) return;
 
   favoriteButtons.forEach((button) => {
+    button.setAttribute(
+      "aria-pressed",
+      button.classList.contains("is-active") ? "true" : "false",
+    );
+
     button.addEventListener("click", () => {
       const isActive = button.classList.toggle("is-active");
       button.setAttribute("aria-pressed", isActive ? "true" : "false");
@@ -1280,6 +1285,29 @@ const initGoodsFavorites = () => {
 };
 
 initGoodsFavorites();
+
+const initGoodsCompareButtons = () => {
+  const compareButtons = document.querySelectorAll(".im-goods__compare-top");
+  if (!compareButtons.length) return;
+
+  compareButtons.forEach((button) => {
+    button.setAttribute(
+      "aria-pressed",
+      button.classList.contains("is-active") ? "true" : "false",
+    );
+
+    button.addEventListener("click", () => {
+      const isActive = button.classList.toggle("is-active");
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      button.setAttribute(
+        "aria-label",
+        isActive ? "Убрать из сравнения" : "Сравнить",
+      );
+    });
+  });
+};
+
+initGoodsCompareButtons();
 
 const initGoodsCartButtons = () => {
   const cartButtons = document.querySelectorAll(".im-goods__cart");
