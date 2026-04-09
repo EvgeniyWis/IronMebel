@@ -255,6 +255,17 @@
   overflow: hidden;
 }
 
+.im-hero__slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  background: #111;
+  pointer-events: none;
+}
+
 .im-hero__slider::after {
   content: "";
   position: absolute;
