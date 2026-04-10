@@ -161,15 +161,27 @@
 
   &__architecture-logo {
     display: block;
-    width: 244px;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: auto;
+    width: 100%;
+    max-width: 106px;
+    line-height: 0;
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin-bottom: 190px;
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      max-height: 84px;
+      object-fit: contain;
+      object-position: left center;
+    }
   }
 
   &__architecture-title {
     max-width: 436px;
-    margin: 88px 0 0;
+    margin: 0;
     font-family: var(--font-family);
     font-weight: var(--font-4xl-bold-fw);
     font-size: var(--font-4xl-size);
@@ -485,7 +497,7 @@
 
     &__architecture-title {
       max-width: 320px;
-      margin-top: 64px;
+      margin-top: 0;
     }
 
     &__architecture-grid {
@@ -622,8 +634,13 @@
     }
 
     &__architecture-logo {
-      width: 240px;
+      max-width: 236px;
+      max-height: 28px;
       margin-bottom: 40px;
+
+      img {
+        max-height: 28px;
+      }
     }
 
     &__architecture-title {
