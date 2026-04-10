@@ -1,0 +1,1021 @@
+.im-privacy-policy-page {
+  padding-top: 12px;
+
+  &__section {
+    padding: 0 0 32px;
+  }
+
+  &__section--policy {
+    scroll-margin-top: 24px;
+  }
+
+  &__title-wrap,
+  &__section-title-wrap {
+    margin-bottom: 12px;
+    padding: 24px 0 24px 24px;
+  }
+
+  &__title,
+  &__section-title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-4xl-bold-fw);
+    font-size: var(--font-4xl-size);
+    line-height: 40px;
+    color: var(--neutral-900);
+  }
+
+  &__overview-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__overview-card {
+    min-width: 0;
+    min-height: 292px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    background: var(--neutral-100);
+  }
+
+  &__overview-card:nth-child(even) {
+    background: var(--neutral-300);
+  }
+
+  &__overview-card-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--brand-600);
+    font-family: var(--font-family);
+    font-weight: var(--font-xs-normal-fw);
+    font-size: var(--font-xs-size);
+    line-height: 15px;
+    color: var(--neutral-100);
+    flex-shrink: 0;
+  }
+
+  &__overview-card-title {
+    max-width: 320px;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-2xl-bold-fw);
+    font-size: var(--font-2xl-size);
+    line-height: 32px;
+    color: var(--neutral-900);
+  }
+
+  &__hero {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__hero-brand {
+    min-height: 250px;
+    padding: 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: var(--brand-600);
+  }
+
+  &__hero-logo {
+    display: block;
+    width: 106px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  &__hero-copy {
+    min-height: 250px;
+    padding: 40px;
+    position: relative;
+    background: var(--blue-800);
+    color: var(--neutral-100);
+  }
+
+  &__hero-text {
+    max-width: 918px;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-2xl-medium-fw);
+    font-size: var(--font-2xl-size);
+    line-height: 32px;
+    color: inherit;
+  }
+
+  &__hero-accent {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: var(--brand-600);
+  }
+
+  &__accordion {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__item {
+    background: var(--neutral-100);
+  }
+
+  &__item:nth-child(even) {
+    background: var(--neutral-300);
+  }
+
+  &__toggle {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+
+  &__toggle:focus-visible {
+    outline: 2px solid var(--blue-700);
+    outline-offset: -2px;
+  }
+
+  &__item-title {
+    min-width: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-xl-normal-fw);
+    font-size: var(--font-xl-size);
+    line-height: 28px;
+    color: var(--neutral-900);
+  }
+
+  &__toggle-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--blue-700);
+    color: var(--neutral-100);
+    transition: background-color var(--transition-fast);
+
+    svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+      transition: transform var(--transition-fast);
+    }
+  }
+
+  &__item.is-open &__toggle-icon svg {
+    transform: rotate(90deg);
+  }
+
+  &__panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+  }
+
+  &__item.is-open &__panel {
+    max-height: none;
+  }
+
+  &__panel-inner {
+    padding: 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__panel-lead {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-2xl-bold-fw);
+    font-size: var(--font-2xl-size);
+    line-height: 32px;
+    color: var(--neutral-900);
+  }
+
+  &__panel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 80px;
+  }
+
+  &__panel-block {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--brand-600);
+    font-family: var(--font-family);
+    font-weight: var(--font-xs-normal-fw);
+    font-size: var(--font-xs-size);
+    line-height: 15px;
+    color: var(--neutral-100);
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__panel-text {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-base-normal-fw);
+    font-size: var(--font-base-size);
+    line-height: 24px;
+    color: var(--neutral-900);
+  }
+
+  &__section--personalization {
+    scroll-margin-top: 24px;
+  }
+
+  &__personalization-hero {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__personalization-panel,
+  &__data-card,
+  &__flow-card,
+  &__settings-card,
+  &__protection-card {
+    min-width: 0;
+    padding: 32px;
+  }
+
+  &__personalization-panel--lead {
+    min-height: 428px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--blue-800);
+    color: var(--neutral-100);
+  }
+
+  &__personalization-panel--copy {
+    min-height: 428px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 16px;
+    background: var(--neutral-300);
+  }
+
+  &__personalization-panel--analysis {
+    min-height: 428px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 28px;
+    background: var(--neutral-100);
+  }
+
+  &__personalization-logo {
+    display: block;
+    width: 75px;
+    height: auto;
+  }
+
+  &__personalization-panel-footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__personalization-title,
+  &__personalization-analysis-title,
+  &__data-card-title,
+  &__flow-card-title,
+  &__recommendation-title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-2xl-bold-fw);
+    font-size: var(--font-2xl-size);
+    line-height: 32px;
+    color: var(--neutral-900);
+  }
+
+  &__personalization-title {
+    max-width: 200px;
+    font-size: var(--font-4xl-size);
+    line-height: 40px;
+    color: inherit;
+  }
+
+  &__personalization-arrow,
+  &__recommendation-arrow {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: var(--brand-600);
+    color: var(--neutral-100);
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast);
+
+    svg {
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &__personalization-arrow,
+  &__recommendation-arrow {
+    cursor: pointer;
+  }
+
+  &__personalization-arrow:hover,
+  &__recommendation-arrow:hover {
+    transform: translateY(-1px);
+  }
+
+  &__personalization-arrow:hover {
+    background: var(--brand-500);
+  }
+
+  &__recommendation-arrow:hover {
+    background: var(--blue-700);
+  }
+
+  &__personalization-arrow:active,
+  &__recommendation-arrow:active {
+    transform: translateY(0);
+  }
+
+  &__personalization-text,
+  &__flow-card-text,
+  &__protection-card-text,
+  &__recommendation-text {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-base-normal-fw);
+    font-size: var(--font-base-size);
+    line-height: 24px;
+    color: var(--neutral-900);
+  }
+
+  &__feature-list {
+    display: grid;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__feature-item {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-normal-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-900);
+  }
+
+  &__feature-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-top: 1px;
+    border-radius: 4px;
+    background: var(--neutral-500);
+    color: var(--neutral-100);
+
+    svg {
+      display: block;
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__cards-track {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__cards-track--data,
+  &__cards-track--flow,
+  &__cards-track--protection {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__cards-track--settings {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  &__cards-track.keen-slider {
+    gap: 0;
+  }
+
+  &__data-card {
+    min-height: 428px;
+    background: var(--neutral-100);
+  }
+
+  &__card-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 28px;
+    border-radius: 8px;
+    background: var(--brand-600);
+    font-family: var(--font-family);
+    font-weight: var(--font-xs-normal-fw);
+    font-size: var(--font-xs-size);
+    line-height: 15px;
+    color: var(--neutral-100);
+    text-align: center;
+  }
+
+  &__data-card-title {
+    margin-bottom: 28px;
+  }
+
+  &__flow-card {
+    min-height: 184px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    background: var(--neutral-100);
+  }
+
+  &__flow-card--accent {
+    justify-content: flex-start;
+  }
+
+  &__settings-card {
+    min-height: 312px;
+    background: var(--neutral-100);
+  }
+
+  &__settings-card--lead {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  &__settings-card-title,
+  &__settings-card-copy {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-lg-bold-fw);
+    font-size: var(--font-lg-size);
+    line-height: 24px;
+    color: var(--neutral-900);
+  }
+
+  &__settings-feature {
+    display: grid;
+    grid-template-columns: 16px minmax(0, 1fr);
+    align-items: start;
+    gap: 16px;
+  }
+
+  &__protection-card {
+    min-height: 428px;
+    background: var(--neutral-100);
+  }
+
+  &__protection-copy {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__data-card--muted,
+  &__protection-card--muted,
+  &__flow-card--muted,
+  &__settings-card--muted {
+    background: var(--neutral-300);
+  }
+
+  &__data-card--accent,
+  &__flow-card--accent,
+  &__settings-card--lead {
+    background: var(--blue-800);
+    color: var(--neutral-100);
+  }
+
+  &__data-card--accent .im-privacy-policy-page__data-card-title,
+  &__data-card--accent .im-privacy-policy-page__feature-item,
+  &__flow-card--accent .im-privacy-policy-page__flow-card-title,
+  &__flow-card--accent .im-privacy-policy-page__flow-card-text,
+  &__settings-card--lead .im-privacy-policy-page__settings-card-title,
+  &__settings-card--lead .im-privacy-policy-page__settings-card-copy {
+    color: var(--neutral-100);
+  }
+
+  &__settings-note {
+    margin-top: 0;
+    min-height: 128px;
+    padding: 40px 32px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: var(--neutral-300);
+    border-radius: 0 0 8px 8px;
+  }
+
+  &__settings-note-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    background: var(--brand-600);
+    color: var(--neutral-100);
+
+    svg {
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &__settings-note-text {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-base-normal-fw);
+    font-size: var(--font-base-size);
+    line-height: 24px;
+    color: var(--neutral-900);
+  }
+
+  &__recommendation {
+    display: grid;
+    grid-template-columns: 416px minmax(0, 1fr);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__recommendation-label {
+    min-width: 0;
+    min-height: 120px;
+    padding: 28px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: var(--brand-600);
+  }
+
+  &__recommendation-title {
+    max-width: 280px;
+    color: var(--neutral-100);
+  }
+
+  &__recommendation-arrow {
+    background: var(--blue-800);
+  }
+
+  &__recommendation-copy {
+    min-height: 120px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    background: var(--neutral-100);
+  }
+}
+
+@media (max-width: 1000px) {
+  .im-privacy-policy-page {
+    &__personalization-panel,
+    &__data-card,
+    &__flow-card,
+    &__settings-card,
+    &__protection-card {
+      padding: 24px;
+    }
+
+    &__personalization-title {
+      font-size: var(--font-3xl-size);
+      line-height: 36px;
+    }
+
+    &__data-card-title,
+    &__personalization-analysis-title,
+    &__flow-card-title,
+    &__recommendation-title {
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__settings-note {
+      padding: 24px;
+      gap: 24px;
+    }
+
+    &__cards-track--settings {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    &__cards-track--settings.keen-slider {
+      display: flex;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    &__cards-track--settings.keen-slider > [data-privacy-personalization-card] {
+      width: 240px;
+      min-width: 240px;
+      border-radius: 8px;
+    }
+
+    &__recommendation {
+      grid-template-columns: 320px minmax(0, 1fr);
+    }
+
+    &__overview-card {
+      min-height: 260px;
+      padding: 24px;
+      gap: 20px;
+    }
+
+    &__overview-card-title {
+      max-width: 280px;
+    }
+
+    &__hero-copy,
+    &__toggle,
+    &__panel-inner {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    &__hero-copy,
+    &__toggle {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    &__panel-inner {
+      padding-bottom: 32px;
+      gap: 32px;
+    }
+
+    &__hero-text {
+      max-width: 100%;
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__panel-grid {
+      gap: 32px;
+    }
+
+    &__panel-lead {
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .im-privacy-policy-page {
+    padding-top: 28px;
+
+    &__section {
+      padding-bottom: 24px;
+    }
+
+    &__title-wrap,
+    &__section-title-wrap {
+      margin-bottom: 16px;
+      padding: 0;
+    }
+
+    &__title,
+    &__section-title {
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__section--personalization {
+      scroll-margin-top: 32px;
+    }
+
+    &__overview-cards {
+      grid-template-columns: 1fr;
+    }
+
+    &__overview-card {
+      min-height: 0;
+      padding: 24px;
+      gap: 24px;
+    }
+
+    &__overview-card-badge {
+      width: 36px;
+      height: 36px;
+    }
+
+    &__overview-card-title {
+      max-width: none;
+      font-size: var(--font-lg-size);
+      line-height: 24px;
+      color: var(--blue-800);
+    }
+
+    &__hero {
+      grid-template-columns: 1fr;
+    }
+
+    &__hero-brand {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    &__hero-logo {
+      width: 60px;
+    }
+
+    &__hero-copy {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    &__hero-text {
+      max-width: 230px;
+      font-weight: var(--font-lg-bold-fw);
+      font-size: var(--font-lg-size);
+      line-height: 24px;
+    }
+
+    &__personalization-hero {
+      grid-template-columns: 1fr;
+    }
+
+    &__personalization-panel,
+    &__data-card,
+    &__flow-card,
+    &__settings-card,
+    &__protection-card,
+    &__recommendation-label,
+    &__recommendation-copy {
+      min-height: 0;
+      padding: 16px;
+    }
+
+    &__personalization-panel--lead,
+    &__personalization-panel--copy,
+    &__personalization-panel--analysis {
+      min-height: 0;
+    }
+
+    &__personalization-logo {
+      width: 36px;
+    }
+
+    &__personalization-panel-footer {
+      gap: 16px;
+    }
+
+    &__personalization-title {
+      max-width: 140px;
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__personalization-arrow,
+    &__recommendation-arrow {
+      width: 32px;
+      height: 32px;
+
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &__personalization-analysis-title,
+    &__data-card-title,
+    &__flow-card-title,
+    &__recommendation-title {
+      font-size: var(--font-lg-size);
+      line-height: 24px;
+    }
+
+    &__personalization-text,
+    &__flow-card-text,
+    &__protection-card-text,
+    &__recommendation-text,
+    &__settings-note-text {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+
+    &__feature-list {
+      gap: 16px;
+    }
+
+    &__feature-item {
+      gap: 12px;
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+
+    &__card-badge {
+      width: 36px;
+      height: 36px;
+      margin-bottom: 20px;
+    }
+
+    &__data-card-title {
+      margin-bottom: 20px;
+    }
+
+    &__cards-track--data,
+    &__cards-track--flow,
+    &__cards-track--protection {
+      grid-template-columns: 1fr;
+      gap: 12px;
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    &__cards-track.keen-slider {
+      display: flex;
+      gap: 0;
+      overflow: hidden;
+    }
+
+    &__cards-track--data.keen-slider > [data-privacy-personalization-card],
+    &__cards-track--flow.keen-slider > [data-privacy-personalization-card],
+    &__cards-track--protection.keen-slider > [data-privacy-personalization-card] {
+      width: 300px;
+      min-width: 300px;
+      border-radius: 8px;
+    }
+
+    &__flow-card {
+      gap: 20px;
+    }
+
+    &__settings-card-title,
+    &__settings-card-copy {
+      font-size: var(--font-base-size);
+      line-height: 24px;
+    }
+
+    &__settings-feature {
+      gap: 12px;
+    }
+
+    &__settings-note {
+      margin-top: 16px;
+      min-height: 0;
+      padding: 16px;
+      gap: 12px;
+      border-radius: 8px;
+    }
+
+    &__settings-note-icon {
+      width: 28px;
+      height: 28px;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &__recommendation {
+      grid-template-columns: 1fr;
+    }
+
+    &__recommendation-title {
+      max-width: 180px;
+    }
+
+    &__toggle {
+      padding: 20px;
+      gap: 16px;
+    }
+
+    &__item-title {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+
+    &__panel-inner {
+      padding: 0 16px 16px;
+      gap: 16px;
+    }
+
+    &__panel-lead {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+
+    &__panel-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    &__panel-block {
+      gap: 16px;
+    }
+
+    &__badge {
+      width: 28px;
+      height: 28px;
+      font-size: var(--font-2xs-size);
+      line-height: 13px;
+    }
+
+    &__panel-text {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .im-privacy-policy-page {
+    &__section {
+      padding-bottom: 16px;
+    }
+
+    &__overview-card {
+      padding: 24px 16px;
+    }
+
+    &__hero-brand,
+    &__hero-copy {
+      padding: 24px 16px;
+    }
+
+    &__hero-accent {
+      right: 16px;
+      bottom: 16px;
+    }
+
+    &__toggle {
+      padding: 20px 16px;
+    }
+
+    &__cards-track--data.keen-slider > [data-privacy-personalization-card],
+    &__cards-track--flow.keen-slider > [data-privacy-personalization-card],
+    &__cards-track--protection.keen-slider > [data-privacy-personalization-card] {
+      width: 292px;
+      min-width: 292px;
+    }
+
+    &__cards-track--settings.keen-slider > [data-privacy-personalization-card] {
+      width: 228px;
+      min-width: 228px;
+    }
+  }
+}
