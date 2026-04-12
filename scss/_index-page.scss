@@ -92,8 +92,10 @@
 
   img {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: auto;
+    height: auto;
+    max-width: 20px;
+    max-height: 20px;
   }
 }
 
@@ -207,8 +209,10 @@
 
   img {
     display: block;
-    width: 20px;
-    height: 20px;
+    width: auto;
+    height: auto;
+    max-width: 20px;
+    max-height: 20px;
   }
 }
 
@@ -338,7 +342,6 @@
 .im-century__media {
   position: relative;
   overflow: hidden;
-  background: #f5f5f5;
 
   img {
     display: block;
@@ -502,9 +505,13 @@
 
   &__download-icon {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-    svg {
+    img {
       display: block;
+      width: 18px;
+      height: 18px;
     }
   }
 
@@ -726,11 +733,23 @@
   border-radius: 8px;
   background: #002139;
   cursor: pointer;
-  transition: opacity var(--transition-fast);
+  transition:
+    opacity var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 
   &:disabled {
     opacity: 0.4;
     cursor: default;
+  }
+
+  &:not(:disabled):hover {
+    background: #0b3658;
+    transform: translateY(-1px);
+  }
+
+  &:not(:disabled):active {
+    transform: translateY(0);
   }
 }
 
@@ -787,8 +806,10 @@
 
   img {
     display: block;
-    width: 20px;
+    width: auto;
     height: auto;
+    max-width: 20px;
+    max-height: 20px;
   }
 }
 
@@ -858,11 +879,23 @@
   border-radius: 8px;
   background: #002139;
   cursor: pointer;
-  transition: opacity var(--transition-fast);
+  transition:
+    opacity var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 
   &:disabled {
     opacity: 0.4;
     cursor: default;
+  }
+
+  &:not(:disabled):hover {
+    background: #0b3658;
+    transform: translateY(-1px);
+  }
+
+  &:not(:disabled):active {
+    transform: translateY(0);
   }
 }
 
@@ -902,13 +935,6 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 1px 2px 0 color-mix(in srgb, var(--blue-900) 4%, transparent);
-}
-
-// Колонка для мобильного слайдера (2 строки)
-.im-partners__column {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
 }
 
 .im-partners__logo {
@@ -991,11 +1017,23 @@
   border-radius: 8px;
   background: #002139;
   cursor: pointer;
-  transition: opacity var(--transition-fast);
+  transition:
+    opacity var(--transition-fast),
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
 
   &:disabled {
     opacity: 0.4;
     cursor: default;
+  }
+
+  &:not(:disabled):hover {
+    background: #0b3658;
+    transform: translateY(-1px);
+  }
+
+  &:not(:disabled):active {
+    transform: translateY(0);
   }
 }
 
@@ -1108,6 +1146,22 @@
   line-height: 16px;
   color: #111111;
   cursor: pointer;
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+
+  &:hover {
+    background: #e8e8e8;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--neutral-black) 10%, transparent);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
 }
 
 
@@ -1154,6 +1208,7 @@
     display: block;
     width: 9px;
     height: 9px;
+    transform: translateY(1px);
   }
 }
 
@@ -1272,8 +1327,9 @@
     color: var(--brand-600);
     transform: translateY(-1px);
 
-    .im-blog__all-arrow svg path {
-      fill: var(--brand-600);
+    .im-blog__all-arrow img {
+      filter: brightness(0) saturate(100%) invert(31%) sepia(67%) saturate(2145%)
+        hue-rotate(336deg) brightness(94%) contrast(92%);
     }
   }
 }
@@ -1286,9 +1342,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 
-  svg path {
-    transition: fill var(--transition-fast);
+  img {
+    display: block;
+    width: 9px;
+    height: 9px;
+    filter: brightness(0) saturate(100%);
+    transition: filter var(--transition-fast);
   }
 }
 
@@ -1399,8 +1460,10 @@
 
   img {
     display: block;
-    width: 12px;
-    height: 12px;
+    width: auto;
+    height: auto;
+    max-width: 12px;
+    max-height: 12px;
   }
 }
 

@@ -134,8 +134,10 @@
 
     img {
       display: block;
-      width: 10px;
-      height: 7px;
+      width: auto;
+      height: auto;
+      max-width: 10px;
+      max-height: 10px;
     }
   }
 
@@ -294,8 +296,10 @@
 
     img {
       display: block;
-      width: 20px;
-      height: 20px;
+      width: auto;
+      height: auto;
+      max-width: 20px;
+      max-height: 20px;
     }
   }
 
@@ -393,6 +397,13 @@
   &__cta-form .im-cta__row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: none;
+  }
+
+  .im-cta__button-icon img {
+    display: block;
+    width: 9px;
+    height: 9px;
+    transform: translateY(1px);
   }
 
   &__cta-title {
@@ -607,8 +618,10 @@
       height: 36px;
 
       img {
-        width: 18px;
-        height: 18px;
+        width: auto;
+        height: auto;
+        max-width: 18px;
+        max-height: 18px;
       }
     }
 

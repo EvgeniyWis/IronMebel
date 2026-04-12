@@ -1,0 +1,544 @@
+.im-contacts-page {
+  padding-top: 12px;
+
+  &__section {
+    padding: 0 0 32px;
+  }
+
+  &__section:last-child {
+    padding-bottom: 0;
+  }
+
+  &__title-wrap,
+  &__section-head {
+    margin-bottom: 12px;
+    padding: 24px 0 24px 24px;
+  }
+
+  &__section-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  &__title,
+  &__section-title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-4xl-bold-fw);
+    font-size: var(--font-4xl-size);
+    line-height: 40px;
+    color: var(--neutral-900);
+  }
+
+  &__section-action,
+  &__call-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--brand-500);
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-bold-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-100);
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast),
+      opacity var(--transition-fast);
+    cursor: pointer;
+
+    &:hover {
+      background: var(--brand-600);
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--neutral-900);
+      outline-offset: 2px;
+    }
+  }
+
+  &__section-action {
+    flex-shrink: 0;
+  }
+
+  &__section-action-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+  }
+
+  &__contacts-layout {
+    display: grid;
+    grid-template-columns: 500px minmax(0, 1fr);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__contacts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  &__contact-card {
+    min-height: 250px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background: var(--neutral-100);
+  }
+
+  &__contact-card--dark {
+    background: var(--blue-800);
+    color: var(--neutral-100);
+  }
+
+  &__contact-card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 0;
+  }
+
+  &__contact-card-copy {
+    display: grid;
+    gap: 12px;
+  }
+
+  &__contact-card-copy--location {
+    gap: 41px;
+  }
+
+  &__contact-card-title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-bold-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: inherit;
+  }
+
+  &__contact-card-text,
+  &__contact-card-link {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-normal-fw);
+    font-size: var(--font-sm-size);
+    line-height: 24px;
+    color: inherit;
+  }
+
+  &__contact-card-link {
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__contact-card-link--email {
+    color: var(--blue-300);
+    overflow-wrap: anywhere;
+  }
+
+  &__contact-card-link--site {
+    color: var(--neutral-100);
+  }
+
+  &__contact-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--brand-500);
+  }
+
+  &__contact-card-icon--blue {
+    background: var(--blue-800);
+  }
+
+  &__call-button {
+    margin-top: auto;
+    width: fit-content;
+  }
+
+  &__map {
+    min-height: 500px;
+    background: var(--neutral-100);
+  }
+
+  &__map-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__requisites-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__requisites-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__requisites-side {
+    display: grid;
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  &__requisite-card,
+  &__requisite-panel {
+    min-width: 0;
+  }
+
+  &__requisite-card {
+    min-height: 150px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 28px;
+    background: var(--neutral-100);
+  }
+
+  &__requisite-card--muted {
+    background: var(--neutral-300);
+  }
+
+  &__requisite-card--company {
+    justify-content: center;
+  }
+
+  &__requisite-card--span-2 {
+    grid-column: span 2;
+  }
+
+  &__requisite-label {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-bold-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-900);
+  }
+
+  &__requisite-value-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &__requisite-value {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-normal-fw);
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-700);
+  }
+
+  &__requisite-value--accent {
+    font-size: var(--font-base-size);
+    line-height: 24px;
+    color: var(--brand-600);
+  }
+
+  &__requisite-copy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--neutral-500);
+    transition:
+      color var(--transition-fast),
+      transform var(--transition-fast);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--blue-600);
+      transform: translateY(-1px);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--blue-600);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    &.is-copied {
+      color: var(--brand-500);
+    }
+  }
+
+  &__requisite-copy-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__requisite-panel {
+    min-height: 300px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    background: var(--neutral-100);
+  }
+
+  &__requisite-panel--addresses {
+    background: var(--neutral-300);
+  }
+
+  &__requisite-panel-columns {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 40px;
+  }
+
+  &__requisite-panel-group {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__requisite-panel-group--full {
+    grid-column: 1 / -1;
+  }
+
+  &__copy-status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@media (max-width: 1000px) {
+  .im-contacts-page {
+    &__contacts-layout,
+    &__requisites-layout {
+      grid-template-columns: 1fr;
+    }
+
+    &__map {
+      min-height: 420px;
+    }
+
+    &__requisites-side {
+      grid-template-rows: none;
+    }
+
+    &__requisite-panel {
+      min-height: 0;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .im-contacts-page {
+    padding-top: 28px;
+
+    &__title-wrap,
+    &__section-head {
+      margin-bottom: 16px;
+      padding: 0;
+    }
+
+    &__section-head {
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    &__title,
+    &__section-title {
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__contact-card {
+      min-height: 220px;
+      padding: 24px;
+      gap: 20px;
+    }
+
+    &__contact-card-text,
+    &__contact-card-link {
+      line-height: 20px;
+    }
+
+    &__map {
+      min-height: 320px;
+    }
+
+    &__requisite-card {
+      min-height: 132px;
+      padding: 24px;
+      gap: 20px;
+    }
+
+    &__requisite-panel {
+      padding: 24px;
+      gap: 20px;
+    }
+
+    &__requisite-panel-columns {
+      gap: 20px 24px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .im-contacts-page {
+    &__section--requisites {
+      padding-bottom: 24px;
+    }
+
+    &__section-action,
+    &__call-button {
+      min-height: 28px;
+      padding: 6px 12px;
+      font-size: var(--font-xs-size);
+      line-height: 15px;
+    }
+
+    &__contacts-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &__contact-card {
+      min-height: 187px;
+      padding: 16px;
+      gap: 16px;
+    }
+
+    &__contact-card-main {
+      gap: 16px;
+    }
+
+    &__contact-card-copy {
+      gap: 8px;
+    }
+
+    &__contact-card-copy--location {
+      gap: 35px;
+    }
+
+    &__contact-card-title,
+    &__contact-card-text,
+    &__contact-card-link {
+      font-size: var(--font-2xs-size);
+      line-height: 13px;
+    }
+
+    &__contact-card-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__call-button {
+      width: 100%;
+    }
+
+    &__map {
+      min-height: 260px;
+    }
+
+    &__requisites-grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__requisite-card {
+      min-height: 0;
+      padding: 16px;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    &__requisite-card--company {
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    &__requisite-card--span-2 {
+      grid-column: auto;
+    }
+
+    &__requisite-value-row {
+      justify-content: flex-end;
+      max-width: 48%;
+      margin-left: auto;
+    }
+
+    &__requisite-value {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+      text-align: right;
+    }
+
+    &__requisite-card--company .im-contacts-page__requisite-value {
+      text-align: left;
+    }
+
+    &__requisite-panel {
+      padding: 16px;
+    }
+
+    &__requisite-panel--muted {
+      background: var(--neutral-300);
+    }
+
+    &__requisite-panel--addresses {
+      background: var(--neutral-100);
+    }
+
+    &__requisite-panel-columns {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    &__requisite-panel .im-contacts-page__requisite-value-row {
+      justify-content: flex-start;
+      max-width: none;
+      margin-left: 0;
+    }
+
+    &__requisite-panel .im-contacts-page__requisite-value {
+      text-align: left;
+    }
+
+    &__requisite-panel-group--full {
+      grid-column: auto;
+    }
+  }
+}

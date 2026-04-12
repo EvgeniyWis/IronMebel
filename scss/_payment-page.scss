@@ -49,8 +49,10 @@
 
     img {
       display: block;
-      width: 20px;
-      height: 20px;
+      width: auto;
+      height: auto;
+      max-width: 20px;
+      max-height: 20px;
     }
   }
 
@@ -138,6 +140,13 @@
       background-color var(--transition-fast),
       transform var(--transition-fast);
 
+    img {
+      display: block;
+      width: 9px;
+      height: 9px;
+      transform: translateY(1px);
+    }
+
     &:hover {
       background: #ff4747;
       transform: translateY(-1px);
@@ -162,7 +171,7 @@
   &__contact-details {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 32px;
     background: var(--neutral-100);
     scroll-margin-top: 24px;
@@ -245,8 +254,10 @@
 
     img {
       display: block;
-      width: 16px;
-      height: 16px;
+      width: auto;
+      height: auto;
+      max-width: 16px;
+      max-height: 16px;
     }
   }
 }

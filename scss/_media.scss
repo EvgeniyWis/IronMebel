@@ -144,7 +144,7 @@
   }
 
   .im-dealer__arrow img {
-    transform: rotate(90deg);
+    transform: rotate(90deg) translateY(1px);
   }
 
   .im-dealer__subtitle,
@@ -1643,7 +1643,7 @@
     display: inline-flex;
     width: 100%;
     justify-content: center;
-    max-width: 374px;
+    align-items: center;
     height: 40px;
     margin-top: 0;
     background: #00355d;
@@ -1652,8 +1652,21 @@
     font-size: 14px;
     line-height: 16px;
 
-    .im-blog__all-arrow svg path {
-      fill: var(--neutral-100);
+    .im-blog__all-arrow img {
+      filter: none;
+    }
+
+    .im-blog__all-arrow {
+      transform: translateY(1px);
+    }
+
+    &:hover {
+      color: var(--neutral-100);
+      transform: none;
+
+      .im-blog__all-arrow img {
+        filter: none;
+      }
     }
   }
 

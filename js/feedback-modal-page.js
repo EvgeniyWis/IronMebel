@@ -1,11 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
+  let isInitialized = false;
+
+  const initFeedbackModal = () => {
+    if (isInitialized) {
+      return true;
+    }
+
   const MODAL_ANIMATION_DURATION = 340;
   const modal = document.querySelector("[data-feedback-modal]");
   const openButtons = document.querySelectorAll("[data-feedback-modal-open]");
 
   if (!(modal instanceof HTMLElement) || !openButtons.length) {
-    return;
+    return false;
   }
+
+  isInitialized = true;
 
   let lastOpenButton = null;
 
@@ -232,4 +241,37 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
-});
+    return true;
+  };
+
+  const bootstrapFeedbackModal = () => {
+    if (initFeedbackModal()) {
+      return;
+    }
+
+    if (!(document.body instanceof HTMLElement)) {
+      return;
+    }
+
+    const observer = new MutationObserver(() => {
+      if (initFeedbackModal()) {
+        observer.disconnect();
+      }
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+
+    window.setTimeout(() => {
+      observer.disconnect();
+    }, 10000);
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootstrapFeedbackModal);
+  } else {
+    bootstrapFeedbackModal();
+  }
+})();

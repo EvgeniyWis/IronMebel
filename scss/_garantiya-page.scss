@@ -53,8 +53,10 @@
   &__badge--icon {
     img {
       display: block;
-      width: 18px;
-      height: 18px;
+      width: auto;
+      height: auto;
+      max-width: 18px;
+      max-height: 18px;
     }
   }
 
@@ -126,8 +128,10 @@
 
     img {
       display: block;
-      width: 10px;
-      height: 7px;
+      width: auto;
+      height: auto;
+      max-width: 10px;
+      max-height: 10px;
     }
   }
 
@@ -272,8 +276,10 @@
 
     img {
       display: block;
-      width: 20px;
+      width: auto;
       height: auto;
+      max-width: 20px;
+      max-height: 20px;
     }
   }
 
@@ -669,8 +675,10 @@
   &__assurances-badge {
     img {
       display: block;
-      width: 20px;
+      width: auto;
       height: auto;
+      max-width: 20px;
+      max-height: 20px;
     }
   }
 
@@ -716,8 +724,10 @@
 
     &__assurances-badge {
       img {
-        width: 18px;
+        width: auto;
         height: auto;
+        max-width: 18px;
+        max-height: 18px;
       }
     }
 
@@ -770,8 +780,10 @@
 
     &__assurances-badge {
       img {
-        width: 18px;
+        width: auto;
         height: auto;
+        max-width: 18px;
+        max-height: 18px;
       }
     }
   }
@@ -855,8 +867,10 @@
 
     img {
       display: block;
-      width: 18px;
+      width: auto;
       height: auto;
+      max-width: 18px;
+      max-height: 18px;
     }
   }
 
@@ -1015,8 +1029,10 @@
 
     img {
       display: block;
-      width: 18px;
+      width: auto;
       height: auto;
+      max-width: 18px;
+      max-height: 18px;
     }
   }
 
@@ -1203,8 +1219,10 @@
       height: 36px;
 
       img {
-        width: 14px;
+        width: auto;
         height: auto;
+        max-width: 14px;
+        max-height: 14px;
       }
     }
 

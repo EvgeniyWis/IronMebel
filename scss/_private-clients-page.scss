@@ -72,6 +72,7 @@
   }
 
   &__intro-panel-title-accent {
+    display: block;
     color: var(--im-private-clients-navy);
   }
 
@@ -93,6 +94,7 @@
       display: block;
       width: 16px;
       height: 16px;
+      transform: translateY(1px);
     }
   }
 
@@ -285,6 +287,7 @@
   }
 
   &__marketplace-title-accent {
+    display: block;
     color: var(--im-private-clients-red);
   }
 
@@ -368,6 +371,7 @@
       display: block;
       width: 14px;
       height: 14px;
+      transform: translateY(1px);
     }
   }
 
@@ -424,6 +428,7 @@
       display: block;
       width: 9px;
       height: 9px;
+      transform: translateY(1px);
     }
   }
 
@@ -596,7 +601,7 @@
       img {
         width: 12px;
         height: 12px;
-        transform: rotate(90deg);
+        transform: rotate(90deg) translateY(1px);
       }
     }
 
@@ -629,7 +634,7 @@
     }
 
     &__architecture-lead {
-      min-height: 348px;
+      min-height: 0;
       padding: 24px;
     }
 
