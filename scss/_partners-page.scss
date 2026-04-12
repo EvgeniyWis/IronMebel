@@ -99,7 +99,7 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 78% 0, 100% 30%, 100% 100%, 0 100%);
   }
 
   &__check-list {
@@ -397,13 +397,6 @@
   &__cta-form .im-cta__row {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     max-width: none;
-  }
-
-  .im-cta__button-icon img {
-    display: block;
-    width: 9px;
-    height: 9px;
-    transform: translateY(1px);
   }
 
   &__cta-title {
@@ -711,7 +704,7 @@
     }
 
     &__hero-image {
-      clip-path: polygon(0 0, 82% 0, 100% 23%, 100% 100%, 0 100%);
+      clip-path: polygon(0 0, 74% 0, 100% 32%, 100% 100%, 0 100%);
     }
 
     &__hero-copy {

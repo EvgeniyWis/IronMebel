@@ -5,6 +5,10 @@
     padding: 0 0 32px;
   }
 
+  &__section--requisites {
+    padding-bottom: 0;
+  }
+
   &__section:last-child {
     padding-bottom: 0;
   }
@@ -327,18 +331,6 @@
   &__requisite-panel-group--full {
     grid-column: 1 / -1;
   }
-
-  &__copy-status {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
-  }
 }
 
 @media (max-width: 1000px) {
@@ -419,7 +411,7 @@
 @media (max-width: 600px) {
   .im-contacts-page {
     &__section--requisites {
-      padding-bottom: 24px;
+      padding-bottom: 0;
     }
 
     &__section-action,

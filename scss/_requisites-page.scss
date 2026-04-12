@@ -1,4 +1,8 @@
 .im-privacy-policy-page {
+  .im-privacy-policy-page__section.im-privacy-policy-page__section--requisites {
+    padding-bottom: 0;
+  }
+
   &__section--requisites {
     scroll-margin-top: 24px;
   }
@@ -189,6 +193,10 @@
 
 @media (max-width: 768px) {
   .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--requisites {
+      padding-bottom: 0;
+    }
+
     &__section--requisites {
       scroll-margin-top: 32px;
     }
@@ -253,6 +261,10 @@
 
 @media (max-width: 600px) {
   .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--requisites {
+      padding-bottom: 0;
+    }
+
     &__requisites-card--details {
       padding: 24px 16px;
     }

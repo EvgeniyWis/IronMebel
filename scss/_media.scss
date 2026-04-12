@@ -144,7 +144,9 @@
   }
 
   .im-dealer__arrow img {
-    transform: rotate(90deg) translateY(1px);
+    width: 8px;
+    height: 9px;
+    transform: rotate(90deg);
   }
 
   .im-dealer__subtitle,
@@ -208,7 +210,7 @@
   }
 
   .im-hero__slider-slide img {
-    clip-path: polygon(0 0, 82% 0, 100% 23%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 74% 0, 100% 32%, 100% 100%, 0 100%);
   }
 
   .im-hero__slider::after {
@@ -267,6 +269,8 @@
   }
 
   .im-hero__test-drive-arrow img {
+    width: 8px;
+    height: 9px;
     transform: rotate(90deg);
   }
 
@@ -593,7 +597,7 @@
 
   .im-century__media img {
     border-radius: 8px 0 0 0;
-    clip-path: polygon(0 0, 82% 0, 100% 23%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 74% 0, 100% 32%, 100% 100%, 0 100%);
   }
 
   .im-cart-page__layout {
@@ -1687,7 +1691,7 @@
   }
 
   .im-century__media img {
-    clip-path: polygon(0 0, 82% 0, 100% 23%, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 74% 0, 100% 32%, 100% 100%, 0 100%);
   }
 
   .im-century__content {

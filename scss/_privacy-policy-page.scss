@@ -1,4 +1,9 @@
 .im-privacy-policy-page {
+  .im-privacy-policy-page__section.im-privacy-policy-page__section--policy,
+  .im-privacy-policy-page__section.im-privacy-policy-page__section--accordion {
+    padding-bottom: 0;
+  }
+
   &__section--policy {
     scroll-margin-top: 24px;
   }
@@ -226,6 +231,11 @@
 
 @media (max-width: 768px) {
   .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--policy,
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--accordion {
+      padding-bottom: 0;
+    }
+
     &__hero {
       grid-template-columns: 1fr;
     }
@@ -296,6 +306,11 @@
 
 @media (max-width: 600px) {
   .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--policy,
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--accordion {
+      padding-bottom: 0;
+    }
+
     &__hero-brand,
     &__hero-copy {
       padding: 24px 16px;

@@ -2623,7 +2623,7 @@
 }
 
 .im-product-page + [data-layout-footer] .im-footer {
-  margin-top: 24px;
+  margin-top: 32px;
 }
 
 .im-product-page__cases-nav {
@@ -3369,6 +3369,10 @@
 }
 
 @media (max-width: 600px) {
+  .im-product-page + [data-layout-footer] .im-footer {
+    margin-top: 32px;
+  }
+
   .im-product-body .page {
     padding-bottom: calc(132px + env(safe-area-inset-bottom));
   }

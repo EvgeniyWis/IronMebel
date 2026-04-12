@@ -1,7 +1,9 @@
 .im-privacy-policy-page {
   padding-top: 12px;
 
-  &__section {
+  &__section:not(.im-privacy-policy-page__section--overview):not(
+      .im-privacy-policy-page__section--recommendation
+    ) {
     padding: 0 0 32px;
   }
 
@@ -26,7 +28,9 @@
   .im-privacy-policy-page {
     padding-top: 28px;
 
-    &__section {
+    &__section:not(.im-privacy-policy-page__section--overview):not(
+        .im-privacy-policy-page__section--recommendation
+      ) {
       padding-bottom: 24px;
     }
 
@@ -46,7 +50,9 @@
 
 @media (max-width: 600px) {
   .im-privacy-policy-page {
-    &__section {
+    &__section:not(.im-privacy-policy-page__section--overview):not(
+        .im-privacy-policy-page__section--recommendation
+      ) {
       padding-bottom: 16px;
     }
   }

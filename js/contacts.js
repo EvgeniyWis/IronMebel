@@ -1,8 +1,7 @@
 (() => {
   const copyButtons = document.querySelectorAll("[data-copy-button]");
-  const statusNode = document.querySelector("[data-copy-status]");
 
-  if (!copyButtons.length || !statusNode) return;
+  if (!copyButtons.length) return;
 
   const timers = new WeakMap();
 
@@ -31,7 +30,6 @@
 
       try {
         await copyValue(value);
-        statusNode.textContent = `Скопировано: ${label}`;
         button.classList.add("is-copied");
         button.setAttribute("aria-label", `Скопировано: ${label}`);
 
@@ -46,7 +44,7 @@
 
         timers.set(button, timer);
       } catch (error) {
-        statusNode.textContent = `Не удалось скопировать: ${label}`;
+        button.setAttribute("aria-label", `Не удалось скопировать: ${label}`);
       }
     });
   });

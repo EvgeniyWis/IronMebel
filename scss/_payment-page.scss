@@ -1,10 +1,14 @@
 .im-payment-page {
   &__section {
-    padding: 12px 0;
+    padding-top: 12px;
   }
 
   &__section + &__section {
     padding-top: 0;
+  }
+
+  &__section--payment {
+    padding-bottom: 12px;
   }
 
   &__title {
@@ -300,10 +304,6 @@
 
 @media (max-width: 600px) {
   .im-payment-page {
-    &__section--contact {
-      padding-bottom: 24px;
-    }
-
     &__title {
       margin: 0 0 20px;
       padding: 24px 0 0;
