@@ -783,10 +783,11 @@ if (catalogModalCards.length) {
 const initDecisionsSliders = () => {
   if (typeof KeenSlider === "undefined") return;
 
-  const MOBILE_DECISIONS_BREAKPOINT = 600;
+  const MOBILE_DECISIONS_BREAKPOINT = 768;
   const sliderRoot = document.querySelector("[data-decisions-slider]");
+  const slides = sliderRoot?.querySelectorAll(".im-decisions__item");
 
-  if (!sliderRoot) return;
+  if (!sliderRoot || !slides?.length) return;
 
   let instance = null;
 
@@ -803,7 +804,7 @@ const initDecisionsSliders = () => {
     sliderRoot.classList.remove("keen-slider");
     sliderRoot.removeAttribute("style");
 
-    sliderRoot.querySelectorAll(".keen-slider__slide").forEach((slide) => {
+    slides.forEach((slide) => {
       slide.removeAttribute("style");
     });
   };

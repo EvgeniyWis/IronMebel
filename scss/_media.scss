@@ -610,8 +610,69 @@
   }
 }
 
+@media (max-width: 768px) {
+  .im-decisions {
+    margin: 36px 0 40px;
+    padding: 24px 0;
+    overflow-x: hidden;
+    margin-bottom: 0;
+  }
+
+  .im-decisions__head {
+    display: grid;
+    grid-template-columns: minmax(0, 20ch) max-content;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+
+  .im-decisions__title {
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  .im-decisions__download {
+    flex-direction: row-reverse;
+    width: auto;
+    padding: 0 14px;
+  }
+
+  .im-decisions__grid {
+    display: block;
+    max-width: none;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .im-decisions__grid.keen-slider {
+    display: flex;
+  }
+
+  .im-decisions__item {
+    width: 303px;
+    min-width: 303px;
+    height: 303px;
+  }
+
+  .im-decisions__promo-brand {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .im-decisions__promo-text {
+    max-width: 225px;
+  }
+
+  .im-decisions__action--label {
+    white-space: normal;
+  }
+
+  .im-decisions__action--primary {
+    width: 163px;
+  }
+}
+
 @media (max-width: 600px) {
-  .im-decisions__title,
   .im-goods__title,
   .im-partners__title {
     font-size: 20px;
@@ -1203,25 +1264,6 @@
     justify-self: center;
   }
 
-  .im-decisions__head {
-    display: grid;
-    grid-template-columns: minmax(0, 20ch) max-content;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 32px;
-  }
-
-  .im-decisions__title {
-    font-size: 20px;
-    line-height: 130%;
-  }
-
-  .im-decisions__download {
-    flex-direction: row-reverse;
-    width: auto;
-    padding: 0 14px;
-  }
-
   .im-industries__title {
     font-size: 20px;
     line-height: 28px;
@@ -1727,63 +1769,6 @@
     max-width: 149px;
     font-size: 12px;
     line-height: 13px;
-  }
-
-  .im-decisions {
-    margin: 36px 0 40px;
-    padding: 24px 0 24px;
-    overflow-x: hidden;
-    margin-bottom: 0;
-  }
-
-  .im-decisions__head {
-    gap: 32px;
-  }
-
-  .im-decisions__title {
-    font-size: 20px;
-    line-height: 130%;
-  }
-
-  .im-decisions__download {
-    flex-direction: row-reverse;
-    width: auto;
-    padding: 0 14px;
-  }
-
-  .im-decisions__grid {
-    display: block;
-    max-width: none;
-    margin: 0;
-    overflow: visible;
-  }
-
-  .im-decisions__grid.keen-slider {
-    display: flex;
-  }
-
-  .im-decisions__item {
-    width: 303px;
-    min-width: 303px;
-    height: 303px;
-  }
-
-  .im-decisions__promo-brand {
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .im-decisions__promo-text {
-    max-width: 225px;
-  }
-
-
-  .im-decisions__action--label {
-    white-space: normal;
-  }
-
-  .im-decisions__action--primary {
-    width: 163px;
   }
 
   .im-catalog-pagination {

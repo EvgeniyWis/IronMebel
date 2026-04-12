@@ -526,7 +526,7 @@
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(303px, 1fr));
-    gap: 6px;
+    gap: 12px;
     width: 100%;
     justify-content: flex-start;
   }
