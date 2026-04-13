@@ -177,9 +177,13 @@
     height: auto;
   }
 
-  &__hero-brand-logo--base,
-  &__hero-brand-logo--pro {
+  &__hero-brand-logo--base {
     width: 339px;
+  }
+
+  &__hero-brand-logo--pro {
+    width: 438px;
+    height: 40px;
   }
 
   &__hero-stats {
@@ -524,9 +528,13 @@
       padding: 24px;
     }
 
-    &__hero-brand-logo--base,
-    &__hero-brand-logo--pro {
+    &__hero-brand-logo--base {
       width: 236px;
+    }
+
+    &__hero-brand-logo--pro {
+      width: 307px;
+      height: 28px;
     }
 
     &__hero-stat {
@@ -877,6 +885,7 @@
   &__support-card-text {
     max-width: 192px;
     margin: 0;
+    margin-top: auto;
     font-family: var(--font-family);
     font-weight: var(--font-sm-bold-fw);
     font-size: var(--font-sm-size);
@@ -1228,6 +1237,7 @@
 
     &__support-card-text {
       max-width: 155px;
+      margin-top: 0;
     }
 
     &__support-accent-title {
