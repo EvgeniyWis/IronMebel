@@ -954,6 +954,16 @@
     grid-template-columns: max-content minmax(0, 1fr);
     column-gap: clamp(48px, 20.85vw, 260px);
     align-items: start;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 25px;
+      height: 25px;
+      background: var(--brand-600);
+    }
   }
 
   &__cta-content {
@@ -1076,6 +1086,10 @@
 
 @media (max-width: 900px) {
   .im-services-page {
+    &__cta-inner::after {
+      content: none;
+    }
+
     &__hero-text,
     &__panel-text,
     &__panel-note,
@@ -1234,6 +1248,10 @@
       max-width: none;
       font-size: var(--font-xl-size);
       line-height: 28px;
+    }
+
+    &__lead-title-accent--inline {
+      display: block;
     }
 
     &__lead-subtitle {

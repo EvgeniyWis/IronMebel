@@ -388,6 +388,16 @@
 
   &__cta-inner {
     column-gap: 260px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      width: 25px;
+      height: 25px;
+      background: var(--brand-600);
+    }
   }
 
   &__cta-content {
@@ -665,6 +675,10 @@
 
 @media (max-width: 900px) {
   .im-partners-page {
+    &__cta-inner::after {
+      content: none;
+    }
+
     .im-cta__form.im-partners-page__cta-form {
       gap: 16px;
     }

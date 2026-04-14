@@ -767,6 +767,10 @@
 
     &__contact-arrow {
       justify-self: start;
+
+      img {
+        transform: rotate(90deg);
+      }
     }
 
     &__contact-text {
