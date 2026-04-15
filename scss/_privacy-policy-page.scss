@@ -1,0 +1,328 @@
+.im-privacy-policy-page {
+  .im-privacy-policy-page__section.im-privacy-policy-page__section--policy,
+  .im-privacy-policy-page__section.im-privacy-policy-page__section--accordion {
+    padding-bottom: 0;
+  }
+
+  &__section--policy {
+    scroll-margin-top: 24px;
+  }
+
+  &__hero {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__hero-brand {
+    min-height: 250px;
+    padding: 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background: var(--brand-600);
+  }
+
+  &__hero-logo {
+    display: block;
+    width: 106px;
+    height: auto;
+    max-width: 100%;
+  }
+
+  &__hero-copy {
+    min-height: 250px;
+    padding: 40px;
+    position: relative;
+    background: var(--blue-800);
+    color: var(--neutral-100);
+  }
+
+  &__hero-text {
+    max-width: 918px;
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-2xl-medium-fw);
+    font-size: var(--font-2xl-size);
+    line-height: 32px;
+    color: inherit;
+  }
+
+  &__hero-accent {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    width: 16px;
+    height: 16px;
+    background: var(--brand-600);
+  }
+
+  &__accordion {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__item {
+    background: var(--neutral-100);
+  }
+
+  &__item:nth-child(even) {
+    background: var(--neutral-300);
+  }
+
+  &__toggle {
+    width: 100%;
+    padding: 40px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+    border: 0;
+    background: transparent;
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+    color: inherit;
+  }
+
+  &__toggle:focus-visible {
+    outline: 2px solid var(--blue-700);
+    outline-offset: -2px;
+  }
+
+  &__item-title {
+    min-width: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-xl-normal-fw);
+    font-size: var(--font-xl-size);
+    line-height: 28px;
+    color: var(--neutral-900);
+  }
+
+  &__toggle-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--blue-700);
+    color: var(--neutral-100);
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast);
+
+    img {
+      display: block;
+      width: 9px;
+      height: 9px;
+    }
+  }
+
+  &__item.is-open &__toggle-icon {
+    transform: rotate(90deg);
+  }
+
+  &__panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal);
+  }
+
+  &__item.is-open &__panel {
+    max-height: none;
+  }
+
+  &__panel-inner {
+    padding: 0 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__panel-lead {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-2xl-bold-fw);
+    font-size: var(--font-2xl-size);
+    line-height: 32px;
+    color: var(--neutral-900);
+  }
+
+  &__panel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 80px;
+  }
+
+  &__panel-block {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: var(--brand-600);
+    font-family: var(--font-family);
+    font-weight: var(--font-xs-normal-fw);
+    font-size: var(--font-xs-size);
+    line-height: 15px;
+    color: var(--neutral-100);
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  &__panel-text {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-base-normal-fw);
+    font-size: var(--font-base-size);
+    line-height: 24px;
+    color: var(--neutral-900);
+  }
+}
+
+@media (max-width: 1000px) {
+  .im-privacy-policy-page {
+    &__hero-copy,
+    &__toggle,
+    &__panel-inner {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    &__hero-copy,
+    &__toggle {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+
+    &__panel-inner {
+      padding-bottom: 32px;
+      gap: 32px;
+    }
+
+    &__hero-text {
+      max-width: 100%;
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+
+    &__panel-grid {
+      gap: 32px;
+    }
+
+    &__panel-lead {
+      font-size: var(--font-xl-size);
+      line-height: 28px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--policy,
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--accordion {
+      padding-bottom: 0;
+    }
+
+    &__hero {
+      grid-template-columns: 1fr;
+    }
+
+    &__hero-brand {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    &__hero-logo {
+      width: 60px;
+    }
+
+    &__hero-copy {
+      min-height: 0;
+      padding: 24px;
+    }
+
+    &__hero-text {
+      max-width: 230px;
+      font-weight: var(--font-lg-bold-fw);
+      font-size: var(--font-lg-size);
+      line-height: 24px;
+    }
+
+    &__toggle {
+      padding: 20px;
+      gap: 16px;
+    }
+
+    &__item-title {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+
+    &__panel-inner {
+      padding: 0 16px 16px;
+      gap: 16px;
+    }
+
+    &__panel-lead {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+
+    &__panel-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    &__panel-block {
+      gap: 16px;
+    }
+
+    &__badge {
+      width: 28px;
+      height: 28px;
+      font-size: var(--font-2xs-size);
+      line-height: 13px;
+    }
+
+    &__panel-text {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--policy,
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--accordion {
+      padding-bottom: 0;
+    }
+
+    &__hero-brand,
+    &__hero-copy {
+      padding: 24px 16px;
+    }
+
+    &__hero-accent {
+      right: 16px;
+      bottom: 16px;
+    }
+
+    &__toggle {
+      padding: 20px 16px;
+    }
+  }
+}

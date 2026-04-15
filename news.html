@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Новости | IronMebel</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <meta
+      name="description"
+      content="Новости и полезные гайды IronMebel о складском оборудовании и системах хранения."
+    />
+    <link rel="stylesheet" href="./css/page-news.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div data-layout-header></div>
+
+      <main class="im-news-page">
+        <section class="im-news-page__section" aria-labelledby="news-title">
+          <div class="im-container">
+            <div class="im-news-page__head">
+              <h1 class="im-news-page__title" id="news-title">Новости</h1>
+
+              <div class="im-news-page__sort-dropdown" data-news-sort>
+                <button
+                  class="im-news-page__sort-button"
+                  type="button"
+                  data-news-sort-toggle
+                  aria-haspopup="listbox"
+                  aria-expanded="false"
+                  aria-label="Порядок отображения новостей"
+                >
+                  <span class="im-news-page__sort-label" data-news-sort-label>
+                    Сначала популярные
+                  </span>
+                  <span class="im-news-page__sort-icon" aria-hidden="true">
+                    <svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M4.51756 6.74945C4.37692 6.74939 4.23944 6.78889 4.12053 6.86334C4.00161 6.93779 3.90611 7.04411 3.84492 7.17018C3.78372 7.29625 3.75929 7.437 3.77445 7.57637C3.78961 7.71575 3.84376 7.84802 3.93067 7.9577L8.41311 13.5599C8.48324 13.6476 8.57226 13.7184 8.67357 13.7668C8.77488 13.8153 8.88584 13.8401 8.99811 13.8395C9.11058 13.8392 9.22152 13.8141 9.32292 13.7656C9.42433 13.7171 9.51334 13.6464 9.58311 13.5584L14.0693 7.95845C14.1567 7.84916 14.2113 7.7171 14.2267 7.57778C14.2422 7.43846 14.2178 7.2975 14.1565 7.17122C14.0951 7.04495 13.9994 6.93845 13.8802 6.86414C13.7609 6.78982 13.6232 6.75074 13.4825 6.75145H4.51756V6.74945Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                </button>
+
+                <div
+                  class="im-news-page__sort-menu"
+                  data-news-sort-menu
+                  role="listbox"
+                  aria-label="Порядок отображения новостей"
+                >
+                  <button
+                    class="im-news-page__sort-option is-active"
+                    type="button"
+                    data-news-sort-option
+                    aria-selected="true"
+                  >
+                    Сначала популярные
+                  </button>
+                  <button
+                    class="im-news-page__sort-option"
+                    type="button"
+                    data-news-sort-option
+                    aria-selected="false"
+                  >
+                    Сначала новые
+                  </button>
+                  <button
+                    class="im-news-page__sort-option"
+                    type="button"
+                    data-news-sort-option
+                    aria-selected="false"
+                  >
+                    Сначала старые
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="im-news-page__grid" data-news-grid role="list"></div>
+
+            <button
+              class="im-news-page__load-more"
+              type="button"
+              disabled
+              aria-disabled="true"
+            >
+              <span class="im-news-page__load-more-icon" aria-hidden="true"></span>
+              <span>Загрузить еще</span>
+            </button>
+
+            <nav class="im-news-page__pagination" aria-label="Пагинация новостей">
+              <div class="im-news-page__pagination-group">
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Первая страница">
+                  <span
+                    class="im-news-page__pagination-icon im-news-page__pagination-icon--double im-news-page__pagination-icon--reverse"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Предыдущая страница">
+                  <span
+                    class="im-news-page__pagination-icon im-news-page__pagination-icon--reverse"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </div>
+
+              <div class="im-news-page__pagination-group im-news-page__pagination-group--pages">
+                <span class="im-news-page__pagination-current" aria-current="page">1</span>
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Страница 2">2</button>
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Страница 3">3</button>
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Страницы между 3 и 12">...</button>
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Страница 12">12</button>
+              </div>
+
+              <div class="im-news-page__pagination-group">
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Следующая страница">
+                  <span class="im-news-page__pagination-icon" aria-hidden="true"></span>
+                </button>
+                <button class="im-news-page__pagination-button" type="button" disabled aria-label="Последняя страница">
+                  <span
+                    class="im-news-page__pagination-icon im-news-page__pagination-icon--double"
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </div>
+            </nav>
+          </div>
+        </section>
+
+        <template id="news-card-template">
+          <article class="im-news-page__card" role="listitem">
+            <a href="#" class="im-news-page__card-media">
+              <img
+                class="im-news-page__card-image"
+                src="./images/main/main_photo.png"
+                alt="Складской стеллаж IronMebel"
+                loading="lazy"
+              />
+              <span class="im-news-page__card-badge">Гайд</span>
+            </a>
+
+            <div class="im-news-page__card-content">
+              <h2 class="im-news-page__card-title">
+                Как выбрать стеллаж под реальную нагрузку
+              </h2>
+              <p class="im-news-page__card-text">
+                Разбираем ключевые параметры стеллажей, чтобы они выдерживали
+                нагрузку и служили годами без деформаций
+              </p>
+              <ul class="im-news-page__meta-list">
+                <li class="im-news-page__meta-chip">
+                  <span class="im-news-page__meta-icon" aria-hidden="true">
+                    <img src="./images/main/icons/birka.svg" alt="" />
+                  </span>
+                  <span>Склад</span>
+                </li>
+                <li class="im-news-page__meta-chip">
+                  <span class="im-news-page__meta-icon" aria-hidden="true">
+                    <img src="./images/main/icons/clock.svg" alt="" />
+                  </span>
+                  <span>5 мин</span>
+                </li>
+                <li class="im-news-page__meta-chip">
+                  <span class="im-news-page__meta-icon" aria-hidden="true">
+                    <img src="./images/main/icons/file-earmark-arrow-down.svg" alt="" />
+                  </span>
+                  <span>PDF</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </template>
+      </main>
+
+      <div data-layout-footer></div>
+    </div>
+
+    <script src="./js/layout-include.js"></script>
+    <script src="./js/news.js"></script>
+  </body>
+</html>

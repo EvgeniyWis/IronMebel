@@ -1,2 +1,19 @@
 .vscode
 PLANS.md
+
+# Local tool state
+.claude/
+.codex-temp/
+.serena/
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# Temporary build artifacts
+*_tmp*.map
+
+# Local working notes and extracted materials
+*_cleaned.md
+docs/*-execplan.md
+docs/*-work/

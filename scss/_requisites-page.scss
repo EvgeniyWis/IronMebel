@@ -1,0 +1,283 @@
+.im-privacy-policy-page {
+  .im-privacy-policy-page__section.im-privacy-policy-page__section--requisites {
+    padding-bottom: 0;
+  }
+
+  &__section--requisites {
+    scroll-margin-top: 24px;
+  }
+
+  &__requisites-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__requisites-card {
+    min-width: 0;
+  }
+
+  &__requisites-card--details {
+    min-height: 325px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 40px;
+    background: var(--blue-800);
+    color: var(--neutral-100);
+  }
+
+  &__requisites-card--documents {
+    display: flex;
+    flex-direction: column;
+    background: var(--neutral-100);
+  }
+
+  &__requisites-card-head {
+    padding: 32px 32px 24px;
+  }
+
+  &__requisites-card-title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-3xl-bold-fw);
+    font-size: var(--font-3xl-size);
+    line-height: 36px;
+  }
+
+  &__requisites-card-title--details {
+    color: var(--neutral-100);
+  }
+
+  &__requisites-card-title--documents {
+    color: var(--neutral-900);
+  }
+
+  &__requisites-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  &__requisites-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__requisites-line {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-base-normal-fw);
+    font-size: var(--font-base-size);
+    line-height: 24px;
+    color: inherit;
+  }
+
+  &__requisites-button {
+    align-self: flex-start;
+    min-height: 50px;
+    padding: 16px 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 0;
+    border-radius: 8px;
+    background: var(--brand-500);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: var(--font-sm-size);
+    line-height: 16px;
+    color: var(--neutral-100);
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast),
+      box-shadow var(--transition-fast);
+  }
+
+  &__requisites-button:hover {
+    background: var(--brand-575);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--brand-600) 40%, transparent);
+  }
+
+  &__requisites-button:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+
+  &__requisites-button:focus-visible,
+  &__requisites-document:focus-visible {
+    outline: 2px solid var(--blue-700);
+    outline-offset: -2px;
+  }
+
+  &__requisites-button-icon,
+  &__requisites-document-icon {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: currentColor;
+
+    svg {
+      display: block;
+    }
+  }
+
+  &__requisites-documents {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__requisites-document {
+    width: 100%;
+    padding: 20px 32px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 28px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    text-align: left;
+    color: var(--neutral-900);
+    transition: background-color var(--transition-fast);
+  }
+
+  &__requisites-document:hover {
+    background: var(--neutral-300);
+  }
+
+  &__requisites-document-text {
+    min-width: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-base-normal-fw);
+    font-size: var(--font-base-size);
+    line-height: 24px;
+    color: var(--neutral-600);
+  }
+}
+
+@media (max-width: 1000px) {
+  .im-privacy-policy-page {
+    &__requisites-card--details {
+      padding: 24px;
+      gap: 32px;
+    }
+
+    &__requisites-card-head {
+      padding: 24px 24px 20px;
+    }
+
+    &__requisites-card-title {
+      font-size: var(--font-2xl-size);
+      line-height: 32px;
+    }
+
+    &__requisites-copy {
+      gap: 40px;
+    }
+
+    &__requisites-document {
+      padding: 20px 24px;
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--requisites {
+      padding-bottom: 0;
+    }
+
+    &__section--requisites {
+      scroll-margin-top: 32px;
+    }
+
+    &__requisites-layout {
+      grid-template-columns: 1fr;
+    }
+
+    &__requisites-card--details {
+      min-height: 0;
+      padding: 24px;
+      gap: 28px;
+    }
+
+    &__requisites-card-head {
+      padding: 16px 16px 12px;
+    }
+
+    &__requisites-card-title--details {
+      font-size: var(--font-lg-size);
+      line-height: 24px;
+    }
+
+    &__requisites-card-title--documents {
+      font-size: var(--font-base-size);
+      line-height: 24px;
+    }
+
+    &__requisites-copy {
+      gap: 16px;
+    }
+
+    &__requisites-lines {
+      gap: 8px;
+    }
+
+    &__requisites-line {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+
+    &__requisites-button {
+      width: 100%;
+    }
+
+    &__requisites-documents {
+      padding: 0 16px 16px;
+    }
+
+    &__requisites-document {
+      padding: 10px 0;
+      align-items: center;
+      gap: 16px;
+    }
+
+    &__requisites-document-text {
+      font-size: var(--font-sm-size);
+      line-height: 16px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .im-privacy-policy-page {
+    .im-privacy-policy-page__section.im-privacy-policy-page__section--requisites {
+      padding-bottom: 0;
+    }
+
+    &__requisites-card--details {
+      padding: 24px 16px;
+    }
+
+    &__requisites-card-head,
+    &__requisites-documents {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    &__requisites-button {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+}

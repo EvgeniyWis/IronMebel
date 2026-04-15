@@ -144,6 +144,8 @@
   }
 
   .im-dealer__arrow img {
+    width: 8px;
+    height: 9px;
     transform: rotate(90deg);
   }
 
@@ -207,6 +209,10 @@
     min-height: 239px;
   }
 
+  .im-hero__slider-slide img {
+    clip-path: polygon(0 0, 74% 0, 100% 32%, 100% 100%, 0 100%);
+  }
+
   .im-hero__slider::after {
     height: 36px;
   }
@@ -263,6 +269,8 @@
   }
 
   .im-hero__test-drive-arrow img {
+    width: 8px;
+    height: 9px;
     transform: rotate(90deg);
   }
 
@@ -552,21 +560,19 @@
   }
 
   .im-partners .im-container {
-    padding: 20px 18px 16px;
-    border-radius: 20px;
+    padding: 0;
+    border-radius: 0;
   }
 
-  .im-partners__title {
-    font-size: 22px;
+  .im-partners__title,
+  .im-professionals__title,
+  .im-blog__title {
+    font-size: 24px;
+    line-height: 32px;
   }
 
   .im-professionals {
     margin: 32px 0;
-  }
-
-  .im-professionals__title {
-    font-size: 28px;
-    line-height: 36px;
   }
 
   .im-century {
@@ -590,8 +596,8 @@
   }
 
   .im-century__media img {
-    border-radius: 8px 0px 0px 0;
-    clip-path: polygon(0 0, calc(100% - 96px) 0, 100% 96px, 100% 100%, 0 100%);
+    border-radius: 8px 0 0 0;
+    clip-path: polygon(0 0, 74% 0, 100% 32%, 100% 100%, 0 100%);
   }
 
   .im-cart-page__layout {
@@ -604,8 +610,69 @@
   }
 }
 
+@media (max-width: 768px) {
+  .im-decisions {
+    margin: 36px 0 40px;
+    padding: 24px 0;
+    overflow-x: hidden;
+    margin-bottom: 0;
+  }
+
+  .im-decisions__head {
+    display: grid;
+    grid-template-columns: minmax(0, 20ch) max-content;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+
+  .im-decisions__title {
+    font-size: 20px;
+    line-height: 130%;
+  }
+
+  .im-decisions__download {
+    flex-direction: row-reverse;
+    width: auto;
+    padding: 0 14px;
+  }
+
+  .im-decisions__grid {
+    display: block;
+    max-width: none;
+    margin: 0;
+    overflow: visible;
+  }
+
+  .im-decisions__grid.keen-slider {
+    display: flex;
+  }
+
+  .im-decisions__item {
+    width: 303px;
+    min-width: 303px;
+    height: 303px;
+  }
+
+  .im-decisions__promo-brand {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .im-decisions__promo-text {
+    max-width: 225px;
+  }
+
+  .im-decisions__action--label {
+    white-space: normal;
+  }
+
+  .im-decisions__action--primary {
+    width: 163px;
+  }
+}
+
 @media (max-width: 600px) {
-  .im-decisions__title,
   .im-goods__title,
   .im-partners__title {
     font-size: 20px;
@@ -1197,25 +1264,6 @@
     justify-self: center;
   }
 
-  .im-decisions__head {
-    display: grid;
-    grid-template-columns: minmax(0, 20ch) max-content;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 32px;
-  }
-
-  .im-decisions__title {
-    font-size: 20px;
-    line-height: 130%;
-  }
-
-  .im-decisions__download {
-    flex-direction: row-reverse;
-    width: auto;
-    padding: 0 14px;
-  }
-
   .im-industries__title {
     font-size: 20px;
     line-height: 28px;
@@ -1261,6 +1309,7 @@
   }
 
   .im-goods__head {
+    padding: 0;
     margin-bottom: 16px;
     flex-direction: column;
     align-items: flex-start;
@@ -1494,7 +1543,7 @@
 
   .im-partners .im-container {
     padding: 0;
-    border-radius: 18px;
+    border-radius: 0;
   }
 
   .im-partners__head {
@@ -1618,6 +1667,7 @@
 
   .im-blog__head {
     gap: 24px;
+    padding: 0;
     margin-bottom: 20px;
   }
 
@@ -1639,7 +1689,7 @@
     display: inline-flex;
     width: 100%;
     justify-content: center;
-    max-width: 374px;
+    align-items: center;
     height: 40px;
     margin-top: 0;
     background: #00355d;
@@ -1648,8 +1698,21 @@
     font-size: 14px;
     line-height: 16px;
 
-    .im-blog__all-arrow svg path {
-      fill: var(--neutral-100);
+    .im-blog__all-arrow img {
+      filter: none;
+    }
+
+    .im-blog__all-arrow {
+      transform: translateY(1px);
+    }
+
+    &:hover {
+      color: var(--neutral-100);
+      transform: none;
+
+      .im-blog__all-arrow img {
+        filter: none;
+      }
     }
   }
 
@@ -1670,7 +1733,7 @@
   }
 
   .im-century__media img {
-    clip-path: polygon(0 0, calc(100% - 96px) 0, 100% 96px, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 74% 0, 100% 32%, 100% 100%, 0 100%);
   }
 
   .im-century__content {
@@ -1706,63 +1769,6 @@
     max-width: 149px;
     font-size: 12px;
     line-height: 13px;
-  }
-
-  .im-decisions {
-    margin: 36px 0 40px;
-    padding: 24px 0 24px;
-    overflow-x: hidden;
-    margin-bottom: 0;
-  }
-
-  .im-decisions__head {
-    gap: 32px;
-  }
-
-  .im-decisions__title {
-    font-size: 20px;
-    line-height: 130%;
-  }
-
-  .im-decisions__download {
-    flex-direction: row-reverse;
-    width: auto;
-    padding: 0 14px;
-  }
-
-  .im-decisions__grid {
-    display: block;
-    max-width: none;
-    margin: 0;
-    overflow: visible;
-  }
-
-  .im-decisions__grid.keen-slider {
-    display: flex;
-  }
-
-  .im-decisions__item {
-    width: 303px;
-    min-width: 303px;
-    height: 303px;
-  }
-
-  .im-decisions__promo-brand {
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  .im-decisions__promo-text {
-    max-width: 225px;
-  }
-
-
-  .im-decisions__action--label {
-    white-space: normal;
-  }
-
-  .im-decisions__action--primary {
-    width: 163px;
   }
 
   .im-catalog-pagination {

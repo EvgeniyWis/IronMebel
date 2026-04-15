@@ -1,0 +1,251 @@
+@use "animations" as *;
+
+.im-not-found-page {
+  padding: 20px 0 0;
+
+  &__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr);
+    align-items: stretch;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  &__primary,
+  &__secondary {
+    min-width: 0;
+  }
+
+  &__primary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 24px;
+    min-height: 624px;
+    padding: 48px 56px 48px 64px;
+    background: var(--blue-800);
+    color: var(--neutral-100);
+  }
+
+  &__title {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+  }
+
+  &__title-label {
+    display: block;
+    font-family: var(--font-family);
+    font-weight: var(--font-6xl-bold-fw);
+    font-size: var(--font-6xl-size);
+    line-height: var(--font-6xl-lh);
+    color: inherit;
+    text-transform: lowercase;
+  }
+
+  &__title-code {
+    display: block;
+    font-family: var(--font-family);
+    font-weight: var(--font-6xl-bold-fw);
+    font-size: 160px;
+    line-height: 0.86;
+    color: inherit;
+  }
+
+  &__text {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-lg-normal-fw);
+    font-size: var(--font-lg-size);
+    line-height: 133%;
+    color: inherit;
+  }
+
+  &__secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 624px;
+    padding: 48px 56px;
+    background: var(--neutral-100);
+    clip-path: polygon(0 0, 78% 0, 100% 30%, 100% 100%, 0 100%);
+  }
+
+  &__secondary-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    width: min(100%, 320px);
+  }
+
+  &__secondary-title {
+    margin: 0;
+    font-family: var(--font-family);
+    font-weight: var(--font-xl-bold-fw);
+    font-size: var(--font-xl-size);
+    line-height: var(--font-xl-lh);
+    color: var(--neutral-900);
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 14px 24px;
+    border-radius: 8px;
+    background: var(--brand-500);
+    color: var(--neutral-100);
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: var(--font-sm-bold-fw);
+    font-size: var(--font-sm-size);
+    line-height: 114%;
+    white-space: nowrap;
+    box-shadow: none;
+    @include interactive-transition;
+
+    &:hover {
+      background: #ff4747;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px
+        color-mix(in srgb, var(--brand-500) 28%, transparent);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--blue-800);
+      outline-offset: 3px;
+    }
+  }
+}
+
+.im-not-found-page + [data-layout-footer] .im-footer {
+  margin-top: 32px;
+}
+
+@media (max-width: 1200px) {
+  .im-not-found-page {
+    &__primary {
+      padding: 44px 48px;
+    }
+
+    &__secondary {
+      padding: 44px 48px;
+    }
+
+    &__title-code {
+      font-size: 144px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .im-not-found-page {
+    &__primary,
+    &__secondary {
+      min-height: 560px;
+    }
+
+    &__title-label {
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    &__title-code {
+      font-size: 132px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .im-not-found-page {
+    padding-top: 16px;
+
+    &__hero {
+      grid-template-columns: 1fr;
+    }
+
+    &__primary,
+    &__secondary {
+      min-height: auto;
+    }
+
+    &__primary {
+      padding: 32px 24px;
+      gap: 16px;
+    }
+
+    &__secondary {
+      padding: 32px 24px;
+      align-items: flex-start;
+      justify-content: flex-start;
+      clip-path: none;
+    }
+
+    &__secondary-inner {
+      width: 100%;
+      gap: 24px;
+    }
+
+    &__title-label {
+      font-size: var(--font-3xl-size);
+      line-height: 36px;
+    }
+
+    &__title-code {
+      font-size: 88px;
+    }
+
+    &__text {
+      font-size: var(--font-base-size);
+      line-height: 150%;
+    }
+
+    &__secondary-title {
+      font-size: var(--font-lg-size);
+      line-height: 133%;
+    }
+  }
+
+  .im-not-found-page + [data-layout-footer] .im-footer {
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .im-not-found-page {
+    &__primary {
+      padding: 24px;
+    }
+
+    &__secondary {
+      padding: 24px;
+    }
+
+    &__title-code {
+      font-size: 80px;
+    }
+
+    &__links {
+      gap: 12px;
+    }
+
+    &__link {
+      min-height: 40px;
+      padding: 12px 18px;
+    }
+  }
+}

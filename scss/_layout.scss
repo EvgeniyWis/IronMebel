@@ -172,7 +172,6 @@
   grid-template-columns: minmax(0, 1.04fr) minmax(0, 1fr);
   overflow: hidden;
   border-radius: 8px;
-  background: var(--neutral-100);
   min-height: 362px;
 }
 
@@ -253,8 +252,18 @@
 .im-hero__slider {
   position: relative;
   min-height: 362px;
-  background: #f3f4f6;
   overflow: hidden;
+}
+
+.im-hero__slider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 2px;
+  background: #111;
+  pointer-events: none;
 }
 
 .im-hero__slider::after {
@@ -283,6 +292,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
+  clip-path: polygon(0 0, 78% 0, 100% 30%, 100% 100%, 0 100%);
 }
 
 .im-hero__slider-pagination {
@@ -360,6 +370,8 @@
   border: none;
   border-radius: 8px;
   background: var(--brand-500);
+  cursor: pointer;
+  text-decoration: none;
   transition:
     background-color var(--transition-fast),
     transform var(--transition-fast);
@@ -367,8 +379,8 @@
 
 .im-hero__test-drive-arrow img {
   display: block;
-  width: 11px;
-  height: 11px;
+  width: 9px;
+  height: 8px;
 }
 
 .im-hero__test-drive-text {
