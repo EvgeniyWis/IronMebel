@@ -367,14 +367,9 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  border: none;
   border-radius: 8px;
   background: var(--brand-500);
-  cursor: pointer;
-  text-decoration: none;
-  transition:
-    background-color var(--transition-fast),
-    transform var(--transition-fast);
+  pointer-events: none;
 }
 
 .im-hero__test-drive-arrow img {
@@ -425,21 +420,11 @@
   box-shadow: none;
 }
 
-.im-hero__test-drive-arrow:hover {
-  background: #ff4747;
-  transform: translateY(-1px);
-}
-
-.im-hero__test-drive-arrow:active {
-  transform: translateY(0);
-}
-
 .im-hero__cta:focus-visible {
   outline: 2px solid #002139;
   outline-offset: 2px;
 }
 
-.im-hero__test-drive-arrow:focus-visible,
 .im-hero__slider-dot:focus-visible {
   outline: 2px solid #002139;
   outline-offset: 2px;

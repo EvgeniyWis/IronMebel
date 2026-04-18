@@ -147,41 +147,13 @@
     border-radius: 8px;
     background: var(--brand-600);
     color: var(--neutral-100);
-    text-decoration: none;
-    cursor: pointer;
-    transition:
-      background-color var(--transition-fast),
-      transform var(--transition-fast);
+    pointer-events: none;
 
     svg {
       display: block;
       width: 32px;
       height: 32px;
     }
-  }
-
-  &__personalization-arrow:focus-visible,
-  &__recommendation-arrow:focus-visible {
-    outline: 2px solid var(--neutral-100);
-    outline-offset: 2px;
-  }
-
-  &__personalization-arrow:hover,
-  &__recommendation-arrow:hover {
-    transform: translateY(-1px);
-  }
-
-  &__personalization-arrow:hover {
-    background: var(--brand-500);
-  }
-
-  &__recommendation-arrow:hover {
-    background: var(--blue-700);
-  }
-
-  &__personalization-arrow:active,
-  &__recommendation-arrow:active {
-    transform: translateY(0);
   }
 
   &__personalization-text,

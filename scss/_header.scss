@@ -993,7 +993,7 @@ body.im-user-logged-in {
 .im-header__mobile-overlay {
   position: fixed;
   inset: 0;
-  z-index: var(--z-fixed);
+  z-index: 2147483644;
   display: flex;
   align-items: stretch;
   justify-content: flex-start;
@@ -1023,12 +1023,16 @@ body.im-user-logged-in {
 }
 
 .im-header__mobile-submenu {
-  z-index: 2;
+  z-index: 2147483646;
 }
 
 .im-header__mobile-menu {
-  z-index: 1;
+  z-index: 2147483645;
   transform: translateX(0);
+}
+
+.im-header:has(.im-header__mobile-overlay.is-open) {
+  z-index: 2147483646;
 }
 
 .im-header__mobile-submenu.is-open {

@@ -519,31 +519,13 @@
     justify-content: center;
     border-radius: 8px;
     background: var(--brand-500);
-    cursor: pointer;
-    text-decoration: none;
-    transition:
-      background-color var(--transition-fast),
-      transform var(--transition-fast);
+    pointer-events: none;
 
     img {
       display: block;
       width: 9px;
       height: 8px;
     }
-  }
-
-  .im-dealer__arrow:hover {
-    background: #ff4747;
-    transform: translateY(-1px);
-  }
-
-  .im-dealer__arrow:active {
-    transform: translateY(0);
-  }
-
-  .im-dealer__arrow:focus-visible {
-    outline: 2px solid #002139;
-    outline-offset: 2px;
   }
 
   .im-dealer__subtitle {

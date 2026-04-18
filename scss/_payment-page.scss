@@ -140,25 +140,13 @@
     height: 32px;
     border-radius: 8px;
     background: var(--brand-500);
-    transition:
-      background-color var(--transition-fast),
-      transform var(--transition-fast);
+    pointer-events: none;
 
     img {
       display: block;
       width: 9px;
       height: 9px;
       transform: translateY(1px);
-    }
-
-    &:hover {
-      background: #ff4747;
-      transform: translateY(-1px);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--neutral-100);
-      outline-offset: 2px;
     }
   }
 

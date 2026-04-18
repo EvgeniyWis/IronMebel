@@ -94,8 +94,9 @@
       "https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.js",
     );
     await loadScript("./js/main.js");
+    window.dispatchEvent(new Event("ironmebel:layout-ready"));
+    window.dispatchEvent(new Event("resize"));
   };
 
   bootstrap();
 })();
-

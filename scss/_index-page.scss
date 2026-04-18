@@ -682,7 +682,8 @@
 // ─── Industries (Отраслевые решения) ───────────────────────
 .im-industries {
   margin: 32px 0;
-  --im-industries-card-size: 249px;
+  --im-industries-card-width: calc(100% / 5);
+  --im-industries-card-height: 249px;
 }
 
 .im-industries__head {
@@ -777,15 +778,15 @@
 }
 
 .im-industries__slide {
-  flex: 0 0 var(--im-industries-card-size);
-  inline-size: var(--im-industries-card-size);
+  flex: 0 0 var(--im-industries-card-width);
+  inline-size: var(--im-industries-card-width);
 }
 
 .im-industries__card {
   box-sizing: border-box;
   inline-size: 100%;
-  min-block-size: var(--im-industries-card-size);
-  aspect-ratio: 1 / 1;
+  block-size: var(--im-industries-card-height);
+  min-block-size: var(--im-industries-card-height);
   padding: 32px;
   background: var(--neutral-100);
   display: flex;
@@ -799,6 +800,7 @@
 }
 
 .im-industries__icon {
+  flex: 0 0 36px;
   width: 36px;
   height: 36px;
   display: flex;
@@ -840,6 +842,7 @@
 // ─── Partners (Партнёры) ───────────────────────────────────
 .im-partners {
   margin: 32px 0;
+  --im-partners-item-size: calc((100% - 108px) / 10);
 }
 
 .im-partners .im-container {
@@ -928,8 +931,8 @@
 
 .im-partners__item {
   box-sizing: border-box;
-  flex: 0 0 114px;
-  inline-size: 114px;
+  flex: 0 0 var(--im-partners-item-size);
+  inline-size: var(--im-partners-item-size);
   block-size: 114px;
   border-radius: 8px;
   padding: 12px 8px;
@@ -1201,31 +1204,13 @@
   justify-content: center;
   border-radius: 8px;
   background: var(--brand-500);
-  cursor: pointer;
-  text-decoration: none;
-  transition:
-    background-color var(--transition-fast),
-    transform var(--transition-fast);
+  pointer-events: none;
 
   img {
     display: block;
     width: 9px;
     height: 8px;
   }
-}
-
-.im-dealer__arrow:hover {
-  background: #ff4747;
-  transform: translateY(-1px);
-}
-
-.im-dealer__arrow:active {
-  transform: translateY(0);
-}
-
-.im-dealer__arrow:focus-visible {
-  outline: 2px solid #002139;
-  outline-offset: 2px;
 }
 
 .im-dealer__subtitle {

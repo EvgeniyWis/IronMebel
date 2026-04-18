@@ -855,11 +855,9 @@ const initPartnersSlider = () => {
     item.cloneNode(true),
   );
   const mobileMediaQuery = window.matchMedia("(max-width: 600px)");
-  const mobileStep = 2;
   let desktopSlider = null;
-  let mobileSliders = [];
+  let mobileSlider = null;
   let currentMode = null;
-  let isSyncingMobileRows = false;
 
   const buildDesktopList = () => {
     const desktopRoot = document.createElement("div");
@@ -869,22 +867,32 @@ const initPartnersSlider = () => {
     return desktopRoot;
   };
 
-  const buildMobileRows = () => {
-    const rowTop = document.createElement("div");
-    rowTop.className = "im-partners__list keen-slider im-partners__list--mobile";
+  const createMobilePartnerCard = (item) => {
+    const card = item.cloneNode(true);
+    card.classList.remove("keen-slider__slide");
+    return card;
+  };
 
-    const rowBottom = document.createElement("div");
-    rowBottom.className =
-      "im-partners__list keen-slider im-partners__list--mobile";
-
+  const buildMobileColumns = () => {
+    const mobileRoot = document.createElement("div");
+    mobileRoot.className = "im-partners__list keen-slider im-partners__list--mobile";
     const midpoint = Math.ceil(originalItems.length / 2);
 
-    originalItems.forEach((item, index) => {
-      const targetRow = index < midpoint ? rowTop : rowBottom;
-      targetRow.appendChild(item.cloneNode(true));
-    });
+    for (let index = 0; index < midpoint; index += 1) {
+      const column = document.createElement("div");
+      column.className = "im-partners__mobile-column keen-slider__slide";
 
-    return [rowTop, rowBottom];
+      column.appendChild(createMobilePartnerCard(originalItems[index]));
+
+      const pairedItem = originalItems[index + midpoint];
+      if (pairedItem) {
+        column.appendChild(createMobilePartnerCard(pairedItem));
+      }
+
+      mobileRoot.appendChild(column);
+    }
+
+    return mobileRoot;
   };
 
   const destroySliders = () => {
@@ -893,9 +901,10 @@ const initPartnersSlider = () => {
       desktopSlider = null;
     }
 
-    mobileSliders.forEach((slider) => slider.destroy());
-    mobileSliders = [];
-    isSyncingMobileRows = false;
+    if (mobileSlider) {
+      mobileSlider.destroy();
+      mobileSlider = null;
+    }
   };
 
   const setDesktopArrowsState = (slider) => {
@@ -906,33 +915,6 @@ const initPartnersSlider = () => {
 
     prevBtn.disabled = details.rel === 0;
     nextBtn.disabled = details.rel === details.maxIdx;
-  };
-
-  const clampSliderIndex = (slider, index) => {
-    const details = slider.track.details;
-    if (!details) return 0;
-    return Math.max(0, Math.min(index, details.maxIdx));
-  };
-
-  const syncMobileRows = (sourceSlider) => {
-    if (isSyncingMobileRows || !sourceSlider.track.details) return;
-
-    const currentIndex = sourceSlider.track.details.rel;
-    const groupedIndex = Math.round(currentIndex / mobileStep) * mobileStep;
-    const targetIndex = clampSliderIndex(sourceSlider, groupedIndex);
-
-    isSyncingMobileRows = true;
-
-    mobileSliders.forEach((slider) => {
-      const sliderIndex = clampSliderIndex(slider, targetIndex);
-      if (slider.track.details && slider.track.details.rel !== sliderIndex) {
-        slider.moveToIdx(sliderIndex);
-      }
-    });
-
-    requestAnimationFrame(() => {
-      isSyncingMobileRows = false;
-    });
   };
 
   const setupDesktopSlider = () => {
@@ -955,36 +937,19 @@ const initPartnersSlider = () => {
     desktopSlider.on("updated", setDesktopArrowsState);
   };
 
-  const setupMobileSliders = () => {
+  const setupMobileSlider = () => {
     sliderWrapper.innerHTML = "";
-    const [rowTop, rowBottom] = buildMobileRows();
-    sliderWrapper.appendChild(rowTop);
-    sliderWrapper.appendChild(rowBottom);
+    const mobileRoot = buildMobileColumns();
+    sliderWrapper.appendChild(mobileRoot);
 
-    const mobileOptions = {
+    mobileSlider = new KeenSlider(mobileRoot, {
       slides: {
-        perView: 3,
+        perView: "auto",
         spacing: 8,
       },
       loop: false,
       drag: true,
       rubberband: false,
-      breakpoints: {
-        "(max-width: 400px)": {
-          slides: { perView: 2, spacing: 8 },
-        },
-      },
-    };
-
-    mobileSliders = [
-      new KeenSlider(rowTop, mobileOptions),
-      new KeenSlider(rowBottom, mobileOptions),
-    ];
-
-    mobileSliders.forEach((slider) => {
-      slider.on("created", () => syncMobileRows(slider));
-      slider.on("animationEnded", () => syncMobileRows(slider));
-      slider.on("updated", () => syncMobileRows(slider));
     });
   };
 
@@ -995,7 +960,7 @@ const initPartnersSlider = () => {
     destroySliders();
 
     if (nextMode === "mobile") {
-      setupMobileSliders();
+      setupMobileSlider();
     } else {
       setupDesktopSlider();
     }

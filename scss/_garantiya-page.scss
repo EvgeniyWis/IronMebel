@@ -953,31 +953,13 @@
     align-items: center;
     justify-content: center;
     background: var(--blue-800);
-    cursor: pointer;
-    text-decoration: none;
-    transition:
-      background-color var(--transition-fast),
-      transform var(--transition-fast);
+    pointer-events: none;
 
     img {
       display: block;
       width: 16px;
       height: 16px;
     }
-  }
-
-  &__openness-cta:hover {
-    background: #103768;
-    transform: translateY(-1px);
-  }
-
-  &__openness-cta:active {
-    transform: translateY(0);
-  }
-
-  &__openness-cta:focus-visible {
-    outline: 2px solid var(--blue-800);
-    outline-offset: 2px;
   }
 
   &__openness-content {

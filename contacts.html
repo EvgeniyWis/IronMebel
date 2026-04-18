@@ -10,6 +10,7 @@
       content="Контакты IronMebel, адреса офиса и склада, а также реквизиты компании."
     />
     <link rel="stylesheet" href="./css/page-contacts.css" />
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=ru_RU"></script>
   </head>
   <body>
     <div class="page">
@@ -121,13 +122,12 @@
                 </article>
               </div>
 
-              <div class="im-contacts-page__map">
-                <img
-                  class="im-contacts-page__map-image"
-                  src="./images/main/map.png"
-                  alt="Карта проезда к офису и складу IronMebel"
-                />
-              </div>
+              <div
+                class="im-contacts-page__map"
+                id="contacts-map"
+                data-contacts-map
+                aria-label="Карта проезда к офису и складу IronMebel"
+              ></div>
             </div>
           </div>
         </section>

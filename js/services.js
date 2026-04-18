@@ -1,15 +1,22 @@
 (() => {
   const SLIDER_BREAKPOINT = 768;
   const trainingRoot = document.querySelector("[data-services-training-slider]");
+  const mobileMedia = window.matchMedia(`(max-width: ${SLIDER_BREAKPOINT}px)`);
 
   if (!trainingRoot) return;
 
   let sliderInstance = null;
+  let retryTimer = null;
 
   const destroySlider = () => {
     if (sliderInstance) {
       sliderInstance.destroy();
       sliderInstance = null;
+    }
+
+    if (retryTimer) {
+      window.clearTimeout(retryTimer);
+      retryTimer = null;
     }
 
     trainingRoot.classList.remove("keen-slider");
@@ -37,7 +44,7 @@
       loop: false,
       slides: {
         perView: "auto",
-        spacing: 12,
+        spacing: 0,
       },
       drag: true,
       rubberband: false,
@@ -52,6 +59,13 @@
 
     if (typeof KeenSlider === "undefined") {
       destroySlider();
+
+      if (retryTimer) return;
+
+      retryTimer = window.setTimeout(() => {
+        retryTimer = null;
+        syncPageState();
+      }, 150);
       return;
     }
 
@@ -59,7 +73,25 @@
   };
 
   syncPageState();
+  window.addEventListener("ironmebel:layout-ready", syncPageState);
+  window.addEventListener("load", syncPageState);
   window.addEventListener("resize", syncPageState);
+  if (typeof mobileMedia.addEventListener === "function") {
+    mobileMedia.addEventListener("change", syncPageState);
+  } else if (typeof mobileMedia.addListener === "function") {
+    mobileMedia.addListener(syncPageState);
+  }
+  window.setTimeout(syncPageState, 200);
+
+  let bootstrapChecks = 0;
+  const bootstrapTimer = window.setInterval(() => {
+    bootstrapChecks += 1;
+    syncPageState();
+
+    if (sliderInstance || bootstrapChecks >= 12) {
+      window.clearInterval(bootstrapTimer);
+    }
+  }, 250);
 })();
 
 (() => {

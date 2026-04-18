@@ -95,21 +95,8 @@
     border-radius: 8px;
     background: var(--brand-600);
     color: var(--neutral-100);
-    text-decoration: none;
     flex: 0 0 auto;
-    transition:
-      transform var(--transition-fast),
-      background-color var(--transition-fast);
-
-    &:hover {
-      background: var(--brand-500);
-      transform: translateY(-1px);
-    }
-
-    &:focus-visible {
-      outline: 2px solid var(--brand-600);
-      outline-offset: 2px;
-    }
+    pointer-events: none;
 
     img {
       display: block;
@@ -1314,9 +1301,9 @@
 
     &__training-track {
       display: flex;
-      gap: 12px;
+      gap: 0;
       overflow: hidden;
-      border-radius: 0;
+      border-radius: 8px;
     }
 
     &__training-card {
@@ -1325,6 +1312,7 @@
       min-width: min(300px, calc(100vw - 90px)) !important;
       max-width: min(300px, calc(100vw - 90px)) !important;
       min-height: 320px;
+      border-radius: 0;
       scroll-snap-align: start;
       gap: 24px;
     }
