@@ -153,7 +153,7 @@
       button.textContent = String(token);
       button.setAttribute("aria-label", "Страница " + token);
       button.addEventListener("click", function () {
-        goToPage(token);
+        goToPage(token, { scrollToNewsStart: true });
       });
       pagesContainer.appendChild(button);
     });
@@ -175,42 +175,63 @@
     renderLoadMore();
   };
 
-  var scrollWindowToTop = function () {
-    window.scrollTo(0, 0);
+  var getNewsScrollTop = function () {
+    var heading = document.getElementById("news-title");
+    var target = heading || document.querySelector(".im-news-page__section");
+    var header = document.querySelector(".im-header");
+    var offset = 24;
+
+    if (!target) return 0;
+
+    if (header) {
+      var headerPosition = window.getComputedStyle(header).position;
+
+      if (headerPosition === "sticky" || headerPosition === "fixed") {
+        offset += header.getBoundingClientRect().height;
+      }
+    }
+
+    return Math.max(target.getBoundingClientRect().top + window.scrollY - offset, 0);
+  };
+
+  var scrollToNewsStart = function () {
+    window.requestAnimationFrame(function () {
+      window.scrollTo(0, getNewsScrollTop());
+    });
   };
 
   var goToPage = function (page, options) {
     var nextPage = Math.max(1, Math.min(page, getTotalPages()));
-    var shouldScrollToTop = Boolean(options && options.scrollToTop);
+    var shouldScrollToNewsStart = Boolean(options && options.scrollToNewsStart);
 
     if (nextPage === state.currentPage) return;
 
     state.currentPage = nextPage;
     render();
 
-    if (shouldScrollToTop) {
-      scrollWindowToTop();
+    if (shouldScrollToNewsStart) {
+      scrollToNewsStart();
     }
   };
 
   firstPageButton.addEventListener("click", function () {
-    goToPage(1);
+    goToPage(1, { scrollToNewsStart: true });
   });
 
   prevPageButton.addEventListener("click", function () {
-    goToPage(state.currentPage - 1);
+    goToPage(state.currentPage - 1, { scrollToNewsStart: true });
   });
 
   nextPageButton.addEventListener("click", function () {
-    goToPage(state.currentPage + 1);
+    goToPage(state.currentPage + 1, { scrollToNewsStart: true });
   });
 
   lastPageButton.addEventListener("click", function () {
-    goToPage(getTotalPages());
+    goToPage(getTotalPages(), { scrollToNewsStart: true });
   });
 
   loadMoreButton.addEventListener("click", function () {
-    goToPage(state.currentPage + 1, { scrollToTop: true });
+    goToPage(state.currentPage + 1, { scrollToNewsStart: true });
   });
 
   dropdowns.forEach(function (dropdown) {
