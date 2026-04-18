@@ -175,13 +175,22 @@
     renderLoadMore();
   };
 
-  var goToPage = function (page) {
+  var scrollWindowToTop = function () {
+    window.scrollTo(0, 0);
+  };
+
+  var goToPage = function (page, options) {
     var nextPage = Math.max(1, Math.min(page, getTotalPages()));
+    var shouldScrollToTop = Boolean(options && options.scrollToTop);
 
     if (nextPage === state.currentPage) return;
 
     state.currentPage = nextPage;
     render();
+
+    if (shouldScrollToTop) {
+      scrollWindowToTop();
+    }
   };
 
   firstPageButton.addEventListener("click", function () {
@@ -201,7 +210,7 @@
   });
 
   loadMoreButton.addEventListener("click", function () {
-    goToPage(state.currentPage + 1);
+    goToPage(state.currentPage + 1, { scrollToTop: true });
   });
 
   dropdowns.forEach(function (dropdown) {
