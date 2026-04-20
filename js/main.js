@@ -1080,6 +1080,11 @@ const initHeroSlider = () => {
   const container = document.querySelector("[data-hero-slider]");
   const sliderRoot = container?.querySelector("[data-hero-slider-track]");
   const pagination = container?.querySelector("[data-hero-slider-pagination]");
+  const hoverMediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+  const AUTOPLAY_DELAY = 5000;
+  const AUTOPLAY_ANIMATION = {
+    duration: 700,
+  };
 
   if (!container || !sliderRoot || !pagination) return;
   if (container.dataset.sliderReady === "true") return;
@@ -1087,8 +1092,17 @@ const initHeroSlider = () => {
 
   /** @type {HTMLButtonElement[]} */
   let dots = [];
+  let slideCount = 0;
+  let currentIndex = 0;
+  let autoplayTimer = null;
+  let activePointerIndex = -1;
+  let isPointerNavigating = false;
+  let pointerNavigationReady = false;
+  let pointerEnteredAt = 0;
+  let isDragging = false;
 
   const syncPagination = (current) => {
+    currentIndex = current;
     if (!dots.length) return;
 
     dots.forEach((dot, index) => {
@@ -1098,7 +1112,44 @@ const initHeroSlider = () => {
     });
   };
 
+  const clearAutoplay = () => {
+    if (!autoplayTimer) return;
+    window.clearTimeout(autoplayTimer);
+    autoplayTimer = null;
+  };
+
+  const scheduleAutoplay = () => {
+    clearAutoplay();
+
+    if (slideCount <= 1 || isPointerNavigating || isDragging) return;
+
+    autoplayTimer = window.setTimeout(() => {
+      const nextIndex = currentIndex >= slideCount - 1 ? 0 : currentIndex + 1;
+      slider.moveToIdx(nextIndex, false, AUTOPLAY_ANIMATION);
+    }, AUTOPLAY_DELAY);
+  };
+
+  const updateSlideByPointer = (clientX) => {
+    if (!hoverMediaQuery.matches || slideCount <= 1) return;
+
+    const bounds = container.getBoundingClientRect();
+    const relativeX = Math.min(Math.max(clientX - bounds.left, 0), bounds.width);
+    const nextIndex = Math.min(
+      slideCount - 1,
+      Math.floor((relativeX / Math.max(bounds.width, 1)) * slideCount),
+    );
+
+    if (nextIndex === activePointerIndex) return;
+
+    activePointerIndex = nextIndex;
+
+    if (nextIndex !== currentIndex) {
+      slider.moveToIdx(nextIndex);
+    }
+  };
+
   const slider = new KeenSlider(sliderRoot, {
+    initial: 0,
     slides: {
       perView: 1,
       spacing: 0,
@@ -1107,12 +1158,13 @@ const initHeroSlider = () => {
     drag: true,
     rubberband: false,
     created(instance) {
-      const slideCount = instance.slides.length;
+      slideCount = instance.slides.length;
       pagination.innerHTML = "";
       dots = [];
 
       if (slideCount <= 1) {
         pagination.hidden = true;
+        clearAutoplay();
         return;
       }
 
@@ -1132,11 +1184,70 @@ const initHeroSlider = () => {
       }
 
       syncPagination(0);
+      scheduleAutoplay();
     },
     slideChanged(instance) {
       syncPagination(instance.track.details.rel);
+      scheduleAutoplay();
+    },
+    dragStarted() {
+      isDragging = true;
+      activePointerIndex = -1;
+      isPointerNavigating = false;
+      pointerEnteredAt = 0;
+      clearAutoplay();
+    },
+    dragEnded() {
+      isDragging = false;
+      scheduleAutoplay();
     },
   });
+
+  container.addEventListener("mouseenter", () => {
+    if (!hoverMediaQuery.matches || slideCount <= 1) return;
+    pointerNavigationReady = true;
+    pointerEnteredAt = performance.now();
+  });
+
+  container.addEventListener("mousemove", (event) => {
+    if (!hoverMediaQuery.matches || !pointerNavigationReady || slideCount <= 1) {
+      return;
+    }
+
+    if (performance.now() - pointerEnteredAt < 150) {
+      return;
+    }
+
+    isPointerNavigating = true;
+    clearAutoplay();
+    updateSlideByPointer(event.clientX);
+  });
+
+  container.addEventListener("mouseleave", () => {
+    if (!hoverMediaQuery.matches || slideCount <= 1) return;
+    pointerNavigationReady = false;
+    pointerEnteredAt = 0;
+    isPointerNavigating = false;
+    activePointerIndex = -1;
+    scheduleAutoplay();
+  });
+
+  const handleHoverModeChange = (event) => {
+    if (event.matches || slideCount <= 1) return;
+    pointerNavigationReady = false;
+    pointerEnteredAt = 0;
+    isPointerNavigating = false;
+    activePointerIndex = -1;
+    scheduleAutoplay();
+  };
+
+  if (typeof hoverMediaQuery.addEventListener === "function") {
+    hoverMediaQuery.addEventListener("change", handleHoverModeChange);
+  } else if (typeof hoverMediaQuery.addListener === "function") {
+    hoverMediaQuery.addListener(handleHoverModeChange);
+  }
+
+  slider.on("destroyed", clearAutoplay);
 
   container.dataset.sliderReady = "true";
 };

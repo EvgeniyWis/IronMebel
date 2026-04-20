@@ -28,6 +28,7 @@
   var state = {
     sort: "popular",
     currentPage: 1,
+    revealMode: "page",
   };
 
   var sortLabels = {
@@ -98,15 +99,20 @@
   var updateVisibleCards = function (sortedItems) {
     var startIndex = (state.currentPage - 1) * PAGE_SIZE;
     var endIndex = startIndex + PAGE_SIZE;
+    var visibleLimit = state.currentPage * PAGE_SIZE;
+    var eagerIndex = state.revealMode === "cumulative" ? startIndex : startIndex;
 
     sortedItems.forEach(function (item, index) {
       var image = item.querySelector(".im-news-page__card-image");
-      var isVisible = index >= startIndex && index < endIndex;
+      var isVisible =
+        state.revealMode === "cumulative"
+          ? index < visibleLimit
+          : index >= startIndex && index < endIndex;
 
       item.hidden = !isVisible;
 
       if (image) {
-        image.loading = index === startIndex ? "eager" : "lazy";
+        image.loading = isVisible && index === eagerIndex ? "eager" : "lazy";
       }
     });
   };
@@ -203,10 +209,12 @@
   var goToPage = function (page, options) {
     var nextPage = Math.max(1, Math.min(page, getTotalPages()));
     var shouldScrollToNewsStart = Boolean(options && options.scrollToNewsStart);
+    var nextRevealMode = options && options.revealMode === "cumulative" ? "cumulative" : "page";
 
-    if (nextPage === state.currentPage) return;
+    if (nextPage === state.currentPage && nextRevealMode === state.revealMode) return;
 
     state.currentPage = nextPage;
+    state.revealMode = nextRevealMode;
     render();
 
     if (shouldScrollToNewsStart) {
@@ -215,23 +223,23 @@
   };
 
   firstPageButton.addEventListener("click", function () {
-    goToPage(1, { scrollToNewsStart: true });
+    goToPage(1, { scrollToNewsStart: true, revealMode: "page" });
   });
 
   prevPageButton.addEventListener("click", function () {
-    goToPage(state.currentPage - 1, { scrollToNewsStart: true });
+    goToPage(state.currentPage - 1, { scrollToNewsStart: true, revealMode: "page" });
   });
 
   nextPageButton.addEventListener("click", function () {
-    goToPage(state.currentPage + 1, { scrollToNewsStart: true });
+    goToPage(state.currentPage + 1, { scrollToNewsStart: true, revealMode: "page" });
   });
 
   lastPageButton.addEventListener("click", function () {
-    goToPage(getTotalPages(), { scrollToNewsStart: true });
+    goToPage(getTotalPages(), { scrollToNewsStart: true, revealMode: "page" });
   });
 
   loadMoreButton.addEventListener("click", function () {
-    goToPage(state.currentPage + 1, { scrollToNewsStart: true });
+    goToPage(state.currentPage + 1, { revealMode: "cumulative" });
   });
 
   dropdowns.forEach(function (dropdown) {
@@ -264,6 +272,7 @@
 
         state.sort = nextSort;
         state.currentPage = 1;
+        state.revealMode = "page";
         label.textContent = sortLabels[nextSort];
         close();
         render();

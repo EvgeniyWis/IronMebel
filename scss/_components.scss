@@ -472,13 +472,15 @@
   }
 
   &:hover {
-    transform: scale(1.05);
-
     svg {
-      circle,
+      circle {
+        fill: var(--brand-500);
+        stroke: var(--brand-500);
+      }
+
       path {
-        fill: var(--brand-600);
-        stroke: var(--brand-600);
+        fill: var(--brand-500);
+        stroke: none;
       }
     }
   }

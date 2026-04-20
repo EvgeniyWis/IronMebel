@@ -305,35 +305,12 @@
     flex-shrink: 0;
     background: var(--blue-800);
     color: var(--neutral-100);
-    text-decoration: none;
-    cursor: pointer;
-    transition:
-      background-color var(--transition-fast),
-      transform var(--transition-fast),
-      box-shadow var(--transition-fast);
+    pointer-events: none;
   }
 
   &__mission-link svg {
     width: 32px;
     height: 32px;
-    transform-origin: center;
-    transition: transform var(--transition-fast);
-  }
-
-  &__mission-link:hover {
-    background: var(--blue-900);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 18px color-mix(in srgb, var(--blue-800) 30%, transparent);
-  }
-
-  &__mission-link:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
-
-  &__mission-link:focus-visible {
-    outline: 2px solid var(--neutral-100);
-    outline-offset: 2px;
   }
 
   &__mission-copy {
