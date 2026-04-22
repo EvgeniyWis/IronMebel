@@ -586,6 +586,14 @@ function initReviewMediaSliders(root = document) {
       return;
     }
 
+    let mediaShell = mediaNode.parentElement;
+    if (!mediaShell?.classList.contains("ready-product__review-media-shell")) {
+      mediaShell = document.createElement("div");
+      mediaShell.className = "ready-product__review-media-shell";
+      mediaNode.parentNode?.insertBefore(mediaShell, mediaNode);
+      mediaShell.appendChild(mediaNode);
+    }
+
     mediaNode.classList.add("keen-slider");
     slides.forEach((slide) => slide.classList.add("keen-slider__slide"));
 
@@ -598,6 +606,19 @@ function initReviewMediaSliders(root = document) {
         spacing: 12,
       },
     });
+
+    const nextButton = document.createElement("button");
+    nextButton.type = "button";
+    nextButton.className = "ready-product__review-media-next";
+    nextButton.setAttribute("aria-label", "Следующий слайд отзыва");
+    nextButton.innerHTML =
+      '<svg viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.46967 3.21967C6.76256 2.92678 7.23744 2.92678 7.53033 3.21967L12.7803 8.46967C13.0732 8.76256 13.0732 9.23744 12.7803 9.53033L7.53033 14.7803C7.23744 15.0732 6.76256 15.0732 6.46967 14.7803C6.17678 14.4874 6.17678 14.0126 6.46967 13.7197L11.1893 9L6.46967 4.28033C6.17678 3.98744 6.17678 3.51256 6.46967 3.21967Z" fill="currentColor"/></svg>';
+    nextButton.addEventListener("click", () => {
+      const currentIndex = slider.track.details?.rel ?? 0;
+      const nextIndex = currentIndex >= slides.length - 1 ? 0 : currentIndex + 1;
+      slider.moveToIdx(nextIndex);
+    });
+    mediaShell.appendChild(nextButton);
 
     reviewMediaSliders.set(mediaNode, slider);
   });
