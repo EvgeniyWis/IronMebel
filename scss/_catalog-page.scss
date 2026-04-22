@@ -1619,7 +1619,7 @@
 
 .im-catalog-seo {
   display: grid;
-  grid-template-columns: 0.9fr 0.1fr;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 24px;
   justify-content: space-between;
   align-items: center;
@@ -1677,7 +1677,9 @@
   }
 
   &__brand-logo {
-    width: 278px;
-    height: 264px;
+    display: block;
+    width: min(278px, 100%);
+    max-width: 100%;
+    height: auto;
   }
 }

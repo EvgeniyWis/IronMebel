@@ -291,6 +291,61 @@ document
   });
 })();
 
+(function initReadySolutionsMobileCardActions() {
+  var page = document.querySelector(".im-ready-solutions-page");
+  if (!page) return;
+
+  var actionSelector =
+    ".im-goods__favorite, .im-goods__compare-top, .im-goods__cart";
+  var blockedSelector = "a, input, select, textarea, label";
+
+  var isMobile = function () {
+    return window.matchMedia("(max-width: 600px)").matches;
+  };
+
+  var closeCards = function (exceptCard) {
+    page.querySelectorAll(".im-goods__card").forEach(function (card) {
+      if (card !== exceptCard) {
+        card.classList.remove("is-actions-open");
+      }
+    });
+  };
+
+  page.addEventListener("click", function (event) {
+    var target = event.target;
+    if (!(target instanceof HTMLElement) || !isMobile()) return;
+
+    var card = target.closest(".im-goods__card");
+    if (!card || !page.contains(card)) return;
+
+    if (target.closest(actionSelector)) return;
+    if (target.closest(blockedSelector)) return;
+
+    var shouldOpen = !card.classList.contains("is-actions-open");
+    closeCards(card);
+    card.classList.toggle("is-actions-open", shouldOpen);
+  });
+
+  document.addEventListener("click", function (event) {
+    var target = event.target;
+    if (!(target instanceof HTMLElement) || !isMobile()) return;
+    if (target.closest(".im-ready-solutions-page .im-goods__card")) return;
+    closeCards();
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      closeCards();
+    }
+  });
+
+  window.addEventListener("resize", function () {
+    if (!isMobile()) {
+      closeCards();
+    }
+  });
+})();
+
 (function initReadySolutionsSortDropdown() {
   var dropdowns = Array.from(document.querySelectorAll("[data-catalog-sort]"));
   if (!dropdowns.length) return;
@@ -417,6 +472,31 @@ document
 
     window.location.href = productPageUrl;
   });
+})();
+
+(function initReadySolutionsSeoBrandLogo() {
+  var logo = document.querySelector(
+    ".im-ready-solutions-page .im-catalog-seo__brand-logo[data-mobile-src]",
+  );
+  if (!logo) return;
+
+  var desktopSrc = logo.dataset.desktopSrc || logo.getAttribute("src");
+  var mobileSrc = logo.dataset.mobileSrc;
+
+  if (!desktopSrc || !mobileSrc) return;
+
+  var syncLogoSource = function () {
+    var nextSrc = window.matchMedia("(max-width: 600px)").matches
+      ? mobileSrc
+      : desktopSrc;
+
+    if (logo.getAttribute("src") !== nextSrc) {
+      logo.setAttribute("src", nextSrc);
+    }
+  };
+
+  syncLogoSource();
+  window.addEventListener("resize", syncLogoSource);
 })();
 
 (() => {
