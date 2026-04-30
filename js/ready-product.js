@@ -1001,6 +1001,15 @@ document.addEventListener("click", (event) => {
     return;
   }
 
+  const replaceButton = event.target.closest("[data-set-preview-replace]");
+
+  if (replaceButton) {
+    const isRemoved = replaceButton.classList.toggle("is-removed");
+    replaceButton.setAttribute("aria-pressed", String(isRemoved));
+
+    return;
+  }
+
   const button = event.target.closest(".ready-product__counter-btn");
 
   if (!button) {

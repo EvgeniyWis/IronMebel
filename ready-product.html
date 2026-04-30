@@ -420,30 +420,81 @@
                               48 900 ₽
                             </span>
                           </div>
-                          <div class="ready-product__set-preview-counter ready-product__counter">
+                          <div class="ready-product__set-preview-controls">
                             <button
-                              class="ready-product__counter-btn"
+                              class="ready-product__set-preview-replace"
                               type="button"
-                              aria-label="Уменьшить количество товара"
-                              data-action="decrement"
+                              aria-label="Заменить товар"
+                              data-set-preview-replace
                             >
-                              −
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--reset"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="17"
+                                  height="14"
+                                  viewBox="0 0 17 14"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 0C6.7095 0 5.238 0.516752 4.0545 1.4535C3.72975 1.71 3.68025 2.18324 3.9375 2.50799C4.19475 2.83274 4.66725 2.88225 4.992 2.625C5.91225 1.89675 7.05075 1.5 8.25 1.5C11.1495 1.5 13.5 3.8505 13.5 6.74999H12L14.25 9.74999L16.5 6.74999H15C15 3.02175 11.9783 0 8.25 0ZM2.25 3.75L0 6.74999H1.5C1.5 10.4782 4.52175 13.5 8.25 13.5C9.79125 13.5 11.262 12.984 12.4455 12.0465C12.7702 11.79 12.8197 11.3167 12.5625 10.992C12.3053 10.6672 11.8327 10.6177 11.508 10.875C10.587 11.604 9.45 12 8.25 12C5.3505 12 3 9.64949 3 6.74999H4.5L2.25 3.75Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--remove"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1 1L11 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                  <path
+                                    d="M11 1L1 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                </svg>
+                              </span>
                             </button>
-                            <input
-                              class="ready-product__counter-input"
-                              type="number"
-                              value="1"
-                              min="0"
-                              aria-label="Количество товара"
-                            />
-                            <button
-                              class="ready-product__counter-btn"
-                              type="button"
-                              aria-label="Увеличить количество товара"
-                              data-action="increment"
-                            >
-                              +
-                            </button>
+                            <div class="ready-product__set-preview-counter ready-product__counter">
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Уменьшить количество товара"
+                                data-action="decrement"
+                              >
+                                −
+                              </button>
+                              <input
+                                class="ready-product__counter-input"
+                                type="number"
+                                value="1"
+                                min="0"
+                                aria-label="Количество товара"
+                              />
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Увеличить количество товара"
+                                data-action="increment"
+                              >
+                                +
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -468,30 +519,81 @@
                               59 900 ₽
                             </span>
                           </div>
-                          <div class="ready-product__set-preview-counter ready-product__counter">
+                          <div class="ready-product__set-preview-controls">
                             <button
-                              class="ready-product__counter-btn"
+                              class="ready-product__set-preview-replace"
                               type="button"
-                              aria-label="Уменьшить количество товара"
-                              data-action="decrement"
+                              aria-label="Заменить товар"
+                              data-set-preview-replace
                             >
-                              −
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--reset"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="17"
+                                  height="14"
+                                  viewBox="0 0 17 14"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 0C6.7095 0 5.238 0.516752 4.0545 1.4535C3.72975 1.71 3.68025 2.18324 3.9375 2.50799C4.19475 2.83274 4.66725 2.88225 4.992 2.625C5.91225 1.89675 7.05075 1.5 8.25 1.5C11.1495 1.5 13.5 3.8505 13.5 6.74999H12L14.25 9.74999L16.5 6.74999H15C15 3.02175 11.9783 0 8.25 0ZM2.25 3.75L0 6.74999H1.5C1.5 10.4782 4.52175 13.5 8.25 13.5C9.79125 13.5 11.262 12.984 12.4455 12.0465C12.7702 11.79 12.8197 11.3167 12.5625 10.992C12.3053 10.6672 11.8327 10.6177 11.508 10.875C10.587 11.604 9.45 12 8.25 12C5.3505 12 3 9.64949 3 6.74999H4.5L2.25 3.75Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--remove"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1 1L11 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                  <path
+                                    d="M11 1L1 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                </svg>
+                              </span>
                             </button>
-                            <input
-                              class="ready-product__counter-input"
-                              type="number"
-                              value="3"
-                              min="0"
-                              aria-label="Количество товара"
-                            />
-                            <button
-                              class="ready-product__counter-btn"
-                              type="button"
-                              aria-label="Увеличить количество товара"
-                              data-action="increment"
-                            >
-                              +
-                            </button>
+                            <div class="ready-product__set-preview-counter ready-product__counter">
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Уменьшить количество товара"
+                                data-action="decrement"
+                              >
+                                −
+                              </button>
+                              <input
+                                class="ready-product__counter-input"
+                                type="number"
+                                value="3"
+                                min="0"
+                                aria-label="Количество товара"
+                              />
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Увеличить количество товара"
+                                data-action="increment"
+                              >
+                                +
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -513,30 +615,81 @@
                               48 900 ₽
                             </span>
                           </div>
-                          <div class="ready-product__set-preview-counter ready-product__counter">
+                          <div class="ready-product__set-preview-controls">
                             <button
-                              class="ready-product__counter-btn"
+                              class="ready-product__set-preview-replace"
                               type="button"
-                              aria-label="Уменьшить количество товара"
-                              data-action="decrement"
+                              aria-label="Заменить товар"
+                              data-set-preview-replace
                             >
-                              −
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--reset"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="17"
+                                  height="14"
+                                  viewBox="0 0 17 14"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 0C6.7095 0 5.238 0.516752 4.0545 1.4535C3.72975 1.71 3.68025 2.18324 3.9375 2.50799C4.19475 2.83274 4.66725 2.88225 4.992 2.625C5.91225 1.89675 7.05075 1.5 8.25 1.5C11.1495 1.5 13.5 3.8505 13.5 6.74999H12L14.25 9.74999L16.5 6.74999H15C15 3.02175 11.9783 0 8.25 0ZM2.25 3.75L0 6.74999H1.5C1.5 10.4782 4.52175 13.5 8.25 13.5C9.79125 13.5 11.262 12.984 12.4455 12.0465C12.7702 11.79 12.8197 11.3167 12.5625 10.992C12.3053 10.6672 11.8327 10.6177 11.508 10.875C10.587 11.604 9.45 12 8.25 12C5.3505 12 3 9.64949 3 6.74999H4.5L2.25 3.75Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--remove"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1 1L11 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                  <path
+                                    d="M11 1L1 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                </svg>
+                              </span>
                             </button>
-                            <input
-                              class="ready-product__counter-input"
-                              type="number"
-                              value="1"
-                              min="0"
-                              aria-label="Количество товара"
-                            />
-                            <button
-                              class="ready-product__counter-btn"
-                              type="button"
-                              aria-label="Увеличить количество товара"
-                              data-action="increment"
-                            >
-                              +
-                            </button>
+                            <div class="ready-product__set-preview-counter ready-product__counter">
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Уменьшить количество товара"
+                                data-action="decrement"
+                              >
+                                −
+                              </button>
+                              <input
+                                class="ready-product__counter-input"
+                                type="number"
+                                value="1"
+                                min="0"
+                                aria-label="Количество товара"
+                              />
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Увеличить количество товара"
+                                data-action="increment"
+                              >
+                                +
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -559,34 +712,109 @@
                               48 900 ₽
                             </span>
                           </div>
-                          <div class="ready-product__set-preview-counter ready-product__counter">
+                          <div class="ready-product__set-preview-controls">
                             <button
-                              class="ready-product__counter-btn"
+                              class="ready-product__set-preview-replace ready-product__set-preview-replace--removed is-removed"
                               type="button"
-                              aria-label="Уменьшить количество товара"
-                              data-action="decrement"
+                              aria-label="Заменить товар"
+                              data-set-preview-replace
                             >
-                              −
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--reset"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="17"
+                                  height="14"
+                                  viewBox="0 0 17 14"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M8.25 0C6.7095 0 5.238 0.516752 4.0545 1.4535C3.72975 1.71 3.68025 2.18324 3.9375 2.50799C4.19475 2.83274 4.66725 2.88225 4.992 2.625C5.91225 1.89675 7.05075 1.5 8.25 1.5C11.1495 1.5 13.5 3.8505 13.5 6.74999H12L14.25 9.74999L16.5 6.74999H15C15 3.02175 11.9783 0 8.25 0ZM2.25 3.75L0 6.74999H1.5C1.5 10.4782 4.52175 13.5 8.25 13.5C9.79125 13.5 11.262 12.984 12.4455 12.0465C12.7702 11.79 12.8197 11.3167 12.5625 10.992C12.3053 10.6672 11.8327 10.6177 11.508 10.875C10.587 11.604 9.45 12 8.25 12C5.3505 12 3 9.64949 3 6.74999H4.5L2.25 3.75Z"
+                                    fill="currentColor"
+                                  />
+                                </svg>
+                              </span>
+                              <span
+                                class="ready-product__set-preview-replace-icon ready-product__set-preview-replace-icon--remove"
+                                aria-hidden="true"
+                              >
+                                <svg
+                                  width="12"
+                                  height="12"
+                                  viewBox="0 0 12 12"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M1 1L11 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                  <path
+                                    d="M11 1L1 11"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                  />
+                                </svg>
+                              </span>
                             </button>
-                            <input
-                              class="ready-product__counter-input"
-                              type="number"
-                              value="12"
-                              min="0"
-                              aria-label="Количество товара"
-                            />
-                            <button
-                              class="ready-product__counter-btn"
-                              type="button"
-                              aria-label="Увеличить количество товара"
-                              data-action="increment"
-                            >
-                              +
-                            </button>
+                            <div class="ready-product__set-preview-counter ready-product__counter">
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Уменьшить количество товара"
+                                data-action="decrement"
+                              >
+                                −
+                              </button>
+                              <input
+                                class="ready-product__counter-input"
+                                type="number"
+                                value="12"
+                                min="0"
+                                aria-label="Количество товара"
+                              />
+                              <button
+                                class="ready-product__counter-btn"
+                                type="button"
+                                aria-label="Увеличить количество товара"
+                                data-action="increment"
+                              >
+                                +
+                              </button>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </article>
+
+                    <button
+                      class="ready-product__set-preview-add"
+                      type="button"
+                      data-set-preview-add
+                    >
+                      <span class="ready-product__set-preview-add-icon" aria-hidden="true">
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 14 14"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M7 1V13M1 7H13"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                          />
+                        </svg>
+                      </span>
+                      <span class="ready-product__set-preview-add-text">Добавить товар</span>
+                    </button>
                   </div>
                   <div data-product-mobile-extras-anchor></div>
                 </section>
