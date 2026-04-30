@@ -447,6 +447,7 @@
   background: var(--green-100);
   font-weight: 700;
   color: var(--green-500);
+  max-width: 110px;
 }
 
 .ready-product__title {
@@ -971,6 +972,7 @@
   font-weight: 400;
   line-height: 1.5;
   color: var(--neutral-900);
+  max-width: 350px;
 }
 
 .ready-product__set-preview-foot {
@@ -3470,6 +3472,10 @@
     margin-bottom: 16px;
   }
 
+  .ready-product__badge--in-stock {
+    max-width: none;
+  }
+
   .ready-product__title {
     order: 3;
     font-size: var(--font-2xl-size);
@@ -3992,6 +3998,10 @@
     min-height: 26px;
     border-radius: 6px;
     margin-bottom: 16px;
+  }
+
+  .ready-product__badge--in-stock {
+    max-width: none;
   }
 
   .ready-product__title {
